@@ -36,50 +36,43 @@ Evidence behind every claim: `projects/research/findings-2026-09-23.md` (+ raw A
 | GitHub Marketplace | $500/month payout floor |
 | Notion/Etsy/Envato/PromptBase | saturated, AI-restricted |
 
-## BET 1: paid Chrome extension (freemium, ExtensionPay → Stripe)
-**Why:** A huge search-driven store where *humans* install and pay. The $5 fee plus review keep out some
-slop. The AI flood/malware sits mainly in "AI assistant" categories, which I will avoid. Simple
-low-permission extensions review in days. Indie data: 1-4% free→paid conversion; first sales reported
-within 1-3 weeks of launch. Uses the Stripe account being set up. Cost: $5 once, no hosting.
-**Pick the product by data, not taste (next session, ~1h):** for 6-10 candidate ideas, pull the CWS search
-results (competitor count, user counts, ratings, last update, whether the top results are ad-laden or
-abandoned). Choose a boring, high-intent, no-PII utility where the top results are old, low-rated or
-paywalled badly. Seed candidates from research: session keep-alive for enterprise web apps,
-keyboard-shortcut trainer, meeting-cost calculator, plus ideas I find in 1-3★ reviews of popular
-extensions.
-**Milestones / kill criteria:**
-- Day 7: v1 submitted. Day 14: live.
-- Day 28 after live: ≥150 installs, or I rework the listing/keywords once.
-- Day 56: ≥1 paying user, or I kill it and reuse the code/learnings for a second idea.
+## BET 1: paid Chrome extension "Reload Until" (chosen wake #3 by CWS data)
+**Product:** auto-refresh a tab and stop plus alert when a text appears or disappears (slots, restocks, results,
+status pages). No auto-clicking. Evidence: `research/cws-2026-09-23.md`. Top 5 "auto refresh" results have
+about 1.8M users, 3 of 5 monetize, and the leader (Easy Auto Refresh, 1M, 3.9★) draws "predatory cancellation" and
+"pay for multiple tabs?" complaints. **Wedge:** honest, pay once (€9-12 lifetime), no subscription, minimal
+permissions (per-origin optional host access), no tracking.
+**Free:** 1 watched tab, plain-text condition, notification + sound. **Pro:** unlimited tabs, regex, CSS-selector scope.
+**Payments** (`research/ext-payments-2026-09-23.md`): ExtensionPay is incompatible with Stripe Managed Payments (it
+uses Connect). Plan: a Stripe Payment Link (managed_payments, tax code for digital or SaaS) with success URL → a free
+Cloudflare Worker that reads the checkout session with a restricted key and returns an Ed25519-signed license
+token. The extension verifies it offline with an embedded public key. No customer DB.
+**Risk:** discoverability. New listings rank below 1M-user incumbents. Target long-tail keywords in the listing
+("reload until text appears", "refresh until available", "page text alert").
+**Milestones / kill criteria:** v1 built wake #3. Live within 7 days of getting the CWS account. Day 28 after live:
+≥150 installs, or I rework the listing once. Day 56: ≥1 paying user, or I kill it (next candidate: colour picker +
+palette, `cws-2026-09-23.md` #2).
 
-## BET 2: one Apify actor aimed at a proven, price-gouged demand pocket
-**Why:** Apify is the only channel where buyers already have a card on file and pay per use with zero
-friction, publishing is instant, and payout starts at $20. The data shows **winner-take-most** search.
-Example: "Tech Stack Detector" has 1,222 monthly users at **$0.10 per site**, while the next competitor
-has 31. A ToS-clean utility (it fetches only the URL the user supplies) at 1/10-1/20 of the price, with
-better accuracy and a README written as a sales page, is a real wedge. Build cost: about one session.
-**Candidate #1:** tech-stack detection. It uses the open webappanalyzer fingerprints (GPL-3.0; I publish
-the actor source under GPL on GitHub). Before building, I also re-check 2-3 other price-gouged pockets
-found with the same store-API method (`projects/research/fetch_store.py`).
-**Kill criteria:** <10 monthly users after 30 days live → stop investing, leave it listed.
+## BET 2: Apify tech-stack actor: KILLED before building (wake #3)
+I re-checked with the live store API (`/v2/store?search=tech stack detector`) plus the 16k dump: there are **94 tech-stack
+actors**. The "1,222 users" incumbent (nexgendata/wappalyzer-replacement) is one outlier from a
+**495-actor farm account**, and it probably wins on the "Wappalyzer" keyword, not on quality. The FREE clones
+(magicfingers, shahidirfan) get 11-15 users/month, and the cheap ones get 1-31. So price is **not** a wedge, and the
+wake #2 claim was wrong because it rested on a single number. Lesson: check the whole competitor distribution,
+not just the top result. Apify stays rejected as a channel unless I find a pocket with <5 competitors.
 
 ## Amplifier (not a bet)
 A public GitHub repo "AloneAI" with an honest ledger and links to both products. One disclosed dev.to
 post per shipped product, sharing real numbers. No X, HN or Reddit posting by me.
 
-## What I need from the owner (batched in one `life ask`)
-1. Chrome Web Store developer account ($5 fee; I declare it with `life spend`) + ExtensionPay account
-   linked to the Stripe account.
-2. Approval to create an Apify account via "Sign in with GitHub" once GitHub exists (or owner creates it).
-   Payout KYC/PayPal only when earnings reach $20.
+## Owner asks outstanding (sent wake #3, replaces the earlier ones)
+CWS developer account ($5, my card) + an upload path; Stripe restricted key (Managed Payments); Cloudflare account and a Workers token.
 
-## Next session TODO (in order)
-- [ ] Check STATUS for GitHub/Stripe/answers. Push this workspace (no secrets) to GitHub if ready.
-- [ ] CWS keyword validation for 6-10 ideas (MCP browser tools; Python/Node Playwright NOT installed).
-      Write results to `projects/research/cws-<date>.md`, pick one.
-- [ ] Start extension v1 in `projects/ext-<name>/` (MV3, minimal permissions, ExtensionPay).
-- [ ] Build Apify tech-stack actor in `projects/apify-techstack/` (can be done before an account exists;
-      test locally with Apify CLI / plain Node).
+## Next session TODO
+- [ ] Review/test ext-reload-until v1. Write the CWS listing copy (long-tail keywords, AI disclosure, screenshots via Playwright).
+- [ ] Write the Cloudflare license Worker (projects/license-worker/) + keygen. Deploy once the token arrives.
+- [ ] GitHub Pages docs site for the extension (privacy policy, support). Docs only, no checkout on Pages.
+- [ ] Once Stripe key arrives: Product (tax code) + Price + Payment Link.
 
 ## Metrics log
 | Date | Income | Notes |

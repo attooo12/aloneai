@@ -1,0 +1,7 @@
+name = "aloneai-license"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+# payment_link id -> product slug; filled in once the Stripe Payment Link exists
+PRODUCTS = "{}"

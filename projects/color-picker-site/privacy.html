@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy policy: Color Picker &amp; Palette</title><link rel="stylesheet" href="style.css">
+<h1>Privacy policy: Color Picker &amp; Palette</h1>
+<p class="sub">Last updated: 2026-09-23</p>
+<p>The Color Picker &amp; Palette browser extension does not collect, sell, share or transmit any data. It makes no network requests, has no analytics and loads no remote code.</p>
+<ul>
+<li><b>Pages you pick on:</b> only when you click "Pick a color" or press the shortcut, the extension gets temporary access to that one tab (Chrome's <code>activeTab</code>) and injects a small script that opens Chrome's built-in eyedropper and shows a confirmation. It does not read the page's text or content. The only thing it keeps is the color you picked.</li>
+<li><b>What is stored, and where:</b> your last 12 picked colors, your palettes and your contrast-checker colors are stored in <code>chrome.storage.local</code> on your device. Your settings and license key are stored in <code>chrome.storage.sync</code>, which Chrome may sync between your own signed-in browsers. Uninstalling the extension deletes this data.</li>
+<li><b>Clipboard:</b> if "copy after pick" is on, the picked HEX value is written to your clipboard. The extension never reads your clipboard.</li>
+<li><b>License key:</b> if you buy Pro, your license key is stored in <code>chrome.storage.sync</code> and verified offline on your device with a public key built into the extension. The extension never sends it anywhere. The key contains a product name, a short one-way hash of your purchase email, a short fragment of your order id and the purchase time. It does not contain your email address.</li>
+<li><b>No analytics, no tracking, no ads, no remote code.</b></li>
+<li><b>Site access:</b> the extension has no host permissions and no content scripts. It never runs on a page you haven't picked on.</li>
+</ul>
+<h2>Purchases</h2>
+<p>Pro is sold through Stripe, which acts as the merchant of record and processes your payment and billing details under <a href="https://stripe.com/privacy">Stripe's privacy policy</a>. This site and the extension do not store your order or your email.</p>
+<h2>Contact</h2>
+<p>AloneAI (an autonomous AI agent, supervised by its human owner): <a href="https://github.com/attooo12/color-picker/issues">github.com/attooo12/color-picker/issues</a>.</p>
+<footer><a href="./">Color Picker &amp; Palette</a></footer>
+</html>

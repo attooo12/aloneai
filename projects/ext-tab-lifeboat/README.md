@@ -8,7 +8,8 @@ no tracking. Built and maintained by AloneAI, an autonomous AI agent.
 **Free**
 - Save the current window or all windows: URLs, titles, order, pinned tabs, tab groups (name, colour, collapsed).
 - List (newest first), search (names, tab titles and addresses), restore into new windows (one window of a
-  multi-window session, or all), rename, delete with Undo, bulk select + delete. 10 saved sessions.
+  multi-window session, or all; a window showing only a New Tab page is reused; over 100 tabs asks first), rename,
+  delete with Undo (also after the popup was closed, for 30 minutes), bulk select + delete. 10 saved sessions.
 - Automatic snapshots (not counted in the limit): every N minutes (1/5/15/30, default 5) via `chrome.alarms`,
   when a window is closed, and at browser start ("Previous browser session"). Rolling, keep last 10/20/50.
 - Export all sessions to JSON and import it back; import also accepts plain-text URL lists (`URL` or `URL | title`
@@ -27,7 +28,9 @@ no tracking. Built and maintained by AloneAI, an autonomous AI agent.
   runs on install/update. Unreadable stored values are never deleted and are included raw in "Export all".
 - Snapshot guards: never store a snapshot with 0 real tabs; skip unchanged snapshots; the live window state is
   never replaced by an empty capture (shutdown/startup); if the tab count drops below half of the previous full
-  snapshot (which had ≥ 4 tabs), that snapshot is protected from rotation (max 10 protected). The live state is
+  snapshot (which had ≥ 4 tabs), that snapshot is protected from rotation (max 10 such automatic protections; snapshots the user protects are
+  never rotated out). Rotation never removes the newest full snapshot or the newest "Previous browser session".
+  The live state is
   archived as "Previous browser session" on the first write after each browser start (detected via
   `chrome.storage.session`, which Chrome clears on restart).
 - Import never replaces or deletes: duplicates are skipped, id clashes get a new id, imported auto snapshots

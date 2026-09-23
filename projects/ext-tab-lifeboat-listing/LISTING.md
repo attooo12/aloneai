@@ -19,7 +19,7 @@ sessions to a file at any time.
 FREE
 • Save the current window or all windows as a named session: page addresses, titles, order, pinned tabs and tab
   groups (name, colour, collapsed)
-• Restore a session into new windows, with its pinned tabs and tab groups recreated
+• Restore a session into new windows (or into an empty New Tab window), with its pinned tabs and tab groups recreated
 • Search sessions by name, tab title or address; rename; delete (with Undo)
 • Automatic snapshots every few minutes (you choose 1, 5, 15 or 30), when you close a window, and of your previous
   browser session when Chrome starts. They don't count toward the limit

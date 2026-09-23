@@ -26,15 +26,22 @@ async function periodicSnapshot(reason = 'periodic') {
   return addAutoSnapshot({ windows: cap.windows }, reason, 'all');
 }
 
+// Debounced (1.5 s), but never postponed more than LIVE_MAX_WAIT after the first change, so a stream of events
+// can't keep the live state from being written.
+const LIVE_MAX_WAIT = 5000;
 let liveTimer = null;
+let liveFirst = 0;
 function scheduleLive() {
+  if (!liveTimer) liveFirst = Date.now();
   clearTimeout(liveTimer);
-  liveTimer = setTimeout(() => { refreshLive().catch(() => {}); }, 1500);
+  liveTimer = setTimeout(() => { liveTimer = null; refreshLive().catch(() => {}); }, Math.max(0, Math.min(1500, liveFirst + LIVE_MAX_WAIT - Date.now())));
 }
 const scheduleLiveIf = (fn) => (...a) => { if (fn(...a)) scheduleLive(); };
 
 chrome.tabs.onCreated.addListener(scheduleLive);
-chrome.tabs.onUpdated.addListener(scheduleLiveIf((id, ch) => 'url' in ch || 'title' in ch || 'pinned' in ch || 'groupId' in ch));
+// Titles are picked up when a page finishes loading; pages that keep changing their title (timers, unread counters)
+// don't trigger a write every second.
+chrome.tabs.onUpdated.addListener(scheduleLiveIf((id, ch) => 'url' in ch || ch.status === 'complete' || 'pinned' in ch || 'groupId' in ch));
 chrome.tabs.onRemoved.addListener(scheduleLiveIf((id, info) => !info.isWindowClosing));
 chrome.tabs.onMoved.addListener(scheduleLive);
 chrome.tabs.onAttached.addListener(scheduleLive);
@@ -64,7 +71,8 @@ chrome.runtime.onStartup.addListener(() => {
   (async () => { await archivePreviousSession(); await ensureAlarms(); await refreshLive(); })().catch(() => {});
 });
 chrome.runtime.onInstalled.addListener(() => {
-  (async () => { await checkIntegrity(); await archivePreviousSession(); await ensureAlarms(); await refreshLive(); })().catch(() => {});
+  // A first snapshot right away, so protection starts at install (not one interval later).
+  (async () => { await checkIntegrity(); await archivePreviousSession(); await ensureAlarms(); await periodicSnapshot(); })().catch(() => {});
 });
 
 // ---------- messages from the popup / options page ----------
@@ -75,7 +83,7 @@ async function handle(msg) {
       if (!s) return { ok: false, error: 'This session could not be read.' };
       if (msg.windowIndex !== undefined && !s.windows[msg.windowIndex]) return { ok: false, error: 'No such window.' };
       const { lazy } = await getSettings();
-      return { ok: true, ...(await restoreSession(s, { windowIndex: msg.windowIndex, lazy })) };
+      return { ok: true, ...(await restoreSession(s, { windowIndex: msg.windowIndex, lazy, intoWindowId: msg.intoWindowId })) };
     }
     case 'openTab': { // Pro: open a single saved tab
       if (!(await isPro())) return { ok: false, error: 'pro_required' };

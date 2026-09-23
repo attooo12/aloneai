@@ -1,0 +1,240 @@
+- generic [ref=f19e1]:
+  - banner [ref=f19e2]:
+    - link "Skip to main content" [ref=f19e3] [cursor=pointer]
+    - generic [ref=f19e4]:
+      - generic [ref=f19e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f19e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f19e8]
+          - generic [ref=f19e9]: Chrome Web Store
+        - search "Sitewide" [ref=f19e10]:
+          - generic [ref=f19e13]:
+            - combobox "Search Chrome Web Store" [active] [ref=f19e15]: block websites focus
+            - button "Clear search" [ref=f19e17] [cursor=pointer]
+        - generic [ref=f19e20]:
+          - button "More options menu" [ref=f19e24] [cursor=pointer]
+          - generic [ref=f19e34]:
+            - button "Google apps" [ref=f19e38] [cursor=pointer]
+            - link "Sign in" [ref=f19e42] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/search/block%2520websites%2520focus?hl%3Den&followup=https://chromewebstore.google.com/search/block%2520websites%2520focus?hl%3Den&hl=en&ec=GAZApQM
+      - tablist [ref=f19e46]:
+        - generic [ref=f19e49]:
+          - tab "Discover" [ref=f19e50] [cursor=pointer]
+          - tab "Extensions" [ref=f19e51] [cursor=pointer]
+          - tab "Themes" [ref=f19e52] [cursor=pointer]
+    - dialog [ref=f19e53]:
+      - complementary [ref=f19e54]:
+        - heading "Switch to Chrome?" [level=2] [ref=f19e56]
+        - paragraph [ref=f19e57]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f19e58]:
+          - button "No thanks" [ref=f19e60] [cursor=pointer]
+          - generic [ref=f19e64] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f19e65]: "Yes"
+            - link "Yes" [ref=f19e66]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - generic [ref=f19e70]:
+    - generic [ref=f19e72]:
+      - generic [ref=f19e73]:
+        - heading "Type" [level=2] [ref=f19e74]
+        - toolbar "Filter items by extension type" [ref=f19e75]:
+          - button "Extensions" [ref=f19e78] [cursor=pointer]
+          - button "Themes" [ref=f19e83] [cursor=pointer]
+      - generic [ref=f19e86]:
+        - heading "Filter by" [level=2] [ref=f19e87]
+        - generic [ref=f19e89] [cursor=pointer]:
+          - checkbox "Featured extensions" [ref=f19e91]
+          - generic [ref=f19e92]: Featured extensions
+        - generic [ref=f19e95] [cursor=pointer]:
+          - checkbox "Established publishers" [ref=f19e97]
+          - generic [ref=f19e98]: Established publishers
+      - generic [ref=f19e100]:
+        - heading "Ratings" [level=2] [ref=f19e101]
+        - radiogroup "Ratings" [ref=f19e102]:
+          - radio "5 stars" [ref=f19e103]
+          - radio "4 stars and up" [ref=f19e109]:
+            - generic [aria-hidden] [ref=f19e116]: "& up"
+          - radio "3 stars and up" [ref=f19e117]:
+            - generic [aria-hidden] [ref=f19e125]: "& up"
+          - radio "2 stars and up" [ref=f19e126]:
+            - generic [aria-hidden] [ref=f19e135]: "& up"
+      - generic [ref=f19e137]:
+        - button "Clear all filters button." [disabled] [ref=f19e138]:
+          - generic [aria-hidden] [ref=f19e140]: Clear all
+        - tooltip [aria-hidden] [ref=f19e141]: Reset your filter options.
+    - main [ref=f19e142]:
+      - generic [ref=f19e143]:
+        - heading "Search results" [level=1] [ref=f19e144]
+        - generic [ref=f19e145]:
+          - generic [ref=f19e146]:
+            - link "StayFocusd – Website Blocker & Focus Timer & Shorts Blocker" [ref=f19e147] [cursor=pointer]:
+              - /url: ./detail/stayfocusd-%E2%80%93-website-bloc/laankejkbhbdhmipfmgcngdelahlfoji
+            - generic [ref=f19e149]:
+              - heading "StayFocusd – Website Blocker & Focus Timer & Shorts Blocker" [level=2] [ref=f19e151]
+              - paragraph [ref=f19e152]:
+                - img "Published by verified publisher" [ref=f19e153]
+                - generic [ref=f19e156]: stayfocusd.com
+                - img "Featured badge" [ref=f19e157]
+                - generic [ref=f19e160]: Featured
+              - generic [ref=f19e161]:
+                - img "Average rating 4.4 out of 5 stars." [ref=f19e162]:
+                  - generic [ref=f19e163]: "4.4"
+                - link "Learn more about results and reviews \"StayFocusd – Website Blocker & Focus Timer & Shorts Blocker\"." [ref=f19e172] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f19e173]: Boost your productivity by limiting the amount of time you spend on time-wasting websites.
+          - generic [ref=f19e174]:
+            - 'link "Block Site: Site Blocker & Focus Mode" [ref=f19e175] [cursor=pointer]':
+              - /url: ./detail/block-site-site-blocker-f/dpfofggmkhdbfcciajfdphofclabnogo
+            - generic [ref=f19e177]:
+              - 'heading "Block Site: Site Blocker & Focus Mode" [level=2] [ref=f19e179]'
+              - paragraph [ref=f19e180]:
+                - img "Published by verified publisher" [ref=f19e181]
+                - generic [ref=f19e184]: blockerwebsite.com/
+                - img "Featured badge" [ref=f19e185]
+                - generic [ref=f19e188]: Featured
+              - generic [ref=f19e189]:
+                - img "Average rating 4.7 out of 5 stars." [ref=f19e190]:
+                  - generic [ref=f19e191]: "4.7"
+                - 'link "Learn more about results and reviews \"Block Site: Site Blocker & Focus Mode\"." [ref=f19e200] [cursor=pointer]':
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f19e201]: Block sites, protect your time with site blocker! Website blocker and password protection help you stay focused.
+          - generic [ref=f19e202]:
+            - link "BlockSite Block Websites & Stay Focused" [ref=f19e203] [cursor=pointer]:
+              - /url: ./detail/blocksite-block-websites/eiimnmioipafcokbfikbljfdeojpcgbh
+            - generic [ref=f19e205]:
+              - heading "BlockSite Block Websites & Stay Focused" [level=2] [ref=f19e207]
+              - paragraph [ref=f19e208]:
+                - img "Published by verified publisher" [ref=f19e209]
+                - generic [ref=f19e212]: blocksite.co/
+                - img "Featured badge" [ref=f19e213]
+                - generic [ref=f19e216]: Featured
+              - generic [ref=f19e217]:
+                - img "Average rating 4.5 out of 5 stars." [ref=f19e218]:
+                  - generic [ref=f19e219]: "4.5"
+                - link "Learn more about results and reviews \"BlockSite Block Websites & Stay Focused\"." [ref=f19e228] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f19e229]: "Stay focused and boost productivity: Custom blocklist, Scheduled site blocking, and Password protection."
+          - generic [ref=f19e230]:
+            - link "FocusGuard - Block Site & Focus Mode" [ref=f19e231] [cursor=pointer]:
+              - /url: ./detail/focusguard-block-site-foc/ifdepgnnjpnbkcgempionjablajancjc
+            - generic [ref=f19e233]:
+              - heading "FocusGuard - Block Site & Focus Mode" [level=2] [ref=f19e235]
+              - paragraph [ref=f19e236]:
+                - img "Featured badge" [ref=f19e237]
+                - generic [ref=f19e240]: Featured
+              - generic [ref=f19e241]:
+                - img "Average rating 4.6 out of 5 stars." [ref=f19e242]:
+                  - generic [ref=f19e243]: "4.6"
+                - link "Learn more about results and reviews \"FocusGuard - Block Site & Focus Mode\"." [ref=f19e252] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f19e253]: Free site blocker for enhanced productivity. Custom blocklist and password protection. Stay focused, and block distractions.
+          - generic [ref=f19e254]:
+            - link "Website Blocker — Block Sites, Focus Timer & Productivity Tools" [ref=f19e255] [cursor=pointer]:
+              - /url: ./detail/website-blocker-%E2%80%94-block-s/kniediipngcpmbmpeacaoinhoeipfina
+            - generic [ref=f19e257]:
+              - heading "Website Blocker — Block Sites, Focus Timer & Productivity Tools" [level=2] [ref=f19e259]
+              - paragraph [ref=f19e260]:
+                - img "Published by verified publisher" [ref=f19e261]
+                - generic [ref=f19e264]: website-blocker.extfy.com/
+                - img "Featured badge" [ref=f19e265]
+                - generic [ref=f19e268]: Featured
+              - generic [ref=f19e269]:
+                - img "Average rating 4.7 out of 5 stars." [ref=f19e270]:
+                  - generic [ref=f19e271]: "4.7"
+                - link "Learn more about results and reviews \"Website Blocker — Block Sites, Focus Timer & Productivity Tools\"." [ref=f19e280] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f19e281]: Block distracting websites, schedule focus sessions, and boost productivity. Keyword blocking, profiles, Pomodoro timer & more.
+          - generic [ref=f19e282]:
+            - 'link "Site Blocker: Stay focused & Block websites" [ref=f19e283] [cursor=pointer]':
+              - /url: ./detail/site-blocker-stay-focused/lfbpllmokmhinnopfchemobgglipfini
+            - generic [ref=f19e285]:
+              - 'heading "Site Blocker: Stay focused & Block websites" [level=2] [ref=f19e287]'
+              - paragraph [ref=f19e288]:
+                - img "Featured badge" [ref=f19e289]
+                - generic [ref=f19e292]: Featured
+              - generic [ref=f19e293]:
+                - img "Average rating 4.7 out of 5 stars." [ref=f19e294]:
+                  - generic [ref=f19e295]: "4.7"
+                - 'link "Learn more about results and reviews \"Site Blocker: Stay focused & Block websites\"." [ref=f19e304] [cursor=pointer]':
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f19e305]: "Boost productivity by features: scheduled site blocking, password protection and custom blocklist."
+          - generic [ref=f19e306]:
+            - link "Self Control -- Block sites and stay focused" [ref=f19e307] [cursor=pointer]:
+              - /url: ./detail/self-control-block-sites/ncaaipdfhdijmfdfmeoagmogddhkfdec
+            - generic [ref=f19e309]:
+              - heading "Self Control -- Block sites and stay focused" [level=2] [ref=f19e311]
+              - paragraph [ref=f19e312]:
+                - img "Featured badge" [ref=f19e313]
+                - generic [ref=f19e316]: Featured
+              - generic [ref=f19e317]:
+                - img "Average rating 4.0 out of 5 stars." [ref=f19e318]:
+                  - generic [ref=f19e319]: "4.0"
+                - link "Learn more about results and reviews \"Self Control -- Block sites and stay focused\"." [ref=f19e328] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f19e329]: A simple web site blocker to keep you focused and enhance your productivity
+          - generic [ref=f19e330]:
+            - link "Website Blocker and Focus Mode" [ref=f19e331] [cursor=pointer]:
+              - /url: ./detail/website-blocker-and-focus/ilioecelhjbmebaimobaaggalibfphhl
+            - generic [ref=f19e333]:
+              - heading "Website Blocker and Focus Mode" [level=2] [ref=f19e335]
+              - paragraph [ref=f19e336]:
+                - img "Published by verified publisher" [ref=f19e337]
+                - generic [ref=f19e340]: sites.google.com/view/websiteblocker/home/
+                - img "Featured badge" [ref=f19e341]
+                - generic [ref=f19e344]: Featured
+              - generic [ref=f19e345]:
+                - img "Average rating 3 out of 5 stars." [ref=f19e346]:
+                  - generic [ref=f19e347]: "3.0"
+                - link "Learn more about results and reviews \"Website Blocker and Focus Mode\"." [ref=f19e356] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f19e357]: Site Blocker chrome extension and focus mode to increase productivity.
+          - generic [ref=f19e358]:
+            - 'link "Stay Focused: Block websites & stay productive!" [ref=f19e359] [cursor=pointer]':
+              - /url: ./detail/stay-focused-block-websit/bmfeifbfjagidfnngmjjgkchjejeggep
+            - generic [ref=f19e361]:
+              - 'heading "Stay Focused: Block websites & stay productive!" [level=2] [ref=f19e363]'
+              - paragraph [ref=f19e364]:
+                - img "Published by verified publisher" [ref=f19e365]
+                - generic [ref=f19e368]: stayfocused.me
+              - generic [ref=f19e369]:
+                - img "Average rating 4.4 out of 5 stars." [ref=f19e370]:
+                  - generic [ref=f19e371]: "4.4"
+                - 'link "Learn more about results and reviews \"Stay Focused: Block websites & stay productive!\"." [ref=f19e380] [cursor=pointer]':
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f19e381]: Boost your productivity by blocking distracting websites, keywords or set daily usage limits.
+          - generic [ref=f19e382]:
+            - link "AppBlock - Block sites & Stay focused" [ref=f19e383] [cursor=pointer]:
+              - /url: ./detail/appblock-block-sites-stay/lniombipmmhhighllijmcdncnefpjloi
+            - generic [ref=f19e385]:
+              - heading "AppBlock - Block sites & Stay focused" [level=2] [ref=f19e387]
+              - paragraph [ref=f19e388]:
+                - img "Featured badge" [ref=f19e389]
+                - generic [ref=f19e392]: Featured
+              - generic [ref=f19e393]:
+                - img "Average rating 4.7 out of 5 stars." [ref=f19e394]:
+                  - generic [ref=f19e395]: "4.7"
+                - link "Learn more about results and reviews \"AppBlock - Block sites & Stay focused\"." [ref=f19e404] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f19e405]: Block distracting webs and stay focused on your work.
+          - button "Load more" [ref=f19e408] [cursor=pointer]
+  - contentinfo [ref=f19e411]:
+    - list [ref=f19e412]:
+      - listitem [ref=f19e413]:
+        - link "About Chrome Web Store" [ref=f19e414] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en
+        - text: •
+      - listitem [ref=f19e415]:
+        - link "Developer Dashboard" [ref=f19e416] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f19e417]:
+        - link "Privacy Policy" [ref=f19e418] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en
+        - text: •
+      - listitem [ref=f19e419]:
+        - link "Terms of Service" [ref=f19e420] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en/gallery_tos.html
+        - text: •
+      - listitem [ref=f19e421]:
+        - link "Help" [ref=f19e422] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en
+  - generic [ref=f19e423]: Page loaded.

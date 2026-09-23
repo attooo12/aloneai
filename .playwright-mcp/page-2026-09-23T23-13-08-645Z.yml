@@ -1,0 +1,238 @@
+- generic [ref=f18e1]:
+  - banner [ref=f18e2]:
+    - link "Skip to main content" [ref=f18e3] [cursor=pointer]
+    - generic [ref=f18e4]:
+      - generic [ref=f18e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f18e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f18e8]
+          - generic [ref=f18e9]: Chrome Web Store
+        - search "Sitewide" [ref=f18e10]:
+          - generic [ref=f18e13]:
+            - combobox "Search Chrome Web Store" [active] [ref=f18e15]: dark mode
+            - button "Clear search" [ref=f18e17] [cursor=pointer]
+        - generic [ref=f18e20]:
+          - button "More options menu" [ref=f18e24] [cursor=pointer]
+          - generic [ref=f18e34]:
+            - button "Google apps" [ref=f18e38] [cursor=pointer]
+            - link "Sign in" [ref=f18e42] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/search/dark%2520mode?hl%3Den&followup=https://chromewebstore.google.com/search/dark%2520mode?hl%3Den&hl=en&ec=GAZApQM
+      - tablist [ref=f18e46]:
+        - generic [ref=f18e49]:
+          - tab "Discover" [ref=f18e50] [cursor=pointer]
+          - tab "Extensions" [ref=f18e51] [cursor=pointer]
+          - tab "Themes" [ref=f18e52] [cursor=pointer]
+    - dialog [ref=f18e53]:
+      - complementary [ref=f18e54]:
+        - heading "Switch to Chrome?" [level=2] [ref=f18e56]
+        - paragraph [ref=f18e57]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f18e58]:
+          - button "No thanks" [ref=f18e60] [cursor=pointer]
+          - generic [ref=f18e64] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f18e65]: "Yes"
+            - link "Yes" [ref=f18e66]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - generic [ref=f18e70]:
+    - generic [ref=f18e72]:
+      - generic [ref=f18e73]:
+        - heading "Type" [level=2] [ref=f18e74]
+        - toolbar "Filter items by extension type" [ref=f18e75]:
+          - button "Extensions" [ref=f18e78] [cursor=pointer]
+          - button "Themes" [ref=f18e83] [cursor=pointer]
+      - generic [ref=f18e86]:
+        - heading "Filter by" [level=2] [ref=f18e87]
+        - generic [ref=f18e89] [cursor=pointer]:
+          - checkbox "Featured extensions" [ref=f18e91]
+          - generic [ref=f18e92]: Featured extensions
+        - generic [ref=f18e95] [cursor=pointer]:
+          - checkbox "Established publishers" [ref=f18e97]
+          - generic [ref=f18e98]: Established publishers
+      - generic [ref=f18e100]:
+        - heading "Ratings" [level=2] [ref=f18e101]
+        - radiogroup "Ratings" [ref=f18e102]:
+          - radio "5 stars" [ref=f18e103]
+          - radio "4 stars and up" [ref=f18e109]:
+            - generic [aria-hidden] [ref=f18e116]: "& up"
+          - radio "3 stars and up" [ref=f18e117]:
+            - generic [aria-hidden] [ref=f18e125]: "& up"
+          - radio "2 stars and up" [ref=f18e126]:
+            - generic [aria-hidden] [ref=f18e135]: "& up"
+      - generic [ref=f18e137]:
+        - button "Clear all filters button." [disabled] [ref=f18e138]:
+          - generic [aria-hidden] [ref=f18e140]: Clear all
+        - tooltip [aria-hidden] [ref=f18e141]: Reset your filter options.
+    - main [ref=f18e142]:
+      - generic [ref=f18e143]:
+        - heading "Search results" [level=1] [ref=f18e144]
+        - generic [ref=f18e145]:
+          - generic [ref=f18e146]:
+            - link "Dark Mode" [ref=f18e147] [cursor=pointer]:
+              - /url: ./detail/dark-mode/dmghijelimhndkbmpgbldicpogfkceaj
+            - generic [ref=f18e149]:
+              - heading "Dark Mode" [level=2] [ref=f18e151]
+              - paragraph [ref=f18e152]:
+                - img "Featured badge" [ref=f18e153]
+                - generic [ref=f18e156]: Featured
+              - generic [ref=f18e157]:
+                - img "Average rating 3.6 out of 5 stars." [ref=f18e158]:
+                  - generic [ref=f18e159]: "3.6"
+                - link "Learn more about results and reviews \"Dark Mode\"." [ref=f18e168] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f18e169]: A global dark theme for the web.
+          - generic [ref=f18e170]:
+            - link "Dark Theme - Dark mode for Chrome" [ref=f18e171] [cursor=pointer]:
+              - /url: ./detail/dark-theme-dark-mode-for/gjjbmfigjpgnehjioicaalopaikcnheo
+            - generic [ref=f18e173]:
+              - heading "Dark Theme - Dark mode for Chrome" [level=2] [ref=f18e175]
+              - paragraph [ref=f18e176]:
+                - img "Published by verified publisher" [ref=f18e177]
+                - generic [ref=f18e180]: dark-shiftmode.com/
+                - img "Featured badge" [ref=f18e181]
+                - generic [ref=f18e184]: Featured
+              - generic [ref=f18e185]:
+                - img "Average rating 4.3 out of 5 stars." [ref=f18e186]:
+                  - generic [ref=f18e187]: "4.3"
+                - link "Learn more about results and reviews \"Dark Theme - Dark mode for Chrome\"." [ref=f18e196] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f18e197]: Dark mode switch any websites to dark theme. Take care of your eyes day using a classic dark reader or change screen brightness.
+          - generic [ref=f18e198]:
+            - link "Dark Mode - Night Eye" [ref=f18e199] [cursor=pointer]:
+              - /url: ./detail/dark-mode-night-eye/alncdjedloppbablonallfbkeiknmkdi
+            - generic [ref=f18e201]:
+              - heading "Dark Mode - Night Eye" [level=2] [ref=f18e203]
+              - paragraph [ref=f18e204]:
+                - img "Published by verified publisher" [ref=f18e205]
+                - generic [ref=f18e208]: nighteye.app
+                - img "Featured badge" [ref=f18e209]
+                - generic [ref=f18e212]: Featured
+              - generic [ref=f18e213]:
+                - img "Average rating 4.5 out of 5 stars." [ref=f18e214]:
+                  - generic [ref=f18e215]: "4.5"
+                - link "Learn more about results and reviews \"Dark Mode - Night Eye\"." [ref=f18e224] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f18e225]: Dark mode for websites with brightness, contrast, warmth, scheduling, and PDF support. No ads. Customize each site separately.
+          - generic [ref=f18e226]:
+            - link "Dark Mode" [ref=f18e227] [cursor=pointer]:
+              - /url: ./detail/dark-mode/dpjfjjogncmalibegalebgbnfigonomb
+            - generic [ref=f18e229]:
+              - heading "Dark Mode" [level=2] [ref=f18e231]
+              - paragraph
+              - generic [ref=f18e232]:
+                - img "Average rating 3.9 out of 5 stars." [ref=f18e233]:
+                  - generic [ref=f18e234]: "3.9"
+                - link "Learn more about results and reviews \"Dark Mode\"." [ref=f18e243] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f18e244]: Switch on Dark Mode for Google Chrome Browser today. 100% Free Protection for your eyes when you are using the computer
+          - generic [ref=f18e245]:
+            - link "Dark Reader" [ref=f18e246] [cursor=pointer]:
+              - /url: ./detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh
+            - generic [ref=f18e248]:
+              - heading "Dark Reader" [level=2] [ref=f18e250]
+              - paragraph [ref=f18e251]:
+                - img "Published by verified publisher" [ref=f18e252]
+                - generic [ref=f18e255]: darkreader.org/
+                - img "Featured badge" [ref=f18e256]
+                - generic [ref=f18e259]: Featured
+              - generic [ref=f18e260]:
+                - img "Average rating 4.7 out of 5 stars." [ref=f18e261]:
+                  - generic [ref=f18e262]: "4.7"
+                - link "Learn more about results and reviews \"Dark Reader\"." [ref=f18e271] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f18e272]: Dark mode for every website. Take care of your eyes, use dark theme for night and daily browsing.
+          - generic [ref=f18e273]:
+            - link "Dark Night Mode" [ref=f18e274] [cursor=pointer]:
+              - /url: ./detail/dark-night-mode/bhbekkddpbpbibiknkcjamlkhoghieie
+            - generic [ref=f18e276]:
+              - heading "Dark Night Mode" [level=2] [ref=f18e278]
+              - paragraph [ref=f18e279]:
+                - img "Published by verified publisher" [ref=f18e280]
+                - generic [ref=f18e283]: darknightmode.com/
+                - img "Featured badge" [ref=f18e284]
+                - generic [ref=f18e287]: Featured
+              - generic [ref=f18e288]:
+                - img "Average rating 4.2 out of 5 stars." [ref=f18e289]:
+                  - generic [ref=f18e290]: "4.2"
+                - link "Learn more about results and reviews \"Dark Night Mode\"." [ref=f18e299] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f18e300]: It is a night mode for the entire Internet. It darkens all the websites you visit so that you can browse without straining your eyes
+          - generic [ref=f18e301]:
+            - link "Custom Dark Mode" [ref=f18e302] [cursor=pointer]:
+              - /url: ./detail/custom-dark-mode/bocmmeghmdkmbdlcagdfpnedcbekjpcn
+            - generic [ref=f18e304]:
+              - heading "Custom Dark Mode" [level=2] [ref=f18e306]
+              - paragraph [ref=f18e307]:
+                - img "Featured badge" [ref=f18e308]
+                - generic [ref=f18e311]: Featured
+              - generic [ref=f18e312]:
+                - img "Average rating 3.9 out of 5 stars." [ref=f18e313]:
+                  - generic [ref=f18e314]: "3.9"
+                - link "Learn more about results and reviews \"Custom Dark Mode\"." [ref=f18e323] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f18e324]: Customize your dark mode for the web!
+          - generic [ref=f18e325]:
+            - link "Google Docs Dark Mode" [ref=f18e326] [cursor=pointer]:
+              - /url: ./detail/google-docs-dark-mode/lgjhepbpjcmfmjlpkkdjlbgomamkgonb
+            - generic [ref=f18e328]:
+              - heading "Google Docs Dark Mode" [level=2] [ref=f18e330]
+              - paragraph [ref=f18e331]:
+                - img "Featured badge" [ref=f18e332]
+                - generic [ref=f18e335]: Featured
+              - generic [ref=f18e336]:
+                - img "Average rating 3.4 out of 5 stars." [ref=f18e337]:
+                  - generic [ref=f18e338]: "3.4"
+                - link "Learn more about results and reviews \"Google Docs Dark Mode\"." [ref=f18e347] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f18e348]: Dark mode for Google Docs!
+          - generic [ref=f18e349]:
+            - link "Shade Dark Mode" [ref=f18e350] [cursor=pointer]:
+              - /url: ./detail/shade-dark-mode/mkeimkkbcndbdlfkbfhhlfgkilcfniic
+            - generic [ref=f18e352]:
+              - heading "Shade Dark Mode" [level=2] [ref=f18e354]
+              - paragraph [ref=f18e355]:
+                - img "Featured badge" [ref=f18e356]
+                - generic [ref=f18e359]: Featured
+              - generic [ref=f18e360]:
+                - img "Average rating 4.4 out of 5 stars." [ref=f18e361]:
+                  - generic [ref=f18e362]: "4.4"
+                - link "Learn more about results and reviews \"Shade Dark Mode\"." [ref=f18e371] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f18e372]: "Shade Dark Mode: Seamlessly embrace dark mode on all websites with personalized controls"
+          - generic [ref=f18e373]:
+            - link "Dark Mode for Chrome" [ref=f18e374] [cursor=pointer]:
+              - /url: ./detail/dark-mode-for-chrome/epbpdmalnhhoggbcckpffgacohbmpapb
+            - generic [ref=f18e376]:
+              - heading "Dark Mode for Chrome" [level=2] [ref=f18e378]
+              - paragraph [ref=f18e379]:
+                - img "Published by verified publisher" [ref=f18e380]
+                - generic [ref=f18e383]: darkmodepro.com
+                - img "Featured badge" [ref=f18e384]
+                - generic [ref=f18e387]: Featured
+              - generic [ref=f18e388]:
+                - img "Average rating 4.5 out of 5 stars." [ref=f18e389]:
+                  - generic [ref=f18e390]: "4.5"
+                - link "Learn more about results and reviews \"Dark Mode for Chrome\"." [ref=f18e399] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f18e400]: Dark mode for all websites. Use dark theme for night and daily browsing with dark reader. Night shift mode.
+          - button "Load more" [ref=f18e403] [cursor=pointer]
+  - contentinfo [ref=f18e406]:
+    - list [ref=f18e407]:
+      - listitem [ref=f18e408]:
+        - link "About Chrome Web Store" [ref=f18e409] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en
+        - text: •
+      - listitem [ref=f18e410]:
+        - link "Developer Dashboard" [ref=f18e411] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f18e412]:
+        - link "Privacy Policy" [ref=f18e413] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en
+        - text: •
+      - listitem [ref=f18e414]:
+        - link "Terms of Service" [ref=f18e415] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en/gallery_tos.html
+        - text: •
+      - listitem [ref=f18e416]:
+        - link "Help" [ref=f18e417] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en
+  - generic [ref=f18e418]: Page loaded.

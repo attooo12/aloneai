@@ -1,0 +1,214 @@
+- generic [ref=f12e1]:
+  - banner [ref=f12e2]:
+    - link "Skip to main content" [ref=f12e3] [cursor=pointer]
+    - generic [ref=f12e4]:
+      - generic [ref=f12e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f12e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f12e8]
+          - generic [ref=f12e9]: Chrome Web Store
+        - search "Sitewide" [ref=f12e10]:
+          - combobox "Search Chrome Web Store" [active] [ref=f12e15]
+        - generic [ref=f12e16]:
+          - button "More options menu" [ref=f12e20] [cursor=pointer]
+          - generic [ref=f12e30]:
+            - button "Google apps" [ref=f12e34] [cursor=pointer]
+            - link "Sign in" [ref=f12e38] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/detail/simple-word-counter/npbdkdphbeljebmbcddcpignamfbfpkg&followup=https://chromewebstore.google.com/detail/simple-word-counter/npbdkdphbeljebmbcddcpignamfbfpkg&ec=GAZApQM
+      - tablist [ref=f12e42]:
+        - generic [ref=f12e45]:
+          - tab "Discover" [ref=f12e46] [cursor=pointer]
+          - tab "Extensions" [selected] [ref=f12e47] [cursor=pointer]
+          - tab "Themes" [ref=f12e48] [cursor=pointer]
+    - dialog [ref=f12e49]:
+      - complementary [ref=f12e50]:
+        - heading "Switch to Chrome?" [level=2] [ref=f12e52]
+        - paragraph [ref=f12e53]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f12e54]:
+          - button "No thanks" [ref=f12e56] [cursor=pointer]
+          - generic [ref=f12e60] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f12e61]: "Yes"
+            - link "Yes" [ref=f12e62]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - main [ref=f12e66]:
+    - generic [ref=f12e67]:
+      - generic [ref=f12e68]:
+        - generic "Info" [ref=f12e70]:
+          - generic [ref=f12e71]: Switch to Chrome to install extensions and themes
+          - button "Switch to Chrome to install extensions and themes Install Chrome" [ref=f12e79] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f12e81]: Install Chrome
+        - generic [ref=f12e83]:
+          - generic [ref=f12e84]:
+            - img "Item logo image for Simple Word Counter" [ref=f12e85]
+            - heading "Simple Word Counter" [level=1] [ref=f12e86]
+          - generic [ref=f12e87]:
+            - generic [ref=f12e88]:
+              - link "Follows recommended practices for Chrome extensions. Learn more." [ref=f12e97] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/?hl=en-US&p=cws_badges
+              - generic [ref=f12e98]: Featured
+            - generic [ref=f12e99]:
+              - generic [ref=f12e100]:
+                - generic [ref=f12e101]: "3.5"
+                - generic [ref=f12e104]:
+                  - text: (
+                  - link [ref=f12e105] [cursor=pointer]:
+                    - /url: ./detail/simple-word-counter/npbdkdphbeljebmbcddcpignamfbfpkg/reviews
+                    - paragraph [ref=f12e106]: 20 ratings
+                  - text: )
+              - button "Ratings are updated daily and may not reflect the most recent reviews." [ref=f12e108] [cursor=pointer]
+            - button "Share" [ref=f12e117] [cursor=pointer]
+          - generic [ref=f12e123]:
+            - link "Extension" [ref=f12e124] [cursor=pointer]:
+              - /url: ./category/extensions
+            - link "Tools" [ref=f12e125] [cursor=pointer]:
+              - /url: ./category/extensions/productivity/tools
+            - text: 3,000 users
+          - button "Add to Chrome" [ref=f12e129] [cursor=pointer]
+      - region "Media carousel" [ref=f12e133]:
+        - generic [ref=f12e135]:
+          - generic [ref=f12e138] [cursor=pointer]:
+            - button "Item media 1 (video) for Simple Word Counter" [ref=f12e140]
+            - img "Item video thumbnail" [ref=f12e146]
+          - button "Item media 2 (screenshot) for Simple Word Counter" [ref=f12e148] [cursor=pointer]:
+            - img "Item media 2 (screenshot) for Simple Word Counter" [ref=f12e149]
+      - generic [ref=f12e150]:
+        - heading "Overview" [level=2] [ref=f12e152]
+        - generic [ref=f12e154]:
+          - generic [ref=f12e155]:
+            - paragraph [ref=f12e156]: Count words quickly and easily. Highlight text and instantly get the word & char count.
+            - paragraph [ref=f12e157]: "Simple Word Counter: Quickly Count Words and Characters Simple Word Counter accomplishes the task of counting words and characters that you've selected quickly.. Just by highlighting the text, a popup will immediately show the total word and character count. Key Features: • Instant Word and Character Count: Simply highlight any text and a tooltip will promptly display the total count of words and characters. • Customizable Tooltip: Manage the tooltip's visibility with a straightforward on/off toggle. PLEASE NOTICE: This extension does NOT function on all websites - it will function on most. Getting Started: 1. Download and install the Simple Word Counter extension from the Chrome Web Store. 2. Highlight the text you want to count on any webpage. A tooltip will automatically pop up near the selected text, showing the word and character count. Additional Settings: • To access more settings, click on the extension icon to open the popup. • In the popup, you can adjust the tooltip's display and set the default behavior for new websites. PLEASE NOTICE: This extension does NOT function on all websites - it will function on most."
+          - button "See more" [ref=f12e158] [cursor=pointer]
+      - generic [ref=f12e161]:
+        - heading [level=2] [ref=f12e163]:
+          - generic [ref=f12e164]:
+            - text: 3.5 out of 5
+            - img "3.5 out of 5 stars" [ref=f12e165]
+          - text: 20 ratings•
+          - paragraph [ref=f12e194]:
+            - link "Learn more about results and reviews." [ref=f12e195] [cursor=pointer]:
+              - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results
+        - generic [ref=f12e197] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f12e198]: See all reviews
+          - link "See all reviews" [ref=f12e199]:
+            - /url: ./detail/simple-word-counter/npbdkdphbeljebmbcddcpignamfbfpkg/reviews
+      - generic [ref=f12e200]:
+        - heading "Details" [level=2] [ref=f12e202]
+        - list [ref=f12e204]:
+          - listitem [ref=f12e205]:
+            - generic [ref=f12e206]: Version
+            - generic [ref=f12e207]: "12.7"
+          - listitem [ref=f12e208]:
+            - generic [ref=f12e209]: Updated
+            - generic [ref=f12e210]: March 27, 2026
+          - listitem [ref=f12e211]:
+            - link "Flag concern" [ref=f12e213] [cursor=pointer]:
+              - /url: ./detail/npbdkdphbeljebmbcddcpignamfbfpkg/report
+          - listitem [ref=f12e214]:
+            - generic [ref=f12e215]: Offered by
+            - generic [ref=f12e216]: tb
+          - listitem [ref=f12e217]:
+            - generic [ref=f12e218]: Size
+            - generic [ref=f12e219]: 184KiB
+          - listitem [ref=f12e220]:
+            - generic [ref=f12e221]: Languages
+            - generic [ref=f12e223]:
+              - text: 14 languages
+              - button "Show more languages" [ref=f12e225] [cursor=pointer]
+          - listitem [ref=f12e231]:
+            - generic [ref=f12e232]: Developer
+            - group [ref=f12e235]:
+              - generic "Email" [ref=f12e236]
+          - listitem [ref=f12e241]:
+            - generic [ref=f12e242]: Non-trader
+            - generic [ref=f12e243]: This developer has not identified itself as a trader. For consumers in the European Union, please note that consumer rights do not apply to contracts between you and this developer.
+      - generic [ref=f12e244]:
+        - heading "Privacy" [level=2] [ref=f12e246]
+        - generic [ref=f12e248]:
+          - generic [ref=f12e249]: The developer has disclosed that it will not collect or use your data.
+          - generic [ref=f12e254]:
+            - heading "This developer declares that your data is" [level=2] [ref=f12e255]
+            - list [ref=f12e256]:
+              - listitem [ref=f12e257]:
+                - text: Not being sold to third parties, outside of the
+                - link "approved use cases" [ref=f12e258] [cursor=pointer]:
+                  - /url: https://developer.chrome.com/docs/webstore/program-policies/limited-use/
+              - listitem [ref=f12e259]: Not being used or transferred for purposes that are unrelated to the item's core functionality
+              - listitem [ref=f12e260]: Not being used or transferred to determine creditworthiness or for lending purposes
+      - generic [ref=f12e262]:
+        - heading "Support" [level=2] [ref=f12e263]
+        - generic [ref=f12e265] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f12e266]: Visit support hub
+          - link "Visit support hub" [ref=f12e267]:
+            - /url: ./detail/npbdkdphbeljebmbcddcpignamfbfpkg/support
+      - generic [ref=f12e268]:
+        - heading "Related" [level=2] [ref=f12e269]
+        - region "Related items carousel" [ref=f12e272]:
+          - button "Previous slide" [ref=f12e274] [cursor=pointer]
+          - region "Related item slides" [ref=f12e281]:
+            - generic [ref=f12e282]:
+              - generic [ref=f12e284]:
+                - link "Word Count" [ref=f12e285] [cursor=pointer]:
+                  - /url: ./detail/word-count/inaklojbeljbfmkkpjfmjjgehckpeohf
+                - generic [ref=f12e286]:
+                  - heading "Word Count" [level=3] [ref=f12e287]
+                  - generic [ref=f12e288]:
+                    - img "Average rating 5 out of 5 stars." [ref=f12e289]:
+                      - generic [ref=f12e290]: "5.0"
+                    - link "Learn more about results and reviews \"Word Count\"." [ref=f12e299] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f12e300]: Display the number of words and characters within highlight in contextMenu and bottom right
+              - generic [ref=f12e302]:
+                - link "Online Word Count" [ref=f12e303] [cursor=pointer]:
+                  - /url: ./detail/online-word-count/pdejaamajefadkacnpfdfpganhgkcoim
+                - generic [ref=f12e304]:
+                  - heading "Online Word Count" [level=3] [ref=f12e305]
+                  - generic [ref=f12e306]:
+                    - img "Average rating 4 out of 5 stars." [ref=f12e307]:
+                      - generic [ref=f12e308]: "4.0"
+                    - link "Learn more about results and reviews \"Online Word Count\"." [ref=f12e317] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f12e318]: Efficiently track your text's word count and character count with the Online Word Counter Chrome Extension.
+              - generic [ref=f12e320]:
+                - link "Word Counter - counts what you type" [ref=f12e321] [cursor=pointer]:
+                  - /url: ./detail/word-counter-counts-what/hjnjgdaeojdfoajjigipjmdnailbmfje
+                - generic [ref=f12e322]:
+                  - heading "Word Counter - counts what you type" [level=3] [ref=f12e324]
+                  - generic [ref=f12e325]:
+                    - img "Average rating 4.2 out of 5 stars." [ref=f12e326]:
+                      - generic [ref=f12e327]: "4.2"
+                    - link "Learn more about results and reviews \"Word Counter - counts what you type\"." [ref=f12e336] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f12e337]: Shows a count of words and characters when you type in a text box on a website
+              - generic [ref=f12e339]:
+                - link "Count Words" [ref=f12e340] [cursor=pointer]:
+                  - /url: ./detail/count-words/hdeekinkciehohlimlofbfpbkojcohlg
+                - generic [ref=f12e341]:
+                  - heading "Count Words" [level=3] [ref=f12e342]
+                  - generic [ref=f12e343]:
+                    - img "Average rating 4.4 out of 5 stars." [ref=f12e344]:
+                      - generic [ref=f12e345]: "4.4"
+                    - link "Learn more about results and reviews \"Count Words\"." [ref=f12e354] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f12e355]: Use Count Words app to find out how many words are in a paragraph. Make any writing task easier with the help of a words counter.
+          - button "Next slide" [ref=f12e357] [cursor=pointer]
+  - contentinfo [ref=f12e363]:
+    - list [ref=f12e364]:
+      - listitem [ref=f12e365]:
+        - link "About Chrome Web Store" [ref=f12e366] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en-US
+        - text: •
+      - listitem [ref=f12e367]:
+        - link "Developer Dashboard" [ref=f12e368] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f12e369]:
+        - link "Privacy Policy" [ref=f12e370] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en-US
+        - text: •
+      - listitem [ref=f12e371]:
+        - link "Terms of Service" [ref=f12e372] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en-US/gallery_tos.html
+        - text: •
+      - listitem [ref=f12e373]:
+        - link "Help" [ref=f12e374] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en-US

@@ -1,0 +1,235 @@
+- generic [ref=f15e1]:
+  - banner [ref=f15e2]:
+    - link "Skip to main content" [ref=f15e3] [cursor=pointer]
+    - generic [ref=f15e4]:
+      - generic [ref=f15e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f15e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f15e8]
+          - generic [ref=f15e9]: Chrome Web Store
+        - search "Sitewide" [ref=f15e10]:
+          - generic [ref=f15e13]:
+            - combobox "Search Chrome Web Store" [active] [ref=f15e15]: clipboard manager
+            - button "Clear search" [ref=f15e17] [cursor=pointer]
+        - generic [ref=f15e20]:
+          - button "More options menu" [ref=f15e24] [cursor=pointer]
+          - generic [ref=f15e34]:
+            - button "Google apps" [ref=f15e38] [cursor=pointer]
+            - link "Sign in" [ref=f15e42] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/search/clipboard%2520manager?hl%3Den&followup=https://chromewebstore.google.com/search/clipboard%2520manager?hl%3Den&hl=en&ec=GAZApQM
+      - tablist [ref=f15e46]:
+        - generic [ref=f15e49]:
+          - tab "Discover" [ref=f15e50] [cursor=pointer]
+          - tab "Extensions" [ref=f15e51] [cursor=pointer]
+          - tab "Themes" [ref=f15e52] [cursor=pointer]
+    - dialog [ref=f15e53]:
+      - complementary [ref=f15e54]:
+        - heading "Switch to Chrome?" [level=2] [ref=f15e56]
+        - paragraph [ref=f15e57]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f15e58]:
+          - button "No thanks" [ref=f15e60] [cursor=pointer]
+          - generic [ref=f15e64] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f15e65]: "Yes"
+            - link "Yes" [ref=f15e66]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - generic [ref=f15e70]:
+    - generic [ref=f15e72]:
+      - generic [ref=f15e73]:
+        - heading "Type" [level=2] [ref=f15e74]
+        - toolbar "Filter items by extension type" [ref=f15e75]:
+          - button "Extensions" [ref=f15e78] [cursor=pointer]
+          - button "Themes" [ref=f15e83] [cursor=pointer]
+      - generic [ref=f15e86]:
+        - heading "Filter by" [level=2] [ref=f15e87]
+        - generic [ref=f15e89] [cursor=pointer]:
+          - checkbox "Featured extensions" [ref=f15e91]
+          - generic [ref=f15e92]: Featured extensions
+        - generic [ref=f15e95] [cursor=pointer]:
+          - checkbox "Established publishers" [ref=f15e97]
+          - generic [ref=f15e98]: Established publishers
+      - generic [ref=f15e100]:
+        - heading "Ratings" [level=2] [ref=f15e101]
+        - radiogroup "Ratings" [ref=f15e102]:
+          - radio "5 stars" [ref=f15e103]
+          - radio "4 stars and up" [ref=f15e109]:
+            - generic [aria-hidden] [ref=f15e116]: "& up"
+          - radio "3 stars and up" [ref=f15e117]:
+            - generic [aria-hidden] [ref=f15e125]: "& up"
+          - radio "2 stars and up" [ref=f15e126]:
+            - generic [aria-hidden] [ref=f15e135]: "& up"
+      - generic [ref=f15e137]:
+        - button "Clear all filters button." [disabled] [ref=f15e138]:
+          - generic [aria-hidden] [ref=f15e140]: Clear all
+        - tooltip [aria-hidden] [ref=f15e141]: Reset your filter options.
+    - main [ref=f15e142]:
+      - generic [ref=f15e143]:
+        - heading "Search results" [level=1] [ref=f15e144]
+        - generic [ref=f15e145]:
+          - generic [ref=f15e146]:
+            - link "Clipboard Manager" [ref=f15e147] [cursor=pointer]:
+              - /url: ./detail/clipboard-manager/blicpdhhajlodleohohaeommdmpjfoab
+            - generic [ref=f15e149]:
+              - heading "Clipboard Manager" [level=2] [ref=f15e151]
+              - paragraph [ref=f15e152]:
+                - img "Featured badge" [ref=f15e153]
+                - generic [ref=f15e156]: Featured
+              - generic [ref=f15e157]:
+                - img "Average rating 2.8 out of 5 stars." [ref=f15e158]:
+                  - generic [ref=f15e159]: "2.8"
+                - link "Learn more about results and reviews \"Clipboard Manager\"." [ref=f15e168] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f15e169]: Easily access to recent clipboards via context-menu or toolbar popup.
+          - generic [ref=f15e170]:
+            - link "Clipboard History Manager - Secure, Fast, and Open Source" [ref=f15e171] [cursor=pointer]:
+              - /url: ./detail/clipboard-history-manager/ombhfdknibjljckajldielimdjcomcek
+            - generic [ref=f15e173]:
+              - heading "Clipboard History Manager - Secure, Fast, and Open Source" [level=2] [ref=f15e175]
+              - paragraph [ref=f15e176]:
+                - img "Published by verified publisher" [ref=f15e177]
+                - generic [ref=f15e180]: clipboardhistory.io
+                - img "Featured badge" [ref=f15e181]
+                - generic [ref=f15e184]: Featured
+              - generic [ref=f15e185]:
+                - img "Average rating 4.5 out of 5 stars." [ref=f15e186]:
+                  - generic [ref=f15e187]: "4.5"
+                - link "Learn more about results and reviews \"Clipboard History Manager - Secure, Fast, and Open Source\"." [ref=f15e196] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f15e197]: Powerful clipboard history manager. Save, search & organize everything you copy. Tags, shortcuts & unlimited storage.
+          - generic [ref=f15e198]:
+            - link "Clipboard Manager Pro" [ref=f15e199] [cursor=pointer]:
+              - /url: ./detail/clipboard-manager-pro/jcpbfmlfngbipepbbhadpabogihgiggm
+            - generic [ref=f15e201]:
+              - heading "Clipboard Manager Pro" [level=2] [ref=f15e203]
+              - paragraph [ref=f15e204]:
+                - img "Published by verified publisher" [ref=f15e205]
+                - generic [ref=f15e208]: clipboardman.com
+                - img "Featured badge" [ref=f15e209]
+                - generic [ref=f15e212]: Featured
+              - generic [ref=f15e213]:
+                - img "Average rating 4.8 out of 5 stars." [ref=f15e214]:
+                  - generic [ref=f15e215]: "4.8"
+                - link "Learn more about results and reviews \"Clipboard Manager Pro\"." [ref=f15e224] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f15e225]: "Smart clipboard manager: Save and find your copied text anytime. Simple, fast, and organized."
+          - generic [ref=f15e226]:
+            - link "Clipboard Manager and Text Expander - Clipboard History Pro" [ref=f15e227] [cursor=pointer]:
+              - /url: ./detail/clipboard-manager-and-tex/ajiejmhbejpdgkkigpddefnjmgcbkenk
+            - generic [ref=f15e229]:
+              - heading "Clipboard Manager and Text Expander - Clipboard History Pro" [level=2] [ref=f15e231]
+              - paragraph [ref=f15e232]:
+                - img "Published by verified publisher" [ref=f15e233]
+                - generic [ref=f15e236]: clipboardextension.com
+                - img "Featured badge" [ref=f15e237]
+                - generic [ref=f15e240]: Featured
+              - generic [ref=f15e241]:
+                - img "Average rating 4.0 out of 5 stars." [ref=f15e242]:
+                  - generic [ref=f15e243]: "4.0"
+                - link "Learn more about results and reviews \"Clipboard Manager and Text Expander - Clipboard History Pro\"." [ref=f15e252] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f15e253]: Save, organize & instantly access clipboard history in Chrome. Sync across devices, create text snippets & boost productivity
+          - generic [ref=f15e254]:
+            - link "Super Clipboard Manager - Copy Paste History" [ref=f15e255] [cursor=pointer]:
+              - /url: ./detail/super-clipboard-manager-c/libklccpahbpglhhaogpnfgjjckhlbaj
+            - generic [ref=f15e257]:
+              - heading "Super Clipboard Manager - Copy Paste History" [level=2] [ref=f15e259]
+              - paragraph [ref=f15e260]:
+                - img "Published by verified publisher" [ref=f15e261]
+                - generic [ref=f15e264]: mozared.com
+                - img "Featured badge" [ref=f15e265]
+                - generic [ref=f15e268]: Featured
+              - generic [ref=f15e269]:
+                - img "Average rating 4.5 out of 5 stars." [ref=f15e270]:
+                  - generic [ref=f15e271]: "4.5"
+                - link "Learn more about results and reviews \"Super Clipboard Manager - Copy Paste History\"." [ref=f15e280] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f15e281]: Clipboard manager & copy paste history tool. Save, search, pin, tag & export text snippets. Free, private, works on every site.
+          - generic [ref=f15e282]:
+            - link "Copy & Paste Clipboard Manager" [ref=f15e283] [cursor=pointer]:
+              - /url: ./detail/copy-paste-clipboard-mana/lkfgndblahfepchjaklbgckefcgencdn
+            - generic [ref=f15e285]:
+              - heading "Copy & Paste Clipboard Manager" [level=2] [ref=f15e287]
+              - paragraph
+              - generic [ref=f15e288]:
+                - img "Average rating 4.6 out of 5 stars." [ref=f15e289]:
+                  - generic [ref=f15e290]: "4.6"
+                - link "Learn more about results and reviews \"Copy & Paste Clipboard Manager\"." [ref=f15e299] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f15e300]: Save your shortcuts
+          - generic [ref=f15e301]:
+            - 'link "Copy History +: The Best Clipboard History Manager Tool" [ref=f15e302] [cursor=pointer]':
+              - /url: ./detail/copy-history-+-the-best-c/kjlbbjicboihbikbjbbmkimccoeccoon
+            - generic [ref=f15e304]:
+              - 'heading "Copy History +: The Best Clipboard History Manager Tool" [level=2] [ref=f15e306]'
+              - paragraph [ref=f15e307]:
+                - img "Published by verified publisher" [ref=f15e308]
+                - generic [ref=f15e311]: pidevex.com
+                - img "Featured badge" [ref=f15e312]
+                - generic [ref=f15e315]: Featured
+              - generic [ref=f15e316]:
+                - img "Average rating 4.6 out of 5 stars." [ref=f15e317]:
+                  - generic [ref=f15e318]: "4.6"
+                - 'link "Learn more about results and reviews \"Copy History +: The Best Clipboard History Manager Tool\"." [ref=f15e327] [cursor=pointer]':
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f15e328]: Secure Clipboard History Manager to auto save copy paste text & snippets. Free easy tool to manage clipboard and boost productivity.
+          - generic [ref=f15e329]:
+            - link "Clipboard Tool | Easy Copy and Paste" [ref=f15e330] [cursor=pointer]:
+              - /url: ./detail/clipboard-tool-easy-copy/aegeclnpeaicklknkpcjbldnpkkkhkid
+            - generic [ref=f15e332]:
+              - heading "Clipboard Tool | Easy Copy and Paste" [level=2] [ref=f15e334]
+              - paragraph [ref=f15e335]:
+                - img "Published by verified publisher" [ref=f15e336]
+                - generic [ref=f15e339]: cresotech.com
+                - img "Featured badge" [ref=f15e340]
+                - generic [ref=f15e343]: Featured
+              - generic [ref=f15e344]:
+                - img "Average rating 4.7 out of 5 stars." [ref=f15e345]:
+                  - generic [ref=f15e346]: "4.7"
+                - link "Learn more about results and reviews \"Clipboard Tool | Easy Copy and Paste\"." [ref=f15e355] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f15e356]: "Manage copied items with Clipboard Tool: Easy Copy and Paste —a clipboard manager tracking clipboard history on Windows/macOS."
+          - generic [ref=f15e357]:
+            - link "Clipboard History Manager" [ref=f15e358] [cursor=pointer]:
+              - /url: ./detail/clipboard-history-manager/pkigjgihlaonoomgjgannieikjecdhil
+            - generic [ref=f15e360]:
+              - heading "Clipboard History Manager" [level=2] [ref=f15e362]
+              - paragraph
+              - generic [ref=f15e363]:
+                - img "Average rating 3.4 out of 5 stars." [ref=f15e364]:
+                  - generic [ref=f15e365]: "3.4"
+                - link "Learn more about results and reviews \"Clipboard History Manager\"." [ref=f15e374] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f15e375]: A full-featured desktop clipboard manager for Mac, Windows and Linux to record what you copy to the clipboard
+          - generic [ref=f15e376]:
+            - link "Clipboard App" [ref=f15e377] [cursor=pointer]:
+              - /url: ./detail/clipboard-app/piifekhceeckfmcaigiedelalhgjoofp
+            - generic [ref=f15e379]:
+              - heading "Clipboard App" [level=2] [ref=f15e381]
+              - paragraph
+              - generic [ref=f15e382]:
+                - img "Average rating 4.9 out of 5 stars." [ref=f15e383]:
+                  - generic [ref=f15e384]: "4.9"
+                - link "Learn more about results and reviews \"Clipboard App\"." [ref=f15e393] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f15e394]: Try Clipboard App to copy and paste text into clipboard history, store it, and paste it whenever you want.
+          - button "Load more" [ref=f15e397] [cursor=pointer]
+  - contentinfo [ref=f15e400]:
+    - list [ref=f15e401]:
+      - listitem [ref=f15e402]:
+        - link "About Chrome Web Store" [ref=f15e403] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en
+        - text: •
+      - listitem [ref=f15e404]:
+        - link "Developer Dashboard" [ref=f15e405] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f15e406]:
+        - link "Privacy Policy" [ref=f15e407] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en
+        - text: •
+      - listitem [ref=f15e408]:
+        - link "Terms of Service" [ref=f15e409] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en/gallery_tos.html
+        - text: •
+      - listitem [ref=f15e410]:
+        - link "Help" [ref=f15e411] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en

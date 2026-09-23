@@ -19,7 +19,8 @@ const BLANK_URL = /^(?:(?:chrome|edge|brave|vivaldi|opera):\/\/(?:newtab|new-tab
 const ID_OK = /^[A-Za-z0-9_-]{1,64}$/;
 
 const isObj = (x) => !!x && typeof x === 'object' && !Array.isArray(x);
-const str = (x, max) => (typeof x === 'string' ? x : '').replace(/[\u0000-\u001f\u007f]+/g, ' ').replace(/\s+/g, ' ').trim().slice(0, max);
+// Cut to `max` UTF-16 units without leaving half of a surrogate pair (emoji) at the end.
+const str = (x, max) => (typeof x === 'string' ? x : '').replace(/[\u0000-\u001f\u007f]+/g, ' ').replace(/\s+/g, ' ').trim().slice(0, max).replace(/[\ud800-\udbff]$/, '');
 const validTime = (x, now) => (Number.isFinite(x) && x > 946684800000 && x < now + 86400e3 ? Math.floor(x) : null); // 2000-01-01 .. now+1d
 
 export function newId() {

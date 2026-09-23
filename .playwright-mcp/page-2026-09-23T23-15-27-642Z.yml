@@ -1,0 +1,212 @@
+- generic [ref=f28e1]:
+  - banner [ref=f28e2]:
+    - link "Skip to main content" [ref=f28e3] [cursor=pointer]
+    - generic [ref=f28e4]:
+      - generic [ref=f28e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f28e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f28e8]
+          - generic [ref=f28e9]: Chrome Web Store
+        - search "Sitewide" [ref=f28e10]:
+          - generic [ref=f28e13]:
+            - combobox "Search Chrome Web Store" [active] [ref=f28e15]: regex tester
+            - button "Clear search" [ref=f28e17] [cursor=pointer]
+        - generic [ref=f28e20]:
+          - button "More options menu" [ref=f28e24] [cursor=pointer]
+          - generic [ref=f28e34]:
+            - button "Google apps" [ref=f28e38] [cursor=pointer]
+            - link "Sign in" [ref=f28e42] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/search/regex%2520tester?hl%3Den&followup=https://chromewebstore.google.com/search/regex%2520tester?hl%3Den&hl=en&ec=GAZApQM
+      - tablist [ref=f28e46]:
+        - generic [ref=f28e49]:
+          - tab "Discover" [ref=f28e50] [cursor=pointer]
+          - tab "Extensions" [ref=f28e51] [cursor=pointer]
+          - tab "Themes" [ref=f28e52] [cursor=pointer]
+    - dialog [ref=f28e53]:
+      - complementary [ref=f28e54]:
+        - heading "Switch to Chrome?" [level=2] [ref=f28e56]
+        - paragraph [ref=f28e57]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f28e58]:
+          - button "No thanks" [ref=f28e60] [cursor=pointer]
+          - generic [ref=f28e64] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f28e65]: "Yes"
+            - link "Yes" [ref=f28e66]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - generic [ref=f28e70]:
+    - generic [ref=f28e72]:
+      - generic [ref=f28e73]:
+        - heading "Type" [level=2] [ref=f28e74]
+        - toolbar "Filter items by extension type" [ref=f28e75]:
+          - button "Extensions" [ref=f28e78] [cursor=pointer]
+          - button "Themes" [ref=f28e83] [cursor=pointer]
+      - generic [ref=f28e86]:
+        - heading "Filter by" [level=2] [ref=f28e87]
+        - generic [ref=f28e89] [cursor=pointer]:
+          - checkbox "Featured extensions" [ref=f28e91]
+          - generic [ref=f28e92]: Featured extensions
+        - generic [ref=f28e95] [cursor=pointer]:
+          - checkbox "Established publishers" [ref=f28e97]
+          - generic [ref=f28e98]: Established publishers
+      - generic [ref=f28e100]:
+        - heading "Ratings" [level=2] [ref=f28e101]
+        - radiogroup "Ratings" [ref=f28e102]:
+          - radio "5 stars" [ref=f28e103]
+          - radio "4 stars and up" [ref=f28e109]:
+            - generic [aria-hidden] [ref=f28e116]: "& up"
+          - radio "3 stars and up" [ref=f28e117]:
+            - generic [aria-hidden] [ref=f28e125]: "& up"
+          - radio "2 stars and up" [ref=f28e126]:
+            - generic [aria-hidden] [ref=f28e135]: "& up"
+      - generic [ref=f28e137]:
+        - button "Clear all filters button." [disabled] [ref=f28e138]:
+          - generic [aria-hidden] [ref=f28e140]: Clear all
+        - tooltip [aria-hidden] [ref=f28e141]: Reset your filter options.
+    - main [ref=f28e142]:
+      - generic [ref=f28e143]:
+        - heading "Search results" [level=1] [ref=f28e144]
+        - generic [ref=f28e145]:
+          - generic [ref=f28e146]:
+            - link "Regex Tester" [ref=f28e147] [cursor=pointer]:
+              - /url: ./detail/regex-tester/jneingcbjklnlmannolphbcelapohphg
+            - generic [ref=f28e149]:
+              - heading "Regex Tester" [level=2] [ref=f28e151]
+              - paragraph
+              - generic [ref=f28e152]:
+                - img "Average rating 0 out of 5 stars." [ref=f28e153]:
+                  - generic [ref=f28e154]: "0.0"
+                - link "Learn more about results and reviews \"Regex Tester\"." [ref=f28e163] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f28e164]: Fast regex testing with syntax highlighting, real-time matching, capture groups. Free, instant, no account needed.
+          - generic [ref=f28e165]:
+            - link "Regular Expression Tester" [ref=f28e166] [cursor=pointer]:
+              - /url: ./detail/regular-expression-tester/foafekbnjlldffphngjgjjahfgnkbjik
+            - generic [ref=f28e168]:
+              - heading "Regular Expression Tester" [level=2] [ref=f28e170]
+              - paragraph
+              - generic [ref=f28e171]:
+                - img "Average rating 4.8 out of 5 stars." [ref=f28e172]:
+                  - generic [ref=f28e173]: "4.8"
+                - link "Learn more about results and reviews \"Regular Expression Tester\"." [ref=f28e182] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f28e183]: Use Regular Expression Tester as a regex validator to check regex patterns and for online regular expression matching on web pages.
+          - generic [ref=f28e184]:
+            - link "Regex Tester Pro - Test and Explain Regular Expressions" [ref=f28e185] [cursor=pointer]:
+              - /url: ./detail/regex-tester-pro-test-and/laljckjnohfcbhmlehjkcppkdfibldad
+            - generic [ref=f28e187]:
+              - heading "Regex Tester Pro - Test and Explain Regular Expressions" [level=2] [ref=f28e189]
+              - paragraph [ref=f28e190]:
+                - img "Published by verified publisher" [ref=f28e191]
+                - generic [ref=f28e194]: zovo.one/
+              - generic [ref=f28e195]:
+                - img "Average rating 4.8 out of 5 stars." [ref=f28e196]:
+                  - generic [ref=f28e197]: "4.8"
+                - link "Learn more about results and reviews \"Regex Tester Pro - Test and Explain Regular Expressions\"." [ref=f28e206] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f28e207]: Test, debug and master regex in your browser. AI-powered generation, multi-flavor support, and real-time match highlighting.
+          - generic [ref=f28e208]:
+            - link "Regex Tester" [ref=f28e209] [cursor=pointer]:
+              - /url: ./detail/regex-tester/cjnmgfggjdcbldpdfalmgnmcfhnbogad
+            - generic [ref=f28e211]:
+              - heading "Regex Tester" [level=2] [ref=f28e213]
+              - paragraph
+              - generic [ref=f28e214]:
+                - img "Average rating 0 out of 5 stars." [ref=f28e215]:
+                  - generic [ref=f28e216]: "0.0"
+                - link "Learn more about results and reviews \"Regex Tester\"." [ref=f28e225] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f28e226]: Test, debug, and save regex patterns with real-time highlighting, group captures, and replace preview.
+          - generic [ref=f28e227]:
+            - link "Regex Tester" [ref=f28e228] [cursor=pointer]:
+              - /url: ./detail/regex-tester/cddhnkjekbifolkdbaoafofphchmdhfl
+            - generic [ref=f28e230]:
+              - heading "Regex Tester" [level=2] [ref=f28e232]
+              - paragraph
+              - generic [ref=f28e233]:
+                - img "Average rating 0 out of 5 stars." [ref=f28e234]:
+                  - generic [ref=f28e235]: "0.0"
+                - link "Learn more about results and reviews \"Regex Tester\"." [ref=f28e244] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f28e245]: Use a web regex tester online to test regex, run python regular expression matching, and validate javascript or Python regex fast.
+          - generic [ref=f28e246]:
+            - link "Regex Tester & Generator" [ref=f28e247] [cursor=pointer]:
+              - /url: ./detail/regex-tester-generator/nfmbcpafnbkokdifjpbpflccbejmpbam
+            - generic [ref=f28e249]:
+              - heading "Regex Tester & Generator" [level=2] [ref=f28e251]
+              - paragraph
+              - generic [ref=f28e252]:
+                - img "Average rating 0 out of 5 stars." [ref=f28e253]:
+                  - generic [ref=f28e254]: "0.0"
+                - link "Learn more about results and reviews \"Regex Tester & Generator\"." [ref=f28e263] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f28e264]: A powerful tool for testing, generating, and learning regular expressions
+          - generic [ref=f28e265]:
+            - link "Regex Tester" [ref=f28e266] [cursor=pointer]:
+              - /url: ./detail/regex-tester/nbdffpanmkmpnhiphaaclbflhamokogd
+            - generic [ref=f28e268]:
+              - heading "Regex Tester" [level=2] [ref=f28e270]
+              - paragraph
+              - generic [ref=f28e271]:
+                - img "Average rating 5 out of 5 stars." [ref=f28e272]:
+                  - generic [ref=f28e273]: "5.0"
+                - link "Learn more about results and reviews \"Regex Tester\"." [ref=f28e282] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f28e283]: Generate and test regular expressions with a modern UI.
+          - generic [ref=f28e284]:
+            - link "Simple Regex Tester" [ref=f28e285] [cursor=pointer]:
+              - /url: ./detail/simple-regex-tester/opocdljabnaoedmbhknoahpemimmjenn
+            - generic [ref=f28e287]:
+              - heading "Simple Regex Tester" [level=2] [ref=f28e289]
+              - paragraph
+              - generic [ref=f28e290]:
+                - img "Average rating 0 out of 5 stars." [ref=f28e291]:
+                  - generic [ref=f28e292]: "0.0"
+                - link "Learn more about results and reviews \"Simple Regex Tester\"." [ref=f28e301] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f28e302]: A clean, modern regex tester for quick matching and group preview.
+          - generic [ref=f28e303]:
+            - link "Regex Tester Pro - Test, Save & Explain Patterns" [ref=f28e304] [cursor=pointer]:
+              - /url: ./detail/regex-tester-pro-test-sav/ibbfaebpmfkhafjjhlfcngkmhaebbkjl
+            - generic [ref=f28e306]:
+              - heading "Regex Tester Pro - Test, Save & Explain Patterns" [level=2] [ref=f28e308]
+              - paragraph
+              - generic [ref=f28e309]:
+                - img "Average rating 0 out of 5 stars." [ref=f28e310]:
+                  - generic [ref=f28e311]: "0.0"
+                - link "Learn more about results and reviews \"Regex Tester Pro - Test, Save & Explain Patterns\"." [ref=f28e320] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f28e321]: Test regex with live highlights, capture groups, replace, saved patterns, and step-by-step explanations. Offline.
+          - generic [ref=f28e322]:
+            - link "Regex Tester Live" [ref=f28e323] [cursor=pointer]:
+              - /url: ./detail/regex-tester-live/polmckpmdiffnbegaokllgelijnnnapf
+            - generic [ref=f28e325]:
+              - heading "Regex Tester Live" [level=2] [ref=f28e327]
+              - paragraph
+              - generic [ref=f28e328]:
+                - img "Average rating 0 out of 5 stars." [ref=f28e329]:
+                  - generic [ref=f28e330]: "0.0"
+                - link "Learn more about results and reviews \"Regex Tester Live\"." [ref=f28e339] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f28e340]: Test regex patterns in real time with live match highlighting, capture group breakdown, and a built-in library of common patterns.
+          - button "Load more" [ref=f28e343] [cursor=pointer]
+  - contentinfo [ref=f28e346]:
+    - list [ref=f28e347]:
+      - listitem [ref=f28e348]:
+        - link "About Chrome Web Store" [ref=f28e349] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en
+        - text: •
+      - listitem [ref=f28e350]:
+        - link "Developer Dashboard" [ref=f28e351] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f28e352]:
+        - link "Privacy Policy" [ref=f28e353] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en
+        - text: •
+      - listitem [ref=f28e354]:
+        - link "Terms of Service" [ref=f28e355] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en/gallery_tos.html
+        - text: •
+      - listitem [ref=f28e356]:
+        - link "Help" [ref=f28e357] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en
+  - generic [ref=f28e358]: Page loaded.

@@ -1,0 +1,230 @@
+- generic [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - link "Skip to main content" [ref=f1e3] [cursor=pointer]
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f1e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f1e8]
+          - generic [ref=f1e9]: Chrome Web Store
+        - search "Sitewide" [ref=f1e10]:
+          - generic [ref=f1e13]:
+            - combobox "Search Chrome Web Store" [active] [ref=f1e15]: word counter
+            - button "Clear search" [ref=f1e17] [cursor=pointer]
+        - generic [ref=f1e20]:
+          - button "More options menu" [ref=f1e24] [cursor=pointer]
+          - generic [ref=f1e34]:
+            - button "Google apps" [ref=f1e38] [cursor=pointer]
+            - link "Sign in" [ref=f1e42] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/search/word%2520counter?hl%3Den&followup=https://chromewebstore.google.com/search/word%2520counter?hl%3Den&hl=en&ec=GAZApQM
+      - tablist [ref=f1e46]:
+        - generic [ref=f1e49]:
+          - tab "Discover" [ref=f1e50] [cursor=pointer]
+          - tab "Extensions" [ref=f1e51] [cursor=pointer]
+          - tab "Themes" [ref=f1e52] [cursor=pointer]
+    - dialog [ref=f1e53]:
+      - complementary [ref=f1e54]:
+        - heading "Switch to Chrome?" [level=2] [ref=f1e56]
+        - paragraph [ref=f1e57]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f1e58]:
+          - button "No thanks" [ref=f1e60] [cursor=pointer]
+          - generic [ref=f1e64] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f1e65]: "Yes"
+            - link "Yes" [ref=f1e66]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - generic [ref=f1e70]:
+    - generic [ref=f1e72]:
+      - generic [ref=f1e73]:
+        - heading "Type" [level=2] [ref=f1e74]
+        - toolbar "Filter items by extension type" [ref=f1e75]:
+          - button "Extensions" [ref=f1e78] [cursor=pointer]
+          - button "Themes" [ref=f1e83] [cursor=pointer]
+      - generic [ref=f1e86]:
+        - heading "Filter by" [level=2] [ref=f1e87]
+        - generic [ref=f1e89] [cursor=pointer]:
+          - checkbox "Featured extensions" [ref=f1e91]
+          - generic [ref=f1e92]: Featured extensions
+        - generic [ref=f1e95] [cursor=pointer]:
+          - checkbox "Established publishers" [ref=f1e97]
+          - generic [ref=f1e98]: Established publishers
+      - generic [ref=f1e100]:
+        - heading "Ratings" [level=2] [ref=f1e101]
+        - radiogroup "Ratings" [ref=f1e102]:
+          - radio "5 stars" [ref=f1e103]
+          - radio "4 stars and up" [ref=f1e109]:
+            - generic [aria-hidden] [ref=f1e116]: "& up"
+          - radio "3 stars and up" [ref=f1e117]:
+            - generic [aria-hidden] [ref=f1e125]: "& up"
+          - radio "2 stars and up" [ref=f1e126]:
+            - generic [aria-hidden] [ref=f1e135]: "& up"
+      - generic [ref=f1e137]:
+        - button "Clear all filters button." [disabled] [ref=f1e138]:
+          - generic [aria-hidden] [ref=f1e140]: Clear all
+        - tooltip [aria-hidden] [ref=f1e141]: Reset your filter options.
+    - main [ref=f1e142]:
+      - generic [ref=f1e143]:
+        - heading "Search results" [level=1] [ref=f1e144]
+        - generic [ref=f1e145]:
+          - generic [ref=f1e146]:
+            - link "Word Counter" [ref=f1e147] [cursor=pointer]:
+              - /url: ./detail/word-counter/jggclakocbglccfomoklndaiihjmlejk
+            - generic [ref=f1e149]:
+              - heading "Word Counter" [level=2] [ref=f1e151]
+              - paragraph
+              - generic [ref=f1e152]:
+                - img "Average rating 3.3 out of 5 stars." [ref=f1e153]:
+                  - generic [ref=f1e154]: "3.3"
+                - link "Learn more about results and reviews \"Word Counter\"." [ref=f1e163] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f1e164]: A lite tool for counting words and characters via right-click menu and popup.
+          - generic [ref=f1e165]:
+            - link "Simple Word Counter" [ref=f1e166] [cursor=pointer]:
+              - /url: ./detail/simple-word-counter/npbdkdphbeljebmbcddcpignamfbfpkg
+            - generic [ref=f1e168]:
+              - heading "Simple Word Counter" [level=2] [ref=f1e170]
+              - paragraph [ref=f1e171]:
+                - img "Featured badge" [ref=f1e172]
+                - generic [ref=f1e175]: Featured
+              - generic [ref=f1e176]:
+                - img "Average rating 3.5 out of 5 stars." [ref=f1e177]:
+                  - generic [ref=f1e178]: "3.5"
+                - link "Learn more about results and reviews \"Simple Word Counter\"." [ref=f1e187] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f1e188]: Count words quickly and easily. Highlight text and instantly get the word & char count.
+          - generic [ref=f1e189]:
+            - link "Webpage Word Counter" [ref=f1e190] [cursor=pointer]:
+              - /url: ./detail/webpage-word-counter/hjncbnemkcdjfobfcdlbhkeahldjobhm
+            - generic [ref=f1e192]:
+              - heading "Webpage Word Counter" [level=2] [ref=f1e194]
+              - paragraph [ref=f1e195]:
+                - img "Featured badge" [ref=f1e196]
+                - generic [ref=f1e199]: Featured
+              - generic [ref=f1e200]:
+                - img "Average rating 4.1 out of 5 stars." [ref=f1e201]:
+                  - generic [ref=f1e202]: "4.1"
+                - link "Learn more about results and reviews \"Webpage Word Counter\"." [ref=f1e211] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f1e212]: Analyze your website text with style with the Webpage Word Counter chrome extension
+          - generic [ref=f1e213]:
+            - link "Word Counter" [ref=f1e214] [cursor=pointer]:
+              - /url: ./detail/word-counter/kfnejlcapblanfejlgcpiakicmfkhmhe
+            - generic [ref=f1e216]:
+              - heading "Word Counter" [level=2] [ref=f1e218]
+              - paragraph [ref=f1e219]:
+                - img "Featured badge" [ref=f1e220]
+                - generic [ref=f1e223]: Featured
+              - generic [ref=f1e224]:
+                - img "Average rating 4 out of 5 stars." [ref=f1e225]:
+                  - generic [ref=f1e226]: "4.0"
+                - link "Learn more about results and reviews \"Word Counter\"." [ref=f1e235] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f1e236]: Count words and characters with the word counter tool. Get word and character count in any text.
+          - generic [ref=f1e237]:
+            - link "Word Counter" [ref=f1e238] [cursor=pointer]:
+              - /url: ./detail/word-counter/dcdjbggikbffllfldmdijljoljjbjomh
+            - generic [ref=f1e240]:
+              - heading "Word Counter" [level=2] [ref=f1e242]
+              - paragraph [ref=f1e243]:
+                - img "Featured badge" [ref=f1e244]
+                - generic [ref=f1e247]: Featured
+              - generic [ref=f1e248]:
+                - img "Average rating 3.9 out of 5 stars." [ref=f1e249]:
+                  - generic [ref=f1e250]: "3.9"
+                - link "Learn more about results and reviews \"Word Counter\"." [ref=f1e259] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f1e260]: Word counter online tool checker to find number of words and characters
+          - generic [ref=f1e261]:
+            - link "Word Counter" [ref=f1e262] [cursor=pointer]:
+              - /url: ./detail/word-counter/cbjddaobmdfhbfgdgjocbhklpmclcboe
+            - generic [ref=f1e264]:
+              - heading "Word Counter" [level=2] [ref=f1e266]
+              - paragraph [ref=f1e267]:
+                - img "Featured badge" [ref=f1e268]
+                - generic [ref=f1e271]: Featured
+              - generic [ref=f1e272]:
+                - img "Average rating 4.6 out of 5 stars." [ref=f1e273]:
+                  - generic [ref=f1e274]: "4.6"
+                - link "Learn more about results and reviews \"Word Counter\"." [ref=f1e283] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f1e284]: Count words and characters in selected text with a single click. Just right-click on any text to analyze it!
+          - generic [ref=f1e285]:
+            - link "Word Counter - counts what you type" [ref=f1e286] [cursor=pointer]:
+              - /url: ./detail/word-counter-counts-what/hjnjgdaeojdfoajjigipjmdnailbmfje
+            - generic [ref=f1e288]:
+              - heading "Word Counter - counts what you type" [level=2] [ref=f1e290]
+              - paragraph [ref=f1e291]:
+                - img "Published by verified publisher" [ref=f1e292]
+                - generic [ref=f1e295]: oorjalabs.com/
+                - img "Featured badge" [ref=f1e296]
+                - generic [ref=f1e299]: Featured
+              - generic [ref=f1e300]:
+                - img "Average rating 4.2 out of 5 stars." [ref=f1e301]:
+                  - generic [ref=f1e302]: "4.2"
+                - link "Learn more about results and reviews \"Word Counter - counts what you type\"." [ref=f1e311] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f1e312]: Shows a count of words and characters when you type in a text box on a website
+          - generic [ref=f1e313]:
+            - link "Word Counter - Character/Word Counting Stats" [ref=f1e314] [cursor=pointer]:
+              - /url: ./detail/word-counter-characterwor/nanlniilojileolplljecnafnjockmac
+            - generic [ref=f1e316]:
+              - heading "Word Counter - Character/Word Counting Stats" [level=2] [ref=f1e318]
+              - paragraph [ref=f1e319]:
+                - img "Published by verified publisher" [ref=f1e320]
+                - generic [ref=f1e323]: oziku.tech
+                - img "Featured badge" [ref=f1e324]
+                - generic [ref=f1e327]: Featured
+              - generic [ref=f1e328]:
+                - img "Average rating 2.4 out of 5 stars." [ref=f1e329]:
+                  - generic [ref=f1e330]: "2.4"
+                - link "Learn more about results and reviews \"Word Counter - Character/Word Counting Stats\"." [ref=f1e339] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f1e340]: Count number of Characters/Letters/Words with one-click. Right-click context menu to count Words/Letters/Characters of selected text
+          - generic [ref=f1e341]:
+            - link "Word Counter" [ref=f1e342] [cursor=pointer]:
+              - /url: ./detail/word-counter/odkgngjmhfpkiiamihedepnhhcnmcgfa
+            - generic [ref=f1e344]:
+              - heading "Word Counter" [level=2] [ref=f1e346]
+              - paragraph [ref=f1e347]:
+                - img "Featured badge" [ref=f1e348]
+                - generic [ref=f1e351]: Featured
+              - generic [ref=f1e352]:
+                - img "Average rating 3.3 out of 5 stars." [ref=f1e353]:
+                  - generic [ref=f1e354]: "3.3"
+                - link "Learn more about results and reviews \"Word Counter\"." [ref=f1e363] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f1e364]: Use the Online Word Counter to count word and as a sentences calculator. Count words and characters in sentance paragraphs.
+          - generic [ref=f1e365]:
+            - link "Selected Word Counter" [ref=f1e366] [cursor=pointer]:
+              - /url: ./detail/selected-word-counter/mcfeipobgilonkanljcbcbeapgpgeceg
+            - generic [ref=f1e368]:
+              - heading "Selected Word Counter" [level=2] [ref=f1e370]
+              - paragraph
+              - generic [ref=f1e371]:
+                - img "Average rating 0 out of 5 stars." [ref=f1e372]:
+                  - generic [ref=f1e373]: "0.0"
+                - link "Learn more about results and reviews \"Selected Word Counter\"." [ref=f1e382] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f1e383]: Count English words in selected text with a single shortcut (Alt+Shift+W). You can customize your shortcut key in settings.
+          - button "Load more" [ref=f1e386] [cursor=pointer]
+  - contentinfo [ref=f1e389]:
+    - list [ref=f1e390]:
+      - listitem [ref=f1e391]:
+        - link "About Chrome Web Store" [ref=f1e392] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en
+        - text: •
+      - listitem [ref=f1e393]:
+        - link "Developer Dashboard" [ref=f1e394] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f1e395]:
+        - link "Privacy Policy" [ref=f1e396] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en
+        - text: •
+      - listitem [ref=f1e397]:
+        - link "Terms of Service" [ref=f1e398] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en/gallery_tos.html
+        - text: •
+      - listitem [ref=f1e399]:
+        - link "Help" [ref=f1e400] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en
+  - generic [ref=f1e401]: Page loaded.

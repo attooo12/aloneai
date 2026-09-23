@@ -1,13 +1,14 @@
 import { isPro } from './license.js';
 import { FREE_SESSION_LIMIT } from './config.js';
 import { captureWindows } from './tabs.js';
-import { getIndex, getSession, getSessions, saveNamed, renameSession, deleteSession, undoDelete, mergeInto, setProtected, keepAsNamed, IDX } from './store.js';
+import { getIndex, getSession, getSessions, saveNamed, renameSession, deleteSession, deleteSessions, undoDelete, getTrash, mergeInto, setProtected, keepAsNamed, IDX } from './store.js';
 import { toMarkdown, toHtml, matches, searchText } from './schema.js';
 
 const $ = (id) => document.getElementById(id);
 const params = new URLSearchParams(location.search);
 const PAGE = 100; // rows rendered at a time
 const TAB_PAGE = 300; // tabs shown per session detail before "show all"
+const BIG_RESTORE = 100; // restoring more tabs than this asks for confirmation first
 
 const state = {
   kind: 'named', // or 'auto'
@@ -128,7 +129,7 @@ function renderList() {
   const empty = $('empty');
   empty.hidden = list.length > 0;
   empty.textContent = state.q ? 'Nothing matches your search.'
-    : state.kind === 'named' ? 'No saved sessions yet. Save this window to start.'
+    : state.kind === 'named' ? 'No saved sessions yet. Save this window to start. Automatic snapshots are already on: see "Auto snapshots".'
       : 'No automatic snapshots yet. The first one is taken a few minutes after you install.';
   $('n-named').textContent = `(${state.index.named.length})`;
   $('n-auto').textContent = `(${state.index.auto.length})`;
@@ -233,9 +234,16 @@ function startRename(e, actionsBox) {
 }
 
 // ---------- actions ----------
-async function restoreSession(e, windowIndex) {
+async function restoreSession(e, windowIndex, confirmed = false) {
+  const n = windowIndex === undefined ? e.tabs : (await getSession(e.id))?.windows[windowIndex]?.tabs.length || 0;
+  if (n > BIG_RESTORE && !confirmed) {
+    status(`This opens ${n} tabs at once, which can slow Chrome down for a while.`, { action: { label: `Open ${n} tabs`, run: () => restoreSession(e, windowIndex, true) }, ms: 0 });
+    $('status').querySelector('button')?.focus();
+    return;
+  }
   status(`Opening ${windowIndex === undefined ? plural(e.tabs, 'tab') : `window ${windowIndex + 1}`}…`, { ms: 0 });
-  const r = await send({ type: 'restore', id: e.id, windowIndex });
+  // intoWindowId: if this window only has a New Tab page, the tabs open here instead of in an extra window.
+  const r = await send({ type: 'restore', id: e.id, windowIndex, intoWindowId: state.windowId });
   // The popup usually closes when the new window takes focus; this is shown if it stays open.
   if (r?.ok) status(`Opened ${plural(r.opened, 'tab')}${r.failed ? `; ${r.failed} could not be opened by Chrome` : ''}.`, { kind: r.failed ? '' : 'ok' });
   else status(r?.error || 'Could not restore this session.', { kind: 'error' });
@@ -273,15 +281,14 @@ async function removeOne(e) {
 }
 async function removeSelected() {
   const ids = [...state.selected].filter((id) => indexEntry(id));
-  const deleted = [];
-  for (const id of ids) { const s = await deleteSession(state.kind, id); if (s) deleted.push(s); }
+  const deleted = await deleteSessions(state.kind, ids);
   state.selected.clear();
   await reload();
   status(`Deleted ${plural(deleted.length, 'session')}.`, { action: { label: 'Undo', run: () => undo(deleted) }, ms: 12000 });
   focusList();
 }
 async function undo(list) {
-  for (const s of list) await undoDelete(s);
+  await undoDelete(list);
   await reload();
   status(`Restored ${plural(list.length, 'session')}.`, { kind: 'ok' });
 }
@@ -392,7 +399,10 @@ $('sel-clear').addEventListener('click', () => { state.selected.clear(); renderL
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area === 'local' && (changes[IDX.named] || changes[IDX.auto])) {
     state.texts.clear();
-    reload();
+    if (changes[IDX[state.kind]]) reload();
+    else { // only the other list changed (e.g. a snapshot was taken): don't re-render, so an open rename box survives
+      for (const k of ['named', 'auto']) if (changes[IDX[k]]) getIndex(k).then((ix) => { state.index[k] = ix; $(`n-${k}`).textContent = `(${ix.length})`; renderPlan(); });
+    }
   }
   if (area === 'sync' && changes.license) isPro().then((p) => { state.pro = p; renderPlan(); });
 });
@@ -404,5 +414,11 @@ chrome.storage.onChanged.addListener((changes, area) => {
   const [pro] = await Promise.all([isPro(), switchKind(state.kind), refreshCounts()]);
   state.pro = pro;
   renderPlan();
+  // A delete from a popup that has since closed can still be undone.
+  const trash = await getTrash();
+  if (trash) {
+    const one = trash.sessions.length === 1 ? trash.sessions[0] : null;
+    status(`Deleted ${one ? `"${one.kind === 'auto' ? REASON[one.reason] || one.name : one.name}"` : plural(trash.sessions.length, 'session')} ${ago(trash.t)}.`, { action: { label: 'Undo', run: () => undo(trash.sessions) }, ms: 15000 });
+  }
   document.body.dataset.ready = '1';
 })();

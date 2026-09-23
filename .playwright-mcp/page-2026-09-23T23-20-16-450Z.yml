@@ -1,0 +1,234 @@
+- generic [ref=f44e1]:
+  - banner [ref=f44e2]:
+    - link "Skip to main content" [ref=f44e3] [cursor=pointer]
+    - generic [ref=f44e4]:
+      - generic [ref=f44e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f44e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f44e8]
+          - generic [ref=f44e9]: Chrome Web Store
+        - search "Sitewide" [ref=f44e10]:
+          - generic [ref=f44e13]:
+            - combobox "Search Chrome Web Store" [active] [ref=f44e15]: text expander
+            - button "Clear search" [ref=f44e17] [cursor=pointer]
+        - generic [ref=f44e20]:
+          - button "More options menu" [ref=f44e24] [cursor=pointer]
+          - generic [ref=f44e34]:
+            - button "Google apps" [ref=f44e38] [cursor=pointer]
+            - link "Sign in" [ref=f44e42] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/search/text%2520expander?hl%3Den&followup=https://chromewebstore.google.com/search/text%2520expander?hl%3Den&hl=en&ec=GAZApQM
+      - tablist [ref=f44e46]:
+        - generic [ref=f44e49]:
+          - tab "Discover" [ref=f44e50] [cursor=pointer]
+          - tab "Extensions" [ref=f44e51] [cursor=pointer]
+          - tab "Themes" [ref=f44e52] [cursor=pointer]
+    - dialog [ref=f44e53]:
+      - complementary [ref=f44e54]:
+        - heading "Switch to Chrome?" [level=2] [ref=f44e56]
+        - paragraph [ref=f44e57]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f44e58]:
+          - button "No thanks" [ref=f44e60] [cursor=pointer]
+          - generic [ref=f44e64] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f44e65]: "Yes"
+            - link "Yes" [ref=f44e66]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - generic [ref=f44e70]:
+    - generic [ref=f44e72]:
+      - generic [ref=f44e73]:
+        - heading "Type" [level=2] [ref=f44e74]
+        - toolbar "Filter items by extension type" [ref=f44e75]:
+          - button "Extensions" [ref=f44e78] [cursor=pointer]
+          - button "Themes" [ref=f44e83] [cursor=pointer]
+      - generic [ref=f44e86]:
+        - heading "Filter by" [level=2] [ref=f44e87]
+        - generic [ref=f44e89] [cursor=pointer]:
+          - checkbox "Featured extensions" [ref=f44e91]
+          - generic [ref=f44e92]: Featured extensions
+        - generic [ref=f44e95] [cursor=pointer]:
+          - checkbox "Established publishers" [ref=f44e97]
+          - generic [ref=f44e98]: Established publishers
+      - generic [ref=f44e100]:
+        - heading "Ratings" [level=2] [ref=f44e101]
+        - radiogroup "Ratings" [ref=f44e102]:
+          - radio "5 stars" [ref=f44e103]
+          - radio "4 stars and up" [ref=f44e109]:
+            - generic [aria-hidden] [ref=f44e116]: "& up"
+          - radio "3 stars and up" [ref=f44e117]:
+            - generic [aria-hidden] [ref=f44e125]: "& up"
+          - radio "2 stars and up" [ref=f44e126]:
+            - generic [aria-hidden] [ref=f44e135]: "& up"
+      - generic [ref=f44e137]:
+        - button "Clear all filters button." [disabled] [ref=f44e138]:
+          - generic [aria-hidden] [ref=f44e140]: Clear all
+        - tooltip [aria-hidden] [ref=f44e141]: Reset your filter options.
+    - main [ref=f44e142]:
+      - generic [ref=f44e143]:
+        - heading "Search results" [level=1] [ref=f44e144]
+        - generic [ref=f44e145]:
+          - generic [ref=f44e146]:
+            - link "Free Auto Text Expander for Google Chrome™" [ref=f44e147] [cursor=pointer]:
+              - /url: ./detail/free-auto-text-expander-f/dnppahfbgjfocdedfhmgclgpicenjolg
+            - generic [ref=f44e149]:
+              - heading "Free Auto Text Expander for Google Chrome™" [level=2] [ref=f44e151]
+              - paragraph [ref=f44e152]:
+                - img "Featured badge" [ref=f44e153]
+                - generic [ref=f44e156]: Featured
+              - generic [ref=f44e157]:
+                - img "Average rating 3.3 out of 5 stars." [ref=f44e158]:
+                  - generic [ref=f44e159]: "3.3"
+                - link "Learn more about results and reviews \"Free Auto Text Expander for Google Chrome™\"." [ref=f44e168] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f44e169]: Create custom keyboard shortcuts to expand and replace text as you type!
+          - generic [ref=f44e170]:
+            - 'link "Magical: Text Expander & Autofill" [ref=f44e171] [cursor=pointer]':
+              - /url: ./detail/magical-text-expander-aut/iibninhmiggehlcdolcilmhacighjamp
+            - generic [ref=f44e173]:
+              - 'heading "Magical: Text Expander & Autofill" [level=2] [ref=f44e175]'
+              - paragraph [ref=f44e176]:
+                - img "Published by verified publisher" [ref=f44e177]
+                - generic [ref=f44e180]: getmagical.com
+                - img "Featured badge" [ref=f44e181]
+                - generic [ref=f44e184]: Featured
+              - generic [ref=f44e185]:
+                - img "Average rating 4.4 out of 5 stars." [ref=f44e186]:
+                  - generic [ref=f44e187]: "4.4"
+                - 'link "Learn more about results and reviews \"Magical: Text Expander & Autofill\"." [ref=f44e196] [cursor=pointer]':
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f44e197]: Magical is a text expander and autofill automation app used by over 100K companies. Expand text like magic and auto-fill forms.
+          - generic [ref=f44e198]:
+            - 'link "Web Text Expander: Text Shortcuts & Snippets" [ref=f44e199] [cursor=pointer]':
+              - /url: ./detail/web-text-expander-text-sh/cmdcnfnhdcaoklhdlmdjfaoandbdcklh
+            - generic [ref=f44e201]:
+              - 'heading "Web Text Expander: Text Shortcuts & Snippets" [level=2] [ref=f44e203]'
+              - paragraph [ref=f44e204]:
+                - img "Published by verified publisher" [ref=f44e205]
+                - generic [ref=f44e208]: webtextexpander.com
+                - img "Featured badge" [ref=f44e209]
+                - generic [ref=f44e212]: Featured
+              - generic [ref=f44e213]:
+                - img "Average rating 4.6 out of 5 stars." [ref=f44e214]:
+                  - generic [ref=f44e215]: "4.6"
+                - 'link "Learn more about results and reviews \"Web Text Expander: Text Shortcuts & Snippets\"." [ref=f44e224] [cursor=pointer]':
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f44e225]: Work smarter and type faster with text shortcuts! Use text expander to turn text snippets into words or sentences anywhere online
+          - generic [ref=f44e226]:
+            - link "Text Expander Pro - Insert Snippets with Shortcuts" [ref=f44e227] [cursor=pointer]:
+              - /url: ./detail/text-expander-pro-insert/cjhnnmlfceimclocbappdpgemdgcldhk
+            - generic [ref=f44e229]:
+              - heading "Text Expander Pro - Insert Snippets with Shortcuts" [level=2] [ref=f44e231]
+              - paragraph [ref=f44e232]:
+                - img "Published by verified publisher" [ref=f44e233]
+                - generic [ref=f44e236]: zovo.one/
+              - generic [ref=f44e237]:
+                - img "Average rating 5 out of 5 stars." [ref=f44e238]:
+                  - generic [ref=f44e239]: "5.0"
+                - link "Learn more about results and reviews \"Text Expander Pro - Insert Snippets with Shortcuts\"." [ref=f44e248] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f44e249]: Type less, do more. Smart text expansion for professionals.
+          - generic [ref=f44e250]:
+            - 'link "TextExpander: Keyboard Shortcuts & Templates" [ref=f44e251] [cursor=pointer]':
+              - /url: ./detail/textexpander-keyboard-sho/mmfhhfjhpadoefoaahomoakamjcfcoil
+            - generic [ref=f44e253]:
+              - 'heading "TextExpander: Keyboard Shortcuts & Templates" [level=2] [ref=f44e255]'
+              - paragraph [ref=f44e256]:
+                - img "Published by verified publisher" [ref=f44e257]
+                - generic [ref=f44e260]: textexpander.com/
+                - img "Featured badge" [ref=f44e261]
+                - generic [ref=f44e264]: Featured
+              - generic [ref=f44e265]:
+                - img "Average rating 4.5 out of 5 stars." [ref=f44e266]:
+                  - generic [ref=f44e267]: "4.5"
+                - 'link "Learn more about results and reviews \"TextExpander: Keyboard Shortcuts & Templates\"." [ref=f44e276] [cursor=pointer]':
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f44e277]: Create and expand repetitive text anywhere on the web with custom keyboard shortcuts.
+          - generic [ref=f44e278]:
+            - link "Smart Text Expander" [ref=f44e279] [cursor=pointer]:
+              - /url: ./detail/smart-text-expander/ablnljkgfddcblnejlnacgeamgbjfkko
+            - generic [ref=f44e281]:
+              - heading "Smart Text Expander" [level=2] [ref=f44e283]
+              - paragraph [ref=f44e284]:
+                - img "Published by verified publisher" [ref=f44e285]
+                - generic [ref=f44e288]: softpulseinfotech.com/
+                - img "Featured badge" [ref=f44e289]
+                - generic [ref=f44e292]: Featured
+              - generic [ref=f44e293]:
+                - img "Average rating 3.8 out of 5 stars." [ref=f44e294]:
+                  - generic [ref=f44e295]: "3.8"
+                - link "Learn more about results and reviews \"Smart Text Expander\"." [ref=f44e304] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f44e305]: Expand your short text with long descriptive text quickly with help of this Smart Text Expander extension
+          - generic [ref=f44e306]:
+            - link "Free Auto Text Expander" [ref=f44e307] [cursor=pointer]:
+              - /url: ./detail/free-auto-text-expander/chpdafndlgeplaoobnmfgmknpaakgfap
+            - generic [ref=f44e309]:
+              - heading "Free Auto Text Expander" [level=2] [ref=f44e311]
+              - paragraph
+              - generic [ref=f44e312]:
+                - img "Average rating 2.8 out of 5 stars." [ref=f44e313]:
+                  - generic [ref=f44e314]: "2.8"
+                - link "Learn more about results and reviews \"Free Auto Text Expander\"." [ref=f44e323] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f44e324]: Create custom keyboard shortcuts to expand and replace text as you type!
+          - generic [ref=f44e325]:
+            - 'link "Auto Text Expander: Text Shortcuts & Snippets" [ref=f44e326] [cursor=pointer]':
+              - /url: ./detail/auto-text-expander-text-s/eppglcmjflhhbkicnlhnnpkplniokckl
+            - generic [ref=f44e328]:
+              - 'heading "Auto Text Expander: Text Shortcuts & Snippets" [level=2] [ref=f44e330]'
+              - paragraph
+              - generic [ref=f44e331]:
+                - img "Average rating 3.2 out of 5 stars." [ref=f44e332]:
+                  - generic [ref=f44e333]: "3.2"
+                - 'link "Learn more about results and reviews \"Auto Text Expander: Text Shortcuts & Snippets\"." [ref=f44e342] [cursor=pointer]':
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f44e343]: Create smart text expansions to get more done and streamline your work. Billions of keystrokes saved!
+          - generic [ref=f44e344]:
+            - link "Text Shortcuts – Text Expander & Snippets" [ref=f44e345] [cursor=pointer]:
+              - /url: ./detail/text-shortcuts-%E2%80%93-text-exp/jmiphnbhebficgfgkebdgjbdnmiphlkl
+            - generic [ref=f44e347]:
+              - heading "Text Shortcuts – Text Expander & Snippets" [level=2] [ref=f44e349]
+              - paragraph [ref=f44e350]:
+                - img "Published by verified publisher" [ref=f44e351]
+                - generic [ref=f44e354]: textshortcuts.com
+                - img "Featured badge" [ref=f44e355]
+                - generic [ref=f44e358]: Featured
+              - generic [ref=f44e359]:
+                - img "Average rating 4.9 out of 5 stars." [ref=f44e360]:
+                  - generic [ref=f44e361]: "4.9"
+                - link "Learn more about results and reviews \"Text Shortcuts – Text Expander & Snippets\"." [ref=f44e370] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f44e371]: Reusable text snippets with fillable fields. Insert dynamic templates anywhere on the web, without retyping.
+          - generic [ref=f44e372]:
+            - link "Text Expander" [ref=f44e373] [cursor=pointer]:
+              - /url: ./detail/text-expander/bknndphnedlilhglflbgpfhpnccpdlff
+            - generic [ref=f44e375]:
+              - heading "Text Expander" [level=2] [ref=f44e377]
+              - paragraph
+              - generic [ref=f44e378]:
+                - img "Average rating 4.8 out of 5 stars." [ref=f44e379]:
+                  - generic [ref=f44e380]: "4.8"
+                - link "Learn more about results and reviews \"Text Expander\"." [ref=f44e389] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f44e390]: Use Text Expander – a magical text expander to expand text instantly with paste shortcut and save typing time
+          - button "Load more" [ref=f44e393] [cursor=pointer]
+  - contentinfo [ref=f44e396]:
+    - list [ref=f44e397]:
+      - listitem [ref=f44e398]:
+        - link "About Chrome Web Store" [ref=f44e399] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en
+        - text: •
+      - listitem [ref=f44e400]:
+        - link "Developer Dashboard" [ref=f44e401] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f44e402]:
+        - link "Privacy Policy" [ref=f44e403] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en
+        - text: •
+      - listitem [ref=f44e404]:
+        - link "Terms of Service" [ref=f44e405] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en/gallery_tos.html
+        - text: •
+      - listitem [ref=f44e406]:
+        - link "Help" [ref=f44e407] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en
+  - generic [ref=f44e408]: Page loaded.

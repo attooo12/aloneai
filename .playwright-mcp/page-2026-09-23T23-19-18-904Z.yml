@@ -1,0 +1,223 @@
+- generic [ref=f41e1]:
+  - banner [ref=f41e2]:
+    - link "Skip to main content" [ref=f41e3] [cursor=pointer]
+    - generic [ref=f41e4]:
+      - generic [ref=f41e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f41e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f41e8]
+          - generic [ref=f41e9]: Chrome Web Store
+        - search "Sitewide" [ref=f41e10]:
+          - combobox "Search Chrome Web Store" [active] [ref=f41e15]
+        - generic [ref=f41e16]:
+          - button "More options menu" [ref=f41e20] [cursor=pointer]
+          - generic [ref=f41e30]:
+            - button "Google apps" [ref=f41e34] [cursor=pointer]
+            - link "Sign in" [ref=f41e38] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/detail/fontscout/jjbdoldmdagddkdhikbnhdfaacdflcfn&followup=https://chromewebstore.google.com/detail/fontscout/jjbdoldmdagddkdhikbnhdfaacdflcfn&ec=GAZApQM
+      - tablist [ref=f41e42]:
+        - generic [ref=f41e45]:
+          - tab "Discover" [ref=f41e46] [cursor=pointer]
+          - tab "Extensions" [selected] [ref=f41e47] [cursor=pointer]
+          - tab "Themes" [ref=f41e48] [cursor=pointer]
+    - dialog [ref=f41e49]:
+      - complementary [ref=f41e50]:
+        - heading "Switch to Chrome?" [level=2] [ref=f41e52]
+        - paragraph [ref=f41e53]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f41e54]:
+          - button "No thanks" [ref=f41e56] [cursor=pointer]
+          - generic [ref=f41e60] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f41e61]: "Yes"
+            - link "Yes" [ref=f41e62]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - main [ref=f41e66]:
+    - generic [ref=f41e67]:
+      - generic [ref=f41e68]:
+        - generic "Info" [ref=f41e70]:
+          - generic [ref=f41e71]: Switch to Chrome to install extensions and themes
+          - button "Switch to Chrome to install extensions and themes Install Chrome" [ref=f41e79] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f41e81]: Install Chrome
+        - generic [ref=f41e83]:
+          - generic [ref=f41e84]:
+            - img "Item logo image for FontScout" [ref=f41e85]
+            - heading "FontScout" [level=1] [ref=f41e86]
+          - generic [ref=f41e87]:
+            - generic [ref=f41e88]:
+              - generic [ref=f41e89]:
+                - generic [ref=f41e90]: "5.0"
+                - generic [ref=f41e93]:
+                  - text: (
+                  - link [ref=f41e94] [cursor=pointer]:
+                    - /url: ./detail/fontscout/jjbdoldmdagddkdhikbnhdfaacdflcfn/reviews
+                    - paragraph [ref=f41e95]: 8 ratings
+                  - text: )
+              - button "Ratings are updated daily and may not reflect the most recent reviews." [ref=f41e97] [cursor=pointer]
+            - button "Share" [ref=f41e106] [cursor=pointer]
+          - generic [ref=f41e112]:
+            - link "Extension" [ref=f41e113] [cursor=pointer]:
+              - /url: ./category/extensions
+            - link "Developer Tools" [ref=f41e114] [cursor=pointer]:
+              - /url: ./category/extensions/productivity/developer
+            - text: 116 users
+          - button "Add to Chrome" [ref=f41e118] [cursor=pointer]
+      - generic [ref=f41e121]:
+        - region "Media carousel" [ref=f41e122]:
+          - button "Previous slide" [ref=f41e124] [cursor=pointer]
+          - generic [ref=f41e131]:
+            - button "Item media 5 (screenshot) for FontScout" [ref=f41e133] [cursor=pointer]:
+              - img "Item media 5 (screenshot) for FontScout" [ref=f41e134]
+            - button "Item media 1 (screenshot) for FontScout" [ref=f41e136] [cursor=pointer]:
+              - img "Item media 1 (screenshot) for FontScout" [ref=f41e137]
+            - button "Item media 2 (screenshot) for FontScout" [ref=f41e139] [cursor=pointer]:
+              - img "Item media 2 (screenshot) for FontScout" [ref=f41e140]
+            - button "Item media 3 (screenshot) for FontScout" [ref=f41e142] [cursor=pointer]:
+              - img "Item media 3 (screenshot) for FontScout" [ref=f41e143]
+            - button "Item media 4 (screenshot) for FontScout" [ref=f41e145] [cursor=pointer]:
+              - img "Item media 4 (screenshot) for FontScout" [ref=f41e146]
+            - button "Item media 5 (screenshot) for FontScout" [ref=f41e148] [cursor=pointer]:
+              - img "Item media 5 (screenshot) for FontScout" [ref=f41e149]
+            - button "Item media 1 (screenshot) for FontScout" [ref=f41e151] [cursor=pointer]:
+              - img "Item media 1 (screenshot) for FontScout" [ref=f41e152]
+          - button "Next slide" [ref=f41e154] [cursor=pointer]
+        - generic [ref=f41e160]:
+          - button "Preview slide 1 for FontScout" [ref=f41e161] [cursor=pointer]:
+            - img "Item media 1 (screenshot) for FontScout" [ref=f41e163]
+          - button "Preview slide 2 for FontScout" [ref=f41e165] [cursor=pointer]:
+            - img "Item media 2 (screenshot) for FontScout" [ref=f41e167]
+          - button "Preview slide 3 for FontScout" [ref=f41e169] [cursor=pointer]:
+            - img "Item media 3 (screenshot) for FontScout" [ref=f41e171]
+          - button "Preview slide 4 for FontScout" [ref=f41e173] [cursor=pointer]:
+            - img "Item media 4 (screenshot) for FontScout" [ref=f41e175]
+          - button "Preview slide 5 for FontScout" [ref=f41e177] [cursor=pointer]:
+            - img "Item media 5 (screenshot) for FontScout" [ref=f41e179]
+      - generic [ref=f41e181]:
+        - heading "Overview" [level=2] [ref=f41e183]
+        - generic [ref=f41e185]:
+          - generic [ref=f41e186]:
+            - paragraph [ref=f41e187]: Identify fonts on any web page with a single click
+            - paragraph [ref=f41e188]: The most accurate font identifier for Chrome — and the only one that lets you download fonts. FontScout uses a multi-step detection pipeline to resolve the true font name — parsing the actual font binary, matching weight-aware font-face rules, decoding hashed filenames, and more. Where other extensions stop at CSS, FontScout keeps digging. WHY FONTSCOUT Most accurate — real font names via OpenType file parsing, not CSS guessing Download any font — as a ZIP with the original file, decompressed TTF/OTF, license info, and a README Editable preview — type your own text to see how the font looks with your content HOW IT WORKS Click the FontScout icon to activate. Hover over any text to see the font name, then click for full details — weight, size, line-height, color, and more. Press ESC to deactivate. FEATURES • Editable preview — type your own text to see how the font looks • Download font as ZIP — original file, decompressed TTF/OTF, license, and README • One-click copy of any CSS property • Shift+click to open multiple tooltips for side-by-side comparison • Font name cursor label on hover before you click • Adobe Fonts / TypeKit detection • System font detection — shows the actual font behind generic keywords like system-ui or sans-serif • Font format display (WOFF2, WOFF, TTF, OTF) • Color in hex, rgb, hsl — hover the swatch for all formats including original CSS value (lab, oklch, etc.) • Light and dark theme PRIVACY No data collected. Everything runs locally. No background activity — activates only when you click the icon. ---------- Changelog 1.0.2 - Fixed font name detection on Wix, Squarespace, and other platforms that use hashed/obfuscated CSS font names — FontScout now reads the real name directly from the font file instead of showing internal identifiers like "wfont_343a2a_4e484..." - Fixed font preview in the tooltip not rendering the correct font on sites where the CSS font stack starts with an internal alias 1.0.1 - Generic CSS font keywords (system-ui, sans-serif, monospace, etc.) now resolve to the actual rendered system font instead of showing the generic keyword name 1.0.0 - Initial release
+          - button "See more" [ref=f41e189] [cursor=pointer]
+      - generic [ref=f41e192]:
+        - heading [level=2] [ref=f41e194]:
+          - generic [ref=f41e195]:
+            - text: 5 out of 5
+            - img "5 out of 5 stars" [ref=f41e196]
+          - text: 8 ratings•
+          - paragraph [ref=f41e225]:
+            - link "Learn more about results and reviews." [ref=f41e226] [cursor=pointer]:
+              - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results
+        - generic [ref=f41e228] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f41e229]: See all reviews
+          - link "See all reviews" [ref=f41e230]:
+            - /url: ./detail/fontscout/jjbdoldmdagddkdhikbnhdfaacdflcfn/reviews
+      - generic [ref=f41e231]:
+        - heading "Details" [level=2] [ref=f41e233]
+        - list [ref=f41e235]:
+          - listitem [ref=f41e236]:
+            - generic [ref=f41e237]: Version
+            - generic [ref=f41e238]: 1.0.2
+          - listitem [ref=f41e239]:
+            - generic [ref=f41e240]: Updated
+            - generic [ref=f41e241]: April 7, 2026
+          - listitem [ref=f41e242]:
+            - link "Flag concern" [ref=f41e244] [cursor=pointer]:
+              - /url: ./detail/jjbdoldmdagddkdhikbnhdfaacdflcfn/report
+          - listitem [ref=f41e245]:
+            - generic [ref=f41e246]: Offered by
+            - generic [ref=f41e247]: anton.korenyako
+          - listitem [ref=f41e248]:
+            - generic [ref=f41e249]: Size
+            - generic [ref=f41e250]: 607KiB
+          - listitem [ref=f41e251]:
+            - generic [ref=f41e252]: Languages
+            - generic [ref=f41e254]:
+              - text: 6 languages
+              - button "Show more languages" [ref=f41e256] [cursor=pointer]
+          - listitem [ref=f41e262]:
+            - generic [ref=f41e263]: Developer
+            - group [ref=f41e266]:
+              - generic "Email" [ref=f41e267]
+          - listitem [ref=f41e272]:
+            - generic [ref=f41e273]: Non-trader
+            - generic [ref=f41e274]: This developer has not identified itself as a trader. For consumers in the European Union, please note that consumer rights do not apply to contracts between you and this developer.
+      - generic [ref=f41e275]:
+        - heading "Privacy" [level=2] [ref=f41e277]
+        - generic [ref=f41e279]:
+          - generic [ref=f41e280]: The developer has disclosed that it will not collect or use your data.
+          - generic [ref=f41e285]:
+            - heading "This developer declares that your data is" [level=2] [ref=f41e286]
+            - list [ref=f41e287]:
+              - listitem [ref=f41e288]:
+                - text: Not being sold to third parties, outside of the
+                - link "approved use cases" [ref=f41e289] [cursor=pointer]:
+                  - /url: https://developer.chrome.com/docs/webstore/program-policies/limited-use/
+              - listitem [ref=f41e290]: Not being used or transferred for purposes that are unrelated to the item's core functionality
+              - listitem [ref=f41e291]: Not being used or transferred to determine creditworthiness or for lending purposes
+    - generic [ref=f41e292]:
+      - heading "You might also like…" [level=2] [ref=f41e293]
+      - generic [ref=f41e294]:
+        - generic [ref=f41e296]:
+          - link "Fontpair" [ref=f41e297] [cursor=pointer]:
+            - /url: ./detail/fontpair/kaofbfeoidjckolmddiafkmaiggonmop
+          - generic [ref=f41e298]:
+            - heading "Fontpair" [level=3] [ref=f41e299]
+            - generic [ref=f41e300]:
+              - img "Average rating 4 out of 5 stars." [ref=f41e301]:
+                - generic [ref=f41e302]: "4.0"
+              - link "Learn more about results and reviews \"Fontpair\"." [ref=f41e311] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+            - paragraph [ref=f41e312]: Detect fonts and colors on any website.
+        - generic [ref=f41e314]:
+          - 'link "FontViz: Inspect fonts with ease" [ref=f41e315] [cursor=pointer]':
+            - /url: ./detail/fontviz-inspect-fonts-wit/fajapbpfjjnjggnlemjommpopjnijajn
+          - generic [ref=f41e316]:
+            - 'heading "FontViz: Inspect fonts with ease" [level=3] [ref=f41e317]'
+            - generic [ref=f41e318]:
+              - img "Average rating 5.0 out of 5 stars." [ref=f41e319]:
+                - generic [ref=f41e320]: "5.0"
+              - 'link "Learn more about results and reviews \"FontViz: Inspect fonts with ease\"." [ref=f41e329] [cursor=pointer]':
+                - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+            - paragraph [ref=f41e330]: Easily inspect and validate the fonts used on any website or web application
+        - generic [ref=f41e332]:
+          - link "Font Recognition" [ref=f41e333] [cursor=pointer]:
+            - /url: ./detail/font-recognition/hllggpdokhihmkgmbmogepokoelmicji
+          - generic [ref=f41e334]:
+            - heading "Font Recognition" [level=3] [ref=f41e335]
+            - generic [ref=f41e336]:
+              - img "Average rating 5.0 out of 5 stars." [ref=f41e337]:
+                - generic [ref=f41e338]: "5.0"
+              - link "Learn more about results and reviews \"Font Recognition\"." [ref=f41e347] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+            - paragraph [ref=f41e348]: Use the Font Recognition to quickly identify types on any page. Our font Finder also makes it easy to download the identified font.
+        - generic [ref=f41e350]:
+          - 'link "WhatFont – Font Finder: identify fonts on page & image" [ref=f41e351] [cursor=pointer]':
+            - /url: ./detail/whatfont-%E2%80%93-font-finder-id/cnchnbcmhjadlbdbcebikmkbdlaajnni
+          - generic [ref=f41e352]:
+            - 'heading "WhatFont – Font Finder: identify fonts on page & image" [level=3] [ref=f41e353]'
+            - generic [ref=f41e354]:
+              - img "Average rating 4.7 out of 5 stars." [ref=f41e355]:
+                - generic [ref=f41e356]: "4.7"
+              - 'link "Learn more about results and reviews \"WhatFont – Font Finder: identify fonts on page & image\"." [ref=f41e365] [cursor=pointer]':
+                - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+            - paragraph [ref=f41e366]: "What font is this? Identify any font on a web page or in an image: family, size, weight, colour, and every font the page uses."
+  - contentinfo [ref=f41e367]:
+    - list [ref=f41e368]:
+      - listitem [ref=f41e369]:
+        - link "About Chrome Web Store" [ref=f41e370] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en-US
+        - text: •
+      - listitem [ref=f41e371]:
+        - link "Developer Dashboard" [ref=f41e372] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f41e373]:
+        - link "Privacy Policy" [ref=f41e374] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en-US
+        - text: •
+      - listitem [ref=f41e375]:
+        - link "Terms of Service" [ref=f41e376] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en-US/gallery_tos.html
+        - text: •
+      - listitem [ref=f41e377]:
+        - link "Help" [ref=f41e378] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en-US

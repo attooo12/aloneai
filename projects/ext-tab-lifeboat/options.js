@@ -2,6 +2,7 @@ import { isPro, verifyToken } from './license.js';
 import { CHECKOUT_URL, PRO_PRICE, AUTO_MINUTES_CHOICES, AUTO_KEEP_CHOICES } from './config.js';
 import { getIndex, getSettings, setSettings, importSessions, exportAllData } from './store.js';
 import { parseImport, buildExport, toMarkdown, toHtml } from './schema.js';
+import { hasDownloads } from './backup.js';
 
 const $ = (id) => document.getElementById(id);
 let pro = false;
@@ -30,7 +31,12 @@ async function refresh() {
   $('data-summary').textContent = `${named.length} saved session${named.length === 1 ? '' : 's'} and ${auto.length} automatic snapshot${auto.length === 1 ? '' : 's'} (${tabs} tabs in total).`;
   const s = await getSettings();
   $('backup').value = s.backup;
-  $('backup-status').textContent = s.backupLast ? `Last backup: ${new Date(s.backupLast).toLocaleString()}` : 'No backup made yet.';
+  const last = s.backupLast ? `Last backup: ${new Date(s.backupLast).toLocaleString()}.` : 'No backup made yet.';
+  // Scheduled backups stop silently without Pro or the downloads permission (removable in chrome://extensions): say so.
+  const paused = s.backup === 'off' ? '' : !pro ? ' Scheduled backups are paused: they need Pro.'
+    : !(await hasDownloads()) ? ' Scheduled backups are paused: Chrome\'s downloads permission was removed. Click "Back up now" to grant it again.' : '';
+  $('backup-status').textContent = last + paused;
+  $('backup-status').classList.toggle('error', !!paused);
 }
 for (const el of document.querySelectorAll('.price')) el.textContent = PRO_PRICE;
 

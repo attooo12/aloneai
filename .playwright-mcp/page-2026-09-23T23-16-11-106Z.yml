@@ -1,0 +1,205 @@
+- generic [ref=f31e1]:
+  - banner [ref=f31e2]:
+    - link "Skip to main content" [ref=f31e3] [cursor=pointer]
+    - generic [ref=f31e4]:
+      - generic [ref=f31e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f31e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f31e8]
+          - generic [ref=f31e9]: Chrome Web Store
+        - search "Sitewide" [ref=f31e10]:
+          - combobox "Search Chrome Web Store" [active] [ref=f31e15]
+        - generic [ref=f31e16]:
+          - button "More options menu" [ref=f31e20] [cursor=pointer]
+          - generic [ref=f31e30]:
+            - button "Google apps" [ref=f31e34] [cursor=pointer]
+            - link "Sign in" [ref=f31e38] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm/reviews&followup=https://chromewebstore.google.com/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm/reviews&ec=GAZApQM
+      - tablist [ref=f31e42]:
+        - generic [ref=f31e45]:
+          - tab "Discover" [ref=f31e46] [cursor=pointer]
+          - tab "Extensions" [selected] [ref=f31e47] [cursor=pointer]
+          - tab "Themes" [ref=f31e48] [cursor=pointer]
+    - dialog [ref=f31e49]:
+      - complementary [ref=f31e50]:
+        - heading "Switch to Chrome?" [level=2] [ref=f31e52]
+        - paragraph [ref=f31e53]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f31e54]:
+          - button "No thanks" [ref=f31e56] [cursor=pointer]
+          - generic [ref=f31e60] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f31e61]: "Yes"
+            - link "Yes" [ref=f31e62]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - main [ref=f31e66]:
+    - generic [ref=f31e67]:
+      - generic [ref=f31e68]:
+        - generic "Info" [ref=f31e70]:
+          - generic [ref=f31e71]: Switch to Chrome to install extensions and themes
+          - button "Switch to Chrome to install extensions and themes Install Chrome" [ref=f31e79] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f31e81]: Install Chrome
+        - generic [ref=f31e82]:
+          - link "Navigate back to item detail page" [ref=f31e88] [cursor=pointer]:
+            - /url: ./detail/WhatFont/jabopobgcpjmedljpbcaablpmlmfcogm
+          - generic [ref=f31e89]:
+            - link [ref=f31e90] [cursor=pointer]:
+              - /url: ./detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm
+              - img "Item logo image for WhatFont" [ref=f31e91]
+              - heading "WhatFont" [level=1] [ref=f31e92]
+            - generic [ref=f31e93]:
+              - generic [ref=f31e94]:
+                - link "Created by the owner of the listed website. The publisher has a good record with no history of violations. Learn more." [ref=f31e103] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/?hl=en-US&p=cws_badges
+                - link "chengyinliu.com" [ref=f31e104] [cursor=pointer]:
+                  - /url: https://chengyinliu.com
+              - generic [ref=f31e105]:
+                - link "Follows recommended practices for Chrome extensions. Learn more." [ref=f31e114] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/?hl=en-US&p=cws_badges
+                - generic [ref=f31e115]: Featured
+              - generic [ref=f31e116]:
+                - img "Average rating 4.0 out of 5 stars. 2.1K ratings." [ref=f31e117]:
+                  - generic [ref=f31e118]: "4.0"
+                  - generic [ref=f31e121]:
+                    - text: (
+                    - paragraph [ref=f31e122]: 2.1K ratings
+                    - text: )
+                - button "Ratings are updated daily and may not reflect the most recent reviews." [ref=f31e124] [cursor=pointer]
+              - button "Share" [ref=f31e133] [cursor=pointer]
+            - generic [ref=f31e139]:
+              - link "Extension" [ref=f31e140] [cursor=pointer]:
+                - /url: ./category/extensions
+              - link "Developer Tools" [ref=f31e141] [cursor=pointer]:
+                - /url: ./category/extensions/productivity/developer
+              - text: 3,000,000 users
+            - button "Add to Chrome" [ref=f31e145] [cursor=pointer]
+      - heading [level=2] [ref=f31e149]:
+        - generic [ref=f31e150]:
+          - text: 4.0 out of 5
+          - img "4.0 out of 5 stars" [ref=f31e151]
+      - text: 2.1K ratings•
+      - paragraph [ref=f31e180]:
+        - link "Learn more about results and reviews." [ref=f31e181] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results
+      - generic [ref=f31e182]:
+        - combobox "Filter by" [ref=f31e185] [cursor=pointer]:
+          - generic:
+            - generic:
+              - generic: Filter by
+              - generic [aria-hidden]: Filter by
+          - generic: All reviews
+        - combobox "Sort by" [ref=f31e189] [cursor=pointer]:
+          - generic:
+            - generic:
+              - generic: Sort by
+              - generic [aria-hidden]: Sort by
+          - generic: Recent
+        - combobox "Language" [ref=f31e194] [cursor=pointer]:
+          - generic:
+            - generic:
+              - generic: Language
+              - generic [aria-hidden]: Language
+          - generic: English
+    - generic [ref=f31e196]:
+      - generic [ref=f31e197]:
+        - img "Review's profile picture" [ref=f31e198]
+        - heading "Riduan Chowdhury 5 out of 5 stars Aug 31, 2026" [level=3] [ref=f31e200]:
+          - generic [ref=f31e201]: Riduan Chowdhury
+          - img "5 out of 5 stars" [ref=f31e202]
+          - generic [ref=f31e231]: Aug 31, 2026
+        - button "Review options" [ref=f31e235] [cursor=pointer]
+        - paragraph [ref=f31e241]: This is the best font finder extension
+      - generic [ref=f31e242]:
+        - img "Review's profile picture" [ref=f31e243]
+        - heading "Mark Jay Daria 2 out of 5 stars Jul 31, 2026" [level=3] [ref=f31e245]:
+          - generic [ref=f31e246]: Mark Jay Daria
+          - img "2 out of 5 stars" [ref=f31e247]
+          - generic [ref=f31e276]: Jul 31, 2026
+        - button "Review options" [ref=f31e280] [cursor=pointer]
+        - paragraph [ref=f31e286]: It was working good, until chrome updated.
+        - generic [ref=f31e287]: 2 out of 2 found this helpful
+      - generic [ref=f31e289]:
+        - img "Review's profile picture" [ref=f31e290]
+        - heading "Richard Medzihradský 5 out of 5 stars Jul 16, 2026" [level=3] [ref=f31e292]:
+          - generic [ref=f31e293]: Richard Medzihradský
+          - img "5 out of 5 stars" [ref=f31e294]
+          - generic [ref=f31e323]: Jul 16, 2026
+        - button "Review options" [ref=f31e327] [cursor=pointer]
+        - paragraph [ref=f31e333]: Does what it says
+      - generic [ref=f31e334]:
+        - img "Review's profile picture" [ref=f31e335]
+        - heading "Artur 1 out of 5 stars Jul 15, 2026" [level=3] [ref=f31e337]:
+          - generic [ref=f31e338]: Artur
+          - img "1 out of 5 stars" [ref=f31e339]
+          - generic [ref=f31e368]: Jul 15, 2026
+        - button "Review options" [ref=f31e372] [cursor=pointer]
+        - paragraph [ref=f31e378]: It stopped working on newer chrome realeses
+        - generic [ref=f31e379]: 4 out of 4 found this helpful
+      - generic [ref=f31e381]:
+        - img "Review's profile picture" [ref=f31e382]
+        - heading "Sumit Bera 5 out of 5 stars Jun 2, 2026" [level=3] [ref=f31e384]:
+          - generic [ref=f31e385]: Sumit Bera
+          - img "5 out of 5 stars" [ref=f31e386]
+          - generic [ref=f31e415]: Jun 2, 2026
+        - button "Review options" [ref=f31e419] [cursor=pointer]
+        - paragraph [ref=f31e425]: one of the best extensions .. very helpful
+      - generic [ref=f31e426]:
+        - img "Review's profile picture" [ref=f31e427]
+        - heading "Agnes Ayuba 4 out of 5 stars May 27, 2026" [level=3] [ref=f31e429]:
+          - generic [ref=f31e430]: Agnes Ayuba
+          - img "4 out of 5 stars" [ref=f31e431]
+          - generic [ref=f31e460]: May 27, 2026
+        - button "Review options" [ref=f31e464] [cursor=pointer]
+        - paragraph [ref=f31e470]: Works good for me so far
+      - generic [ref=f31e471]:
+        - img "Review's profile picture" [ref=f31e472]
+        - heading "卂ㄥi ALi 1 out of 5 stars May 12, 2026" [level=3] [ref=f31e474]:
+          - generic [ref=f31e475]: 卂ㄥi ALi
+          - img "1 out of 5 stars" [ref=f31e476]
+          - generic [ref=f31e505]: May 12, 2026
+        - button "Review options" [ref=f31e509] [cursor=pointer]
+        - paragraph [ref=f31e515]: Not working on local html files
+      - generic [ref=f31e516]:
+        - img "Review's profile picture" [ref=f31e517]
+        - heading "customer service BO5 41O 5OO3 barg 4 out of 5 stars Apr 29, 2026" [level=3] [ref=f31e519]:
+          - generic [ref=f31e520]: customer service BO5 41O 5OO3 barg
+          - img "4 out of 5 stars" [ref=f31e521]
+          - generic [ref=f31e550]: Apr 29, 2026
+        - button "Review options" [ref=f31e554] [cursor=pointer]
+        - paragraph [ref=f31e560]: A simple and handy tool for instantly identifying fonts on any webpage
+      - generic [ref=f31e561]:
+        - img "Review's profile picture" [ref=f31e562]
+        - heading "peter zvoz 5 out of 5 stars Apr 1, 2026" [level=3] [ref=f31e564]:
+          - generic [ref=f31e565]: peter zvoz
+          - img "5 out of 5 stars" [ref=f31e566]
+          - generic [ref=f31e595]: Apr 1, 2026
+        - button "Review options" [ref=f31e599] [cursor=pointer]
+        - paragraph [ref=f31e605]: Really simple, and quite effective.
+      - generic [ref=f31e606]:
+        - img "Review's profile picture" [ref=f31e607]
+        - heading "Rohan Bhardwaj 5 out of 5 stars Mar 20, 2026" [level=3] [ref=f31e609]:
+          - generic [ref=f31e610]: Rohan Bhardwaj
+          - img "5 out of 5 stars" [ref=f31e611]
+          - generic [ref=f31e640]: Mar 20, 2026
+        - button "Review options" [ref=f31e644] [cursor=pointer]
+        - paragraph [ref=f31e650]: I love fonts and love finding about new fonts. Works like a charm. Thank you for making this.
+      - button "Load more" [ref=f31e653] [cursor=pointer]
+  - contentinfo [ref=f31e656]:
+    - list [ref=f31e657]:
+      - listitem [ref=f31e658]:
+        - link "About Chrome Web Store" [ref=f31e659] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en-US
+        - text: •
+      - listitem [ref=f31e660]:
+        - link "Developer Dashboard" [ref=f31e661] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f31e662]:
+        - link "Privacy Policy" [ref=f31e663] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en-US
+        - text: •
+      - listitem [ref=f31e664]:
+        - link "Terms of Service" [ref=f31e665] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en-US/gallery_tos.html
+        - text: •
+      - listitem [ref=f31e666]:
+        - link "Help" [ref=f31e667] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en-US

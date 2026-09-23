@@ -1,0 +1,222 @@
+- generic [ref=f34e1]:
+  - banner [ref=f34e2]:
+    - link "Skip to main content" [ref=f34e3] [cursor=pointer]
+    - generic [ref=f34e4]:
+      - generic [ref=f34e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f34e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f34e8]
+          - generic [ref=f34e9]: Chrome Web Store
+        - search "Sitewide" [ref=f34e10]:
+          - generic [ref=f34e13]:
+            - combobox "Search Chrome Web Store" [active] [ref=f34e15]: page ruler
+            - button "Clear search" [ref=f34e17] [cursor=pointer]
+        - generic [ref=f34e20]:
+          - button "More options menu" [ref=f34e24] [cursor=pointer]
+          - generic [ref=f34e34]:
+            - button "Google apps" [ref=f34e38] [cursor=pointer]
+            - link "Sign in" [ref=f34e42] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/search/page%2520ruler?hl%3Den&followup=https://chromewebstore.google.com/search/page%2520ruler?hl%3Den&hl=en&ec=GAZApQM
+      - tablist [ref=f34e46]:
+        - generic [ref=f34e49]:
+          - tab "Discover" [ref=f34e50] [cursor=pointer]
+          - tab "Extensions" [ref=f34e51] [cursor=pointer]
+          - tab "Themes" [ref=f34e52] [cursor=pointer]
+    - dialog [ref=f34e53]:
+      - complementary [ref=f34e54]:
+        - heading "Switch to Chrome?" [level=2] [ref=f34e56]
+        - paragraph [ref=f34e57]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f34e58]:
+          - button "No thanks" [ref=f34e60] [cursor=pointer]
+          - generic [ref=f34e64] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f34e65]: "Yes"
+            - link "Yes" [ref=f34e66]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - generic [ref=f34e70]:
+    - generic [ref=f34e72]:
+      - generic [ref=f34e73]:
+        - heading "Type" [level=2] [ref=f34e74]
+        - toolbar "Filter items by extension type" [ref=f34e75]:
+          - button "Extensions" [ref=f34e78] [cursor=pointer]
+          - button "Themes" [ref=f34e83] [cursor=pointer]
+      - generic [ref=f34e86]:
+        - heading "Filter by" [level=2] [ref=f34e87]
+        - generic [ref=f34e89] [cursor=pointer]:
+          - checkbox "Featured extensions" [ref=f34e91]
+          - generic [ref=f34e92]: Featured extensions
+        - generic [ref=f34e95] [cursor=pointer]:
+          - checkbox "Established publishers" [ref=f34e97]
+          - generic [ref=f34e98]: Established publishers
+      - generic [ref=f34e100]:
+        - heading "Ratings" [level=2] [ref=f34e101]
+        - radiogroup "Ratings" [ref=f34e102]:
+          - radio "5 stars" [ref=f34e103]
+          - radio "4 stars and up" [ref=f34e109]:
+            - generic [aria-hidden] [ref=f34e116]: "& up"
+          - radio "3 stars and up" [ref=f34e117]:
+            - generic [aria-hidden] [ref=f34e125]: "& up"
+          - radio "2 stars and up" [ref=f34e126]:
+            - generic [aria-hidden] [ref=f34e135]: "& up"
+      - generic [ref=f34e137]:
+        - button "Clear all filters button." [disabled] [ref=f34e138]:
+          - generic [aria-hidden] [ref=f34e140]: Clear all
+        - tooltip [aria-hidden] [ref=f34e141]: Reset your filter options.
+    - main [ref=f34e142]:
+      - generic [ref=f34e143]:
+        - heading "Search results" [level=1] [ref=f34e144]
+        - generic [ref=f34e145]:
+          - generic [ref=f34e146]:
+            - link "Page Ruler" [ref=f34e147] [cursor=pointer]:
+              - /url: ./detail/page-ruler/jcbmcnpepaddcedmjdcmhbekjhbfnlff
+            - generic [ref=f34e149]:
+              - heading "Page Ruler" [level=2] [ref=f34e151]
+              - paragraph [ref=f34e152]:
+                - img "Featured badge" [ref=f34e153]
+                - generic [ref=f34e156]: Featured
+              - generic [ref=f34e157]:
+                - img "Average rating 3.9 out of 5 stars." [ref=f34e158]:
+                  - generic [ref=f34e159]: "3.9"
+                - link "Learn more about results and reviews \"Page Ruler\"." [ref=f34e168] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f34e169]: Measure page elements size in pixel with an easy-to-use ruler.
+          - generic [ref=f34e170]:
+            - link "Page Ruler – CSS Inspector & Grid Overlay" [ref=f34e171] [cursor=pointer]:
+              - /url: ./detail/page-ruler-%E2%80%93-css-inspecto/eccmicoahcpagbnibfolooaocnlceieg
+            - generic [ref=f34e173]:
+              - heading "Page Ruler – CSS Inspector & Grid Overlay" [level=2] [ref=f34e175]
+              - paragraph [ref=f34e176]:
+                - img "Featured badge" [ref=f34e177]
+                - generic [ref=f34e180]: Featured
+              - generic [ref=f34e181]:
+                - img "Average rating 3.3 out of 5 stars." [ref=f34e182]:
+                  - generic [ref=f34e183]: "3.3"
+                - link "Learn more about results and reviews \"Page Ruler – CSS Inspector & Grid Overlay\"." [ref=f34e192] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f34e193]: Screen ruler, element inspector, grid overlay & CSS/Tailwind export for pixel-perfect UI design and frontend QA.
+          - generic [ref=f34e194]:
+            - 'link "Page Ruler: Your Web Design Companion" [ref=f34e195] [cursor=pointer]':
+              - /url: ./detail/page-ruler-your-web-desig/ochbejipanddbdcigjldfpggbpelplbh
+            - generic [ref=f34e197]:
+              - 'heading "Page Ruler: Your Web Design Companion" [level=2] [ref=f34e199]'
+              - paragraph
+              - generic [ref=f34e200]:
+                - img "Average rating 3.3 out of 5 stars." [ref=f34e201]:
+                  - generic [ref=f34e202]: "3.3"
+                - 'link "Learn more about results and reviews \"Page Ruler: Your Web Design Companion\"." [ref=f34e211] [cursor=pointer]':
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f34e212]: Page ruler extension to measure elements on web pages. An advanced page ruler tool to measure the size of web elements in pixels.
+          - generic [ref=f34e213]:
+            - link "Page Ruler" [ref=f34e214] [cursor=pointer]:
+              - /url: ./detail/page-ruler/fklmdndlkcmopcnbpcakbllgiclmkplk
+            - generic [ref=f34e216]:
+              - heading "Page Ruler" [level=2] [ref=f34e218]
+              - paragraph
+              - generic [ref=f34e219]:
+                - img "Average rating 4.3 out of 5 stars." [ref=f34e220]:
+                  - generic [ref=f34e221]: "4.3"
+                - link "Learn more about results and reviews \"Page Ruler\"." [ref=f34e230] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f34e231]: Use page ruler to measure page elements size in pixel with easy to use ruler.
+          - generic [ref=f34e232]:
+            - link "Scope Master Page Ruler" [ref=f34e233] [cursor=pointer]:
+              - /url: ./detail/scope-master-page-ruler/dlbfbjkldnioadbilgbfilbhafplbnan
+            - generic [ref=f34e235]:
+              - heading "Scope Master Page Ruler" [level=2] [ref=f34e237]
+              - paragraph
+              - generic [ref=f34e238]:
+                - img "Average rating 5 out of 5 stars." [ref=f34e239]:
+                  - generic [ref=f34e240]: "5.0"
+                - link "Learn more about results and reviews \"Scope Master Page Ruler\"." [ref=f34e249] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f34e250]: Accurate Pixel Measurement Tool for Web Elements and Pages - Free & Efficient!
+          - generic [ref=f34e251]:
+            - link "Screen Ruler - Measure and Inspect the Web" [ref=f34e252] [cursor=pointer]:
+              - /url: ./detail/screen-ruler-measure-and/jfbbgijjljfbolelfkopkhbfjajjampm
+            - generic [ref=f34e254]:
+              - heading "Screen Ruler - Measure and Inspect the Web" [level=2] [ref=f34e256]
+              - paragraph [ref=f34e257]:
+                - img "Published by verified publisher" [ref=f34e258]
+                - generic [ref=f34e261]: screen-ruler.com
+                - img "Featured badge" [ref=f34e262]
+                - generic [ref=f34e265]: Featured
+              - generic [ref=f34e266]:
+                - img "Average rating 4.3 out of 5 stars." [ref=f34e267]:
+                  - generic [ref=f34e268]: "4.3"
+                - link "Learn more about results and reviews \"Screen Ruler - Measure and Inspect the Web\"." [ref=f34e277] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f34e278]: Web inspector for designers & developers. Measure elements, extract CSS & colors, capture screenshots & more.
+          - generic [ref=f34e279]:
+            - link "Easy Page Ruler" [ref=f34e280] [cursor=pointer]:
+              - /url: ./detail/easy-page-ruler/dhpoohkhfkomjiicdickkebndjiaiean
+            - generic [ref=f34e282]:
+              - heading "Easy Page Ruler" [level=2] [ref=f34e284]
+              - paragraph
+              - generic [ref=f34e285]:
+                - img "Average rating 0 out of 5 stars." [ref=f34e286]:
+                  - generic [ref=f34e287]: "0.0"
+                - link "Learn more about results and reviews \"Easy Page Ruler\"." [ref=f34e296] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f34e297]: Introducing Easy Page Ruler - your go-to tool for precise pixel measurements on any webpage.
+          - generic [ref=f34e298]:
+            - link "Page Grid Ruler" [ref=f34e299] [cursor=pointer]:
+              - /url: ./detail/page-grid-ruler/mpnmjbcgbfnbfjmljblfngeofmnehdig
+            - generic [ref=f34e301]:
+              - heading "Page Grid Ruler" [level=2] [ref=f34e303]
+              - paragraph [ref=f34e304]:
+                - img "Featured badge" [ref=f34e305]
+                - generic [ref=f34e308]: Featured
+              - generic [ref=f34e309]:
+                - img "Average rating 0 out of 5 stars." [ref=f34e310]:
+                  - generic [ref=f34e311]: "0.0"
+                - link "Learn more about results and reviews \"Page Grid Ruler\"." [ref=f34e320] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f34e321]: Draw a grid view, get page dimensions in pixel (px) unit and draw a rule
+          - generic [ref=f34e322]:
+            - link "Page Ruler Pro" [ref=f34e323] [cursor=pointer]:
+              - /url: ./detail/page-ruler-pro/cpaecmblagpobngdoiolohafananckaj
+            - generic [ref=f34e325]:
+              - heading "Page Ruler Pro" [level=2] [ref=f34e327]
+              - paragraph
+              - generic [ref=f34e328]:
+                - img "Average rating 5 out of 5 stars." [ref=f34e329]:
+                  - generic [ref=f34e330]: "5.0"
+                - link "Learn more about results and reviews \"Page Ruler Pro\"." [ref=f34e339] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f34e340]: Page Ruler to measure elements, distances and layouts. Measure it with grid, snap on any website.
+          - generic [ref=f34e341]:
+            - link "Metric Spy Page Ruler" [ref=f34e342] [cursor=pointer]:
+              - /url: ./detail/metric-spy-page-ruler/plifocdammkpinhfihphfbbnlggbcjpo
+            - generic [ref=f34e344]:
+              - heading "Metric Spy Page Ruler" [level=2] [ref=f34e346]
+              - paragraph [ref=f34e347]:
+                - img "Featured badge" [ref=f34e348]
+                - generic [ref=f34e351]: Featured
+              - generic [ref=f34e352]:
+                - img "Average rating 5 out of 5 stars." [ref=f34e353]:
+                  - generic [ref=f34e354]: "5.0"
+                - link "Learn more about results and reviews \"Metric Spy Page Ruler\"." [ref=f34e363] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f34e364]: Quickly Measure Elements on Web Pages with a Ruler Tool, Free Selection, and Convenient Keyboard Shortcuts.
+          - button "Load more" [ref=f34e367] [cursor=pointer]
+  - contentinfo [ref=f34e370]:
+    - list [ref=f34e371]:
+      - listitem [ref=f34e372]:
+        - link "About Chrome Web Store" [ref=f34e373] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en
+        - text: •
+      - listitem [ref=f34e374]:
+        - link "Developer Dashboard" [ref=f34e375] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f34e376]:
+        - link "Privacy Policy" [ref=f34e377] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en
+        - text: •
+      - listitem [ref=f34e378]:
+        - link "Terms of Service" [ref=f34e379] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en/gallery_tos.html
+        - text: •
+      - listitem [ref=f34e380]:
+        - link "Help" [ref=f34e381] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en
+  - generic [ref=f34e382]: Page loaded.

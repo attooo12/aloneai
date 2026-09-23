@@ -264,6 +264,58 @@ try {
   const bad = await St.getSettings();
   check('settings: defaults + sanitising', st.autoKeep === 5 && bad.autoMinutes === 1 && bad.autoKeep === Cfg.DEFAULT_SETTINGS.autoKeep && bad.backup === 'off');
 
+  // ================= review fixes =================
+  {
+    const t = S.cleanSession({ name: 'n'.repeat(119) + '😀', tabs: [{ url: 'https://x.example/', title: 'a'.repeat(S.LIMITS.title - 1) + '😀 more' }] }).session;
+    const lone = (x) => /[\ud800-\udbff](?![\udc00-\udfff])|(?:^|[^\ud800-\udbff])[\udc00-\udfff]/.test(x);
+    check('unicode: cutting a long title/name never leaves half an emoji', !lone(t.windows[0].tabs[0].title) && !lone(t.name) && t.windows[0].tabs[0].title.length === S.LIMITS.title - 1, t.windows[0].tabs[0].title.slice(-3));
+    check('unicode: CJK/RTL/emoji titles kept intact', S.cleanSession({ tabs: [{ url: 'https://x.example/', title: '日本語 עברית 👩‍💻' }] }).session.windows[0].tabs[0].title === '日本語 עברית 👩‍💻');
+  }
+  L.data.clear();
+  await St.setSettings({ autoKeep: 5 });
+  // user-protected snapshots are never rotated out, even by more than PROTECTED_MAX automatic protections
+  const mine = await snap(30, 'mine');
+  await St.setProtected(mine.added.id, true);
+  for (let i = 0; i < Cfg.PROTECTED_MAX + 3; i++) { await snap(20, 'up' + i); await snap(1, 'ud' + i); }
+  const ai = await St.getIndex('auto');
+  check('protect: a snapshot the user protected is never rotated out', ai.some((e) => e.id === mine.added.id && e.keep === 'user') && (await St.getSession(mine.added.id)) && ai.filter((e) => e.keep === true).length === Cfg.PROTECTED_MAX, JSON.stringify(ai.map((e) => e.keep)));
+  await L.set({ 'idx:auto': [...L.data.get('idx:auto'), { broken: true }] }); // one damaged entry => rebuild
+  check('protect: an index rebuild keeps "user" protection', (await St.getIndex('auto')).find((e) => e.id === mine.added.id)?.keep === 'user');
+  const delMine = await St.deleteSession('auto', mine.added.id);
+  await St.undoDelete(delMine);
+  check('protect: delete + undo keeps "user" protection', (await St.getIndex('auto')).find((e) => e.id === mine.added.id)?.keep === 'user');
+  // rotation can't push out the newest full snapshot or the newest "Previous browser session"
+  L.data.clear();
+  await St.setSettings({ autoKeep: 5 });
+  const full = await snap(8, 'full');
+  for (let i = 0; i < 12; i++) await snap(2, 'closed' + i, 'window-closed', 'window');
+  check('rotation: many closed-window snapshots never evict the newest full snapshot', (await St.getIndex('auto')).some((e) => e.id === full.added.id) && (await St.getIndex('auto')).filter((e) => !e.keep).length === 5);
+  const prev = await St.addAutoSnapshot({ windows: [win(8, 'full')] }, 'previous-session', 'all');
+  check('rotation: "Previous browser session" recorded even when unchanged', prev.added?.reason === 'previous-session');
+  for (let i = 0; i < 12; i++) await snap(6 + (i % 2), 'later' + i);
+  check('rotation: the newest "Previous browser session" survives later snapshots', (await St.getIndex('auto')).some((e) => e.id === prev.added.id) && (await St.getIndex('auto')).filter((e) => !e.keep).length === 5);
+  // delete -> trash -> undo after the popup closed
+  L.data.clear();
+  const d1 = await St.saveNamed(cap(2, 'd1'), 'Del one');
+  const d2 = await St.saveNamed(cap(3, 'd2'), 'Del two');
+  const gone = await St.deleteSessions('named', [d1.id, d2.id]);
+  const tr = await St.getTrash();
+  check('trash: a delete is kept as trash in the same write', gone.length === 2 && tr?.sessions.length === 2 && (await St.getIndex('named')).length === 0 && !L.data.has('s:' + d1.id));
+  check('trash: not offered once it is old', (await St.getTrash(Date.now() + St.TRASH_UNDO_MS + 1)) === null);
+  await St.undoDelete(tr.sessions); // e.g. from a popup opened later
+  check('trash: undo from storage brings both back and clears the trash', (await St.getIndex('named')).length === 2 && (await St.getSession(d2.id)).windows[0].tabs.length === 3 && !L.data.has('trash'));
+  // settings writes don't lose each other
+  await Promise.all([St.setSettings({ backupLast: 123 }), St.setSettings({ autoMinutes: 15 }), St.setSettings({ lazy: true })]);
+  const ss = await St.getSettings();
+  check('settings: concurrent writes all kept', ss.backupLast === 123 && ss.autoMinutes === 15 && ss.lazy === true, JSON.stringify(ss));
+  // scheduled backup: a last-backup time in the future (clock moved back) doesn't stop backups
+  const B = await import(join(tmp, 'ext/backup.js'));
+  await St.setSettings({ backup: 'daily', backupLast: Date.now() + 5 * 86400e3 });
+  const fut = await B.backupIfDue();
+  await St.setSettings({ backupLast: Date.now() - 3600e3 });
+  check('backup: due again when the last backup is "in the future"; not due 1 h after a backup', fut.skipped !== 'not-due' && (await B.backupIfDue()).skipped === 'not-due', JSON.stringify(fut));
+  await St.setSettings({ backup: 'off' });
+
   // performance: 300 named sessions, index read is cheap
   L.data.clear();
   await chrome.storage.sync.set({ license: makeToken(pem) });

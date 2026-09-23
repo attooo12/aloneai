@@ -1,0 +1,213 @@
+- generic [ref=f47e1]:
+  - banner [ref=f47e2]:
+    - link "Skip to main content" [ref=f47e3] [cursor=pointer]
+    - generic [ref=f47e4]:
+      - generic [ref=f47e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f47e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f47e8]
+          - generic [ref=f47e9]: Chrome Web Store
+        - search "Sitewide" [ref=f47e10]:
+          - generic [ref=f47e13]:
+            - combobox "Search Chrome Web Store" [active] [ref=f47e15]: dummy run
+            - button "Clear search" [ref=f47e17] [cursor=pointer]
+        - generic [ref=f47e20]:
+          - button "More options menu" [ref=f47e24] [cursor=pointer]
+          - generic [ref=f47e34]:
+            - button "Google apps" [ref=f47e38] [cursor=pointer]
+            - link "Sign in" [ref=f47e42] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/search/dummy%2520run?hl%3Den&followup=https://chromewebstore.google.com/search/dummy%2520run?hl%3Den&hl=en&ec=GAZApQM
+      - tablist [ref=f47e46]:
+        - generic [ref=f47e49]:
+          - tab "Discover" [ref=f47e50] [cursor=pointer]
+          - tab "Extensions" [ref=f47e51] [cursor=pointer]
+          - tab "Themes" [ref=f47e52] [cursor=pointer]
+    - dialog [ref=f47e53]:
+      - complementary [ref=f47e54]:
+        - heading "Switch to Chrome?" [level=2] [ref=f47e56]
+        - paragraph [ref=f47e57]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f47e58]:
+          - button "No thanks" [ref=f47e60] [cursor=pointer]
+          - generic [ref=f47e64] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f47e65]: "Yes"
+            - link "Yes" [ref=f47e66]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - generic [ref=f47e70]:
+    - generic [ref=f47e72]:
+      - generic [ref=f47e73]:
+        - heading "Type" [level=2] [ref=f47e74]
+        - toolbar "Filter items by extension type" [ref=f47e75]:
+          - button "Extensions" [ref=f47e78] [cursor=pointer]
+          - button "Themes" [ref=f47e83] [cursor=pointer]
+      - generic [ref=f47e86]:
+        - heading "Filter by" [level=2] [ref=f47e87]
+        - generic [ref=f47e89] [cursor=pointer]:
+          - checkbox "Featured extensions" [ref=f47e91]
+          - generic [ref=f47e92]: Featured extensions
+        - generic [ref=f47e95] [cursor=pointer]:
+          - checkbox "Established publishers" [ref=f47e97]
+          - generic [ref=f47e98]: Established publishers
+      - generic [ref=f47e100]:
+        - heading "Ratings" [level=2] [ref=f47e101]
+        - radiogroup "Ratings" [ref=f47e102]:
+          - radio "5 stars" [ref=f47e103]
+          - radio "4 stars and up" [ref=f47e109]:
+            - generic [aria-hidden] [ref=f47e116]: "& up"
+          - radio "3 stars and up" [ref=f47e117]:
+            - generic [aria-hidden] [ref=f47e125]: "& up"
+          - radio "2 stars and up" [ref=f47e126]:
+            - generic [aria-hidden] [ref=f47e135]: "& up"
+      - generic [ref=f47e137]:
+        - button "Clear all filters button." [disabled] [ref=f47e138]:
+          - generic [aria-hidden] [ref=f47e140]: Clear all
+        - tooltip [aria-hidden] [ref=f47e141]: Reset your filter options.
+    - main [ref=f47e142]:
+      - generic [ref=f47e143]:
+        - heading "Search results" [level=1] [ref=f47e144]
+        - generic [ref=f47e145]:
+          - generic [ref=f47e146]:
+            - link "Bulk Delete Tweets — Free X (Twitter) Post Cleaner" [ref=f47e147] [cursor=pointer]:
+              - /url: ./detail/bulk-delete-tweets-%E2%80%94-free/gjkcmaamjpgjnmaljdabjopcmgebnhac
+            - generic [ref=f47e149]:
+              - heading "Bulk Delete Tweets — Free X (Twitter) Post Cleaner" [level=2] [ref=f47e151]
+              - paragraph [ref=f47e152]:
+                - link "https://seolust.com/" [ref=f47e153] [cursor=pointer]:
+                  - /url: https://seolust.com/
+              - generic [ref=f47e154]:
+                - img "Average rating 0 out of 5 stars." [ref=f47e155]:
+                  - generic [ref=f47e156]: "0.0"
+                - link "Learn more about results and reviews \"Bulk Delete Tweets — Free X (Twitter) Post Cleaner\"." [ref=f47e165] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f47e166]: Bulk delete all your tweets, replies & X posts for free. Mass-delete right in your browser — no password, no API fees.
+          - generic [ref=f47e167]:
+            - link "Bulk Delete Videos on TikTok" [ref=f47e168] [cursor=pointer]:
+              - /url: ./detail/bulk-delete-videos-on-tik/dlmdmkbajbiieiecpcohafipiefnlgnd
+            - generic [ref=f47e170]:
+              - heading "Bulk Delete Videos on TikTok" [level=2] [ref=f47e172]
+              - paragraph [ref=f47e173]:
+                - link "bulkdeletetools.com" [ref=f47e174] [cursor=pointer]:
+                  - /url: https://bulkdeletetools.com
+              - generic [ref=f47e175]:
+                - img "Average rating 0 out of 5 stars." [ref=f47e176]:
+                  - generic [ref=f47e177]: "0.0"
+                - link "Learn more about results and reviews \"Bulk Delete Videos on TikTok\"." [ref=f47e186] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f47e187]: Bulk delete your own TikTok videos. Filter by date or keyword, preview with a dry run, then delete safely. Restorable 30 days.
+          - generic [ref=f47e188]:
+            - link "YouTube Video Batch Publisher" [ref=f47e189] [cursor=pointer]:
+              - /url: ./detail/youtube-video-batch-publi/ekbndmbpefpfcjebbcegdcnoladjanfc
+            - generic [ref=f47e191]:
+              - heading "YouTube Video Batch Publisher" [level=2] [ref=f47e193]
+              - paragraph
+              - generic [ref=f47e194]:
+                - img "Average rating 4.2 out of 5 stars." [ref=f47e195]:
+                  - generic [ref=f47e196]: "4.2"
+                - link "Learn more about results and reviews \"YouTube Video Batch Publisher\"." [ref=f47e205] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f47e206]: Batch publish, schedule, and manage YouTube videos with templates, find & replace, and more.
+          - generic [ref=f47e207]:
+            - link "Test Data Generator & Dummy Data Filler" [ref=f47e208] [cursor=pointer]:
+              - /url: ./detail/test-data-generator-dummy/ijbgjhonlgbcfodaljlmeafplnaelhlk
+            - generic [ref=f47e210]:
+              - heading "Test Data Generator & Dummy Data Filler" [level=2] [ref=f47e212]
+              - paragraph
+              - generic [ref=f47e213]:
+                - img "Average rating 5 out of 5 stars." [ref=f47e214]:
+                  - generic [ref=f47e215]: "5.0"
+                - link "Learn more about results and reviews \"Test Data Generator & Dummy Data Filler\"." [ref=f47e224] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f47e225]: Use Test Data Generator to auto fill web forms with dummy data.
+          - generic [ref=f47e226]:
+            - link "Splendid Bookmarks for AI Agents" [ref=f47e227] [cursor=pointer]:
+              - /url: ./detail/splendid-bookmarks-for-ai/ehmdjfhakpifieboiogjemfdbgaemmaj
+            - generic [ref=f47e229]:
+              - heading "Splendid Bookmarks for AI Agents" [level=2] [ref=f47e231]
+              - paragraph
+              - generic [ref=f47e232]:
+                - img "Average rating 0 out of 5 stars." [ref=f47e233]:
+                  - generic [ref=f47e234]: "0.0"
+                - link "Learn more about results and reviews \"Splendid Bookmarks for AI Agents\"." [ref=f47e243] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f47e244]: Let coding agents search, move and rename your bookmarks, with dry runs, verified backups and rollback.
+          - generic [ref=f47e245]:
+            - link "FlowFav" [ref=f47e246] [cursor=pointer]:
+              - /url: ./detail/flowfav/iocighcgecbokpjdjjpecoacladnchlo
+            - generic [ref=f47e248]:
+              - heading "FlowFav" [level=2] [ref=f47e250]
+              - paragraph
+              - generic [ref=f47e251]:
+                - img "Average rating 0 out of 5 stars." [ref=f47e252]:
+                  - generic [ref=f47e253]: "0.0"
+                - link "Learn more about results and reviews \"FlowFav\"." [ref=f47e262] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f47e263]: Save favorite URLs, organize them into categories, and record/replay browser interactions.
+          - generic [ref=f47e264]:
+            - link "GumBoost" [ref=f47e265] [cursor=pointer]:
+              - /url: ./detail/gumboost/hpmhmnonicjffdnmclfpmakinjglbopk
+            - generic [ref=f47e267]:
+              - heading "GumBoost" [level=2] [ref=f47e269]
+              - paragraph
+              - generic [ref=f47e270]:
+                - img "Average rating 4 out of 5 stars." [ref=f47e271]:
+                  - generic [ref=f47e272]: "4.0"
+                - link "Learn more about results and reviews \"GumBoost\"." [ref=f47e281] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f47e282]: Repost expired Gumtree ads fast. GumBoost+ unlocks unlimited reposts.
+          - generic [ref=f47e283]:
+            - link "Viraholic" [ref=f47e284] [cursor=pointer]:
+              - /url: ./detail/viraholic/ljnecbmaokhhncanelailolflheamieg
+            - generic [ref=f47e286]:
+              - heading "Viraholic" [level=2] [ref=f47e288]
+              - paragraph
+              - generic [ref=f47e289]:
+                - img "Average rating 0 out of 5 stars." [ref=f47e290]:
+                  - generic [ref=f47e291]: "0.0"
+                - link "Learn more about results and reviews \"Viraholic\"." [ref=f47e300] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f47e301]: AI reply assistant for your X & LinkedIn account. Drafts in-context replies from your feed; you approve before anything posts.
+          - generic [ref=f47e302]:
+            - link "Submit Auto-Clicker (Safe)" [ref=f47e303] [cursor=pointer]:
+              - /url: ./detail/submit-auto-clicker-safe/dnglmkgbpidndlhffnbihclfmkcedolf
+            - generic [ref=f47e305]:
+              - heading "Submit Auto-Clicker (Safe)" [level=2] [ref=f47e307]
+              - paragraph
+              - generic [ref=f47e308]:
+                - img "Average rating 0 out of 5 stars." [ref=f47e309]:
+                  - generic [ref=f47e310]: "0.0"
+                - link "Learn more about results and reviews \"Submit Auto-Clicker (Safe)\"." [ref=f47e319] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f47e320]: Allowlist-based submit button auto-clicker with dry-run safeguards.
+          - generic [ref=f47e321]:
+            - link "LinkedIn Sent Invitations Cleaner" [ref=f47e322] [cursor=pointer]:
+              - /url: ./detail/linkedin-sent-invitations/jopphflhmpmfjgpecgnggenmgcjckfab
+            - generic [ref=f47e324]:
+              - heading "LinkedIn Sent Invitations Cleaner" [level=2] [ref=f47e326]
+              - paragraph
+              - generic [ref=f47e327]:
+                - img "Average rating 5 out of 5 stars." [ref=f47e328]:
+                  - generic [ref=f47e329]: "5.0"
+                - link "Learn more about results and reviews \"LinkedIn Sent Invitations Cleaner\"." [ref=f47e338] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f47e339]: Paginate sent invitations and withdraw older invites with controlled concurrency.
+          - button "Load more" [ref=f47e342] [cursor=pointer]
+  - contentinfo [ref=f47e345]:
+    - list [ref=f47e346]:
+      - listitem [ref=f47e347]:
+        - link "About Chrome Web Store" [ref=f47e348] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en
+        - text: •
+      - listitem [ref=f47e349]:
+        - link "Developer Dashboard" [ref=f47e350] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f47e351]:
+        - link "Privacy Policy" [ref=f47e352] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en
+        - text: •
+      - listitem [ref=f47e353]:
+        - link "Terms of Service" [ref=f47e354] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en/gallery_tos.html
+        - text: •
+      - listitem [ref=f47e355]:
+        - link "Help" [ref=f47e356] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en

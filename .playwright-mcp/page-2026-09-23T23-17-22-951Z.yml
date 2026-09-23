@@ -1,0 +1,226 @@
+- generic [ref=f36e1]:
+  - banner [ref=f36e2]:
+    - link "Skip to main content" [ref=f36e3] [cursor=pointer]
+    - generic [ref=f36e4]:
+      - generic [ref=f36e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f36e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f36e8]
+          - generic [ref=f36e9]: Chrome Web Store
+        - search "Sitewide" [ref=f36e10]:
+          - generic [ref=f36e13]:
+            - combobox "Search Chrome Web Store" [active] [ref=f36e15]: fake filler
+            - button "Clear search" [ref=f36e17] [cursor=pointer]
+        - generic [ref=f36e20]:
+          - button "More options menu" [ref=f36e24] [cursor=pointer]
+          - generic [ref=f36e34]:
+            - button "Google apps" [ref=f36e38] [cursor=pointer]
+            - link "Sign in" [ref=f36e42] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/search/fake%2520filler?hl%3Den&followup=https://chromewebstore.google.com/search/fake%2520filler?hl%3Den&hl=en&ec=GAZApQM
+      - tablist [ref=f36e46]:
+        - generic [ref=f36e49]:
+          - tab "Discover" [ref=f36e50] [cursor=pointer]
+          - tab "Extensions" [ref=f36e51] [cursor=pointer]
+          - tab "Themes" [ref=f36e52] [cursor=pointer]
+    - dialog [ref=f36e53]:
+      - complementary [ref=f36e54]:
+        - heading "Switch to Chrome?" [level=2] [ref=f36e56]
+        - paragraph [ref=f36e57]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f36e58]:
+          - button "No thanks" [ref=f36e60] [cursor=pointer]
+          - generic [ref=f36e64] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f36e65]: "Yes"
+            - link "Yes" [ref=f36e66]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - generic [ref=f36e70]:
+    - generic [ref=f36e72]:
+      - generic [ref=f36e73]:
+        - heading "Type" [level=2] [ref=f36e74]
+        - toolbar "Filter items by extension type" [ref=f36e75]:
+          - button "Extensions" [ref=f36e78] [cursor=pointer]
+          - button "Themes" [ref=f36e83] [cursor=pointer]
+      - generic [ref=f36e86]:
+        - heading "Filter by" [level=2] [ref=f36e87]
+        - generic [ref=f36e89] [cursor=pointer]:
+          - checkbox "Featured extensions" [ref=f36e91]
+          - generic [ref=f36e92]: Featured extensions
+        - generic [ref=f36e95] [cursor=pointer]:
+          - checkbox "Established publishers" [ref=f36e97]
+          - generic [ref=f36e98]: Established publishers
+      - generic [ref=f36e100]:
+        - heading "Ratings" [level=2] [ref=f36e101]
+        - radiogroup "Ratings" [ref=f36e102]:
+          - radio "5 stars" [ref=f36e103]
+          - radio "4 stars and up" [ref=f36e109]:
+            - generic [aria-hidden] [ref=f36e116]: "& up"
+          - radio "3 stars and up" [ref=f36e117]:
+            - generic [aria-hidden] [ref=f36e125]: "& up"
+          - radio "2 stars and up" [ref=f36e126]:
+            - generic [aria-hidden] [ref=f36e135]: "& up"
+      - generic [ref=f36e137]:
+        - button "Clear all filters button." [disabled] [ref=f36e138]:
+          - generic [aria-hidden] [ref=f36e140]: Clear all
+        - tooltip [aria-hidden] [ref=f36e141]: Reset your filter options.
+    - main [ref=f36e142]:
+      - generic [ref=f36e143]:
+        - heading "Search results" [level=1] [ref=f36e144]
+        - generic [ref=f36e145]:
+          - generic [ref=f36e146]:
+            - link "Fake Filler" [ref=f36e147] [cursor=pointer]:
+              - /url: ./detail/fake-filler/bnjjngeaknajbdcgpfkgnonkmififhfo
+            - generic [ref=f36e149]:
+              - heading "Fake Filler" [level=2] [ref=f36e151]
+              - paragraph [ref=f36e152]:
+                - img "Published by verified publisher" [ref=f36e153]
+                - generic [ref=f36e156]: fakefiller.com
+                - img "Featured badge" [ref=f36e157]
+                - generic [ref=f36e160]: Featured
+              - generic [ref=f36e161]:
+                - img "Average rating 4.4 out of 5 stars." [ref=f36e162]:
+                  - generic [ref=f36e163]: "4.4"
+                - link "Learn more about results and reviews \"Fake Filler\"." [ref=f36e172] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f36e173]: A form filler that fills all inputs on a page with fake/dummy data.
+          - generic [ref=f36e174]:
+            - link "Fake Filler 2" [ref=f36e175] [cursor=pointer]:
+              - /url: ./detail/fake-filler-2/cjikmgjafbapgbmlaobilpfjhoimmblo
+            - generic [ref=f36e177]:
+              - heading "Fake Filler 2" [level=2] [ref=f36e179]
+              - paragraph
+              - generic [ref=f36e180]:
+                - img "Average rating 4.8 out of 5 stars." [ref=f36e181]:
+                  - generic [ref=f36e182]: "4.8"
+                - link "Learn more about results and reviews \"Fake Filler 2\"." [ref=f36e191] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f36e192]: A form filler that fills all inputs on a page with fake/dummy data.
+          - generic [ref=f36e193]:
+            - link "AI Fake Filler - Form Autofill & Realistic Data" [ref=f36e194] [cursor=pointer]:
+              - /url: ./detail/ai-fake-filler-form-autof/lpnplglgchppfgldplhofjfgnlljgbme
+            - generic [ref=f36e196]:
+              - heading "AI Fake Filler - Form Autofill & Realistic Data" [level=2] [ref=f36e198]
+              - paragraph
+              - generic [ref=f36e199]:
+                - img "Average rating 4 out of 5 stars." [ref=f36e200]:
+                  - generic [ref=f36e201]: "4.0"
+                - link "Learn more about results and reviews \"AI Fake Filler - Form Autofill & Realistic Data\"." [ref=f36e210] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f36e211]: Generate realistic data and auto-fill any form instantly with AI-powered, context-aware accuracy in all languages.
+          - generic [ref=f36e212]:
+            - link "Fake Data - A form filler you won't hate" [ref=f36e213] [cursor=pointer]:
+              - /url: ./detail/fake-data-a-form-filler-y/gchcfdihakkhjgfmokemfeembfokkajj
+            - generic [ref=f36e215]:
+              - heading "Fake Data - A form filler you won't hate" [level=2] [ref=f36e217]
+              - paragraph [ref=f36e218]:
+                - img "Published by verified publisher" [ref=f36e219]
+                - generic [ref=f36e222]: fakedata.pro
+                - img "Featured badge" [ref=f36e223]
+                - generic [ref=f36e226]: Featured
+              - generic [ref=f36e227]:
+                - img "Average rating 4.7 out of 5 stars." [ref=f36e228]:
+                  - generic [ref=f36e229]: "4.7"
+                - link "Learn more about results and reviews \"Fake Data - A form filler you won't hate\"." [ref=f36e238] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f36e239]: The most advanced tool for filling forms with fake and random data.
+          - generic [ref=f36e240]:
+            - link "Fake Filler Indian" [ref=f36e241] [cursor=pointer]:
+              - /url: ./detail/fake-filler-indian/djebpbfndpmiogcligbnfmjjjibjcbnn
+            - generic [ref=f36e243]:
+              - heading "Fake Filler Indian" [level=2] [ref=f36e245]
+              - paragraph
+              - generic [ref=f36e246]:
+                - img "Average rating 5 out of 5 stars." [ref=f36e247]:
+                  - generic [ref=f36e248]: "5.0"
+                - link "Learn more about results and reviews \"Fake Filler Indian\"." [ref=f36e257] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f36e258]: A form filler that fills all inputs on a page with indian's fake/dummy data.
+          - generic [ref=f36e259]:
+            - link "Smart Filler - AI-Powered Form Autofill & Fake Data Generator" [ref=f36e260] [cursor=pointer]:
+              - /url: ./detail/smart-filler-ai-powered-f/cbmbffimofdigpeacpefklgijkodgalb
+            - generic [ref=f36e262]:
+              - heading "Smart Filler - AI-Powered Form Autofill & Fake Data Generator" [level=2] [ref=f36e264]
+              - paragraph [ref=f36e265]:
+                - img "Published by verified publisher" [ref=f36e266]
+                - generic [ref=f36e269]: acowebs.com/
+              - generic [ref=f36e270]:
+                - img "Average rating 5 out of 5 stars." [ref=f36e271]:
+                  - generic [ref=f36e272]: "5.0"
+                - link "Learn more about results and reviews \"Smart Filler - AI-Powered Form Autofill & Fake Data Generator\"." [ref=f36e281] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f36e282]: Save time with Smart Filler - the AI autofill extension that fills forms using fake data and pre set profiles.
+          - generic [ref=f36e283]:
+            - link "FakerFill – Form Filler & Fake Data Generator" [ref=f36e284] [cursor=pointer]:
+              - /url: ./detail/fakerfill-%E2%80%93-form-filler-f/ajepcgeokfoanenjolfjfpfdbcpddooe
+            - generic [ref=f36e286]:
+              - heading "FakerFill – Form Filler & Fake Data Generator" [level=2] [ref=f36e288]
+              - paragraph [ref=f36e289]:
+                - img "Published by verified publisher" [ref=f36e290]
+                - generic [ref=f36e293]: fakerfill.com
+                - img "Featured badge" [ref=f36e294]
+                - generic [ref=f36e297]: Featured
+              - generic [ref=f36e298]:
+                - img "Average rating 5 out of 5 stars." [ref=f36e299]:
+                  - generic [ref=f36e300]: "5.0"
+                - link "Learn more about results and reviews \"FakerFill – Form Filler & Fake Data Generator\"." [ref=f36e309] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f36e310]: Auto-fill forms instantly with realistic fake data. A powerful form filler & test data generator for developers and QA teams.
+          - generic [ref=f36e311]:
+            - link "Yi Fake Filler" [ref=f36e312] [cursor=pointer]:
+              - /url: ./detail/yi-fake-filler/piccikjemhibiibpjjpbdpdagkhipeao
+            - generic [ref=f36e314]:
+              - heading "Yi Fake Filler" [level=2] [ref=f36e316]
+              - paragraph [ref=f36e317]:
+                - img "Published by verified publisher" [ref=f36e318]
+                - generic [ref=f36e321]: mengyi.me
+              - generic [ref=f36e322]:
+                - img "Average rating 0 out of 5 stars." [ref=f36e323]:
+                  - generic [ref=f36e324]: "0.0"
+                - link "Learn more about results and reviews \"Yi Fake Filler\"." [ref=f36e333] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f36e334]: Fills web forms with fake data. Easy, powerful, and clean!
+          - generic [ref=f36e335]:
+            - link "Fake Data Filler" [ref=f36e336] [cursor=pointer]:
+              - /url: ./detail/fake-data-filler/mbnjmgnejijenkoahpmhpnckooobalhh
+            - generic [ref=f36e338]:
+              - heading "Fake Data Filler" [level=2] [ref=f36e340]
+              - paragraph
+              - generic [ref=f36e341]:
+                - img "Average rating 5 out of 5 stars." [ref=f36e342]:
+                  - generic [ref=f36e343]: "5.0"
+                - link "Learn more about results and reviews \"Fake Data Filler\"." [ref=f36e352] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f36e353]: Generate realistic fake data and automatically fill matching web form fields.
+          - generic [ref=f36e354]:
+            - link "Form Filler" [ref=f36e355] [cursor=pointer]:
+              - /url: ./detail/form-filler/mgnbpcjhmedeihkkjgdahegokmpbggdn
+            - generic [ref=f36e357]:
+              - heading "Form Filler" [level=2] [ref=f36e359]
+              - paragraph
+              - generic [ref=f36e360]:
+                - img "Average rating 0 out of 5 stars." [ref=f36e361]:
+                  - generic [ref=f36e362]: "0.0"
+                - link "Learn more about results and reviews \"Form Filler\"." [ref=f36e371] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f36e372]: One-click Form Filler Chrome extension auto-fills web forms with fake filler data. Test forms with this fast and reliable extension
+          - button "Load more" [ref=f36e375] [cursor=pointer]
+  - contentinfo [ref=f36e378]:
+    - list [ref=f36e379]:
+      - listitem [ref=f36e380]:
+        - link "About Chrome Web Store" [ref=f36e381] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en
+        - text: •
+      - listitem [ref=f36e382]:
+        - link "Developer Dashboard" [ref=f36e383] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f36e384]:
+        - link "Privacy Policy" [ref=f36e385] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en
+        - text: •
+      - listitem [ref=f36e386]:
+        - link "Terms of Service" [ref=f36e387] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en/gallery_tos.html
+        - text: •
+      - listitem [ref=f36e388]:
+        - link "Help" [ref=f36e389] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en
+  - generic [ref=f36e390]: Page loaded.

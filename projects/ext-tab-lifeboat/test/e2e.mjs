@@ -37,7 +37,9 @@ const pem = readFileSync(join(HERE, 'TEST_ONLY_private_key.pem'), 'utf8');
 const server = createServer((req, res) => {
   const name = decodeURIComponent(req.url.slice(1).split('?')[0]) || 'home';
   res.setHeader('Content-Type', 'text/html');
-  res.end(`<!doctype html><title>Page ${name}</title><h1>${name}</h1>`);
+  // "ticker": a page that changes its title every 300 ms (like a timer or an unread counter)
+  const script = name === 'ticker' ? '<script>let i = 0; setInterval(() => { document.title = "Tick " + i++; }, 300);</script>' : '';
+  res.end(`<!doctype html><title>Page ${name}</title><h1>${name}</h1>${script}`);
 }).listen(PORT, '127.0.0.1');
 
 const ctx = await chromium.launchPersistentContext(join(tmp, 'profile'), {
@@ -336,6 +338,88 @@ try {
   check('Free: backup refused (Pro)', freeBackup.ok === false && freeBackup.error === 'pro_required');
   const freeMerge = await store(async () => { try { await (await import('./store.js')).mergeInto([{ id: 'a' }, { id: 'b' }], 'x'); return 'merged'; } catch (e) { return e.code; } });
   check('Free: merge refused in the store too', freeMerge === 'pro_required');
+  // scheduled backup left on without Pro: the options page says it is paused instead of pretending
+  await store(async () => (await import('./store.js')).setSettings({ backup: 'weekly' }));
+  await drv.reload({ waitUntil: 'load' });
+  await drv.waitForSelector('body[data-ready]');
+  check('options: scheduled backup without Pro is shown as paused', /paused: they need Pro/.test(await drv.textContent('#backup-status')), await drv.textContent('#backup-status'));
+  await store(async () => (await import('./store.js')).setSettings({ backup: 'off' }));
+
+  // ---------- review fixes: live state ----------
+  const liveHas = async (suffix) => (await store(async () => (await import('./store.js')).getLive())).session.windows.some((w) => w.tabs.some((t) => t.url.endsWith(suffix)));
+  // A window with only tabs Chrome can't reopen (data:) must not shift the live state: closing the window after it
+  // must snapshot that window's own tabs.
+  const [dataWin, alignWin] = await sw.evaluate(async (origin) => {
+    const d = await chrome.windows.create({ url: 'data:text/html,only-data', focused: false });
+    const w = await chrome.windows.create({ url: origin + '/aligned-1', focused: false });
+    const t2 = await chrome.tabs.create({ windowId: w.id, url: origin + '/aligned-2', active: false });
+    const t3 = await chrome.tabs.create({ windowId: w.id, url: origin + '/aligned-3', active: false });
+    const g = await chrome.tabs.group({ tabIds: [t2.id, t3.id], createProperties: { windowId: w.id } });
+    await chrome.tabGroups.update(g, { title: 'Aligned', color: 'green' });
+    return [d.id, w.id];
+  }, ORIGIN);
+  await sleep(6000); // let the debounced live refresh from creating these windows run first
+  await sw.evaluate(() => globalThis.__tv.refreshLive());
+  const closedBefore = new Set((await idx('auto')).map((e) => e.id));
+  await sw.evaluate((wid) => chrome.windows.remove(wid), alignWin);
+  let alignSnap = null;
+  for (let i = 0; i < 40 && !alignSnap; i++) { await sleep(100); alignSnap = (await idx('auto')).find((e) => e.reason === 'window-closed' && !closedBefore.has(e.id)); }
+  const alignSession = alignSnap && await store(async (id) => (await import('./store.js')).getSession(id), alignSnap.id);
+  check('closed window next to a data:-only window: the snapshot has the closed window\'s own tabs', alignSession?.windows[0].tabs.map((t) => t.url.replace(ORIGIN, '')).join(',') === '/aligned-1,/aligned-2,/aligned-3', JSON.stringify(alignSession?.windows));
+  await sw.evaluate((wid) => chrome.windows.remove(wid), dataWin);
+  // A page that changes its title every 300 ms must not keep the live state from being written.
+  const tickTab = await sw.evaluate(async (origin) => (await chrome.tabs.create({ url: origin + '/ticker', active: false })).id, ORIGIN);
+  await sleep(2000);
+  await sw.evaluate(async (origin) => chrome.tabs.create({ url: origin + '/fresh-while-ticking', active: false }), ORIGIN);
+  await sleep(6500);
+  check('live state is written within seconds even while a page keeps changing its title', await liveHas('/fresh-while-ticking'));
+  await sw.evaluate((id) => chrome.tabs.remove(id), tickTab);
+
+  // ---------- review fixes: restore ----------
+  // Restoring from a window that only has a blank page reuses it (no extra empty window).
+  const small = (await idx('named')).find((e) => e.tabs === 6 && e.groups === 2);
+  const blank = await sw.evaluate(async () => (await chrome.windows.create({ url: 'about:blank', focused: true })).id);
+  const winsBefore = await sw.evaluate(async () => (await chrome.windows.getAll()).length);
+  const intoRes = await pop.evaluate(async (a) => chrome.runtime.sendMessage({ type: 'restore', id: a.id, intoWindowId: a.blank }), { id: small.id, blank });
+  await sleep(800);
+  const intoState = await sw.evaluate(async (wid) => {
+    const tabs = await chrome.tabs.query({ windowId: wid });
+    return { wins: (await chrome.windows.getAll()).length, urls: tabs.map((t) => t.url || t.pendingUrl), pinned: tabs[0]?.pinned, groups: (await chrome.tabGroups.query({ windowId: wid })).length };
+  }, blank);
+  check('restore from a blank window opens the tabs there, no extra window', intoRes.ok && intoRes.opened === 6 && intoState.wins === winsBefore && intoState.urls.length === 6 && !intoState.urls.includes('about:blank') && intoState.urls[0].endsWith('/pinned-home') && intoState.pinned && intoState.groups === 2, JSON.stringify([intoRes, intoState]));
+  await sw.evaluate((wid) => chrome.windows.remove(wid), blank);
+  // Big restores ask first.
+  await store(async () => (await import('./store.js')).importSessions([{ name: 'Huge research', windows: [{ tabs: Array.from({ length: 120 }, (_, i) => ({ url: `about:blank#t${i}`, title: 'T' + i })) }] }]));
+  const bigPop = watch(await ctx.newPage(), 'popup-big');
+  await bigPop.goto(`${EXT_URL}/popup.html`, { waitUntil: 'load' });
+  await bigPop.waitForSelector('body[data-ready]');
+  await bigPop.fill('#q', 'Huge research');
+  await bigPop.waitForFunction(() => document.querySelectorAll('#list .item').length === 1);
+  const winsBig = await sw.evaluate(async () => (await chrome.windows.getAll()).length);
+  await bigPop.click('#list .item .restore');
+  await bigPop.waitForFunction(() => /opens 120 tabs/.test(document.querySelector('#status').textContent));
+  await sleep(500);
+  check('restore of 120 tabs asks first, opens nothing yet', (await sw.evaluate(async () => (await chrome.windows.getAll()).length)) === winsBig);
+  // (opening 120 real tabs exhausts this test machine, so the restore message is captured instead)
+  await bigPop.evaluate(() => { window.__sent = []; chrome.runtime.sendMessage = async (m) => { window.__sent.push(m); return { ok: true, opened: 120, failed: 0 }; }; });
+  await bigPop.click('#status button:has-text("Open 120 tabs")');
+  await bigPop.waitForFunction(() => /Opened 120 tabs/.test(document.querySelector('#status').textContent));
+  const sent = await bigPop.evaluate(() => window.__sent);
+  check('...and restores after confirming', sent.length === 1 && sent[0].type === 'restore' && Number.isInteger(sent[0].intoWindowId), JSON.stringify(sent));
+  // Undo still works after the popup closed.
+  await bigPop.click('#list .item .main');
+  await bigPop.click('.details .actions button:has-text("Delete")');
+  await bigPop.waitForFunction(() => /Deleted/.test(document.querySelector('#status').textContent));
+  await bigPop.close();
+  check('delete: session gone', !(await idx('named')).some((e) => e.name === 'Huge research'));
+  const pop2 = watch(await ctx.newPage(), 'popup-reopen');
+  await pop2.goto(`${EXT_URL}/popup.html`, { waitUntil: 'load' });
+  await pop2.waitForSelector('body[data-ready]');
+  check('reopened popup offers Undo for the last delete', /Deleted "Huge research"/.test(await pop2.textContent('#status')));
+  await pop2.click('#status button:has-text("Undo")');
+  await pop2.waitForFunction(() => /Restored 1 session/.test(document.querySelector('#status').textContent));
+  check('...and Undo brings it back', (await idx('named')).some((e) => e.name === 'Huge research' && e.tabs === 120) && !(await store(async () => (await chrome.storage.local.get('trash')).trash)));
+  await pop2.close();
 
   // ---------- performance: 250 sessions ----------
   await setLicense(good);

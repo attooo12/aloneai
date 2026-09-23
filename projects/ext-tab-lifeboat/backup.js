@@ -41,6 +41,8 @@ export async function runBackup() {
 export async function backupIfDue(now = Date.now()) {
   const s = await getSettings();
   if (s.backup === 'off') return { skipped: 'off' };
-  if (now - (s.backupLast || 0) < BACKUP_PERIOD_MS[s.backup]) return { skipped: 'not-due' };
+  const last = s.backupLast || 0;
+  // A last-backup time in the future (the clock was wrong or moved back) must not stop backups until it's reached.
+  if (last <= now && now - last < BACKUP_PERIOD_MS[s.backup]) return { skipped: 'not-due' };
   return runBackup();
 }

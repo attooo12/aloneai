@@ -1,0 +1,228 @@
+- generic [ref=f14e1]:
+  - banner [ref=f14e2]:
+    - link "Skip to main content" [ref=f14e3] [cursor=pointer]
+    - generic [ref=f14e4]:
+      - generic [ref=f14e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f14e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f14e8]
+          - generic [ref=f14e9]: Chrome Web Store
+        - search "Sitewide" [ref=f14e10]:
+          - combobox "Search Chrome Web Store" [active] [ref=f14e15]
+        - generic [ref=f14e16]:
+          - button "More options menu" [ref=f14e20] [cursor=pointer]
+          - generic [ref=f14e30]:
+            - button "Google apps" [ref=f14e34] [cursor=pointer]
+            - link "Sign in" [ref=f14e38] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/detail/webpage-word-counter/hjncbnemkcdjfobfcdlbhkeahldjobhm&followup=https://chromewebstore.google.com/detail/webpage-word-counter/hjncbnemkcdjfobfcdlbhkeahldjobhm&ec=GAZApQM
+      - tablist [ref=f14e42]:
+        - generic [ref=f14e45]:
+          - tab "Discover" [ref=f14e46] [cursor=pointer]
+          - tab "Extensions" [selected] [ref=f14e47] [cursor=pointer]
+          - tab "Themes" [ref=f14e48] [cursor=pointer]
+    - dialog [ref=f14e49]:
+      - complementary [ref=f14e50]:
+        - heading "Switch to Chrome?" [level=2] [ref=f14e52]
+        - paragraph [ref=f14e53]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f14e54]:
+          - button "No thanks" [ref=f14e56] [cursor=pointer]
+          - generic [ref=f14e60] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f14e61]: "Yes"
+            - link "Yes" [ref=f14e62]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - main [ref=f14e66]:
+    - generic [ref=f14e67]:
+      - generic [ref=f14e68]:
+        - generic "Info" [ref=f14e70]:
+          - generic [ref=f14e71]: Switch to Chrome to install extensions and themes
+          - button "Switch to Chrome to install extensions and themes Install Chrome" [ref=f14e79] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f14e81]: Install Chrome
+        - generic [ref=f14e83]:
+          - generic [ref=f14e84]:
+            - img "Item logo image for Webpage Word Counter" [ref=f14e85]
+            - heading "Webpage Word Counter" [level=1] [ref=f14e86]
+          - generic [ref=f14e87]:
+            - generic [ref=f14e88]:
+              - link "Follows recommended practices for Chrome extensions. Learn more." [ref=f14e97] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/?hl=en-US&p=cws_badges
+              - generic [ref=f14e98]: Featured
+            - generic [ref=f14e99]:
+              - generic [ref=f14e100]:
+                - generic [ref=f14e101]: "4.1"
+                - generic [ref=f14e104]:
+                  - text: (
+                  - link [ref=f14e105] [cursor=pointer]:
+                    - /url: ./detail/webpage-word-counter/hjncbnemkcdjfobfcdlbhkeahldjobhm/reviews
+                    - paragraph [ref=f14e106]: 14 ratings
+                  - text: )
+              - button "Ratings are updated daily and may not reflect the most recent reviews." [ref=f14e108] [cursor=pointer]
+            - button "Share" [ref=f14e117] [cursor=pointer]
+          - generic [ref=f14e123]:
+            - link "Extension" [ref=f14e124] [cursor=pointer]:
+              - /url: ./category/extensions
+            - link "Workflow & Planning" [ref=f14e125] [cursor=pointer]:
+              - /url: ./category/extensions/productivity/workflow
+            - text: 7,000 users
+          - button "Add to Chrome" [ref=f14e129] [cursor=pointer]
+      - generic [ref=f14e132]:
+        - region "Media carousel" [ref=f14e133]:
+          - button "Previous slide" [ref=f14e135] [cursor=pointer]
+          - generic [ref=f14e142]:
+            - button "Item media 3 (screenshot) for Webpage Word Counter" [ref=f14e144] [cursor=pointer]:
+              - img "Item media 3 (screenshot) for Webpage Word Counter" [ref=f14e145]
+            - button "Item media 4 (screenshot) for Webpage Word Counter" [ref=f14e147] [cursor=pointer]:
+              - img "Item media 4 (screenshot) for Webpage Word Counter" [ref=f14e148]
+            - generic [ref=f14e151] [cursor=pointer]:
+              - button "Item media 1 (video) for Webpage Word Counter" [ref=f14e153]
+              - img "Item video thumbnail" [ref=f14e159]
+            - button "Item media 2 (screenshot) for Webpage Word Counter" [ref=f14e161] [cursor=pointer]:
+              - img "Item media 2 (screenshot) for Webpage Word Counter" [ref=f14e162]
+            - button "Item media 3 (screenshot) for Webpage Word Counter" [ref=f14e164] [cursor=pointer]:
+              - img "Item media 3 (screenshot) for Webpage Word Counter" [ref=f14e165]
+            - button "Item media 4 (screenshot) for Webpage Word Counter" [ref=f14e167] [cursor=pointer]:
+              - img "Item media 4 (screenshot) for Webpage Word Counter" [ref=f14e168]
+            - generic [ref=f14e171] [cursor=pointer]:
+              - button "Item media 1 (video) for Webpage Word Counter" [ref=f14e173]
+              - img "Item video thumbnail" [ref=f14e179]
+            - button "Item media 2 (screenshot) for Webpage Word Counter" [ref=f14e181] [cursor=pointer]:
+              - img "Item media 2 (screenshot) for Webpage Word Counter" [ref=f14e182]
+          - button "Next slide" [ref=f14e184] [cursor=pointer]
+        - generic [ref=f14e190]:
+          - button "Preview slide 1 for Webpage Word Counter" [ref=f14e191] [cursor=pointer]:
+            - img "Item video thumbnail" [ref=f14e192]
+          - button "Preview slide 2 for Webpage Word Counter" [ref=f14e194] [cursor=pointer]:
+            - img "Item media 2 (screenshot) for Webpage Word Counter" [ref=f14e196]
+          - button "Preview slide 3 for Webpage Word Counter" [ref=f14e198] [cursor=pointer]:
+            - img "Item media 3 (screenshot) for Webpage Word Counter" [ref=f14e200]
+          - button "Preview slide 4 for Webpage Word Counter" [ref=f14e202] [cursor=pointer]:
+            - img "Item media 4 (screenshot) for Webpage Word Counter" [ref=f14e204]
+      - generic [ref=f14e206]:
+        - heading "Overview" [level=2] [ref=f14e208]
+        - generic [ref=f14e210]:
+          - generic [ref=f14e211]:
+            - paragraph [ref=f14e212]: Analyze your website text with style with the Webpage Word Counter chrome extension
+            - paragraph [ref=f14e213]: "🚀 Webpage Word Counter Extension for Chrome: Instantly Count Words on Any Website! 🚀 Introducing the Webpage Word Counter Chrome Extension – a sleek, lightweight, and powerful tool tailored for Chrome users who need to count words on a website quickly and effortlessly. This word counter for websites delivers accurate word counts for any webpage you visit, plus it even counts words for specific text selections. A must-have for content creators, SEO experts, researchers, students, and every Chrome user looking to optimize their work. 🔍 How It Works: 1️⃣ Visit any webpage you need analyzed. 2️⃣ Click on the Webpage Word Counter Extension icon. 3️⃣ Instantly see the total word count for the entire website page. 📄 4️⃣ Want a count for a specific section? Simply highlight it and click the Word Counter icon – you'll see both the webpage’s total and the highlighted segment’s word count. Features: 👉 Effortless to Use: One click activates this webpage word counter tool. 👉 Flexible Counts: Get word counts for the entire page or any snippet with ease. 👉 Real-Time Analysis: Instant in-browser word counts, with all your data staying private. 👉 SEO Boost: An ideal companion for SEO analysts, helping with keyword density and competitive insights on any website. 💡 Why wait? Enhance your Chrome browsing with the Webpage Word Counter Extension! Start using this word counter for websites today to stay ahead in your content game! 🔒 Privacy Matters: This Chrome extension operates entirely on your device. Your data remains private, as we do not store or access the contents of the analyzed webpages. Frequently Asked Questions (FAQ) Q: How can I check the word count of highlighted text? A: Simply highlight the text you want to analyze, click on the Webpage Word Counter icon, and the extension will show both the total word count for the page and the word count for your selected text. Perfect for SEO word count analysis or finding total word count for specific sections! Q: Can I count words on a specific webpage or website only? A: Absolutely! This extension counts words for any webpage or website you visit. Just click the extension icon to see the web page word counter in action for the entire page, or highlight specific text to get a segmented count. Q: Is this SEO word counter useful for analyzing web content? A: Yes, it’s ideal for SEO professionals who need quick insights into keyword density or total word count on competitor sites. This SEO word count tool provides accurate word counts for entire webpages, helping you make informed content and keyword decisions. Q: Can I use this as a total word counter for any site I visit? A: Definitely! It’s designed as a total word counter for any webpage you access on Chrome. Whether it’s a blog, an article, or a competitor's webpage, it shows the total word count instantly. Q: Is my data safe with this extension? A: Yes, privacy is our priority. The Webpage Word Counter operates entirely on your device, meaning no data is stored or accessed externally. Enhance your productivity and optimize your SEO strategy effortlessly with the Webpage Word Counter Extension! Start using this tool today to count words on any website and stay ahead in your content game."
+          - button "See more" [ref=f14e214] [cursor=pointer]
+      - generic [ref=f14e217]:
+        - heading [level=2] [ref=f14e219]:
+          - generic [ref=f14e220]:
+            - text: 4.1 out of 5
+            - img "4.1 out of 5 stars" [ref=f14e221]
+          - text: 14 ratings•
+          - paragraph [ref=f14e250]:
+            - link "Learn more about results and reviews." [ref=f14e251] [cursor=pointer]:
+              - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results
+        - generic [ref=f14e253] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f14e254]: See all reviews
+          - link "See all reviews" [ref=f14e255]:
+            - /url: ./detail/webpage-word-counter/hjncbnemkcdjfobfcdlbhkeahldjobhm/reviews
+      - generic [ref=f14e256]:
+        - heading "Details" [level=2] [ref=f14e258]
+        - list [ref=f14e260]:
+          - listitem [ref=f14e261]:
+            - generic [ref=f14e262]: Version
+            - generic [ref=f14e263]: "2.1"
+          - listitem [ref=f14e264]:
+            - generic [ref=f14e265]: Updated
+            - generic [ref=f14e266]: January 5, 2026
+          - listitem [ref=f14e267]:
+            - link "Flag concern" [ref=f14e269] [cursor=pointer]:
+              - /url: ./detail/hjncbnemkcdjfobfcdlbhkeahldjobhm/report
+          - listitem [ref=f14e270]:
+            - generic [ref=f14e271]: Size
+            - generic [ref=f14e272]: 22.93KiB
+          - listitem [ref=f14e273]:
+            - generic [ref=f14e274]: Languages
+            - generic [ref=f14e275]: English
+          - listitem [ref=f14e277]:
+            - generic [ref=f14e278]: Developer
+            - group [ref=f14e281]:
+              - generic "Email" [ref=f14e282]
+          - listitem [ref=f14e287]:
+            - generic [ref=f14e288]: Non-trader
+            - generic [ref=f14e289]: This developer has not identified itself as a trader. For consumers in the European Union, please note that consumer rights do not apply to contracts between you and this developer.
+      - generic [ref=f14e290]:
+        - heading "Privacy" [level=2] [ref=f14e292]
+        - generic [ref=f14e294]:
+          - generic [ref=f14e295]: The developer has disclosed that it will not collect or use your data.
+          - generic [ref=f14e300]:
+            - heading "This developer declares that your data is" [level=2] [ref=f14e301]
+            - list [ref=f14e302]:
+              - listitem [ref=f14e303]:
+                - text: Not being sold to third parties, outside of the
+                - link "approved use cases" [ref=f14e304] [cursor=pointer]:
+                  - /url: https://developer.chrome.com/docs/webstore/program-policies/limited-use/
+              - listitem [ref=f14e305]: Not being used or transferred for purposes that are unrelated to the item's core functionality
+              - listitem [ref=f14e306]: Not being used or transferred to determine creditworthiness or for lending purposes
+      - generic [ref=f14e307]:
+        - heading "Related" [level=2] [ref=f14e308]
+        - region "Related items carousel" [ref=f14e311]:
+          - button "Previous slide" [ref=f14e313] [cursor=pointer]
+          - region "Related item slides" [ref=f14e320]:
+            - generic [ref=f14e321]:
+              - generic [ref=f14e323]:
+                - link "Word Count Checker 2024" [ref=f14e324] [cursor=pointer]:
+                  - /url: ./detail/word-count-checker-2024/kclhacbgejlcdldgjknfkleaplknfdem
+                - generic [ref=f14e325]:
+                  - heading "Word Count Checker 2024" [level=3] [ref=f14e327]
+                  - generic [ref=f14e328]:
+                    - img "Average rating 4.2 out of 5 stars." [ref=f14e329]:
+                      - generic [ref=f14e330]: "4.2"
+                    - link "Learn more about results and reviews \"Word Count Checker 2024\"." [ref=f14e339] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f14e340]: Use Word Count Checker Extension to access the count of Characters and words while selecting the text. Download Free Word Counter.
+              - generic [ref=f14e342]:
+                - link "SEO Search Simulator by Nightwatch" [ref=f14e343] [cursor=pointer]:
+                  - /url: ./detail/seo-search-simulator-by-n/edfjfgjklednkencfhnokmkajbgfhpon
+                - generic [ref=f14e344]:
+                  - heading "SEO Search Simulator by Nightwatch" [level=3] [ref=f14e345]
+                  - generic [ref=f14e346]:
+                    - img "Average rating 4.8 out of 5 stars." [ref=f14e347]:
+                      - generic [ref=f14e348]: "4.8"
+                    - link "Learn more about results and reviews \"SEO Search Simulator by Nightwatch\"." [ref=f14e357] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f14e358]: Simulate search engine queries from any location on Google and easily check and track your website or your competitor's rankings.
+              - generic [ref=f14e360]:
+                - link "Word Counter Plus" [ref=f14e361] [cursor=pointer]:
+                  - /url: ./detail/word-counter-plus/ockonfdfcanonnajjchhapbiahlhjeej
+                - generic [ref=f14e362]:
+                  - heading "Word Counter Plus" [level=3] [ref=f14e363]
+                  - generic [ref=f14e364]:
+                    - img "Average rating 5 out of 5 stars." [ref=f14e365]:
+                      - generic [ref=f14e366]: "5.0"
+                    - link "Learn more about results and reviews \"Word Counter Plus\"." [ref=f14e375] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f14e376]: A simple and accurate word counter. Provides a right click context menu to get stats on the selected text
+              - generic [ref=f14e378]:
+                - link "Detailed SEO Extension" [ref=f14e379] [cursor=pointer]:
+                  - /url: ./detail/detailed-seo-extension/pfjdepjjfjjahkjfpkcgfmfhmnakjfba
+                - generic [ref=f14e380]:
+                  - heading "Detailed SEO Extension" [level=3] [ref=f14e381]
+                  - generic [ref=f14e382]:
+                    - img "Average rating 4.9 out of 5 stars." [ref=f14e383]:
+                      - generic [ref=f14e384]: "4.9"
+                    - link "Learn more about results and reviews \"Detailed SEO Extension\"." [ref=f14e393] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f14e394]: Get SEO insights at the click of a button to any website you're currently on. Built by full-time SEO's for daily analysis.
+          - button "Next slide" [ref=f14e396] [cursor=pointer]
+  - contentinfo [ref=f14e402]:
+    - list [ref=f14e403]:
+      - listitem [ref=f14e404]:
+        - link "About Chrome Web Store" [ref=f14e405] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en-US
+        - text: •
+      - listitem [ref=f14e406]:
+        - link "Developer Dashboard" [ref=f14e407] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f14e408]:
+        - link "Privacy Policy" [ref=f14e409] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en-US
+        - text: •
+      - listitem [ref=f14e410]:
+        - link "Terms of Service" [ref=f14e411] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en-US/gallery_tos.html
+        - text: •
+      - listitem [ref=f14e412]:
+        - link "Help" [ref=f14e413] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en-US

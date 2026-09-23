@@ -1,0 +1,236 @@
+- generic [ref=f21e1]:
+  - banner [ref=f21e2]:
+    - link "Skip to main content" [ref=f21e3] [cursor=pointer]
+    - generic [ref=f21e4]:
+      - generic [ref=f21e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f21e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f21e8]
+          - generic [ref=f21e9]: Chrome Web Store
+        - search "Sitewide" [ref=f21e10]:
+          - generic [ref=f21e13]:
+            - combobox "Search Chrome Web Store" [active] [ref=f21e15]: qr code generator
+            - button "Clear search" [ref=f21e17] [cursor=pointer]
+        - generic [ref=f21e20]:
+          - button "More options menu" [ref=f21e24] [cursor=pointer]
+          - generic [ref=f21e34]:
+            - button "Google apps" [ref=f21e38] [cursor=pointer]
+            - link "Sign in" [ref=f21e42] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/search/qr%2520code%2520generator?hl%3Den&followup=https://chromewebstore.google.com/search/qr%2520code%2520generator?hl%3Den&hl=en&ec=GAZApQM
+      - tablist [ref=f21e46]:
+        - generic [ref=f21e49]:
+          - tab "Discover" [ref=f21e50] [cursor=pointer]
+          - tab "Extensions" [ref=f21e51] [cursor=pointer]
+          - tab "Themes" [ref=f21e52] [cursor=pointer]
+    - dialog [ref=f21e53]:
+      - complementary [ref=f21e54]:
+        - heading "Switch to Chrome?" [level=2] [ref=f21e56]
+        - paragraph [ref=f21e57]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f21e58]:
+          - button "No thanks" [ref=f21e60] [cursor=pointer]
+          - generic [ref=f21e64] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f21e65]: "Yes"
+            - link "Yes" [ref=f21e66]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - generic [ref=f21e70]:
+    - generic [ref=f21e72]:
+      - generic [ref=f21e73]:
+        - heading "Type" [level=2] [ref=f21e74]
+        - toolbar "Filter items by extension type" [ref=f21e75]:
+          - button "Extensions" [ref=f21e78] [cursor=pointer]
+          - button "Themes" [ref=f21e83] [cursor=pointer]
+      - generic [ref=f21e86]:
+        - heading "Filter by" [level=2] [ref=f21e87]
+        - generic [ref=f21e89] [cursor=pointer]:
+          - checkbox "Featured extensions" [ref=f21e91]
+          - generic [ref=f21e92]: Featured extensions
+        - generic [ref=f21e95] [cursor=pointer]:
+          - checkbox "Established publishers" [ref=f21e97]
+          - generic [ref=f21e98]: Established publishers
+      - generic [ref=f21e100]:
+        - heading "Ratings" [level=2] [ref=f21e101]
+        - radiogroup "Ratings" [ref=f21e102]:
+          - radio "5 stars" [ref=f21e103]
+          - radio "4 stars and up" [ref=f21e109]:
+            - generic [aria-hidden] [ref=f21e116]: "& up"
+          - radio "3 stars and up" [ref=f21e117]:
+            - generic [aria-hidden] [ref=f21e125]: "& up"
+          - radio "2 stars and up" [ref=f21e126]:
+            - generic [aria-hidden] [ref=f21e135]: "& up"
+      - generic [ref=f21e137]:
+        - button "Clear all filters button." [disabled] [ref=f21e138]:
+          - generic [aria-hidden] [ref=f21e140]: Clear all
+        - tooltip [aria-hidden] [ref=f21e141]: Reset your filter options.
+    - main [ref=f21e142]:
+      - generic [ref=f21e143]:
+        - heading "Search results" [level=1] [ref=f21e144]
+        - generic [ref=f21e145]:
+          - generic [ref=f21e146]:
+            - link "QR Code Generator" [ref=f21e147] [cursor=pointer]:
+              - /url: ./detail/qr-code-generator/afpbjjgbdimpioenaedcjgkaigggcdpp
+            - generic [ref=f21e149]:
+              - heading "QR Code Generator" [level=2] [ref=f21e151]
+              - paragraph [ref=f21e152]:
+                - img "Published by verified publisher" [ref=f21e153]
+                - generic [ref=f21e156]: high-qr-code-generator.com/
+                - img "Featured badge" [ref=f21e157]
+                - generic [ref=f21e160]: Featured
+              - generic [ref=f21e161]:
+                - img "Average rating 4.9 out of 5 stars." [ref=f21e162]:
+                  - generic [ref=f21e163]: "4.9"
+                - link "Learn more about results and reviews \"QR Code Generator\"." [ref=f21e172] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f21e173]: A super handy QR Code Generator / Creator for you.
+          - generic [ref=f21e174]:
+            - link "QR Code (Generator and Reader)" [ref=f21e175] [cursor=pointer]:
+              - /url: ./detail/qr-code-generator-and-rea/hkojjajclkgeijhcmfjcjkddfjpaimek
+            - generic [ref=f21e177]:
+              - heading "QR Code (Generator and Reader)" [level=2] [ref=f21e179]
+              - paragraph [ref=f21e180]:
+                - img "Featured badge" [ref=f21e181]
+                - generic [ref=f21e184]: Featured
+              - generic [ref=f21e185]:
+                - img "Average rating 3.8 out of 5 stars." [ref=f21e186]:
+                  - generic [ref=f21e187]: "3.8"
+                - link "Learn more about results and reviews \"QR Code (Generator and Reader)\"." [ref=f21e196] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f21e197]: Generate QR Code from the url of current page, link or selected text. And decode QR Code in image.
+          - generic [ref=f21e198]:
+            - link "QR Code Generator" [ref=f21e199] [cursor=pointer]:
+              - /url: ./detail/qr-code-generator/pfdnbeicnlgaliljnkekjigcgnlgkjfc
+            - generic [ref=f21e201]:
+              - heading "QR Code Generator" [level=2] [ref=f21e203]
+              - paragraph
+              - generic [ref=f21e204]:
+                - img "Average rating 4 out of 5 stars." [ref=f21e205]:
+                  - generic [ref=f21e206]: "4.0"
+                - link "Learn more about results and reviews \"QR Code Generator\"." [ref=f21e215] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f21e216]: Generate QR code from any text and save it as an SVG image
+          - generic [ref=f21e217]:
+            - link "QR Code Generator" [ref=f21e218] [cursor=pointer]:
+              - /url: ./detail/qr-code-generator/gdbiecmpdlomillanfkefmnbjbbmobbn
+            - generic [ref=f21e220]:
+              - heading "QR Code Generator" [level=2] [ref=f21e222]
+              - paragraph [ref=f21e223]:
+                - img "Featured badge" [ref=f21e224]
+                - generic [ref=f21e227]: Featured
+              - generic [ref=f21e228]:
+                - img "Average rating 4.6 out of 5 stars." [ref=f21e229]:
+                  - generic [ref=f21e230]: "4.6"
+                - link "Learn more about results and reviews \"QR Code Generator\"." [ref=f21e239] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f21e240]: Generate QR Code from any text or urls.
+          - generic [ref=f21e241]:
+            - link "QR Code Generator" [ref=f21e242] [cursor=pointer]:
+              - /url: ./detail/qr-code-generator/lkdokbndiffkmddlfpbjiokmfkafmgkm
+            - generic [ref=f21e244]:
+              - heading "QR Code Generator" [level=2] [ref=f21e246]
+              - paragraph [ref=f21e247]:
+                - img "Featured badge" [ref=f21e248]
+                - generic [ref=f21e251]: Featured
+              - generic [ref=f21e252]:
+                - img "Average rating 4.5 out of 5 stars." [ref=f21e253]:
+                  - generic [ref=f21e254]: "4.5"
+                - link "Learn more about results and reviews \"QR Code Generator\"." [ref=f21e263] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f21e264]: "QR Code Extension: A faster, more direct way to create and share QR codes, even better than short links."
+          - generic [ref=f21e265]:
+            - link "QR Code Generator" [ref=f21e266] [cursor=pointer]:
+              - /url: ./detail/qr-code-generator/hoeiookpkijlnjdafhaclpdbfflelmci
+            - generic [ref=f21e268]:
+              - heading "QR Code Generator" [level=2] [ref=f21e270]
+              - paragraph [ref=f21e271]:
+                - img "Featured badge" [ref=f21e272]
+                - generic [ref=f21e275]: Featured
+              - generic [ref=f21e276]:
+                - img "Average rating 4.2 out of 5 stars." [ref=f21e277]:
+                  - generic [ref=f21e278]: "4.2"
+                - link "Learn more about results and reviews \"QR Code Generator\"." [ref=f21e287] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f21e288]: QR Code fastest way to generate or scan QR codes. Decode QR Code in image or use webcam.
+          - generic [ref=f21e289]:
+            - link "Offline QR Code Generator" [ref=f21e290] [cursor=pointer]:
+              - /url: ./detail/offline-qr-code-generator/fehmldbcmhbdkofkiaedfejkalnidchm
+            - generic [ref=f21e292]:
+              - heading "Offline QR Code Generator" [level=2] [ref=f21e294]
+              - paragraph [ref=f21e295]:
+                - img "Featured badge" [ref=f21e296]
+                - generic [ref=f21e299]: Featured
+              - generic [ref=f21e300]:
+                - img "Average rating 3.7 out of 5 stars." [ref=f21e301]:
+                  - generic [ref=f21e302]: "3.7"
+                - link "Learn more about results and reviews \"Offline QR Code Generator\"." [ref=f21e311] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f21e312]: Generate QR codes for the current tab URL and Edit later
+          - generic [ref=f21e313]:
+            - link "Rqrcode Studio - Free QR Code Generator" [ref=f21e314] [cursor=pointer]:
+              - /url: ./detail/rqrcode-studio-free-qr-co/pmdoddddofbceeedfhejcikebapbhkhl
+            - generic [ref=f21e316]:
+              - heading "Rqrcode Studio - Free QR Code Generator" [level=2] [ref=f21e318]
+              - paragraph [ref=f21e319]:
+                - img "Published by verified publisher" [ref=f21e320]
+                - generic [ref=f21e323]: rqrcode.com/
+                - img "Featured badge" [ref=f21e324]
+                - generic [ref=f21e327]: Featured
+              - generic [ref=f21e328]:
+                - img "Average rating 4.8 out of 5 stars." [ref=f21e329]:
+                  - generic [ref=f21e330]: "4.8"
+                - link "Learn more about results and reviews \"Rqrcode Studio - Free QR Code Generator\"." [ref=f21e339] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f21e340]: Generate, customize and download QR codes directly from your Chrome toolbar. No ads, fast and secure.
+          - generic [ref=f21e341]:
+            - link "The QR Code Generator" [ref=f21e342] [cursor=pointer]:
+              - /url: ./detail/the-qr-code-generator/oijdcdmnjjgnnhgljmhkjlablaejfeeb
+            - generic [ref=f21e344]:
+              - heading "The QR Code Generator" [level=2] [ref=f21e346]
+              - paragraph [ref=f21e347]:
+                - img "Published by verified publisher" [ref=f21e348]
+                - generic [ref=f21e351]: the-qrcode-generator.com
+                - img "Featured badge" [ref=f21e352]
+                - generic [ref=f21e355]: Featured
+              - generic [ref=f21e356]:
+                - img "Average rating 4.3 out of 5 stars." [ref=f21e357]:
+                  - generic [ref=f21e358]: "4.3"
+                - link "Learn more about results and reviews \"The QR Code Generator\"." [ref=f21e367] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f21e368]: Create, scan, and edit QR codes instantly with one click.
+          - generic [ref=f21e369]:
+            - link "Online QR Code Generator" [ref=f21e370] [cursor=pointer]:
+              - /url: ./detail/online-qr-code-generator/ldkfghicdollojhmldmphpkojbkifekd
+            - generic [ref=f21e372]:
+              - heading "Online QR Code Generator" [level=2] [ref=f21e374]
+              - paragraph [ref=f21e375]:
+                - img "Published by verified publisher" [ref=f21e376]
+                - generic [ref=f21e379]: www.online-qrcode-generator.com/
+                - img "Featured badge" [ref=f21e380]
+                - generic [ref=f21e383]: Featured
+              - generic [ref=f21e384]:
+                - img "Average rating 4.5 out of 5 stars." [ref=f21e385]:
+                  - generic [ref=f21e386]: "4.5"
+                - link "Learn more about results and reviews \"Online QR Code Generator\"." [ref=f21e395] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f21e396]: Online QR Code Generator is a free, online, real-time QR code generation solution, start creating your QR code barcodes now!
+          - button "Load more" [ref=f21e399] [cursor=pointer]
+  - contentinfo [ref=f21e402]:
+    - list [ref=f21e403]:
+      - listitem [ref=f21e404]:
+        - link "About Chrome Web Store" [ref=f21e405] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en
+        - text: •
+      - listitem [ref=f21e406]:
+        - link "Developer Dashboard" [ref=f21e407] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f21e408]:
+        - link "Privacy Policy" [ref=f21e409] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en
+        - text: •
+      - listitem [ref=f21e410]:
+        - link "Terms of Service" [ref=f21e411] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en/gallery_tos.html
+        - text: •
+      - listitem [ref=f21e412]:
+        - link "Help" [ref=f21e413] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en
+  - generic [ref=f21e414]: Page loaded.

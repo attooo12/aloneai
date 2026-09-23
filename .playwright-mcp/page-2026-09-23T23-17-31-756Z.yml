@@ -1,0 +1,212 @@
+- generic [ref=f37e1]:
+  - banner [ref=f37e2]:
+    - link "Skip to main content" [ref=f37e3] [cursor=pointer]
+    - generic [ref=f37e4]:
+      - generic [ref=f37e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f37e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f37e8]
+          - generic [ref=f37e9]: Chrome Web Store
+        - search "Sitewide" [ref=f37e10]:
+          - combobox "Search Chrome Web Store" [active] [ref=f37e15]
+        - generic [ref=f37e16]:
+          - button "More options menu" [ref=f37e20] [cursor=pointer]
+          - generic [ref=f37e30]:
+            - button "Google apps" [ref=f37e34] [cursor=pointer]
+            - link "Sign in" [ref=f37e38] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/detail/fake-filler/bnjjngeaknajbdcgpfkgnonkmififhfo/reviews&followup=https://chromewebstore.google.com/detail/fake-filler/bnjjngeaknajbdcgpfkgnonkmififhfo/reviews&ec=GAZApQM
+      - tablist [ref=f37e42]:
+        - generic [ref=f37e45]:
+          - tab "Discover" [ref=f37e46] [cursor=pointer]
+          - tab "Extensions" [selected] [ref=f37e47] [cursor=pointer]
+          - tab "Themes" [ref=f37e48] [cursor=pointer]
+    - dialog [ref=f37e49]:
+      - complementary [ref=f37e50]:
+        - heading "Switch to Chrome?" [level=2] [ref=f37e52]
+        - paragraph [ref=f37e53]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f37e54]:
+          - button "No thanks" [ref=f37e56] [cursor=pointer]
+          - generic [ref=f37e60] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f37e61]: "Yes"
+            - link "Yes" [ref=f37e62]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - main [ref=f37e66]:
+    - generic [ref=f37e67]:
+      - generic [ref=f37e68]:
+        - generic "Info" [ref=f37e70]:
+          - generic [ref=f37e71]: Switch to Chrome to install extensions and themes
+          - button "Switch to Chrome to install extensions and themes Install Chrome" [ref=f37e79] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f37e81]: Install Chrome
+        - generic [ref=f37e82]:
+          - link "Navigate back to item detail page" [ref=f37e88] [cursor=pointer]:
+            - /url: ./detail/Fake%20Filler/bnjjngeaknajbdcgpfkgnonkmififhfo
+          - generic [ref=f37e89]:
+            - link [ref=f37e90] [cursor=pointer]:
+              - /url: ./detail/fake-filler/bnjjngeaknajbdcgpfkgnonkmififhfo
+              - img "Item logo image for Fake Filler" [ref=f37e91]
+              - heading "Fake Filler" [level=1] [ref=f37e92]
+            - generic [ref=f37e93]:
+              - generic [ref=f37e94]:
+                - link "Created by the owner of the listed website. The publisher has a good record with no history of violations. Learn more." [ref=f37e103] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/?hl=en-US&p=cws_badges
+                - link "fakefiller.com" [ref=f37e104] [cursor=pointer]:
+                  - /url: https://fakefiller.com
+              - generic [ref=f37e105]:
+                - link "Follows recommended practices for Chrome extensions. Learn more." [ref=f37e114] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/?hl=en-US&p=cws_badges
+                - generic [ref=f37e115]: Featured
+              - generic [ref=f37e116]:
+                - img "Average rating 4.4 out of 5 stars. 793 ratings." [ref=f37e117]:
+                  - generic [ref=f37e118]: "4.4"
+                  - generic [ref=f37e121]:
+                    - text: (
+                    - paragraph [ref=f37e122]: 793 ratings
+                    - text: )
+                - button "Ratings are updated daily and may not reflect the most recent reviews." [ref=f37e124] [cursor=pointer]
+              - button "Share" [ref=f37e133] [cursor=pointer]
+            - generic [ref=f37e139]:
+              - link "Extension" [ref=f37e140] [cursor=pointer]:
+                - /url: ./category/extensions
+              - link "Developer Tools" [ref=f37e141] [cursor=pointer]:
+                - /url: ./category/extensions/productivity/developer
+              - text: 400,000 users
+            - button "Add to Chrome" [ref=f37e145] [cursor=pointer]
+      - heading [level=2] [ref=f37e149]:
+        - generic [ref=f37e150]:
+          - text: 4.4 out of 5
+          - img "4.4 out of 5 stars" [ref=f37e151]
+      - text: 793 ratings•
+      - paragraph [ref=f37e180]:
+        - link "Learn more about results and reviews." [ref=f37e181] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results
+      - generic [ref=f37e182]:
+        - combobox "Filter by" [ref=f37e185] [cursor=pointer]:
+          - generic:
+            - generic:
+              - generic: Filter by
+              - generic [aria-hidden]: Filter by
+          - generic: All reviews
+        - combobox "Sort by" [ref=f37e189] [cursor=pointer]:
+          - generic:
+            - generic:
+              - generic: Sort by
+              - generic [aria-hidden]: Sort by
+          - generic: Recent
+        - combobox "Language" [ref=f37e194] [cursor=pointer]:
+          - generic:
+            - generic:
+              - generic: Language
+              - generic [aria-hidden]: Language
+          - generic: English
+    - generic [ref=f37e196]:
+      - generic [ref=f37e197]:
+        - img "Review's profile picture" [ref=f37e198]
+        - heading "Syed Bipul Rahman 1 out of 5 stars Jul 4, 2026" [level=3] [ref=f37e200]:
+          - generic [ref=f37e201]: Syed Bipul Rahman
+          - img "1 out of 5 stars" [ref=f37e202]
+          - generic [ref=f37e231]: Jul 4, 2026
+        - button "Review options" [ref=f37e235] [cursor=pointer]
+        - paragraph [ref=f37e241]: not recommended. not work on moon invoice, I have tried sevaral times. fake extension.
+        - generic [ref=f37e242]: 1 person found this review to be unhelpful
+      - generic [ref=f37e244]:
+        - img "Review's profile picture" [ref=f37e245]
+        - heading "Okoro Redemption 4 out of 5 stars Jun 28, 2026" [level=3] [ref=f37e247]:
+          - generic [ref=f37e248]: Okoro Redemption
+          - img "4 out of 5 stars" [ref=f37e249]
+          - generic [ref=f37e278]: Jun 28, 2026
+        - button "Review options" [ref=f37e282] [cursor=pointer]
+        - paragraph [ref=f37e288]: Just the best.
+      - generic [ref=f37e289]:
+        - img "Review's profile picture" [ref=f37e290]
+        - heading "gibrain 5 out of 5 stars Jun 27, 2026" [level=3] [ref=f37e292]:
+          - generic [ref=f37e293]: gibrain
+          - img "5 out of 5 stars" [ref=f37e294]
+          - generic [ref=f37e323]: Jun 27, 2026
+        - button "Review options" [ref=f37e327] [cursor=pointer]
+        - paragraph [ref=f37e333]: fast, straight to the point.
+        - generic [ref=f37e334]: 1 person found this review to be helpful
+      - generic [ref=f37e336]:
+        - img "Review's profile picture" [ref=f37e337]
+        - heading "Adegbite Adeoye 5 out of 5 stars May 28, 2026" [level=3] [ref=f37e339]:
+          - generic [ref=f37e340]: Adegbite Adeoye
+          - img "5 out of 5 stars" [ref=f37e341]
+          - generic [ref=f37e370]: May 28, 2026
+        - button "Review options" [ref=f37e374] [cursor=pointer]
+        - paragraph [ref=f37e380]: I find this extension very useful especially during development
+        - generic [ref=f37e381]: 1 out of 2 found this helpful
+      - generic [ref=f37e383]:
+        - img "Review's profile picture" [ref=f37e384]
+        - heading "Martha Mwangi 5 out of 5 stars Apr 17, 2026" [level=3] [ref=f37e386]:
+          - generic [ref=f37e387]: Martha Mwangi
+          - img "5 out of 5 stars" [ref=f37e388]
+          - generic [ref=f37e417]: Apr 17, 2026
+        - button "Review options" [ref=f37e421] [cursor=pointer]
+        - paragraph [ref=f37e427]: How do i use it in englidh
+        - generic [ref=f37e428]: 1 person found this review to be unhelpful
+      - generic [ref=f37e430]:
+        - img "Review's profile picture" [ref=f37e431]
+        - heading "Ryan Freeman 1 out of 5 stars Apr 1, 2026" [level=3] [ref=f37e433]:
+          - generic [ref=f37e434]: Ryan Freeman
+          - img "1 out of 5 stars" [ref=f37e435]
+          - generic [ref=f37e464]: Apr 1, 2026
+        - button "Review options" [ref=f37e468] [cursor=pointer]
+        - paragraph [ref=f37e474]: Did not work.
+        - generic [ref=f37e475]: 1 out of 3 found this helpful
+      - generic [ref=f37e477]:
+        - img "Review's profile picture" [ref=f37e478]
+        - heading "Shadab 5 out of 5 stars Mar 8, 2026" [level=3] [ref=f37e480]:
+          - generic [ref=f37e481]: Shadab
+          - img "5 out of 5 stars" [ref=f37e482]
+          - generic [ref=f37e511]: Mar 8, 2026
+        - button "Review options" [ref=f37e515] [cursor=pointer]
+        - paragraph [ref=f37e521]: It's a good extension. But a lot of limitations are there and that's why I built one improving all the issues with an amazing UX. Check it out here https://www.mockfill.com/
+        - generic [ref=f37e522]: 0 out of 4 found this helpful
+      - generic [ref=f37e524]:
+        - img "Review's profile picture" [ref=f37e525]
+        - heading "Abdi Nexi 3 out of 5 stars Feb 21, 2026" [level=3] [ref=f37e527]:
+          - generic [ref=f37e528]: Abdi Nexi
+          - img "3 out of 5 stars" [ref=f37e529]
+          - generic [ref=f37e558]: Feb 21, 2026
+        - button "Review options" [ref=f37e562] [cursor=pointer]
+        - paragraph [ref=f37e568]: would be much better if it could read the context, and apply more factual data
+        - generic [ref=f37e569]: 1 person found this review to be helpful
+      - generic [ref=f37e571]:
+        - img "Review's profile picture" [ref=f37e572]
+        - heading "Divyam Sharma 1 out of 5 stars Feb 17, 2026" [level=3] [ref=f37e574]:
+          - generic [ref=f37e575]: Divyam Sharma
+          - img "1 out of 5 stars" [ref=f37e576]
+          - generic [ref=f37e605]: Feb 17, 2026
+        - button "Review options" [ref=f37e609] [cursor=pointer]
+        - paragraph [ref=f37e615]: ain't working
+        - generic [ref=f37e616]: 1 person found this review to be helpful
+      - generic [ref=f37e618]:
+        - img "Review's profile picture" [ref=f37e619]
+        - heading "Orange Oreo 3 out of 5 stars Feb 12, 2026" [level=3] [ref=f37e621]:
+          - generic [ref=f37e622]: Orange Oreo
+          - img "3 out of 5 stars" [ref=f37e623]
+          - generic [ref=f37e652]: Feb 12, 2026
+        - button "Review options" [ref=f37e656] [cursor=pointer]
+        - paragraph [ref=f37e662]: Text Input fields are filled with fake data that's working fine, but for select fields (on load) not picking right data
+        - generic [ref=f37e663]: 1 person found this review to be helpful
+      - button "Load more" [ref=f37e667] [cursor=pointer]
+  - contentinfo [ref=f37e670]:
+    - list [ref=f37e671]:
+      - listitem [ref=f37e672]:
+        - link "About Chrome Web Store" [ref=f37e673] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en-US
+        - text: •
+      - listitem [ref=f37e674]:
+        - link "Developer Dashboard" [ref=f37e675] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f37e676]:
+        - link "Privacy Policy" [ref=f37e677] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en-US
+        - text: •
+      - listitem [ref=f37e678]:
+        - link "Terms of Service" [ref=f37e679] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en-US/gallery_tos.html
+        - text: •
+      - listitem [ref=f37e680]:
+        - link "Help" [ref=f37e681] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en-US

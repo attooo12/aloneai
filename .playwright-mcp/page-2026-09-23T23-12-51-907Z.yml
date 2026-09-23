@@ -1,0 +1,260 @@
+- generic [ref=f17e1]:
+  - banner [ref=f17e2]:
+    - link "Skip to main content" [ref=f17e3] [cursor=pointer]
+    - generic [ref=f17e4]:
+      - generic [ref=f17e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f17e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f17e8]
+          - generic [ref=f17e9]: Chrome Web Store
+        - search "Sitewide" [ref=f17e10]:
+          - combobox "Search Chrome Web Store" [active] [ref=f17e15]
+        - generic [ref=f17e16]:
+          - button "More options menu" [ref=f17e20] [cursor=pointer]
+          - generic [ref=f17e30]:
+            - button "Google apps" [ref=f17e34] [cursor=pointer]
+            - link "Sign in" [ref=f17e38] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/detail/clipboard-history-manager/ombhfdknibjljckajldielimdjcomcek&followup=https://chromewebstore.google.com/detail/clipboard-history-manager/ombhfdknibjljckajldielimdjcomcek&ec=GAZApQM
+      - tablist [ref=f17e42]:
+        - generic [ref=f17e45]:
+          - tab "Discover" [ref=f17e46] [cursor=pointer]
+          - tab "Extensions" [selected] [ref=f17e47] [cursor=pointer]
+          - tab "Themes" [ref=f17e48] [cursor=pointer]
+    - dialog [ref=f17e49]:
+      - complementary [ref=f17e50]:
+        - heading "Switch to Chrome?" [level=2] [ref=f17e52]
+        - paragraph [ref=f17e53]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f17e54]:
+          - button "No thanks" [ref=f17e56] [cursor=pointer]
+          - generic [ref=f17e60] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f17e61]: "Yes"
+            - link "Yes" [ref=f17e62]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - main [ref=f17e66]:
+    - generic [ref=f17e67]:
+      - generic [ref=f17e68]:
+        - generic "Info" [ref=f17e70]:
+          - generic [ref=f17e71]: Switch to Chrome to install extensions and themes
+          - button "Switch to Chrome to install extensions and themes Install Chrome" [ref=f17e79] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f17e81]: Install Chrome
+        - generic [ref=f17e83]:
+          - generic [ref=f17e84]:
+            - img "Item logo image for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e85]
+            - heading "Clipboard History Manager - Secure, Fast, and Open Source" [level=1] [ref=f17e86]
+          - generic [ref=f17e87]:
+            - generic [ref=f17e88]:
+              - link "Created by the owner of the listed website. The publisher has a good record with no history of violations. Learn more." [ref=f17e97] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/?hl=en-US&p=cws_badges
+              - link "clipboardhistory.io" [ref=f17e98] [cursor=pointer]:
+                - /url: https://clipboardhistory.io
+            - generic [ref=f17e99]:
+              - link "Follows recommended practices for Chrome extensions. Learn more." [ref=f17e108] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/?hl=en-US&p=cws_badges
+              - generic [ref=f17e109]: Featured
+            - generic [ref=f17e110]:
+              - generic [ref=f17e111]:
+                - generic [ref=f17e112]: "4.5"
+                - generic [ref=f17e115]:
+                  - text: (
+                  - link [ref=f17e116] [cursor=pointer]:
+                    - /url: ./detail/clipboard-history-manager/ombhfdknibjljckajldielimdjcomcek/reviews
+                    - paragraph [ref=f17e117]: 55 ratings
+                  - text: )
+              - button "Ratings are updated daily and may not reflect the most recent reviews." [ref=f17e119] [cursor=pointer]
+            - button "Share" [ref=f17e128] [cursor=pointer]
+          - generic [ref=f17e134]:
+            - link "Extension" [ref=f17e135] [cursor=pointer]:
+              - /url: ./category/extensions
+            - link "Workflow & Planning" [ref=f17e136] [cursor=pointer]:
+              - /url: ./category/extensions/productivity/workflow
+            - text: 9,000 users
+          - button "Add to Chrome" [ref=f17e140] [cursor=pointer]
+      - generic [ref=f17e143]:
+        - region "Media carousel" [ref=f17e144]:
+          - button "Previous slide" [ref=f17e146] [cursor=pointer]
+          - generic [ref=f17e153]:
+            - button "Item media 4 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e155] [cursor=pointer]:
+              - img "Item media 4 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e156]
+            - button "Item media 5 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e158] [cursor=pointer]:
+              - img "Item media 5 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e159]
+            - button "Item media 1 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e161] [cursor=pointer]:
+              - img "Item media 1 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e162]
+            - button "Item media 2 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e164] [cursor=pointer]:
+              - img "Item media 2 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e165]
+            - button "Item media 3 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e167] [cursor=pointer]:
+              - img "Item media 3 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e168]
+            - button "Item media 4 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e170] [cursor=pointer]:
+              - img "Item media 4 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e171]
+            - button "Item media 5 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e173] [cursor=pointer]:
+              - img "Item media 5 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e174]
+            - button "Item media 1 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e176] [cursor=pointer]:
+              - img "Item media 1 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e177]
+            - button "Item media 2 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e179] [cursor=pointer]:
+              - img "Item media 2 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e180]
+          - button "Next slide" [ref=f17e182] [cursor=pointer]
+        - generic [ref=f17e188]:
+          - button "Preview slide 1 for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e189] [cursor=pointer]:
+            - img "Item media 1 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e191]
+          - button "Preview slide 2 for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e193] [cursor=pointer]:
+            - img "Item media 2 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e195]
+          - button "Preview slide 3 for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e197] [cursor=pointer]:
+            - img "Item media 3 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e199]
+          - button "Preview slide 4 for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e201] [cursor=pointer]:
+            - img "Item media 4 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e203]
+          - button "Preview slide 5 for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e205] [cursor=pointer]:
+            - img "Item media 5 (screenshot) for Clipboard History Manager - Secure, Fast, and Open Source" [ref=f17e207]
+      - generic [ref=f17e209]:
+        - heading "Overview" [level=2] [ref=f17e211]
+        - generic [ref=f17e213]:
+          - generic [ref=f17e214]:
+            - paragraph [ref=f17e215]: Powerful clipboard history manager. Save, search & organize everything you copy. Tags, shortcuts & unlimited storage.
+            - paragraph [ref=f17e216]: "The first open source clipboard history manager Chrome extension. Get all of the productivity benefits of a clipboard history with none of the security risks. Clipboard History IO offers a simple, efficient, and secure way to manage your clipboard. When the clipboard monitor is enabled, everything you copy to your clipboard will be backed up and saved for easy access later. Never worry about losing important content in your clipboard again! 🛠 Features • Comprehensive Clipboard History Management: Access and modify a complete history of everything copied to your clipboard. • Favoriting and Tagging: Mark items as favorites or add tags for faster access through search or filters. • Customization: Adjust extension settings and themes to suit your preferences. • Import and Export: Easily import or export items, including those created by this extension or others like Clipboard History Pro. • Merging: Combine multiple items seamlessly using a powerful merge tool. • Floating Mode: Open the clipboard history in a separate persistent and resizable window. • Paste from Context Menu: Conveniently paste recently copied items directly from the context menu on any website. • Keyboard Shortcuts: Quickly paste items using keyboard shortcuts. • Cloud Sync (Pro): Manually or automatically store items in the cloud and access them from any of your devices. 🔒 Security & Privacy: Unrestricted access to your clipboard can raise serious privacy concerns. In an effort to be the most trustworthy clipboard history manager, Clipboard History is fully open-source. You can download or review the source code here: https://github.com/ayoung19/clipboard-history 📝 Changelog: https://github.com/ayoung19/clipboard-history/releases"
+          - button "See more" [ref=f17e217] [cursor=pointer]
+      - generic [ref=f17e220]:
+        - heading [level=2] [ref=f17e222]:
+          - generic [ref=f17e223]:
+            - text: 4.5 out of 5
+            - img "4.5 out of 5 stars" [ref=f17e224]
+          - text: 55 ratings•
+          - paragraph [ref=f17e253]:
+            - link "Learn more about results and reviews." [ref=f17e254] [cursor=pointer]:
+              - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results
+        - generic [ref=f17e256] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f17e257]: See all reviews
+          - link "See all reviews" [ref=f17e258]:
+            - /url: ./detail/clipboard-history-manager/ombhfdknibjljckajldielimdjcomcek/reviews
+      - generic [ref=f17e259]:
+        - heading "Details" [level=2] [ref=f17e261]
+        - list [ref=f17e263]:
+          - listitem [ref=f17e264]:
+            - generic [ref=f17e265]: Version
+            - generic [ref=f17e266]: 1.4.20
+          - listitem [ref=f17e267]:
+            - generic [ref=f17e268]: Updated
+            - generic [ref=f17e269]: June 13, 2026
+          - listitem [ref=f17e270]:
+            - generic [ref=f17e271]: Features
+            - generic [ref=f17e272]: Offers in-app purchases
+          - listitem [ref=f17e273]:
+            - link "Flag concern" [ref=f17e275] [cursor=pointer]:
+              - /url: ./detail/ombhfdknibjljckajldielimdjcomcek/report
+          - listitem [ref=f17e276]:
+            - generic [ref=f17e277]: Size
+            - generic [ref=f17e278]: 1.32MiB
+          - listitem [ref=f17e279]:
+            - generic [ref=f17e280]: Languages
+            - generic [ref=f17e282]:
+              - text: 53 languages
+              - button "Show more languages" [ref=f17e284] [cursor=pointer]
+          - listitem [ref=f17e290]:
+            - generic [ref=f17e291]: Developer
+            - generic [ref=f17e293]:
+              - link "Website" [ref=f17e294] [cursor=pointer]:
+                - /url: https://clipboardhistory.io
+              - group [ref=f17e297]:
+                - generic "Email" [ref=f17e298]
+          - listitem [ref=f17e303]:
+            - generic [ref=f17e304]: Non-trader
+            - generic [ref=f17e305]: This developer has not identified itself as a trader. For consumers in the European Union, please note that consumer rights do not apply to contracts between you and this developer.
+      - generic [ref=f17e306]:
+        - heading "Privacy" [level=2] [ref=f17e308]
+        - generic [ref=f17e310]:
+          - generic [ref=f17e311]:
+            - paragraph [ref=f17e312]:
+              - text: Clipboard History Manager - Secure, Fast, and Open Source has disclosed the following information regarding the collection and usage of your data. More detailed information can be found in the developer's
+              - link "privacy policy" [ref=f17e313] [cursor=pointer]:
+                - /url: https://www.clipboardhistory.io/html/privacy.html
+              - text: .
+            - heading "Clipboard History Manager - Secure, Fast, and Open Source handles the following:" [level=3] [ref=f17e314]
+            - generic [ref=f17e315]: Personally identifiable information
+            - generic [ref=f17e328] [cursor=pointer]:
+              - generic [aria-hidden] [ref=f17e329]: See details
+              - link "See details" [ref=f17e330]:
+                - /url: ./detail/ombhfdknibjljckajldielimdjcomcek/privacy
+          - generic [ref=f17e332]:
+            - heading "This developer declares that your data is" [level=2] [ref=f17e333]
+            - list [ref=f17e334]:
+              - listitem [ref=f17e335]:
+                - text: Not being sold to third parties, outside of the
+                - link "approved use cases" [ref=f17e336] [cursor=pointer]:
+                  - /url: https://developer.chrome.com/docs/webstore/program-policies/limited-use/
+              - listitem [ref=f17e337]: Not being used or transferred for purposes that are unrelated to the item's core functionality
+              - listitem [ref=f17e338]: Not being used or transferred to determine creditworthiness or for lending purposes
+      - generic [ref=f17e340]:
+        - heading "Support" [level=2] [ref=f17e341]
+        - generic [ref=f17e343] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f17e344]: Visit support hub
+          - link "Visit support hub" [ref=f17e345]:
+            - /url: ./detail/ombhfdknibjljckajldielimdjcomcek/support
+      - generic [ref=f17e346]:
+        - heading "Related" [level=2] [ref=f17e347]
+        - region "Related items carousel" [ref=f17e350]:
+          - button "Previous slide" [ref=f17e352] [cursor=pointer]
+          - region "Related item slides" [ref=f17e359]:
+            - generic [ref=f17e360]:
+              - generic [ref=f17e362]:
+                - link "Clipboard Tool | Easy Copy and Paste" [ref=f17e363] [cursor=pointer]:
+                  - /url: ./detail/clipboard-tool-easy-copy/aegeclnpeaicklknkpcjbldnpkkkhkid
+                - generic [ref=f17e364]:
+                  - heading "Clipboard Tool | Easy Copy and Paste" [level=3] [ref=f17e365]
+                  - generic [ref=f17e366]:
+                    - img "Average rating 4.7 out of 5 stars." [ref=f17e367]:
+                      - generic [ref=f17e368]: "4.7"
+                    - link "Learn more about results and reviews \"Clipboard Tool | Easy Copy and Paste\"." [ref=f17e377] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f17e378]: "Manage copied items with Clipboard Tool: Easy Copy and Paste —a clipboard manager tracking clipboard history on Windows/macOS."
+              - generic [ref=f17e380]:
+                - link "Chrome Clipboard - Type less, browse faster." [ref=f17e381] [cursor=pointer]:
+                  - /url: ./detail/chrome-clipboard-type-les/dompeeegekhkimeopkaipdmhkibmpoie
+                - generic [ref=f17e382]:
+                  - heading "Chrome Clipboard - Type less, browse faster." [level=3] [ref=f17e383]
+                  - generic [ref=f17e384]:
+                    - img "Average rating 4.8 out of 5 stars." [ref=f17e385]:
+                      - generic [ref=f17e386]: "4.8"
+                    - link "Learn more about results and reviews \"Chrome Clipboard - Type less, browse faster.\"." [ref=f17e395] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f17e396]: Save your frequently used info and never type them again.
+              - generic [ref=f17e398]:
+                - link "CopyClip - Clipboard History Management Side Panel" [ref=f17e399] [cursor=pointer]:
+                  - /url: ./detail/copyclip-clipboard-histor/pgjckoablokakigdlgbhdmeohbklphli
+                - generic [ref=f17e400]:
+                  - heading "CopyClip - Clipboard History Management Side Panel" [level=3] [ref=f17e402]
+                  - generic [ref=f17e403]:
+                    - img "Average rating 4.2 out of 5 stars." [ref=f17e404]:
+                      - generic [ref=f17e405]: "4.2"
+                    - link "Learn more about results and reviews \"CopyClip - Clipboard History Management Side Panel\"." [ref=f17e414] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f17e415]: A clipboard history tool that allows you to copy and paste from your clipboard history.
+              - generic [ref=f17e417]:
+                - 'link "Copy History +: The Best Clipboard History Manager Tool" [ref=f17e418] [cursor=pointer]':
+                  - /url: ./detail/copy-history-+-the-best-c/kjlbbjicboihbikbjbbmkimccoeccoon
+                - generic [ref=f17e419]:
+                  - 'heading "Copy History +: The Best Clipboard History Manager Tool" [level=3] [ref=f17e420]'
+                  - generic [ref=f17e421]:
+                    - img "Average rating 4.6 out of 5 stars." [ref=f17e422]:
+                      - generic [ref=f17e423]: "4.6"
+                    - 'link "Learn more about results and reviews \"Copy History +: The Best Clipboard History Manager Tool\"." [ref=f17e432] [cursor=pointer]':
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f17e433]: Secure Clipboard History Manager to auto save copy paste text & snippets. Free easy tool to manage clipboard and boost productivity.
+          - button "Next slide" [ref=f17e435] [cursor=pointer]
+  - contentinfo [ref=f17e441]:
+    - list [ref=f17e442]:
+      - listitem [ref=f17e443]:
+        - link "About Chrome Web Store" [ref=f17e444] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en-US
+        - text: •
+      - listitem [ref=f17e445]:
+        - link "Developer Dashboard" [ref=f17e446] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f17e447]:
+        - link "Privacy Policy" [ref=f17e448] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en-US
+        - text: •
+      - listitem [ref=f17e449]:
+        - link "Terms of Service" [ref=f17e450] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en-US/gallery_tos.html
+        - text: •
+      - listitem [ref=f17e451]:
+        - link "Help" [ref=f17e452] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en-US

@@ -1,0 +1,246 @@
+- generic [ref=f43e1]:
+  - banner [ref=f43e2]:
+    - link "Skip to main content" [ref=f43e3] [cursor=pointer]
+    - generic [ref=f43e4]:
+      - generic [ref=f43e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f43e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f43e8]
+          - generic [ref=f43e9]: Chrome Web Store
+        - search "Sitewide" [ref=f43e10]:
+          - combobox "Search Chrome Web Store" [active] [ref=f43e15]
+        - generic [ref=f43e16]:
+          - button "More options menu" [ref=f43e20] [cursor=pointer]
+          - generic [ref=f43e30]:
+            - button "Google apps" [ref=f43e34] [cursor=pointer]
+            - link "Sign in" [ref=f43e38] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/detail/mockfill-%25E2%2580%2593-autofill-forms/ibaokjdbkpcihbpbpnlilmegbaaijghf&followup=https://chromewebstore.google.com/detail/mockfill-%25E2%2580%2593-autofill-forms/ibaokjdbkpcihbpbpnlilmegbaaijghf&ec=GAZApQM
+      - tablist [ref=f43e42]:
+        - generic [ref=f43e45]:
+          - tab "Discover" [ref=f43e46] [cursor=pointer]
+          - tab "Extensions" [selected] [ref=f43e47] [cursor=pointer]
+          - tab "Themes" [ref=f43e48] [cursor=pointer]
+    - dialog [ref=f43e49]:
+      - complementary [ref=f43e50]:
+        - heading "Switch to Chrome?" [level=2] [ref=f43e52]
+        - paragraph [ref=f43e53]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f43e54]:
+          - button "No thanks" [ref=f43e56] [cursor=pointer]
+          - generic [ref=f43e60] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f43e61]: "Yes"
+            - link "Yes" [ref=f43e62]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - main [ref=f43e66]:
+    - generic [ref=f43e67]:
+      - generic [ref=f43e68]:
+        - generic "Info" [ref=f43e70]:
+          - generic [ref=f43e71]: Switch to Chrome to install extensions and themes
+          - button "Switch to Chrome to install extensions and themes Install Chrome" [ref=f43e79] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f43e81]: Install Chrome
+        - generic [ref=f43e83]:
+          - generic [ref=f43e84]:
+            - img "Item logo image for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e85]
+            - heading "MockFill – Autofill Forms with Mock/Fake Data" [level=1] [ref=f43e86]
+          - generic [ref=f43e87]:
+            - generic [ref=f43e88]:
+              - link "Created by the owner of the listed website. The publisher has a good record with no history of violations. Learn more." [ref=f43e97] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/?hl=en-US&p=cws_badges
+              - link "mockfill.com" [ref=f43e98] [cursor=pointer]:
+                - /url: https://mockfill.com
+            - generic [ref=f43e99]:
+              - generic [ref=f43e100]:
+                - generic [ref=f43e101]: "5.0"
+                - generic [ref=f43e104]:
+                  - text: (
+                  - link [ref=f43e105] [cursor=pointer]:
+                    - /url: ./detail/mockfill-%E2%80%93-autofill-forms/ibaokjdbkpcihbpbpnlilmegbaaijghf/reviews
+                    - paragraph [ref=f43e106]: 5 ratings
+                  - text: )
+              - button "Ratings are updated daily and may not reflect the most recent reviews." [ref=f43e108] [cursor=pointer]
+            - button "Share" [ref=f43e117] [cursor=pointer]
+          - generic [ref=f43e123]:
+            - link "Extension" [ref=f43e124] [cursor=pointer]:
+              - /url: ./category/extensions
+            - link "Developer Tools" [ref=f43e125] [cursor=pointer]:
+              - /url: ./category/extensions/productivity/developer
+            - text: 975 users
+          - button "Add to Chrome" [ref=f43e129] [cursor=pointer]
+      - generic [ref=f43e132]:
+        - region "Media carousel" [ref=f43e133]:
+          - button "Previous slide" [ref=f43e135] [cursor=pointer]
+          - generic [ref=f43e142]:
+            - button "Item media 4 (screenshot) for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e144] [cursor=pointer]:
+              - img "Item media 4 (screenshot) for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e145]
+            - generic [ref=f43e148] [cursor=pointer]:
+              - button "Item media 1 (video) for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e150]
+              - img "Item video thumbnail" [ref=f43e156]
+            - button "Item media 2 (screenshot) for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e158] [cursor=pointer]:
+              - img "Item media 2 (screenshot) for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e159]
+            - button "Item media 3 (screenshot) for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e161] [cursor=pointer]:
+              - img "Item media 3 (screenshot) for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e162]
+            - button "Item media 4 (screenshot) for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e164] [cursor=pointer]:
+              - img "Item media 4 (screenshot) for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e165]
+            - generic [ref=f43e168] [cursor=pointer]:
+              - button "Item media 1 (video) for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e170]
+              - img "Item video thumbnail" [ref=f43e176]
+          - button "Next slide" [ref=f43e178] [cursor=pointer]
+        - generic [ref=f43e184]:
+          - button "Preview slide 1 for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e185] [cursor=pointer]:
+            - img "Item video thumbnail" [ref=f43e186]
+          - button "Preview slide 2 for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e188] [cursor=pointer]:
+            - img "Item media 2 (screenshot) for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e190]
+          - button "Preview slide 3 for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e192] [cursor=pointer]:
+            - img "Item media 3 (screenshot) for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e194]
+          - button "Preview slide 4 for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e196] [cursor=pointer]:
+            - img "Item media 4 (screenshot) for MockFill – Autofill Forms with Mock/Fake Data" [ref=f43e198]
+      - generic [ref=f43e200]:
+        - heading "Overview" [level=2] [ref=f43e202]
+        - generic [ref=f43e204]:
+          - generic [ref=f43e205]:
+            - paragraph [ref=f43e206]: A web form filler that autofills page inputs with realistic dummy data for testing.
+            - paragraph [ref=f43e207]: "MockFill – Autofill Forms with Mock Data (Chrome Extension) MockFill is a lightweight autofill Chrome extension built for developers, QA engineers, and designers who frequently test web forms. Instead of manually typing fake data again and again, MockFill lets you autofill forms instantly with realistic test data—right inside your browser. Whether you’re testing signup forms, debugging validations, or previewing layouts, MockFill helps you fill web forms faster and stay focused on building. ✨ Key Features 🚀 One-Click Form Autofill Instantly autofill entire web forms with smart mock data. 🎯 Smart Field Detection Automatically detects form fields like name, email, phone number, date, address, and more. ⚡ Single Field or Bulk Fill Fill individual inputs or auto populate the entire form at once. 🛠 Works on Any Website Compatible with React, Vue, Angular, and plain HTML forms. 🔒 Private & Secure No tracking, no data collection—everything runs locally in your browser. ✅ Why Install MockFill? If you regularly work with web forms, manual form filling quickly becomes repetitive and slow. MockFill acts as a fake data form filler, helping you test faster without relying on browser autofill or Google autofill settings. With MockFill, you: Save hours of repetitive typing Autofill form data consistently Test forms more efficiently Perfect for frontend developers, QA testers, and product designers who want a better form autofill experience. What's New 🆕? Autofill support of Dropdown(Select HTML and React V2&V2 Select only currently )"
+          - button "See more" [ref=f43e208] [cursor=pointer]
+      - generic [ref=f43e211]:
+        - heading [level=2] [ref=f43e213]:
+          - generic [ref=f43e214]:
+            - text: 5 out of 5
+            - img "5 out of 5 stars" [ref=f43e215]
+          - text: 5 ratings•
+          - paragraph [ref=f43e244]:
+            - link "Learn more about results and reviews." [ref=f43e245] [cursor=pointer]:
+              - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results
+        - generic [ref=f43e247] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f43e248]: See all reviews
+          - link "See all reviews" [ref=f43e249]:
+            - /url: ./detail/mockfill-%E2%80%93-autofill-forms/ibaokjdbkpcihbpbpnlilmegbaaijghf/reviews
+      - generic [ref=f43e250]:
+        - heading "Details" [level=2] [ref=f43e252]
+        - list [ref=f43e254]:
+          - listitem [ref=f43e255]:
+            - generic [ref=f43e256]: Version
+            - generic [ref=f43e257]: 2.3.5
+          - listitem [ref=f43e258]:
+            - generic [ref=f43e259]: Updated
+            - generic [ref=f43e260]: March 24, 2026
+          - listitem [ref=f43e261]:
+            - generic [ref=f43e262]: Features
+            - generic [ref=f43e263]: Offers in-app purchases
+          - listitem [ref=f43e264]:
+            - link "Flag concern" [ref=f43e266] [cursor=pointer]:
+              - /url: ./detail/ibaokjdbkpcihbpbpnlilmegbaaijghf/report
+          - listitem [ref=f43e267]:
+            - generic [ref=f43e268]: Size
+            - generic [ref=f43e269]: 1.85MiB
+          - listitem [ref=f43e270]:
+            - generic [ref=f43e271]: Languages
+            - generic [ref=f43e272]: English
+          - listitem [ref=f43e274]:
+            - generic [ref=f43e275]: Developer
+            - generic [ref=f43e277]:
+              - link "Website" [ref=f43e278] [cursor=pointer]:
+                - /url: https://mockfill.com
+              - group [ref=f43e281]:
+                - generic "Email" [ref=f43e282]
+          - listitem [ref=f43e287]:
+            - generic [ref=f43e288]: Non-trader
+            - generic [ref=f43e289]: This developer has not identified itself as a trader. For consumers in the European Union, please note that consumer rights do not apply to contracts between you and this developer.
+      - generic [ref=f43e290]:
+        - heading "Privacy" [level=2] [ref=f43e292]
+        - generic [ref=f43e294]:
+          - generic [ref=f43e295]:
+            - paragraph [ref=f43e296]:
+              - text: MockFill – Autofill Forms with Mock/Fake Data has disclosed the following information regarding the collection and usage of your data. More detailed information can be found in the developer's
+              - link "privacy policy" [ref=f43e297] [cursor=pointer]:
+                - /url: https://mockfill.vercel.app/privacy
+              - text: .
+            - heading "MockFill – Autofill Forms with Mock/Fake Data handles the following:" [level=3] [ref=f43e298]
+            - generic [ref=f43e299]:
+              - generic [ref=f43e300]: Personally identifiable information
+              - generic [ref=f43e310]: Website content
+            - generic [ref=f43e317] [cursor=pointer]:
+              - generic [aria-hidden] [ref=f43e318]: See details
+              - link "See details" [ref=f43e319]:
+                - /url: ./detail/ibaokjdbkpcihbpbpnlilmegbaaijghf/privacy
+          - generic [ref=f43e321]:
+            - heading "This developer declares that your data is" [level=2] [ref=f43e322]
+            - list [ref=f43e323]:
+              - listitem [ref=f43e324]:
+                - text: Not being sold to third parties, outside of the
+                - link "approved use cases" [ref=f43e325] [cursor=pointer]:
+                  - /url: https://developer.chrome.com/docs/webstore/program-policies/limited-use/
+              - listitem [ref=f43e326]: Not being used or transferred for purposes that are unrelated to the item's core functionality
+              - listitem [ref=f43e327]: Not being used or transferred to determine creditworthiness or for lending purposes
+      - generic [ref=f43e328]:
+        - heading "Support" [level=2] [ref=f43e330]
+        - paragraph [ref=f43e331]:
+          - text: For help with questions, suggestions, or problems, visit the developer's
+          - link "support site" [ref=f43e332] [cursor=pointer]:
+            - /url: https://mockfill.com/support
+    - generic [ref=f43e333]:
+      - heading "You might also like…" [level=2] [ref=f43e334]
+      - generic [ref=f43e335]:
+        - generic [ref=f43e337]:
+          - link "Fake Filler" [ref=f43e338] [cursor=pointer]:
+            - /url: ./detail/fake-filler/bnjjngeaknajbdcgpfkgnonkmififhfo
+          - generic [ref=f43e339]:
+            - heading "Fake Filler" [level=3] [ref=f43e340]
+            - generic [ref=f43e341]:
+              - img "Average rating 4.4 out of 5 stars." [ref=f43e342]:
+                - generic [ref=f43e343]: "4.4"
+              - link "Learn more about results and reviews \"Fake Filler\"." [ref=f43e352] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+            - paragraph [ref=f43e353]: A form filler that fills all inputs on a page with fake/dummy data.
+        - generic [ref=f43e355]:
+          - link "FakerFill – Form Filler & Fake Data Generator" [ref=f43e356] [cursor=pointer]:
+            - /url: ./detail/fakerfill-%E2%80%93-form-filler-f/ajepcgeokfoanenjolfjfpfdbcpddooe
+          - generic [ref=f43e357]:
+            - heading "FakerFill – Form Filler & Fake Data Generator" [level=3] [ref=f43e358]
+            - generic [ref=f43e359]:
+              - img "Average rating 5 out of 5 stars." [ref=f43e360]:
+                - generic [ref=f43e361]: "5.0"
+              - link "Learn more about results and reviews \"FakerFill – Form Filler & Fake Data Generator\"." [ref=f43e370] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+            - paragraph [ref=f43e371]: Auto-fill forms instantly with realistic fake data. A powerful form filler & test data generator for developers and QA teams.
+        - generic [ref=f43e373]:
+          - link "Form Filler Buddy" [ref=f43e374] [cursor=pointer]:
+            - /url: ./detail/form-filler-buddy/iihmcahgacmeofhbgjjhgflbffcmdnic
+          - generic [ref=f43e375]:
+            - heading "Form Filler Buddy" [level=3] [ref=f43e376]
+            - generic [ref=f43e377]:
+              - img "Average rating 5 out of 5 stars." [ref=f43e378]:
+                - generic [ref=f43e379]: "5.0"
+              - link "Learn more about results and reviews \"Form Filler Buddy\"." [ref=f43e388] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+            - paragraph [ref=f43e389]: Autofill forms with saved fields or realistic test data. Supports site-specific fields and secure storage.
+        - generic [ref=f43e391]:
+          - link "Fake Data - A form filler you won't hate" [ref=f43e392] [cursor=pointer]:
+            - /url: ./detail/fake-data-a-form-filler-y/gchcfdihakkhjgfmokemfeembfokkajj
+          - generic [ref=f43e393]:
+            - heading "Fake Data - A form filler you won't hate" [level=3] [ref=f43e394]
+            - generic [ref=f43e395]:
+              - img "Average rating 4.7 out of 5 stars." [ref=f43e396]:
+                - generic [ref=f43e397]: "4.7"
+              - link "Learn more about results and reviews \"Fake Data - A form filler you won't hate\"." [ref=f43e406] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+            - paragraph [ref=f43e407]: The most advanced tool for filling forms with fake and random data.
+  - contentinfo [ref=f43e408]:
+    - list [ref=f43e409]:
+      - listitem [ref=f43e410]:
+        - link "About Chrome Web Store" [ref=f43e411] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en-US
+        - text: •
+      - listitem [ref=f43e412]:
+        - link "Developer Dashboard" [ref=f43e413] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f43e414]:
+        - link "Privacy Policy" [ref=f43e415] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en-US
+        - text: •
+      - listitem [ref=f43e416]:
+        - link "Terms of Service" [ref=f43e417] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en-US/gallery_tos.html
+        - text: •
+      - listitem [ref=f43e418]:
+        - link "Help" [ref=f43e419] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en-US

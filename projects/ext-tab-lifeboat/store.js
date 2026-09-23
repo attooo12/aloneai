@@ -8,6 +8,7 @@
 //   live         -> { t, ids, session }   last known state of all windows (source of "window closed" and
 //                                   "previous browser session" snapshots)
 //   settings     -> DEFAULT_SETTINGS patch
+//   trash        -> { t, sessions }   the last deleted session(s), so "Undo" still works after the popup closed
 // A session and its index entry are always written in the same storage.set() call. Every mutation runs under
 // one cross-context Web Lock ("tab-lifeboat-store"), so the popup, options page and service worker never interleave.
 import { isPro } from './license.js';
@@ -60,7 +61,7 @@ async function rebuildIndexesLocked() {
   }
   // Keep protected flags that survive in a damaged index, where possible.
   const oldAuto = Array.isArray(all[IDX.auto]) ? all[IDX.auto] : [];
-  for (const e of out.auto) if (oldAuto.some((o) => o && o.id === e.id && o.keep)) e.keep = true;
+  for (const e of out.auto) { const o = oldAuto.find((x) => x && x.id === e.id && x.keep); if (o) e.keep = o.keep === 'user' ? 'user' : true; }
   for (const list of Object.values(out)) list.sort((a, b) => a.created - b.created);
   await local().set({ [IDX.named]: out.named, [IDX.auto]: out.auto, schema: SCHEMA_VERSION });
   return out;
@@ -116,7 +117,7 @@ export function saveNamed(capture, name) {
 
 export function renameSession(kind, id, name) {
   return withLock(async () => {
-    const clean = String(name ?? '').replace(/\s+/g, ' ').trim().slice(0, 120);
+    const clean = String(name ?? '').replace(/\s+/g, ' ').trim().slice(0, 120).replace(/[\ud800-\udbff]$/, '');
     if (!clean) throw new Error('The name cannot be empty.');
     const idx = await readIndex(kind);
     const e = idx.find((x) => x.id === id);
@@ -129,32 +130,56 @@ export function renameSession(kind, id, name) {
   });
 }
 
-// Deletes and returns the session, so the UI can offer "Undo".
-export function deleteSession(kind, id) {
+// Deletes and returns the sessions, so the UI can offer "Undo". They are also kept as `trash` (the last delete
+// only) in the same write, so Undo still works after the popup has closed.
+export const TRASH_UNDO_MS = 30 * 60e3; // how long the popup offers "Undo" for the last delete
+export function deleteSessions(kind, ids) {
   return withLock(async () => {
     const idx = await readIndex(kind);
-    const s = await getSession(id);
-    const e = idx.find((x) => x.id === id);
-    await local().set({ [IDX[kind]]: idx.filter((x) => x.id !== id) });
-    await local().remove(sKey(id));
-    if (s && e?.keep) s.keep = true;
-    return s;
+    const gone = new Set(ids);
+    const list = (await getSessions(ids)).filter(Boolean);
+    for (const s of list) { const e = idx.find((x) => x.id === s.id); if (e?.keep) s.keep = e.keep; }
+    const write = { [IDX[kind]]: idx.filter((x) => !gone.has(x.id)) };
+    if (list.length) write.trash = { t: Date.now(), sessions: list };
+    await local().set(write);
+    await local().remove(ids.map(sKey));
+    return list;
   });
 }
+export const deleteSession = async (kind, id) => (await deleteSessions(kind, [id]))[0] || null;
 
-// Puts a deleted session back (Undo). Not subject to the Free limit: it was already saved.
-export function undoDelete(session) {
+// The last delete, if it is recent enough to offer "Undo".
+export async function getTrash(now = Date.now()) {
+  const { trash } = await local().get('trash');
+  return trash && Array.isArray(trash.sessions) && trash.sessions.length && now - trash.t < TRASH_UNDO_MS ? trash : null;
+}
+
+// Puts deleted session(s) back (Undo). Not subject to the Free limit: they were already saved.
+export function undoDelete(sessions) {
   return withLock(async () => {
-    const r = cleanSession(session);
-    if (r.error) throw new Error('Cannot undo: ' + r.error);
-    const kind = r.session.kind;
-    const idx = (await readIndex(kind)).filter((x) => x.id !== r.session.id);
-    const e = summarize(r.session);
-    if (session.keep) e.keep = true;
-    idx.push(e);
-    idx.sort((a, b) => a.created - b.created);
-    await local().set({ [sKey(e.id)]: r.session, [IDX[kind]]: idx });
-    return e;
+    const list = Array.isArray(sessions) ? sessions : [sessions];
+    const idx = { named: await readIndex('named'), auto: await readIndex('auto') };
+    const write = {};
+    const out = [];
+    for (const session of list) {
+      const r = cleanSession(session);
+      if (r.error) throw new Error('Cannot undo: ' + r.error);
+      const kind = r.session.kind;
+      idx[kind] = idx[kind].filter((x) => x.id !== r.session.id);
+      const e = summarize(r.session);
+      if (session.keep) e.keep = session.keep === 'user' ? 'user' : true;
+      idx[kind].push(e);
+      write[sKey(e.id)] = r.session;
+      write[IDX[kind]] = idx[kind];
+      out.push(e);
+    }
+    for (const k of ['named', 'auto']) if (write[IDX[k]]) write[IDX[k]].sort((a, b) => a.created - b.created);
+    const { trash } = await local().get('trash');
+    const rest = Array.isArray(trash?.sessions) ? trash.sessions.filter((x) => !out.some((e) => e.id === x?.id)) : [];
+    if (rest.length) write.trash = { ...trash, sessions: rest };
+    await local().set(write);
+    if (trash && !rest.length) await local().remove('trash');
+    return Array.isArray(sessions) ? out : out[0];
   });
 }
 
@@ -237,7 +262,10 @@ const REASON_LABEL = { periodic: 'Auto snapshot', 'window-closed': 'Closed windo
 //  - skip a snapshot identical to the latest one of the same scope (an idle browser doesn't churn the rotation);
 //  - if the tab count collapses (< DROP_RATIO of the last full snapshot, which had >= DROP_MIN real tabs), that
 //    last good snapshot is marked protected and is not rotated out (crash, accidental "close all", etc.);
-//  - rotation only ever removes the oldest unprotected snapshots beyond `autoKeep`.
+//  - rotation only ever removes the oldest unprotected snapshots beyond `autoKeep`, and never the newest full
+//    ("all") snapshot or the newest "Previous browser session" (many closed windows can't push them out);
+//  - automatically protected snapshots are capped at PROTECTED_MAX; ones the user protected are never removed.
+//  - "Previous browser session" is always recorded (once per browser start), even if unchanged.
 export function addAutoSnapshot(capture, reason = 'periodic', scope = 'all', { now = Date.now() } = {}) {
   return withLock(async () => {
     const r = cleanSession({ ...capture, name: `${REASON_LABEL[reason] || 'Snapshot'}`, reason, scope, created: now, updated: now }, { kind: 'auto', keepId: false, now });
@@ -249,21 +277,27 @@ export function addAutoSnapshot(capture, reason = 'periodic', scope = 'all', { n
     const e = summarize(s);
     const sameScope = idx.filter((x) => (x.scope || 'all') === scope);
     const latest = sameScope[sameScope.length - 1];
-    if (latest && latest.fp === e.fp) return { skipped: 'unchanged', id: latest.id };
+    if (latest && latest.fp === e.fp && reason !== 'previous-session') return { skipped: 'unchanged', id: latest.id };
     if (scope === 'window' && sameScope.slice(-10).some((x) => x.fp === e.fp)) return { skipped: 'unchanged' };
     let protectedId = null;
     if (scope === 'all' && latest && (latest.real ?? latest.tabs) >= DROP_MIN && c.real < (latest.real ?? latest.tabs) * DROP_RATIO) {
-      latest.keep = true;
+      if (!latest.keep) latest.keep = true;
       protectedId = latest.id;
     }
     idx.push(e);
     const { autoKeep } = await getSettings();
+    const newestAll = idx.findLast((x) => (x.scope || 'all') === 'all');
+    const newestPrev = idx.findLast((x) => x.reason === 'previous-session');
     const unprotected = idx.filter((x) => !x.keep);
-    const kept = idx.filter((x) => x.keep);
-    const evict = new Set([
-      ...unprotected.slice(0, Math.max(0, unprotected.length - autoKeep)).map((x) => x.id),
-      ...kept.slice(0, Math.max(0, kept.length - PROTECTED_MAX)).map((x) => x.id)
-    ]);
+    const kept = idx.filter((x) => x.keep === true); // automatic protection; 'user' is never rotated out
+    const evict = new Set(kept.slice(0, Math.max(0, kept.length - PROTECTED_MAX)).map((x) => x.id));
+    let excess = unprotected.length - autoKeep;
+    for (const x of unprotected) {
+      if (excess <= 0) break;
+      if (x === newestAll || x === newestPrev) continue;
+      evict.add(x.id);
+      excess--;
+    }
     const next = idx.filter((x) => !evict.has(x.id));
     await local().set({ [sKey(s.id)]: s, [IDX.auto]: next });
     if (evict.size) await local().remove([...evict].map(sKey));
@@ -271,13 +305,13 @@ export function addAutoSnapshot(capture, reason = 'periodic', scope = 'all', { n
   });
 }
 
-// Pin / unpin an auto snapshot (protected snapshots are not rotated out).
+// Pin / unpin an auto snapshot. Protected by the user ('user') = never rotated out.
 export function setProtected(id, keep) {
   return withLock(async () => {
     const idx = await readIndex('auto');
     const e = idx.find((x) => x.id === id);
     if (!e) throw new Error('Snapshot not found.');
-    if (keep) e.keep = true; else delete e.keep;
+    if (keep) e.keep = 'user'; else delete e.keep;
     await local().set({ [IDX.auto]: idx });
     return e;
   });
@@ -334,8 +368,10 @@ export async function getSettings() {
   if (!['off', 'daily', 'weekly'].includes(s.backup)) s.backup = 'off';
   return s;
 }
-export async function setSettings(patch) {
-  const next = { ...(await getSettings()), ...patch };
-  await local().set({ settings: next });
-  return next;
+export function setSettings(patch) {
+  return withLock(async () => { // read-modify-write: the options page and the backup alarm both write settings
+    const next = { ...(await getSettings()), ...patch };
+    await local().set({ settings: next });
+    return next;
+  });
 }

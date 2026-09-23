@@ -1,0 +1,254 @@
+- generic [ref=f26e1]:
+  - banner [ref=f26e2]:
+    - link "Skip to main content" [ref=f26e3] [cursor=pointer]
+    - generic [ref=f26e4]:
+      - generic [ref=f26e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f26e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f26e8]
+          - generic [ref=f26e9]: Chrome Web Store
+        - search "Sitewide" [ref=f26e10]:
+          - combobox "Search Chrome Web Store" [active] [ref=f26e15]
+        - generic [ref=f26e16]:
+          - button "More options menu" [ref=f26e20] [cursor=pointer]
+          - generic [ref=f26e30]:
+            - button "Google apps" [ref=f26e34] [cursor=pointer]
+            - link "Sign in" [ref=f26e38] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/detail/editthiscookie-v3/ojfebgpkimhlhcblbalbfjblapadhbol&followup=https://chromewebstore.google.com/detail/editthiscookie-v3/ojfebgpkimhlhcblbalbfjblapadhbol&ec=GAZApQM
+      - tablist [ref=f26e42]:
+        - generic [ref=f26e45]:
+          - tab "Discover" [ref=f26e46] [cursor=pointer]
+          - tab "Extensions" [selected] [ref=f26e47] [cursor=pointer]
+          - tab "Themes" [ref=f26e48] [cursor=pointer]
+    - dialog [ref=f26e49]:
+      - complementary [ref=f26e50]:
+        - heading "Switch to Chrome?" [level=2] [ref=f26e52]
+        - paragraph [ref=f26e53]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f26e54]:
+          - button "No thanks" [ref=f26e56] [cursor=pointer]
+          - generic [ref=f26e60] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f26e61]: "Yes"
+            - link "Yes" [ref=f26e62]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - main [ref=f26e66]:
+    - generic [ref=f26e67]:
+      - generic [ref=f26e68]:
+        - generic "Info" [ref=f26e70]:
+          - generic [ref=f26e71]: Switch to Chrome to install extensions and themes
+          - button "Switch to Chrome to install extensions and themes Install Chrome" [ref=f26e79] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f26e81]: Install Chrome
+        - generic [ref=f26e83]:
+          - generic [ref=f26e84]:
+            - img "Item logo image for EditThisCookie (V3)" [ref=f26e85]
+            - heading "EditThisCookie (V3)" [level=1] [ref=f26e86]
+          - generic [ref=f26e87]:
+            - generic [ref=f26e88]:
+              - link "Created by the owner of the listed website. The publisher has a good record with no history of violations. Learn more." [ref=f26e97] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/?hl=en-US&p=cws_badges
+              - link "editcookie.com" [ref=f26e98] [cursor=pointer]:
+                - /url: https://editcookie.com
+            - generic [ref=f26e99]:
+              - link "Follows recommended practices for Chrome extensions. Learn more." [ref=f26e108] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/?hl=en-US&p=cws_badges
+              - generic [ref=f26e109]: Featured
+            - generic [ref=f26e110]:
+              - generic [ref=f26e111]:
+                - generic [ref=f26e112]: "4.1"
+                - generic [ref=f26e115]:
+                  - text: (
+                  - link [ref=f26e116] [cursor=pointer]:
+                    - /url: ./detail/editthiscookie-v3/ojfebgpkimhlhcblbalbfjblapadhbol/reviews
+                    - paragraph [ref=f26e117]: 94 ratings
+                  - text: )
+              - button "Ratings are updated daily and may not reflect the most recent reviews." [ref=f26e119] [cursor=pointer]
+            - button "Share" [ref=f26e128] [cursor=pointer]
+          - generic [ref=f26e134]:
+            - link "Extension" [ref=f26e135] [cursor=pointer]:
+              - /url: ./category/extensions
+            - link "Tools" [ref=f26e136] [cursor=pointer]:
+              - /url: ./category/extensions/productivity/tools
+            - text: 400,000 users
+          - button "Add to Chrome" [ref=f26e140] [cursor=pointer]
+      - generic [ref=f26e143]:
+        - region "Media carousel" [ref=f26e144]:
+          - button "Previous slide" [ref=f26e146] [cursor=pointer]
+          - generic [ref=f26e153]:
+            - button "Item media 5 (screenshot) for EditThisCookie (V3)" [ref=f26e155] [cursor=pointer]:
+              - img "Item media 5 (screenshot) for EditThisCookie (V3)" [ref=f26e156]
+            - button "Item media 6 (screenshot) for EditThisCookie (V3)" [ref=f26e158] [cursor=pointer]:
+              - img "Item media 6 (screenshot) for EditThisCookie (V3)" [ref=f26e159]
+            - button "Item media 1 (screenshot) for EditThisCookie (V3)" [ref=f26e161] [cursor=pointer]:
+              - img "Item media 1 (screenshot) for EditThisCookie (V3)" [ref=f26e162]
+            - button "Item media 2 (screenshot) for EditThisCookie (V3)" [ref=f26e164] [cursor=pointer]:
+              - img "Item media 2 (screenshot) for EditThisCookie (V3)" [ref=f26e165]
+            - button "Item media 3 (screenshot) for EditThisCookie (V3)" [ref=f26e167] [cursor=pointer]:
+              - img "Item media 3 (screenshot) for EditThisCookie (V3)" [ref=f26e168]
+            - button "Item media 4 (screenshot) for EditThisCookie (V3)" [ref=f26e170] [cursor=pointer]:
+              - img "Item media 4 (screenshot) for EditThisCookie (V3)" [ref=f26e171]
+            - button "Item media 5 (screenshot) for EditThisCookie (V3)" [ref=f26e173] [cursor=pointer]:
+              - img "Item media 5 (screenshot) for EditThisCookie (V3)" [ref=f26e174]
+            - button "Item media 6 (screenshot) for EditThisCookie (V3)" [ref=f26e176] [cursor=pointer]:
+              - img "Item media 6 (screenshot) for EditThisCookie (V3)" [ref=f26e177]
+            - button "Item media 1 (screenshot) for EditThisCookie (V3)" [ref=f26e179] [cursor=pointer]:
+              - img "Item media 1 (screenshot) for EditThisCookie (V3)" [ref=f26e180]
+            - button "Item media 2 (screenshot) for EditThisCookie (V3)" [ref=f26e182] [cursor=pointer]:
+              - img "Item media 2 (screenshot) for EditThisCookie (V3)" [ref=f26e183]
+          - button "Next slide" [ref=f26e185] [cursor=pointer]
+        - generic [ref=f26e191]:
+          - button "Preview slide 1 for EditThisCookie (V3)" [ref=f26e192] [cursor=pointer]:
+            - img "Item media 1 (screenshot) for EditThisCookie (V3)" [ref=f26e194]
+          - button "Preview slide 2 for EditThisCookie (V3)" [ref=f26e196] [cursor=pointer]:
+            - img "Item media 2 (screenshot) for EditThisCookie (V3)" [ref=f26e198]
+          - button "Preview slide 3 for EditThisCookie (V3)" [ref=f26e200] [cursor=pointer]:
+            - img "Item media 3 (screenshot) for EditThisCookie (V3)" [ref=f26e202]
+          - button "Preview slide 4 for EditThisCookie (V3)" [ref=f26e204] [cursor=pointer]:
+            - img "Item media 4 (screenshot) for EditThisCookie (V3)" [ref=f26e206]
+          - button "Preview slide 5 for EditThisCookie (V3)" [ref=f26e208] [cursor=pointer]:
+            - img "Item media 5 (screenshot) for EditThisCookie (V3)" [ref=f26e210]
+          - button "Preview slide 6 for EditThisCookie (V3)" [ref=f26e212] [cursor=pointer]:
+            - img "Item media 6 (screenshot) for EditThisCookie (V3)" [ref=f26e214]
+      - generic [ref=f26e216]:
+        - heading "Overview" [level=2] [ref=f26e218]
+        - generic [ref=f26e220]:
+          - generic [ref=f26e221]:
+            - paragraph [ref=f26e222]: EditThisCookie is a cookie manager. You can add, delete, edit, search, protect and block cookies!
+            - paragraph [ref=f26e223]: EditThisCookie is a cookie manager. You can add, delete, edit, search, protect, and block cookies! Inspired by the lack of good cookie managers in Google Chrome, I developed this small, simple, and extremely useful extension that allows you to do anything you'll ever need to do to cookies! Delete any cookie Edit any cookie Add a new cookie Search a cookie Protect a cookie (read-only) Block cookies (cookie filter) Export cookies in JSON, Netscape cookie file (perfect for wget and curl), Perl::LPW Import cookies in JSON Limit the maximum expiration date of any cookie https://github.com/mrfanii/Edit-This-Cookie-V3
+          - button "See more" [ref=f26e224] [cursor=pointer]
+      - generic [ref=f26e227]:
+        - heading [level=2] [ref=f26e229]:
+          - generic [ref=f26e230]:
+            - text: 4.1 out of 5
+            - img "4.1 out of 5 stars" [ref=f26e231]
+          - text: 94 ratings•
+          - paragraph [ref=f26e260]:
+            - link "Learn more about results and reviews." [ref=f26e261] [cursor=pointer]:
+              - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results
+        - generic [ref=f26e263] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f26e264]: See all reviews
+          - link "See all reviews" [ref=f26e265]:
+            - /url: ./detail/editthiscookie-v3/ojfebgpkimhlhcblbalbfjblapadhbol/reviews
+      - generic [ref=f26e266]:
+        - heading "Details" [level=2] [ref=f26e268]
+        - list [ref=f26e270]:
+          - listitem [ref=f26e271]:
+            - generic [ref=f26e272]: Version
+            - generic [ref=f26e273]: 3.0.5
+          - listitem [ref=f26e274]:
+            - generic [ref=f26e275]: Updated
+            - generic [ref=f26e276]: September 12, 2025
+          - listitem [ref=f26e277]:
+            - link "Flag concern" [ref=f26e279] [cursor=pointer]:
+              - /url: ./detail/ojfebgpkimhlhcblbalbfjblapadhbol/report
+          - listitem [ref=f26e280]:
+            - generic [ref=f26e281]: Size
+            - generic [ref=f26e282]: 1.06MiB
+          - listitem [ref=f26e283]:
+            - generic [ref=f26e284]: Languages
+            - generic [ref=f26e286]:
+              - text: 35 languages
+              - button "Show more languages" [ref=f26e288] [cursor=pointer]
+          - listitem [ref=f26e294]:
+            - generic [ref=f26e295]: Developer
+            - generic [ref=f26e297]:
+              - link "Website" [ref=f26e298] [cursor=pointer]:
+                - /url: https://editcookie.com
+              - group [ref=f26e301]:
+                - generic "Email" [ref=f26e302]
+          - listitem [ref=f26e307]:
+            - generic [ref=f26e308]: Non-trader
+            - generic [ref=f26e309]: This developer has not identified itself as a trader. For consumers in the European Union, please note that consumer rights do not apply to contracts between you and this developer.
+      - generic [ref=f26e310]:
+        - heading "Privacy" [level=2] [ref=f26e312]
+        - generic [ref=f26e314]:
+          - generic [ref=f26e319]:
+            - text: The developer has disclosed that it will not collect or use your data. To learn more, see the developer’s
+            - link "privacy policy" [ref=f26e320] [cursor=pointer]:
+              - /url: https://www.freebusinessapps.net/privacy
+            - text: .
+          - generic [ref=f26e321]:
+            - heading "This developer declares that your data is" [level=2] [ref=f26e322]
+            - list [ref=f26e323]:
+              - listitem [ref=f26e324]:
+                - text: Not being sold to third parties, outside of the
+                - link "approved use cases" [ref=f26e325] [cursor=pointer]:
+                  - /url: https://developer.chrome.com/docs/webstore/program-policies/limited-use/
+              - listitem [ref=f26e326]: Not being used or transferred for purposes that are unrelated to the item's core functionality
+              - listitem [ref=f26e327]: Not being used or transferred to determine creditworthiness or for lending purposes
+      - generic [ref=f26e329]:
+        - heading "Support" [level=2] [ref=f26e330]
+        - generic [ref=f26e332] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f26e333]: Visit support hub
+          - link "Visit support hub" [ref=f26e334]:
+            - /url: ./detail/ojfebgpkimhlhcblbalbfjblapadhbol/support
+      - generic [ref=f26e335]:
+        - heading "Related" [level=2] [ref=f26e336]
+        - region "Related items carousel" [ref=f26e339]:
+          - button "Previous slide" [ref=f26e341] [cursor=pointer]
+          - region "Related item slides" [ref=f26e348]:
+            - generic [ref=f26e349]:
+              - generic [ref=f26e351]:
+                - link "Cookie-Editor" [ref=f26e352] [cursor=pointer]:
+                  - /url: ./detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm
+                - generic [ref=f26e353]:
+                  - heading "Cookie-Editor" [level=3] [ref=f26e354]
+                  - generic [ref=f26e355]:
+                    - img "Average rating 4.4 out of 5 stars." [ref=f26e356]:
+                      - generic [ref=f26e357]: "4.4"
+                    - link "Learn more about results and reviews \"Cookie-Editor\"." [ref=f26e366] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f26e367]: Simple yet powerful Cookie Editor that allow you to quickly create, edit and delete cookies without leaving your tab.
+              - generic [ref=f26e369]:
+                - link "Cookie Editor" [ref=f26e370] [cursor=pointer]:
+                  - /url: ./detail/cookie-editor/gigiddbkofmmehoipndncpadfopebjfh
+                - generic [ref=f26e371]:
+                  - heading "Cookie Editor" [level=3] [ref=f26e372]
+                  - generic [ref=f26e373]:
+                    - img "Average rating 3 out of 5 stars." [ref=f26e374]:
+                      - generic [ref=f26e375]: "3.0"
+                    - link "Learn more about results and reviews \"Cookie Editor\"." [ref=f26e384] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f26e385]: Use Cookie Editor to edit a cookie, to delete and to clear cookies for the current url
+              - generic [ref=f26e387]:
+                - link "PDF Editor" [ref=f26e388] [cursor=pointer]:
+                  - /url: ./detail/pdf-editor/deaiapbieocoklikiokamcdklicacgdo
+                - generic [ref=f26e389]:
+                  - heading "PDF Editor" [level=3] [ref=f26e391]
+                  - generic [ref=f26e392]:
+                    - img "Average rating 1.9 out of 5 stars." [ref=f26e393]:
+                      - generic [ref=f26e394]: "1.9"
+                    - link "Learn more about results and reviews \"PDF Editor\"." [ref=f26e403] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f26e404]: PDF Editor - edit, merge and combine PDF documents.
+              - generic [ref=f26e406]:
+                - link "BigBobux" [ref=f26e407] [cursor=pointer]:
+                  - /url: ./detail/bigbobux/ibgmgbapjmbpkjdindmgmgfolfbedpoe
+                - generic [ref=f26e408]:
+                  - heading "BigBobux" [level=3] [ref=f26e410]
+                  - generic [ref=f26e411]:
+                    - img "Average rating 4.4 out of 5 stars." [ref=f26e412]:
+                      - generic [ref=f26e413]: "4.4"
+                    - link "Learn more about results and reviews \"BigBobux\"." [ref=f26e422] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f26e423]: Fakes your Robux
+          - button "Next slide" [ref=f26e425] [cursor=pointer]
+  - contentinfo [ref=f26e431]:
+    - list [ref=f26e432]:
+      - listitem [ref=f26e433]:
+        - link "About Chrome Web Store" [ref=f26e434] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en-US
+        - text: •
+      - listitem [ref=f26e435]:
+        - link "Developer Dashboard" [ref=f26e436] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f26e437]:
+        - link "Privacy Policy" [ref=f26e438] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en-US
+        - text: •
+      - listitem [ref=f26e439]:
+        - link "Terms of Service" [ref=f26e440] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en-US/gallery_tos.html
+        - text: •
+      - listitem [ref=f26e441]:
+        - link "Help" [ref=f26e442] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en-US

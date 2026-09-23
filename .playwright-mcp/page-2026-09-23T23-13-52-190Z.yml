@@ -1,0 +1,246 @@
+- generic [ref=f22e1]:
+  - banner [ref=f22e2]:
+    - link "Skip to main content" [ref=f22e3] [cursor=pointer]
+    - generic [ref=f22e4]:
+      - generic [ref=f22e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f22e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f22e8]
+          - generic [ref=f22e9]: Chrome Web Store
+        - search "Sitewide" [ref=f22e10]:
+          - combobox "Search Chrome Web Store" [active] [ref=f22e15]
+        - generic [ref=f22e16]:
+          - button "More options menu" [ref=f22e20] [cursor=pointer]
+          - generic [ref=f22e30]:
+            - button "Google apps" [ref=f22e34] [cursor=pointer]
+            - link "Sign in" [ref=f22e38] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/detail/qr-code-generator/afpbjjgbdimpioenaedcjgkaigggcdpp&followup=https://chromewebstore.google.com/detail/qr-code-generator/afpbjjgbdimpioenaedcjgkaigggcdpp&ec=GAZApQM
+      - tablist [ref=f22e42]:
+        - generic [ref=f22e45]:
+          - tab "Discover" [ref=f22e46] [cursor=pointer]
+          - tab "Extensions" [selected] [ref=f22e47] [cursor=pointer]
+          - tab "Themes" [ref=f22e48] [cursor=pointer]
+    - dialog [ref=f22e49]:
+      - complementary [ref=f22e50]:
+        - heading "Switch to Chrome?" [level=2] [ref=f22e52]
+        - paragraph [ref=f22e53]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f22e54]:
+          - button "No thanks" [ref=f22e56] [cursor=pointer]
+          - generic [ref=f22e60] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f22e61]: "Yes"
+            - link "Yes" [ref=f22e62]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - main [ref=f22e66]:
+    - generic [ref=f22e67]:
+      - generic [ref=f22e68]:
+        - generic "Info" [ref=f22e70]:
+          - generic [ref=f22e71]: Switch to Chrome to install extensions and themes
+          - button "Switch to Chrome to install extensions and themes Install Chrome" [ref=f22e79] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f22e81]: Install Chrome
+        - generic [ref=f22e83]:
+          - generic [ref=f22e84]:
+            - img "Item logo image for QR Code Generator" [ref=f22e85]
+            - heading "QR Code Generator" [level=1] [ref=f22e86]
+          - generic [ref=f22e87]:
+            - generic [ref=f22e88]:
+              - link "Created by the owner of the listed website. The publisher has a good record with no history of violations. Learn more." [ref=f22e97] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/?hl=en-US&p=cws_badges
+              - link "https://high-qr-code-generator.com/" [ref=f22e98] [cursor=pointer]:
+                - /url: https://high-qr-code-generator.com/
+            - generic [ref=f22e99]:
+              - link "Follows recommended practices for Chrome extensions. Learn more." [ref=f22e108] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/?hl=en-US&p=cws_badges
+              - generic [ref=f22e109]: Featured
+            - generic [ref=f22e110]:
+              - generic [ref=f22e111]:
+                - generic [ref=f22e112]: "4.9"
+                - generic [ref=f22e115]:
+                  - text: (
+                  - link [ref=f22e116] [cursor=pointer]:
+                    - /url: ./detail/qr-code-generator/afpbjjgbdimpioenaedcjgkaigggcdpp/reviews
+                    - paragraph [ref=f22e117]: 6K ratings
+                  - text: )
+              - button "Ratings are updated daily and may not reflect the most recent reviews." [ref=f22e119] [cursor=pointer]
+            - button "Share" [ref=f22e128] [cursor=pointer]
+          - generic [ref=f22e134]:
+            - link "Extension" [ref=f22e135] [cursor=pointer]:
+              - /url: ./category/extensions
+            - link "Tools" [ref=f22e136] [cursor=pointer]:
+              - /url: ./category/extensions/productivity/tools
+            - text: 900,000 users
+          - button "Add to Chrome" [ref=f22e140] [cursor=pointer]
+      - generic [ref=f22e143]:
+        - region "Media carousel" [ref=f22e144]:
+          - button "Previous slide" [ref=f22e146] [cursor=pointer]
+          - generic [ref=f22e153]:
+            - button "Item media 3 (screenshot) for QR Code Generator" [ref=f22e155] [cursor=pointer]:
+              - img "Item media 3 (screenshot) for QR Code Generator" [ref=f22e156]
+            - button "Item media 4 (screenshot) for QR Code Generator" [ref=f22e158] [cursor=pointer]:
+              - img "Item media 4 (screenshot) for QR Code Generator" [ref=f22e159]
+            - button "Item media 1 (screenshot) for QR Code Generator" [ref=f22e161] [cursor=pointer]:
+              - img "Item media 1 (screenshot) for QR Code Generator" [ref=f22e162]
+            - button "Item media 2 (screenshot) for QR Code Generator" [ref=f22e164] [cursor=pointer]:
+              - img "Item media 2 (screenshot) for QR Code Generator" [ref=f22e165]
+            - button "Item media 3 (screenshot) for QR Code Generator" [ref=f22e167] [cursor=pointer]:
+              - img "Item media 3 (screenshot) for QR Code Generator" [ref=f22e168]
+            - button "Item media 4 (screenshot) for QR Code Generator" [ref=f22e170] [cursor=pointer]:
+              - img "Item media 4 (screenshot) for QR Code Generator" [ref=f22e171]
+            - button "Item media 1 (screenshot) for QR Code Generator" [ref=f22e173] [cursor=pointer]:
+              - img "Item media 1 (screenshot) for QR Code Generator" [ref=f22e174]
+            - button "Item media 2 (screenshot) for QR Code Generator" [ref=f22e176] [cursor=pointer]:
+              - img "Item media 2 (screenshot) for QR Code Generator" [ref=f22e177]
+          - button "Next slide" [ref=f22e179] [cursor=pointer]
+        - generic [ref=f22e185]:
+          - button "Preview slide 1 for QR Code Generator" [ref=f22e186] [cursor=pointer]:
+            - img "Item media 1 (screenshot) for QR Code Generator" [ref=f22e188]
+          - button "Preview slide 2 for QR Code Generator" [ref=f22e190] [cursor=pointer]:
+            - img "Item media 2 (screenshot) for QR Code Generator" [ref=f22e192]
+          - button "Preview slide 3 for QR Code Generator" [ref=f22e194] [cursor=pointer]:
+            - img "Item media 3 (screenshot) for QR Code Generator" [ref=f22e196]
+          - button "Preview slide 4 for QR Code Generator" [ref=f22e198] [cursor=pointer]:
+            - img "Item media 4 (screenshot) for QR Code Generator" [ref=f22e200]
+      - generic [ref=f22e202]:
+        - heading "Overview" [level=2] [ref=f22e204]
+        - generic [ref=f22e206]:
+          - generic [ref=f22e207]:
+            - paragraph [ref=f22e208]: A super handy QR Code Generator / Creator for you.
+            - paragraph [ref=f22e209]: "Converts your current page into a QR Code with one quick click. Generates QR Codes from free text and URLs on the fly. The highest-rated QR Code Generator in the Chrome Web Store. ★ QR Code Generator Highlights: ✓ Trusted by 800,000+ weekly active users. ✓ Privacy-friendly: no unnecessary permissions required. ✓ Adapts to your operating system’s Dark Mode to protect your eyes. ✓ Generate a QR Code for your current page with just one click. ✓ Free for everyone. ✓ Scan, analyze, decode, and read QR Codes. ✓ Scan QR Codes directly with your camera. ✓ Save and view your QR Code scan history. ✓ Create QR Codes in real time: Simply type to generate. ✓ Right-click to create a QR Code for your selection. ✓ Color and size customization. ✓ Option to download the QR Code as an image (PNG/SVG/SVG Code). ✓ “With Logo”: Customize your QR Code with a logo. ✓ Super fast and works offline. ✓ Supports hotkeys. Assign them at chrome://extensions/shortcuts ✓ Print your QR Code directly. ✓ Option to disable context menus available in Settings » Advanced. ✓ Adjustable error correction level (L/M/Q/H) for better scan reliability. ★★★★★ PLEASE RATE FIVE ★★★★★ If you like this extension, please write a review and rate us five stars. I’m looking forward to reading your comments. Updated on Sep 22, 2026 - Sharper image QR scanning, even for very blurry codes - still with no extra permissions. Internal tests: 98% to 100%. If another tool can scan it, so can we. Updated on Aug 28, 2026 - Greatly enhanced image-based QR code scanning success. Updated on June 27, 2026 - Added error correction level. You can now choose between Low (7%), Medium (15%), Quartile (25%), and High (30%) to balance QR Code density and scan reliability. Find it in Settings » Advanced. - Fixed a bug where customized color settings were not being saved. Updated on May 1, 2026 - Added camera-based QR Code scanning. You can now scan QR Codes directly with your camera. - Added scan history. You can save and view all QR Codes you have scanned. Updated on Dec 1, 2024 - Thanks to our user Braden Wardle, we've fixed an issue where the print feature did not function correctly. - Fixed minor style issues. Updated on Nov 18, 2024 - Thanks to our user \"E\", we've fixed the 'Multiple Fixed Popups' feature malfunction in v.10.3.10 - Fixed uninstall URL typo. Updated on Oct 26, 2024: - Resolved text rendering problem in dark theme. - Corrected issues with auto-switching between light and dark themes. - Removed the donation link to improve the UI's appearance. If you want to support us, just rate us five stars! :) Updated on Mar 23, 2024: - Resolved a problem where the context menu was not functioning. Updated on Feb 16, 2024: - Improved QR Scanner. - Minor fixes. Updated on January 31, 2024: - Significantly enhanced the reliability of our scanning feature – we're confident it's among the top online QR scanners now! - User Interface Enhancements. Updated on Jan 29, 2024: - Fixed the bug where customized color settings were not working. - Resolved the issue with QR codes containing Chinese, Japanese, or Korean characters not being scannable. - Corrected the transparent background bug. - Addressed the bug where the export size was incorrect. - Improved the success rate of scans. - Other minor fixes. Updated on Jan 18, 2024: - Now compatible with Manifest v3. - Improved QR-scanning feature significantly. - Added SVG export support (SVG or SVG Code). Updated on Feb 14, 2021: - Bug fixes. - Optimized code and resources. Updated on Feb 5, 2021: - Improved print feature. - Toggle between dark/light/auto modes as you wish. - Optimized code and resources (probably the fastest QR Code Generator in the Chrome Web Store). Updated on Jan 21, 2021: - Improved print feature. - Bug fixes. - Optimized code and resources. Updated on Jan 19, 2021: - Improved dark mode design. - Optimized code and resources. - Added a print button in the fixed popup window. Updated on Jan 10, 2021: - Automatically uses your OS's dark mode to protect your eyes. Updated on Jan 2, 2021: - Improved QR Code reader (decoder) when scanning a QR Code in an image. - Bug fixes and optimization. Updated on Nov 23, 2020: - Shortcut setting at chrome://extensions/shortcuts (we will add a link to this page in our next version). - Quick QR Code Generator is now rebranding to QR Code Generator. - Bug fixes and optimization. Updated on Nov 15, 2020: - Added the white frame (aka the “Quiet Zone”) around the generated QR Code. - Bug fixes. Updated on Jun 25, 2020: - Fixed a bug that would display the wrong UI on the options page. Updated on Jun 24, 2020: - Bug fixes. Updated on Apr 23, 2020: - Bug fixes. Updated on Jan 12, 2020: - Bug fixes. Updated on Dec 22, 2019: - Bug fixes. Updated on Dec 15, 2019: - Bug fixes. Updated on Oct 2, 2019: - Added “Open in a fixed window” feature. You can keep this QR Code on your screen without closing it. Updated on Aug 28, 2019: - Fixed a bug that would cause the Chrome Extension panel to show an error message. - New icon design. Updated on Aug 9, 2019: - Added Bulk QR Code Generator feature. You can generate more than one QR Code and download them in a “.ZIP” file. Updated on Aug 4, 2019: - Added “HD” / “With Logo” feature. Now you can generate your QR Code with a logo. - Bug fixes. Updated on Jun 28, 2019: - Bug fixes. Updated on May 1, 2019: - Up to 50 languages supported. - Fixed text mistakes in Chinese/Japanese languages. Updated on Apr 15, 2019: - Fixed QR Code reader bug (some CJK characters might mess up). Updated on Apr 5, 2019: - As requested, the downloaded image now has the size as a suffix. For instance: exported_qrcode_image_350.png. - Added “Runs offline” badge. Updated on Mar 25, 2019: - Fixed a bug where the QR Code scanner/reader was not showing up after restarting Chrome. Updated on Mar 17, 2019: - Added QR Scanner/Reader feature as you demanded. - Fixed the bug where the QR Code image size wrongly reset to 20px. - Added an option to turn off the context menus if you don’t like them. Updated on Mar 7, 2019: - Fixed a bug that may cause the size of your downloaded image to be unchangeable. - Added a Donation button. Thanks for supporting me. Updated on Dec 8, 2018: - Up to 7 languages supported. Updated on Dec 6, 2018: - Added two languages support. Updated on Dec 2, 2018: - Using “activeTab” to replace “tab” permission. There will be NO “read your browser history” warning any more :) Updated on Jan 15, 2018: - Fixed some small bugs. Updated on Dec 11, 2017: - Able to copy the image directly (try to paste it anywhere else, like “Photoshop”). Updated on Oct 2, 2017: - Removed the “default hotkey” feature - now you can customize it on your own. Just one click from the “settings”. - Added ContextMenu feature - now you can “Quick QR” anything with two simple right clicks. Updated on Jun 15, 2017: - Focus the input zone after the popup shows up - so you can type whatever you want to turn into a QR Code. - Now, you can use ALT+Q to open the QR Popup. If you want to change your shortcut, please go to chrome://extensions/configureCommands Updated on Jun 13, 2017: - Fixed a bug where the popup window might get blocked when clicking on the icon. Updated on Jun 2, 2017: - Now, you can enter more than one line instead of a single line. Updated on May 5, 2017: - Fixed a bug where the “save image” feature did not work correctly after making modifications to the QR Code. Updated on Apr 6, 2017: - Instantly updates the QR Code when you are typing. Updated on Feb 25, 2017: - Access the options in the popup (get what you need on the fly). - Fixed a bug that created images that couldn’t be transparent. Updated on Jan 14, 2017: - Transparent background. - Customizable colors and size. - You can find them in the Options page (Right-click on the icon and click “Options” to access). Updated on Jan 11, 2017: - Added retina-display rendering support. Updated on Jan 1, 2017: - Redesigned the layout. - Fixed small bugs."
+          - button "See more" [ref=f22e210] [cursor=pointer]
+      - generic [ref=f22e213]:
+        - heading [level=2] [ref=f22e215]:
+          - generic [ref=f22e216]:
+            - text: 4.9 out of 5
+            - img "4.9 out of 5 stars" [ref=f22e217]
+          - text: 6K ratings•
+          - paragraph [ref=f22e246]:
+            - link "Learn more about results and reviews." [ref=f22e247] [cursor=pointer]:
+              - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results
+        - generic [ref=f22e249] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f22e250]: See all reviews
+          - link "See all reviews" [ref=f22e251]:
+            - /url: ./detail/qr-code-generator/afpbjjgbdimpioenaedcjgkaigggcdpp/reviews
+      - generic [ref=f22e252]:
+        - heading "Details" [level=2] [ref=f22e254]
+        - list [ref=f22e256]:
+          - listitem [ref=f22e257]:
+            - generic [ref=f22e258]: Version
+            - generic [ref=f22e259]: 11.3.2
+          - listitem [ref=f22e260]:
+            - generic [ref=f22e261]: Updated
+            - generic [ref=f22e262]: September 23, 2026
+          - listitem [ref=f22e263]:
+            - link "Flag concern" [ref=f22e265] [cursor=pointer]:
+              - /url: ./detail/afpbjjgbdimpioenaedcjgkaigggcdpp/report
+          - listitem [ref=f22e266]:
+            - generic [ref=f22e267]: Size
+            - generic [ref=f22e268]: 3.25MiB
+          - listitem [ref=f22e269]:
+            - generic [ref=f22e270]: Languages
+            - generic [ref=f22e272]:
+              - text: 66 languages
+              - button "Show more languages" [ref=f22e274] [cursor=pointer]
+          - listitem [ref=f22e280]:
+            - generic [ref=f22e281]: Developer
+            - generic [ref=f22e283]:
+              - link "Website" [ref=f22e284] [cursor=pointer]:
+                - /url: https://high-qr-code-generator.com/
+              - group [ref=f22e287]:
+                - generic "Email" [ref=f22e288]
+          - listitem [ref=f22e293]:
+            - generic [ref=f22e294]: Non-trader
+            - generic [ref=f22e295]: This developer has not identified itself as a trader. For consumers in the European Union, please note that consumer rights do not apply to contracts between you and this developer.
+      - generic [ref=f22e296]:
+        - heading "Privacy" [level=2] [ref=f22e298]
+        - generic [ref=f22e300]:
+          - generic [ref=f22e305]:
+            - text: The developer has disclosed that it will not collect or use your data. To learn more, see the developer’s
+            - link "privacy policy" [ref=f22e306] [cursor=pointer]:
+              - /url: https://high-qr-code-generator.com/privacy
+            - text: .
+          - generic [ref=f22e307]:
+            - heading "This developer declares that your data is" [level=2] [ref=f22e308]
+            - list [ref=f22e309]:
+              - listitem [ref=f22e310]:
+                - text: Not being sold to third parties, outside of the
+                - link "approved use cases" [ref=f22e311] [cursor=pointer]:
+                  - /url: https://developer.chrome.com/docs/webstore/program-policies/limited-use/
+              - listitem [ref=f22e312]: Not being used or transferred for purposes that are unrelated to the item's core functionality
+              - listitem [ref=f22e313]: Not being used or transferred to determine creditworthiness or for lending purposes
+      - generic [ref=f22e315]:
+        - heading "Support" [level=2] [ref=f22e316]
+        - generic [ref=f22e318] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f22e319]: Visit support hub
+          - link "Visit support hub" [ref=f22e320]:
+            - /url: ./detail/afpbjjgbdimpioenaedcjgkaigggcdpp/support
+      - generic [ref=f22e321]:
+        - heading "Related" [level=2] [ref=f22e322]
+        - region "Related items carousel" [ref=f22e325]:
+          - button "Previous slide" [ref=f22e327] [cursor=pointer]
+          - region "Related item slides" [ref=f22e334]:
+            - generic [ref=f22e335]:
+              - generic [ref=f22e337]:
+                - link "Generador de código QR" [ref=f22e338] [cursor=pointer]:
+                  - /url: ./detail/generador-de-c%C3%B3digo-qr/lkdokbndiffkmddlfpbjiokmfkafmgkm
+                - generic [ref=f22e339]:
+                  - heading "Generador de código QR" [level=3] [ref=f22e340]
+                  - generic [ref=f22e341]:
+                    - img "Average rating 4.5 out of 5 stars." [ref=f22e342]:
+                      - generic [ref=f22e343]: "4.5"
+                    - link "Learn more about results and reviews \"Generador de código QR\"." [ref=f22e352] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f22e353]: "Extensión de código QR: Una forma más rápida y directa de crear y compartir códigos QR, incluso mejor que los enlaces cortos."
+              - generic [ref=f22e355]:
+                - link "The Quick QR Code - Multi-scene decoding tool" [ref=f22e356] [cursor=pointer]:
+                  - /url: ./detail/the-quick-qr-code-multi-s/eefoinodjigoedmfjkbikmdhecggljgc
+                - generic [ref=f22e357]:
+                  - heading "The Quick QR Code - Multi-scene decoding tool" [level=3] [ref=f22e358]
+                  - generic [ref=f22e359]:
+                    - img "Average rating 4.7 out of 5 stars." [ref=f22e360]:
+                      - generic [ref=f22e361]: "4.7"
+                    - link "Learn more about results and reviews \"The Quick QR Code - Multi-scene decoding tool\"." [ref=f22e370] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f22e371]: "Full-featured QR Code Extension(The Quick QR Code): QR code generation, camera decoding, screenshot decoding, picture decoding, etc."
+              - generic [ref=f22e373]:
+                - link "QR Code Generator" [ref=f22e374] [cursor=pointer]:
+                  - /url: ./detail/qr-code-generator/hoeiookpkijlnjdafhaclpdbfflelmci
+                - generic [ref=f22e375]:
+                  - heading "QR Code Generator" [level=3] [ref=f22e376]
+                  - generic [ref=f22e377]:
+                    - img "Average rating 4.2 out of 5 stars." [ref=f22e378]:
+                      - generic [ref=f22e379]: "4.2"
+                    - link "Learn more about results and reviews \"QR Code Generator\"." [ref=f22e388] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f22e389]: QR Code fastest way to generate or scan QR codes. Decode QR Code in image or use webcam.
+              - generic [ref=f22e391]:
+                - link "QR Code (Generator and Reader)" [ref=f22e392] [cursor=pointer]:
+                  - /url: ./detail/qr-code-generator-and-rea/hkojjajclkgeijhcmfjcjkddfjpaimek
+                - generic [ref=f22e393]:
+                  - heading "QR Code (Generator and Reader)" [level=3] [ref=f22e394]
+                  - generic [ref=f22e395]:
+                    - img "Average rating 3.8 out of 5 stars." [ref=f22e396]:
+                      - generic [ref=f22e397]: "3.8"
+                    - link "Learn more about results and reviews \"QR Code (Generator and Reader)\"." [ref=f22e406] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f22e407]: Generate QR Code from the url of current page, link or selected text. And decode QR Code in image.
+          - button "Next slide" [ref=f22e409] [cursor=pointer]
+  - contentinfo [ref=f22e415]:
+    - list [ref=f22e416]:
+      - listitem [ref=f22e417]:
+        - link "About Chrome Web Store" [ref=f22e418] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en-US
+        - text: •
+      - listitem [ref=f22e419]:
+        - link "Developer Dashboard" [ref=f22e420] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f22e421]:
+        - link "Privacy Policy" [ref=f22e422] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en-US
+        - text: •
+      - listitem [ref=f22e423]:
+        - link "Terms of Service" [ref=f22e424] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en-US/gallery_tos.html
+        - text: •
+      - listitem [ref=f22e425]:
+        - link "Help" [ref=f22e426] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en-US

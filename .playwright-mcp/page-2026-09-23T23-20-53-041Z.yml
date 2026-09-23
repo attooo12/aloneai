@@ -1,0 +1,97 @@
+- generic [ref=f46e1]:
+  - banner [ref=f46e2]:
+    - link "Skip to main content" [ref=f46e3] [cursor=pointer]
+    - generic [ref=f46e4]:
+      - generic [ref=f46e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f46e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f46e8]
+          - generic [ref=f46e9]: Chrome Web Store
+        - search "Sitewide" [ref=f46e10]:
+          - generic [ref=f46e13]:
+            - combobox "Search Chrome Web Store" [active] [ref=f46e15]: type sleuth
+            - button "Clear search" [ref=f46e17] [cursor=pointer]
+        - generic [ref=f46e20]:
+          - button "More options menu" [ref=f46e24] [cursor=pointer]
+          - generic [ref=f46e34]:
+            - button "Google apps" [ref=f46e38] [cursor=pointer]
+            - link "Sign in" [ref=f46e42] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/search/type%2520sleuth?hl%3Den&followup=https://chromewebstore.google.com/search/type%2520sleuth?hl%3Den&hl=en&ec=GAZApQM
+      - tablist [ref=f46e46]:
+        - generic [ref=f46e49]:
+          - tab "Discover" [ref=f46e50] [cursor=pointer]
+          - tab "Extensions" [ref=f46e51] [cursor=pointer]
+          - tab "Themes" [ref=f46e52] [cursor=pointer]
+    - dialog [ref=f46e53]:
+      - complementary [ref=f46e54]:
+        - heading "Switch to Chrome?" [level=2] [ref=f46e56]
+        - paragraph [ref=f46e57]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f46e58]:
+          - button "No thanks" [ref=f46e60] [cursor=pointer]
+          - generic [ref=f46e64] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f46e65]: "Yes"
+            - link "Yes" [ref=f46e66]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - generic [ref=f46e70]:
+    - generic [ref=f46e72]:
+      - generic [ref=f46e73]:
+        - heading "Type" [level=2] [ref=f46e74]
+        - toolbar "Filter items by extension type" [ref=f46e75]:
+          - generic [ref=f46e76]:
+            - generic:
+              - button "Extensions" [disabled]
+          - generic [ref=f46e77]:
+            - generic:
+              - button "Themes" [disabled]
+      - generic [ref=f46e78]:
+        - heading "Filter by" [level=2] [ref=f46e79]
+        - generic [ref=f46e81]:
+          - generic:
+            - checkbox "Featured extensions" [disabled]
+          - generic [ref=f46e82]: Featured extensions
+        - generic [ref=f46e85]:
+          - generic:
+            - checkbox "Established publishers" [disabled]
+          - generic [ref=f46e86]: Established publishers
+      - generic [ref=f46e88]:
+        - heading "Ratings" [level=2] [ref=f46e89]
+        - radiogroup "Ratings" [ref=f46e90]:
+          - radio "5 stars" [disabled]
+          - radio "4 stars and up" [disabled]:
+            - generic [aria-hidden]: "& up"
+          - radio "3 stars and up" [disabled]:
+            - generic [aria-hidden]: "& up"
+          - radio "2 stars and up" [disabled]:
+            - generic [aria-hidden]: "& up"
+      - generic [ref=f46e92]:
+        - button "Clear all filters button." [disabled] [ref=f46e93]:
+          - generic [aria-hidden] [ref=f46e95]: Clear all
+        - tooltip [aria-hidden] [ref=f46e96]: Reset your filter options.
+    - main [ref=f46e97]:
+      - dialog "No search results" [ref=f46e99]:
+        - heading "No search results" [level=1] [ref=f46e100]
+        - text: It looks like there aren't any search results for your search.
+        - strong [ref=f46e101]: "Tip:"
+        - text: Try using words that might appear in the name of the extension, theme, or topic you're looking for.
+  - contentinfo [ref=f46e102]:
+    - list [ref=f46e103]:
+      - listitem [ref=f46e104]:
+        - link "About Chrome Web Store" [ref=f46e105] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en
+        - text: •
+      - listitem [ref=f46e106]:
+        - link "Developer Dashboard" [ref=f46e107] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f46e108]:
+        - link "Privacy Policy" [ref=f46e109] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en
+        - text: •
+      - listitem [ref=f46e110]:
+        - link "Terms of Service" [ref=f46e111] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en/gallery_tos.html
+        - text: •
+      - listitem [ref=f46e112]:
+        - link "Help" [ref=f46e113] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en
+  - generic [ref=f46e114]: Page loaded.

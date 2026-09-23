@@ -1,0 +1,245 @@
+- generic [ref=f35e1]:
+  - banner [ref=f35e2]:
+    - link "Skip to main content" [ref=f35e3] [cursor=pointer]
+    - generic [ref=f35e4]:
+      - generic [ref=f35e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f35e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f35e8]
+          - generic [ref=f35e9]: Chrome Web Store
+        - search "Sitewide" [ref=f35e10]:
+          - combobox "Search Chrome Web Store" [active] [ref=f35e15]
+        - generic [ref=f35e16]:
+          - button "More options menu" [ref=f35e20] [cursor=pointer]
+          - generic [ref=f35e30]:
+            - button "Google apps" [ref=f35e34] [cursor=pointer]
+            - link "Sign in" [ref=f35e38] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/detail/page-ruler/jcbmcnpepaddcedmjdcmhbekjhbfnlff&followup=https://chromewebstore.google.com/detail/page-ruler/jcbmcnpepaddcedmjdcmhbekjhbfnlff&ec=GAZApQM
+      - tablist [ref=f35e42]:
+        - generic [ref=f35e45]:
+          - tab "Discover" [ref=f35e46] [cursor=pointer]
+          - tab "Extensions" [selected] [ref=f35e47] [cursor=pointer]
+          - tab "Themes" [ref=f35e48] [cursor=pointer]
+    - dialog [ref=f35e49]:
+      - complementary [ref=f35e50]:
+        - heading "Switch to Chrome?" [level=2] [ref=f35e52]
+        - paragraph [ref=f35e53]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f35e54]:
+          - button "No thanks" [ref=f35e56] [cursor=pointer]
+          - generic [ref=f35e60] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f35e61]: "Yes"
+            - link "Yes" [ref=f35e62]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - main [ref=f35e66]:
+    - generic [ref=f35e67]:
+      - generic [ref=f35e68]:
+        - generic "Info" [ref=f35e70]:
+          - generic [ref=f35e71]: Switch to Chrome to install extensions and themes
+          - button "Switch to Chrome to install extensions and themes Install Chrome" [ref=f35e79] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f35e81]: Install Chrome
+        - generic [ref=f35e83]:
+          - generic [ref=f35e84]:
+            - img "Item logo image for Page Ruler" [ref=f35e85]
+            - heading "Page Ruler" [level=1] [ref=f35e86]
+          - generic [ref=f35e87]:
+            - generic [ref=f35e88]:
+              - link "Follows recommended practices for Chrome extensions. Learn more." [ref=f35e97] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/?hl=en-US&p=cws_badges
+              - generic [ref=f35e98]: Featured
+            - generic [ref=f35e99]:
+              - generic [ref=f35e100]:
+                - generic [ref=f35e101]: "3.9"
+                - generic [ref=f35e104]:
+                  - text: (
+                  - link [ref=f35e105] [cursor=pointer]:
+                    - /url: ./detail/page-ruler/jcbmcnpepaddcedmjdcmhbekjhbfnlff/reviews
+                    - paragraph [ref=f35e106]: 103 ratings
+                  - text: )
+              - button "Ratings are updated daily and may not reflect the most recent reviews." [ref=f35e108] [cursor=pointer]
+            - button "Share" [ref=f35e117] [cursor=pointer]
+          - generic [ref=f35e123]:
+            - link "Extension" [ref=f35e124] [cursor=pointer]:
+              - /url: ./category/extensions
+            - link "Tools" [ref=f35e125] [cursor=pointer]:
+              - /url: ./category/extensions/productivity/tools
+            - text: 500,000 users
+          - button "Add to Chrome" [ref=f35e129] [cursor=pointer]
+      - generic [ref=f35e132]:
+        - region "Media carousel" [ref=f35e133]:
+          - button "Previous slide" [ref=f35e135] [cursor=pointer]
+          - generic [ref=f35e142]:
+            - button "Item media 5 (screenshot) for Page Ruler" [ref=f35e144] [cursor=pointer]:
+              - img "Item media 5 (screenshot) for Page Ruler" [ref=f35e145]
+            - button "Item media 6 (screenshot) for Page Ruler" [ref=f35e147] [cursor=pointer]:
+              - img "Item media 6 (screenshot) for Page Ruler" [ref=f35e148]
+            - generic [ref=f35e151] [cursor=pointer]:
+              - button "Item media 1 (video) for Page Ruler" [ref=f35e153]
+              - img "Item video thumbnail" [ref=f35e159]
+            - button "Item media 2 (screenshot) for Page Ruler" [ref=f35e161] [cursor=pointer]:
+              - img "Item media 2 (screenshot) for Page Ruler" [ref=f35e162]
+            - button "Item media 3 (screenshot) for Page Ruler" [ref=f35e164] [cursor=pointer]:
+              - img "Item media 3 (screenshot) for Page Ruler" [ref=f35e165]
+            - button "Item media 4 (screenshot) for Page Ruler" [ref=f35e167] [cursor=pointer]:
+              - img "Item media 4 (screenshot) for Page Ruler" [ref=f35e168]
+            - button "Item media 5 (screenshot) for Page Ruler" [ref=f35e170] [cursor=pointer]:
+              - img "Item media 5 (screenshot) for Page Ruler" [ref=f35e171]
+            - button "Item media 6 (screenshot) for Page Ruler" [ref=f35e173] [cursor=pointer]:
+              - img "Item media 6 (screenshot) for Page Ruler" [ref=f35e174]
+            - generic [ref=f35e177] [cursor=pointer]:
+              - button "Item media 1 (video) for Page Ruler" [ref=f35e179]
+              - img "Item video thumbnail" [ref=f35e185]
+            - button "Item media 2 (screenshot) for Page Ruler" [ref=f35e187] [cursor=pointer]:
+              - img "Item media 2 (screenshot) for Page Ruler" [ref=f35e188]
+          - button "Next slide" [ref=f35e190] [cursor=pointer]
+        - generic [ref=f35e196]:
+          - button "Preview slide 1 for Page Ruler" [ref=f35e197] [cursor=pointer]:
+            - img "Item video thumbnail" [ref=f35e198]
+          - button "Preview slide 2 for Page Ruler" [ref=f35e200] [cursor=pointer]:
+            - img "Item media 2 (screenshot) for Page Ruler" [ref=f35e202]
+          - button "Preview slide 3 for Page Ruler" [ref=f35e204] [cursor=pointer]:
+            - img "Item media 3 (screenshot) for Page Ruler" [ref=f35e206]
+          - button "Preview slide 4 for Page Ruler" [ref=f35e208] [cursor=pointer]:
+            - img "Item media 4 (screenshot) for Page Ruler" [ref=f35e210]
+          - button "Preview slide 5 for Page Ruler" [ref=f35e212] [cursor=pointer]:
+            - img "Item media 5 (screenshot) for Page Ruler" [ref=f35e214]
+          - button "Preview slide 6 for Page Ruler" [ref=f35e216] [cursor=pointer]:
+            - img "Item media 6 (screenshot) for Page Ruler" [ref=f35e218]
+      - generic [ref=f35e220]:
+        - heading "Overview" [level=2] [ref=f35e222]
+        - generic [ref=f35e224]:
+          - generic [ref=f35e225]:
+            - paragraph [ref=f35e226]: Measure page elements size in pixel with an easy-to-use ruler.
+            - paragraph [ref=f35e227]: Page Ruler is an extension that lets you measure distances (in pixels) on a webpage. It draws a rectangular ruler when you move your mouse on the page. The ruler has width, height, start and end all labeled with corresponding metrics in pixels. When you move your mouse, the rectangle changes its size and all the numerics are updated. To activate the addon please press the toolbar button once. Likewise, to disable the addon please press the toolbar button again. This addon works with mouse clicks in desktop machines. For touch-enabled devices, you can work with touch to draw the rectangle within the page. If you have a feature request in mind or found a bug to report, please fill the bug report form on the addon's homepage (https://mybrowseraddon.com/page-ruler.html).
+          - button "See more" [ref=f35e228] [cursor=pointer]
+      - generic [ref=f35e231]:
+        - heading [level=2] [ref=f35e233]:
+          - generic [ref=f35e234]:
+            - text: 3.9 out of 5
+            - img "3.9 out of 5 stars" [ref=f35e235]
+          - text: 103 ratings•
+          - paragraph [ref=f35e264]:
+            - link "Learn more about results and reviews." [ref=f35e265] [cursor=pointer]:
+              - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results
+        - generic [ref=f35e267] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f35e268]: See all reviews
+          - link "See all reviews" [ref=f35e269]:
+            - /url: ./detail/page-ruler/jcbmcnpepaddcedmjdcmhbekjhbfnlff/reviews
+      - generic [ref=f35e270]:
+        - heading "Details" [level=2] [ref=f35e272]
+        - list [ref=f35e274]:
+          - listitem [ref=f35e275]:
+            - generic [ref=f35e276]: Version
+            - generic [ref=f35e277]: 0.1.8
+          - listitem [ref=f35e278]:
+            - generic [ref=f35e279]: Updated
+            - generic [ref=f35e280]: July 13, 2026
+          - listitem [ref=f35e281]:
+            - link "Flag concern" [ref=f35e283] [cursor=pointer]:
+              - /url: ./detail/jcbmcnpepaddcedmjdcmhbekjhbfnlff/report
+          - listitem [ref=f35e284]:
+            - generic [ref=f35e285]: Offered by
+            - generic [ref=f35e286]: leocompson
+          - listitem [ref=f35e287]:
+            - generic [ref=f35e288]: Size
+            - generic [ref=f35e289]: 309KiB
+          - listitem [ref=f35e290]:
+            - generic [ref=f35e291]: Languages
+            - generic [ref=f35e292]: English
+          - listitem [ref=f35e294]:
+            - generic [ref=f35e295]: Developer
+            - group [ref=f35e298]:
+              - generic "Email" [ref=f35e299]
+          - listitem [ref=f35e304]:
+            - generic [ref=f35e305]: Non-trader
+            - generic [ref=f35e306]: This developer has not identified itself as a trader. For consumers in the European Union, please note that consumer rights do not apply to contracts between you and this developer.
+      - generic [ref=f35e307]:
+        - heading "Privacy" [level=2] [ref=f35e309]
+        - generic [ref=f35e311]:
+          - generic [ref=f35e312]: The developer has disclosed that it will not collect or use your data.
+          - generic [ref=f35e317]:
+            - heading "This developer declares that your data is" [level=2] [ref=f35e318]
+            - list [ref=f35e319]:
+              - listitem [ref=f35e320]:
+                - text: Not being sold to third parties, outside of the
+                - link "approved use cases" [ref=f35e321] [cursor=pointer]:
+                  - /url: https://developer.chrome.com/docs/webstore/program-policies/limited-use/
+              - listitem [ref=f35e322]: Not being used or transferred for purposes that are unrelated to the item's core functionality
+              - listitem [ref=f35e323]: Not being used or transferred to determine creditworthiness or for lending purposes
+      - generic [ref=f35e324]:
+        - heading "Support" [level=2] [ref=f35e326]
+        - paragraph [ref=f35e327]:
+          - text: For help with questions, suggestions, or problems, visit the developer's
+          - link "support site" [ref=f35e328] [cursor=pointer]:
+            - /url: https://mybrowseraddon.com/page-ruler.html
+      - generic [ref=f35e329]:
+        - heading "Related" [level=2] [ref=f35e330]
+        - region "Related items carousel" [ref=f35e333]:
+          - button "Previous slide" [ref=f35e335] [cursor=pointer]
+          - region "Related item slides" [ref=f35e342]:
+            - generic [ref=f35e343]:
+              - generic [ref=f35e345]:
+                - link "Designer Tools" [ref=f35e346] [cursor=pointer]:
+                  - /url: ./detail/designer-tools/jiiidpmjdakhbgkbdchmhmnfbdebfnhp
+                - generic [ref=f35e347]:
+                  - heading "Designer Tools" [level=3] [ref=f35e348]
+                  - generic [ref=f35e349]:
+                    - img "Average rating 4.6 out of 5 stars." [ref=f35e350]:
+                      - generic [ref=f35e351]: "4.6"
+                    - link "Learn more about results and reviews \"Designer Tools\"." [ref=f35e360] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f35e361]: A collection of tools to help you design and develop websites with precision.
+              - generic [ref=f35e363]:
+                - link "Grid Lines Ruler" [ref=f35e364] [cursor=pointer]:
+                  - /url: ./detail/grid-lines-ruler/efbjomaifkkegoiioihfcallbkfgibbo
+                - generic [ref=f35e365]:
+                  - heading "Grid Lines Ruler" [level=3] [ref=f35e367]
+                  - generic [ref=f35e368]:
+                    - img "Average rating 4.3 out of 5 stars." [ref=f35e369]:
+                      - generic [ref=f35e370]: "4.3"
+                    - link "Learn more about results and reviews \"Grid Lines Ruler\"." [ref=f35e379] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f35e380]: Create grids on pages that provide the developers visual hints to help in developing the web app layouts.
+              - generic [ref=f35e382]:
+                - link "Better Ruler" [ref=f35e383] [cursor=pointer]:
+                  - /url: ./detail/better-ruler/ilcnadaaninblgbekoaihdhoiecaflie
+                - generic [ref=f35e384]:
+                  - heading "Better Ruler" [level=3] [ref=f35e385]
+                  - generic [ref=f35e386]:
+                    - img "Average rating 4.8 out of 5 stars." [ref=f35e387]:
+                      - generic [ref=f35e388]: "4.8"
+                    - link "Learn more about results and reviews \"Better Ruler\"." [ref=f35e397] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f35e398]: A page ruler which can snaps around web elements for easier measurement. Provide convenience for front-end development and ui design
+              - generic [ref=f35e400]:
+                - link "PixGrid Ruler" [ref=f35e401] [cursor=pointer]:
+                  - /url: ./detail/pixgrid-ruler/glkplndamjplebapgopdlbicglmfimic
+                - generic [ref=f35e402]:
+                  - heading "PixGrid Ruler" [level=3] [ref=f35e403]
+                  - generic [ref=f35e404]:
+                    - img "Average rating 4.2 out of 5 stars." [ref=f35e405]:
+                      - generic [ref=f35e406]: "4.2"
+                    - link "Learn more about results and reviews \"PixGrid Ruler\"." [ref=f35e415] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f35e416]: Your Pixel-Perfect Ruler for Measuring Web Elements
+          - button "Next slide" [ref=f35e418] [cursor=pointer]
+  - contentinfo [ref=f35e424]:
+    - list [ref=f35e425]:
+      - listitem [ref=f35e426]:
+        - link "About Chrome Web Store" [ref=f35e427] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en-US
+        - text: •
+      - listitem [ref=f35e428]:
+        - link "Developer Dashboard" [ref=f35e429] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f35e430]:
+        - link "Privacy Policy" [ref=f35e431] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en-US
+        - text: •
+      - listitem [ref=f35e432]:
+        - link "Terms of Service" [ref=f35e433] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en-US/gallery_tos.html
+        - text: •
+      - listitem [ref=f35e434]:
+        - link "Help" [ref=f35e435] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en-US

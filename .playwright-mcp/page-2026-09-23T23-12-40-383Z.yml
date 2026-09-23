@@ -1,0 +1,207 @@
+- generic [ref=f16e1]:
+  - banner [ref=f16e2]:
+    - link "Skip to main content" [ref=f16e3] [cursor=pointer]
+    - generic [ref=f16e4]:
+      - generic [ref=f16e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f16e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f16e8]
+          - generic [ref=f16e9]: Chrome Web Store
+        - search "Sitewide" [ref=f16e10]:
+          - combobox "Search Chrome Web Store" [active] [ref=f16e15]
+        - generic [ref=f16e16]:
+          - button "More options menu" [ref=f16e20] [cursor=pointer]
+          - generic [ref=f16e30]:
+            - button "Google apps" [ref=f16e34] [cursor=pointer]
+            - link "Sign in" [ref=f16e38] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/detail/clipboard-manager/blicpdhhajlodleohohaeommdmpjfoab&followup=https://chromewebstore.google.com/detail/clipboard-manager/blicpdhhajlodleohohaeommdmpjfoab&ec=GAZApQM
+      - tablist [ref=f16e42]:
+        - generic [ref=f16e45]:
+          - tab "Discover" [ref=f16e46] [cursor=pointer]
+          - tab "Extensions" [selected] [ref=f16e47] [cursor=pointer]
+          - tab "Themes" [ref=f16e48] [cursor=pointer]
+    - dialog [ref=f16e49]:
+      - complementary [ref=f16e50]:
+        - heading "Switch to Chrome?" [level=2] [ref=f16e52]
+        - paragraph [ref=f16e53]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f16e54]:
+          - button "No thanks" [ref=f16e56] [cursor=pointer]
+          - generic [ref=f16e60] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f16e61]: "Yes"
+            - link "Yes" [ref=f16e62]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - main [ref=f16e66]:
+    - generic [ref=f16e67]:
+      - generic [ref=f16e68]:
+        - generic "Info" [ref=f16e70]:
+          - generic [ref=f16e71]: Switch to Chrome to install extensions and themes
+          - button "Switch to Chrome to install extensions and themes Install Chrome" [ref=f16e79] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f16e81]: Install Chrome
+        - generic [ref=f16e83]:
+          - generic [ref=f16e84]:
+            - img "Item logo image for Clipboard Manager" [ref=f16e85]
+            - heading "Clipboard Manager" [level=1] [ref=f16e86]
+          - generic [ref=f16e87]:
+            - generic [ref=f16e88]:
+              - link "Follows recommended practices for Chrome extensions. Learn more." [ref=f16e97] [cursor=pointer]:
+                - /url: https://support.google.com/chrome_webstore/?hl=en-US&p=cws_badges
+              - generic [ref=f16e98]: Featured
+            - generic [ref=f16e99]:
+              - generic [ref=f16e100]:
+                - generic [ref=f16e101]: "2.8"
+                - generic [ref=f16e104]:
+                  - text: (
+                  - link [ref=f16e105] [cursor=pointer]:
+                    - /url: ./detail/clipboard-manager/blicpdhhajlodleohohaeommdmpjfoab/reviews
+                    - paragraph [ref=f16e106]: 5 ratings
+                  - text: )
+              - button "Ratings are updated daily and may not reflect the most recent reviews." [ref=f16e108] [cursor=pointer]
+            - button "Share" [ref=f16e117] [cursor=pointer]
+          - generic [ref=f16e123]:
+            - link "Extension" [ref=f16e124] [cursor=pointer]:
+              - /url: ./category/extensions
+            - link "Tools" [ref=f16e125] [cursor=pointer]:
+              - /url: ./category/extensions/productivity/tools
+            - text: 4,000 users
+          - button "Add to Chrome" [ref=f16e129] [cursor=pointer]
+      - button "Item media 1 (screenshot) for Clipboard Manager" [ref=f16e134] [cursor=pointer]:
+        - img "Item media 1 (screenshot) for Clipboard Manager" [ref=f16e135]
+      - generic [ref=f16e136]:
+        - heading "Overview" [level=2] [ref=f16e138]
+        - generic [ref=f16e140]:
+          - generic [ref=f16e141]:
+            - paragraph [ref=f16e142]: Easily access to recent clipboards via context-menu or toolbar popup.
+            - paragraph [ref=f16e143]: Clipboard Manager is an extension that let you easily store and view clipboard items via toolbar popup. You can also access up to 7 clipboard items via mouse right click (context-menu). Please note that, the add-on only stores clipboard items when you want to "paste" them. In other words, when you just copy an item, it is NOT stored to the memory. But, when you paste it to an editable area within a page, it will be stored to the memory. This way, only needed items will be saved to the memory. To access stored clipboard items, please open toolbar popup or right-click on an editable area and then choose clipboard manager in the right-click. Then, click on a desired clipboard item; and it will be inserted to the editable filed. Moreover, to switch the interface theme to dark, please press the moon icon in the top toolbar. If you have a feature request, or found a bug to report, please fill out the bug report form on the addon's homepage (https://mybrowseraddon.com/clipboard-manager.html).
+          - button "See more" [ref=f16e144] [cursor=pointer]
+      - generic [ref=f16e147]:
+        - heading [level=2] [ref=f16e149]:
+          - generic [ref=f16e150]:
+            - text: 2.8 out of 5
+            - img "2.8 out of 5 stars" [ref=f16e151]
+          - text: 5 ratings•
+          - paragraph [ref=f16e180]:
+            - link "Learn more about results and reviews." [ref=f16e181] [cursor=pointer]:
+              - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results
+        - generic [ref=f16e183] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f16e184]: See all reviews
+          - link "See all reviews" [ref=f16e185]:
+            - /url: ./detail/clipboard-manager/blicpdhhajlodleohohaeommdmpjfoab/reviews
+      - generic [ref=f16e186]:
+        - heading "Details" [level=2] [ref=f16e188]
+        - list [ref=f16e190]:
+          - listitem [ref=f16e191]:
+            - generic [ref=f16e192]: Version
+            - generic [ref=f16e193]: 0.1.6
+          - listitem [ref=f16e194]:
+            - generic [ref=f16e195]: Updated
+            - generic [ref=f16e196]: July 12, 2026
+          - listitem [ref=f16e197]:
+            - link "Flag concern" [ref=f16e199] [cursor=pointer]:
+              - /url: ./detail/blicpdhhajlodleohohaeommdmpjfoab/report
+          - listitem [ref=f16e200]:
+            - generic [ref=f16e201]: Offered by
+            - generic [ref=f16e202]: Muyor
+          - listitem [ref=f16e203]:
+            - generic [ref=f16e204]: Size
+            - generic [ref=f16e205]: 24.76KiB
+          - listitem [ref=f16e206]:
+            - generic [ref=f16e207]: Languages
+            - generic [ref=f16e208]: English
+          - listitem [ref=f16e210]:
+            - generic [ref=f16e211]: Developer
+            - group [ref=f16e214]:
+              - generic "Email" [ref=f16e215]
+          - listitem [ref=f16e220]:
+            - generic [ref=f16e221]: Non-trader
+            - generic [ref=f16e222]: This developer has not identified itself as a trader. For consumers in the European Union, please note that consumer rights do not apply to contracts between you and this developer.
+      - generic [ref=f16e223]:
+        - heading "Privacy" [level=2] [ref=f16e225]
+        - generic [ref=f16e227]:
+          - generic [ref=f16e228]: The developer has disclosed that it will not collect or use your data.
+          - generic [ref=f16e233]:
+            - heading "This developer declares that your data is" [level=2] [ref=f16e234]
+            - list [ref=f16e235]:
+              - listitem [ref=f16e236]:
+                - text: Not being sold to third parties, outside of the
+                - link "approved use cases" [ref=f16e237] [cursor=pointer]:
+                  - /url: https://developer.chrome.com/docs/webstore/program-policies/limited-use/
+              - listitem [ref=f16e238]: Not being used or transferred for purposes that are unrelated to the item's core functionality
+              - listitem [ref=f16e239]: Not being used or transferred to determine creditworthiness or for lending purposes
+      - generic [ref=f16e240]:
+        - heading "Support" [level=2] [ref=f16e242]
+        - paragraph [ref=f16e243]:
+          - text: For help with questions, suggestions, or problems, visit the developer's
+          - link "support site" [ref=f16e244] [cursor=pointer]:
+            - /url: https://mybrowseraddon.com/clipboard-manager.html
+      - generic [ref=f16e245]:
+        - heading "Related" [level=2] [ref=f16e246]
+        - region "Related items carousel" [ref=f16e249]:
+          - button "Previous slide" [ref=f16e251] [cursor=pointer]
+          - region "Related item slides" [ref=f16e258]:
+            - generic [ref=f16e259]:
+              - generic [ref=f16e261]:
+                - link "My Clipboard" [ref=f16e262] [cursor=pointer]:
+                  - /url: ./detail/my-clipboard/emhmaepmgpjnimnogbehplipclejinpa
+                - generic [ref=f16e263]:
+                  - heading "My Clipboard" [level=3] [ref=f16e265]
+                  - generic [ref=f16e266]:
+                    - img "Average rating 3.7 out of 5 stars." [ref=f16e267]:
+                      - generic [ref=f16e268]: "3.7"
+                    - link "Learn more about results and reviews \"My Clipboard\"." [ref=f16e277] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f16e278]: A Cross-platform universal clipboard for myclipboard.io
+              - generic [ref=f16e280]:
+                - link "Permanent clipboard" [ref=f16e281] [cursor=pointer]:
+                  - /url: ./detail/permanent-clipboard/hilkjcfodmbdgpadbpehimibheopoccb
+                - generic [ref=f16e282]:
+                  - heading "Permanent clipboard" [level=3] [ref=f16e283]
+                  - generic [ref=f16e284]:
+                    - img "Average rating 4.4 out of 5 stars." [ref=f16e285]:
+                      - generic [ref=f16e286]: "4.4"
+                    - link "Learn more about results and reviews \"Permanent clipboard\"." [ref=f16e295] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f16e296]: Keep your most-used replies, templates, and notes one click away. Insert anywhere from the popup or right-click menu.
+              - generic [ref=f16e298]:
+                - link "Clipboard History" [ref=f16e299] [cursor=pointer]:
+                  - /url: ./detail/clipboard-history/hocnnmhgcikjadmcgimjfabidalgejio
+                - generic [ref=f16e300]:
+                  - heading "Clipboard History" [level=3] [ref=f16e301]
+                  - generic [ref=f16e302]:
+                    - img "Average rating 3.9 out of 5 stars." [ref=f16e303]:
+                      - generic [ref=f16e304]: "3.9"
+                    - link "Learn more about results and reviews \"Clipboard History\"." [ref=f16e313] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f16e314]: Save history of copied text in browser.
+              - generic [ref=f16e316]:
+                - link "Clipboard History" [ref=f16e317] [cursor=pointer]:
+                  - /url: ./detail/clipboard-history/cioiijhfebhhkmnijjjgbhkjjdlphjid
+                - generic [ref=f16e318]:
+                  - heading "Clipboard History" [level=3] [ref=f16e319]
+                  - generic [ref=f16e320]:
+                    - img "Average rating 4.3 out of 5 stars." [ref=f16e321]:
+                      - generic [ref=f16e322]: "4.3"
+                    - link "Learn more about results and reviews \"Clipboard History\"." [ref=f16e331] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f16e332]: Effortlessly access, check, and view clipboard history on Mac and Windows 10. Easily see macos and windows clipboard history.
+          - button "Next slide" [ref=f16e334] [cursor=pointer]
+  - contentinfo [ref=f16e340]:
+    - list [ref=f16e341]:
+      - listitem [ref=f16e342]:
+        - link "About Chrome Web Store" [ref=f16e343] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en-US
+        - text: •
+      - listitem [ref=f16e344]:
+        - link "Developer Dashboard" [ref=f16e345] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f16e346]:
+        - link "Privacy Policy" [ref=f16e347] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en-US
+        - text: •
+      - listitem [ref=f16e348]:
+        - link "Terms of Service" [ref=f16e349] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en-US/gallery_tos.html
+        - text: •
+      - listitem [ref=f16e350]:
+        - link "Help" [ref=f16e351] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en-US

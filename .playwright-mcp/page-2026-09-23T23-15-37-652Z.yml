@@ -1,0 +1,222 @@
+- generic [ref=f29e1]:
+  - banner [ref=f29e2]:
+    - link "Skip to main content" [ref=f29e3] [cursor=pointer]
+    - generic [ref=f29e4]:
+      - generic [ref=f29e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f29e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f29e8]
+          - generic [ref=f29e9]: Chrome Web Store
+        - search "Sitewide" [ref=f29e10]:
+          - generic [ref=f29e13]:
+            - combobox "Search Chrome Web Store" [active] [ref=f29e15]: whatfont font inspector
+            - button "Clear search" [ref=f29e17] [cursor=pointer]
+        - generic [ref=f29e20]:
+          - button "More options menu" [ref=f29e24] [cursor=pointer]
+          - generic [ref=f29e34]:
+            - button "Google apps" [ref=f29e38] [cursor=pointer]
+            - link "Sign in" [ref=f29e42] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/search/whatfont%2520font%2520inspector?hl%3Den&followup=https://chromewebstore.google.com/search/whatfont%2520font%2520inspector?hl%3Den&hl=en&ec=GAZApQM
+      - tablist [ref=f29e46]:
+        - generic [ref=f29e49]:
+          - tab "Discover" [ref=f29e50] [cursor=pointer]
+          - tab "Extensions" [ref=f29e51] [cursor=pointer]
+          - tab "Themes" [ref=f29e52] [cursor=pointer]
+    - dialog [ref=f29e53]:
+      - complementary [ref=f29e54]:
+        - heading "Switch to Chrome?" [level=2] [ref=f29e56]
+        - paragraph [ref=f29e57]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f29e58]:
+          - button "No thanks" [ref=f29e60] [cursor=pointer]
+          - generic [ref=f29e64] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f29e65]: "Yes"
+            - link "Yes" [ref=f29e66]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - generic [ref=f29e70]:
+    - generic [ref=f29e72]:
+      - generic [ref=f29e73]:
+        - heading "Type" [level=2] [ref=f29e74]
+        - toolbar "Filter items by extension type" [ref=f29e75]:
+          - button "Extensions" [ref=f29e78] [cursor=pointer]
+          - button "Themes" [ref=f29e83] [cursor=pointer]
+      - generic [ref=f29e86]:
+        - heading "Filter by" [level=2] [ref=f29e87]
+        - generic [ref=f29e89] [cursor=pointer]:
+          - checkbox "Featured extensions" [ref=f29e91]
+          - generic [ref=f29e92]: Featured extensions
+        - generic [ref=f29e95] [cursor=pointer]:
+          - checkbox "Established publishers" [ref=f29e97]
+          - generic [ref=f29e98]: Established publishers
+      - generic [ref=f29e100]:
+        - heading "Ratings" [level=2] [ref=f29e101]
+        - radiogroup "Ratings" [ref=f29e102]:
+          - radio "5 stars" [ref=f29e103]
+          - radio "4 stars and up" [ref=f29e109]:
+            - generic [aria-hidden] [ref=f29e116]: "& up"
+          - radio "3 stars and up" [ref=f29e117]:
+            - generic [aria-hidden] [ref=f29e125]: "& up"
+          - radio "2 stars and up" [ref=f29e126]:
+            - generic [aria-hidden] [ref=f29e135]: "& up"
+      - generic [ref=f29e137]:
+        - button "Clear all filters button." [disabled] [ref=f29e138]:
+          - generic [aria-hidden] [ref=f29e140]: Clear all
+        - tooltip [aria-hidden] [ref=f29e141]: Reset your filter options.
+    - main [ref=f29e142]:
+      - generic [ref=f29e143]:
+        - heading "Search results" [level=1] [ref=f29e144]
+        - generic [ref=f29e145]:
+          - generic [ref=f29e146]:
+            - link "What Font - font finder" [ref=f29e147] [cursor=pointer]:
+              - /url: ./detail/what-font-font-finder/opogloaldjiplhogobhmghlgnlciebin
+            - generic [ref=f29e149]:
+              - heading "What Font - font finder" [level=2] [ref=f29e151]
+              - paragraph [ref=f29e152]:
+                - img "Published by verified publisher" [ref=f29e153]
+                - generic [ref=f29e156]: fenzory.com
+                - img "Featured badge" [ref=f29e157]
+                - generic [ref=f29e160]: Featured
+              - generic [ref=f29e161]:
+                - img "Average rating 3.8 out of 5 stars." [ref=f29e162]:
+                  - generic [ref=f29e163]: "3.8"
+                - link "Learn more about results and reviews \"What Font - font finder\"." [ref=f29e172] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f29e173]: What font? Easy identify the font on a web page, html font size, color and font family.
+          - generic [ref=f29e174]:
+            - 'link "WhatFont – Font Finder: identify fonts on page & image" [ref=f29e175] [cursor=pointer]':
+              - /url: ./detail/whatfont-%E2%80%93-font-finder-id/cnchnbcmhjadlbdbcebikmkbdlaajnni
+            - generic [ref=f29e177]:
+              - 'heading "WhatFont – Font Finder: identify fonts on page & image" [level=2] [ref=f29e179]'
+              - paragraph
+              - generic [ref=f29e180]:
+                - img "Average rating 4.7 out of 5 stars." [ref=f29e181]:
+                  - generic [ref=f29e182]: "4.7"
+                - 'link "Learn more about results and reviews \"WhatFont – Font Finder: identify fonts on page & image\"." [ref=f29e191] [cursor=pointer]':
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f29e192]: "What font is this? Identify any font on a web page or in an image: family, size, weight, colour, and every font the page uses."
+          - generic [ref=f29e193]:
+            - link "Font Inspector — What Font & Page Fonts" [ref=f29e194] [cursor=pointer]:
+              - /url: ./detail/font-inspector-%E2%80%94-what-fon/ahgcifofccphkhjgpedlhaoenjnomejl
+            - generic [ref=f29e196]:
+              - heading "Font Inspector — What Font & Page Fonts" [level=2] [ref=f29e198]
+              - paragraph
+              - generic [ref=f29e199]:
+                - img "Average rating 4.7 out of 5 stars." [ref=f29e200]:
+                  - generic [ref=f29e201]: "4.7"
+                - link "Learn more about results and reviews \"Font Inspector — What Font & Page Fonts\"." [ref=f29e210] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f29e211]: Hover any text to instantly see its font, size, weight, color and line-height. Click the icon to list every font on the page.
+          - generic [ref=f29e212]:
+            - link "Fontlens - Font Finder, What Font & Color Inspector" [ref=f29e213] [cursor=pointer]:
+              - /url: ./detail/fontlens-font-finder-what/iinggbjpppgofoecajghplkiknnfihof
+            - generic [ref=f29e215]:
+              - heading "Fontlens - Font Finder, What Font & Color Inspector" [level=2] [ref=f29e217]
+              - paragraph
+              - generic [ref=f29e218]:
+                - img "Average rating 0 out of 5 stars." [ref=f29e219]:
+                  - generic [ref=f29e220]: "0.0"
+                - link "Learn more about results and reviews \"Fontlens - Font Finder, What Font & Color Inspector\"." [ref=f29e229] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f29e230]: Identify any font on any website. Size, weight, line height, HEX/RGB/HSL colors and WCAG contrast. No DevTools needed.
+          - generic [ref=f29e231]:
+            - link "What Font Is This" [ref=f29e232] [cursor=pointer]:
+              - /url: ./detail/what-font-is-this/ohpnpjnjiiicilaniffpeoecgoaojadj
+            - generic [ref=f29e234]:
+              - heading "What Font Is This" [level=2] [ref=f29e236]
+              - paragraph
+              - generic [ref=f29e237]:
+                - img "Average rating 0 out of 5 stars." [ref=f29e238]:
+                  - generic [ref=f29e239]: "0.0"
+                - link "Learn more about results and reviews \"What Font Is This\"." [ref=f29e248] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f29e249]: Identify any font on any website instantly. Hover to inspect, click to pin. Free, no account required.
+          - generic [ref=f29e250]:
+            - link "Font Detector" [ref=f29e251] [cursor=pointer]:
+              - /url: ./detail/font-detector/cgncoankficfiehdibnhimiodebdmadp
+            - generic [ref=f29e253]:
+              - heading "Font Detector" [level=2] [ref=f29e255]
+              - paragraph [ref=f29e256]:
+                - img "Published by verified publisher" [ref=f29e257]
+                - generic [ref=f29e260]: bushe.co
+              - generic [ref=f29e261]:
+                - img "Average rating 0 out of 5 stars." [ref=f29e262]:
+                  - generic [ref=f29e263]: "0.0"
+                - link "Learn more about results and reviews \"Font Detector\"." [ref=f29e272] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f29e273]: Identify any font on any webpage instantly. Click to inspect font family, size, weight & color. The easiest web font finder.
+          - generic [ref=f29e274]:
+            - link "Font Finder & Font Identifier - Detect All Fonts" [ref=f29e275] [cursor=pointer]:
+              - /url: ./detail/font-finder-font-identifi/lapfniceajebpddjgcidmippnkfncjfe
+            - generic [ref=f29e277]:
+              - heading "Font Finder & Font Identifier - Detect All Fonts" [level=2] [ref=f29e279]
+              - paragraph [ref=f29e280]:
+                - link "fuzesoft.com" [ref=f29e281] [cursor=pointer]:
+                  - /url: https://fuzesoft.com
+              - generic [ref=f29e282]:
+                - img "Average rating 0 out of 5 stars." [ref=f29e283]:
+                  - generic [ref=f29e284]: "0.0"
+                - link "Learn more about results and reviews \"Font Finder & Font Identifier - Detect All Fonts\"." [ref=f29e293] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f29e294]: Font finder that shows the font that actually rendered, not the CSS stack. Identify any font on hover, audit every font on the page.
+          - generic [ref=f29e295]:
+            - 'link "What Font: Font Identifier & Style Inspector for Websites" [ref=f29e296] [cursor=pointer]':
+              - /url: ./detail/what-font-font-identifier/ommgngggiofbncjkoimdickpplhfbajn
+            - generic [ref=f29e298]:
+              - 'heading "What Font: Font Identifier & Style Inspector for Websites" [level=2] [ref=f29e300]'
+              - paragraph
+              - generic [ref=f29e301]:
+                - img "Average rating 0 out of 5 stars." [ref=f29e302]:
+                  - generic [ref=f29e303]: "0.0"
+                - 'link "Learn more about results and reviews \"What Font: Font Identifier & Style Inspector for Websites\"." [ref=f29e312] [cursor=pointer]':
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f29e313]: Instantly detect and inspect fonts on any website. Identify font family, size, color, and spacing with one click.
+          - generic [ref=f29e314]:
+            - link "Font Finder — What Font Is This?" [ref=f29e315] [cursor=pointer]:
+              - /url: ./detail/font-finder-%E2%80%94-what-font-i/oliajfmamkkggkhlkfphcjnppcajomjd
+            - generic [ref=f29e317]:
+              - heading "Font Finder — What Font Is This?" [level=2] [ref=f29e319]
+              - paragraph
+              - generic [ref=f29e320]:
+                - img "Average rating 0 out of 5 stars." [ref=f29e321]:
+                  - generic [ref=f29e322]: "0.0"
+                - link "Learn more about results and reviews \"Font Finder — What Font Is This?\"." [ref=f29e331] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f29e332]: Identify fonts on any webpage. Hover to see font details, copy CSS, try different fonts, and generate font reports.
+          - generic [ref=f29e333]:
+            - link "WhatFont" [ref=f29e334] [cursor=pointer]:
+              - /url: ./detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm
+            - generic [ref=f29e336]:
+              - heading "WhatFont" [level=2] [ref=f29e338]
+              - paragraph [ref=f29e339]:
+                - img "Published by verified publisher" [ref=f29e340]
+                - generic [ref=f29e343]: chengyinliu.com
+                - img "Featured badge" [ref=f29e344]
+                - generic [ref=f29e347]: Featured
+              - generic [ref=f29e348]:
+                - img "Average rating 4.0 out of 5 stars." [ref=f29e349]:
+                  - generic [ref=f29e350]: "4.0"
+                - link "Learn more about results and reviews \"WhatFont\"." [ref=f29e359] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en
+              - paragraph [ref=f29e360]: The easiest way to identify fonts on web pages.
+          - button "Load more" [ref=f29e363] [cursor=pointer]
+  - contentinfo [ref=f29e366]:
+    - list [ref=f29e367]:
+      - listitem [ref=f29e368]:
+        - link "About Chrome Web Store" [ref=f29e369] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en
+        - text: •
+      - listitem [ref=f29e370]:
+        - link "Developer Dashboard" [ref=f29e371] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f29e372]:
+        - link "Privacy Policy" [ref=f29e373] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en
+        - text: •
+      - listitem [ref=f29e374]:
+        - link "Terms of Service" [ref=f29e375] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en/gallery_tos.html
+        - text: •
+      - listitem [ref=f29e376]:
+        - link "Help" [ref=f29e377] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en
+  - generic [ref=f29e378]: Page loaded.

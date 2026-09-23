@@ -1,0 +1,209 @@
+- generic [ref=f25e1]:
+  - banner [ref=f25e2]:
+    - link "Skip to main content" [ref=f25e3] [cursor=pointer]
+    - generic [ref=f25e4]:
+      - generic [ref=f25e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f25e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f25e8]
+          - generic [ref=f25e9]: Chrome Web Store
+        - search "Sitewide" [ref=f25e10]:
+          - combobox "Search Chrome Web Store" [active] [ref=f25e15]
+        - generic [ref=f25e16]:
+          - button "More options menu" [ref=f25e20] [cursor=pointer]
+          - generic [ref=f25e30]:
+            - button "Google apps" [ref=f25e34] [cursor=pointer]
+            - link "Sign in" [ref=f25e38] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm/reviews&followup=https://chromewebstore.google.com/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm/reviews&ec=GAZApQM
+      - tablist [ref=f25e42]:
+        - generic [ref=f25e45]:
+          - tab "Discover" [ref=f25e46] [cursor=pointer]
+          - tab "Extensions" [selected] [ref=f25e47] [cursor=pointer]
+          - tab "Themes" [ref=f25e48] [cursor=pointer]
+    - dialog [ref=f25e49]:
+      - complementary [ref=f25e50]:
+        - heading "Switch to Chrome?" [level=2] [ref=f25e52]
+        - paragraph [ref=f25e53]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f25e54]:
+          - button "No thanks" [ref=f25e56] [cursor=pointer]
+          - generic [ref=f25e60] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f25e61]: "Yes"
+            - link "Yes" [ref=f25e62]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - main [ref=f25e66]:
+    - generic [ref=f25e67]:
+      - generic [ref=f25e68]:
+        - generic "Info" [ref=f25e70]:
+          - generic [ref=f25e71]: Switch to Chrome to install extensions and themes
+          - button "Switch to Chrome to install extensions and themes Install Chrome" [ref=f25e79] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f25e81]: Install Chrome
+        - generic [ref=f25e82]:
+          - link "Navigate back to item detail page" [ref=f25e88] [cursor=pointer]:
+            - /url: ./detail/Cookie-Editor/hlkenndednhfkekhgcdicdfddnkalmdm
+          - generic [ref=f25e89]:
+            - link [ref=f25e90] [cursor=pointer]:
+              - /url: ./detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm
+              - img "Item logo image for Cookie-Editor" [ref=f25e91]
+              - heading "Cookie-Editor" [level=1] [ref=f25e92]
+            - generic [ref=f25e93]:
+              - generic [ref=f25e94]:
+                - link "Created by the owner of the listed website. The publisher has a good record with no history of violations. Learn more." [ref=f25e103] [cursor=pointer]:
+                  - /url: https://support.google.com/chrome_webstore/?hl=en-US&p=cws_badges
+                - link "cookie-editor.com" [ref=f25e104] [cursor=pointer]:
+                  - /url: https://cookie-editor.com
+              - generic [ref=f25e105]:
+                - img "Average rating 4.4 out of 5 stars. 410 ratings." [ref=f25e106]:
+                  - generic [ref=f25e107]: "4.4"
+                  - generic [ref=f25e110]:
+                    - text: (
+                    - paragraph [ref=f25e111]: 410 ratings
+                    - text: )
+                - button "Ratings are updated daily and may not reflect the most recent reviews." [ref=f25e113] [cursor=pointer]
+              - button "Share" [ref=f25e122] [cursor=pointer]
+            - generic [ref=f25e128]:
+              - link "Extension" [ref=f25e129] [cursor=pointer]:
+                - /url: ./category/extensions
+              - link "Developer Tools" [ref=f25e130] [cursor=pointer]:
+                - /url: ./category/extensions/productivity/developer
+              - text: 2,000,000 users
+            - button "Add to Chrome" [ref=f25e134] [cursor=pointer]
+      - heading [level=2] [ref=f25e138]:
+        - generic [ref=f25e139]:
+          - text: 4.4 out of 5
+          - img "4.4 out of 5 stars" [ref=f25e140]
+      - text: 410 ratings•
+      - paragraph [ref=f25e169]:
+        - link "Learn more about results and reviews." [ref=f25e170] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results
+      - generic [ref=f25e171]:
+        - combobox "Filter by" [ref=f25e174] [cursor=pointer]:
+          - generic:
+            - generic:
+              - generic: Filter by
+              - generic [aria-hidden]: Filter by
+          - generic: All reviews
+        - combobox "Sort by" [ref=f25e178] [cursor=pointer]:
+          - generic:
+            - generic:
+              - generic: Sort by
+              - generic [aria-hidden]: Sort by
+          - generic: Recent
+        - combobox "Language" [ref=f25e183] [cursor=pointer]:
+          - generic:
+            - generic:
+              - generic: Language
+              - generic [aria-hidden]: Language
+          - generic: English
+    - generic [ref=f25e185]:
+      - generic [ref=f25e186]:
+        - img "Review's profile picture" [ref=f25e187]
+        - heading "Jon S. 3 out of 5 stars Jul 26, 2026" [level=3] [ref=f25e189]:
+          - generic [ref=f25e190]: Jon S.
+          - img "3 out of 5 stars" [ref=f25e191]
+          - generic [ref=f25e220]: Jul 26, 2026
+        - button "Review options" [ref=f25e224] [cursor=pointer]
+        - paragraph [ref=f25e230]: This extension is definitely useful. However, it would be a LOT better if you could whitelist certain cookies against deletion when clicking the "Delete All" option for a site. Right now, the only way to delete all but a certain cookie is to delete each cookie one by one or (quicker). Also, there is no option to preserve subdomain cookies.
+      - generic [ref=f25e231]:
+        - img "Review's profile picture" [ref=f25e232]
+        - heading "Luv Puppy 1 out of 5 stars Jul 19, 2026" [level=3] [ref=f25e234]:
+          - generic [ref=f25e235]: Luv Puppy
+          - img "1 out of 5 stars" [ref=f25e236]
+          - generic [ref=f25e265]: Jul 19, 2026
+        - button "Review options" [ref=f25e269] [cursor=pointer]
+        - paragraph [ref=f25e275]:
+          - text: This is not working properly anymore and this is because of Google forcing Manifest3 on everyone and crippling many good extensions. I hope there is a fix for this in Manifest3 and that the developer can update it to work again. For now, you can use the same extension in a Firefox based brower and it works fine. Firefox based browsers remain on Manifest2. So if you need a temporary work-around for this, just install a Firefox based browser and then add this extension to it. Then export whate...
+          - button "Show more" [ref=f25e276] [cursor=pointer]
+        - generic [ref=f25e277]: 1 person found this review to be unhelpful
+      - generic [ref=f25e279]:
+        - img "Review's profile picture" [ref=f25e280]
+        - heading "Sudhanshu Gandhi 1 out of 5 stars Jun 27, 2026" [level=3] [ref=f25e282]:
+          - generic [ref=f25e283]: Sudhanshu Gandhi
+          - img "1 out of 5 stars" [ref=f25e284]
+          - generic [ref=f25e313]: Jun 27, 2026
+        - button "Review options" [ref=f25e317] [cursor=pointer]
+        - paragraph [ref=f25e323]: Not work properly now
+        - generic [ref=f25e324]: 1 out of 3 found this helpful
+      - generic [ref=f25e326]:
+        - img "Review's profile picture" [ref=f25e327]
+        - heading "Baran Çetin 5 out of 5 stars Jun 6, 2026" [level=3] [ref=f25e329]:
+          - generic [ref=f25e330]: Baran Çetin
+          - img "5 out of 5 stars" [ref=f25e331]
+          - generic [ref=f25e360]: Jun 6, 2026
+        - button "Review options" [ref=f25e364] [cursor=pointer]
+        - paragraph [ref=f25e370]: Better than Get cookies.txt LOCALLY.
+      - generic [ref=f25e371]:
+        - img "Review's profile picture" [ref=f25e372]
+        - heading "Jacob Holmes 1 out of 5 stars Apr 9, 2026" [level=3] [ref=f25e374]:
+          - generic [ref=f25e375]: Jacob Holmes
+          - img "1 out of 5 stars" [ref=f25e376]
+          - generic [ref=f25e405]: Apr 9, 2026
+        - button "Review options" [ref=f25e409] [cursor=pointer]
+        - paragraph [ref=f25e415]: Locks the ability to export cookies to the current site. Need to export *all* cookies as JSON? This extension will *NOT* do that.
+        - generic [ref=f25e416]: 3 out of 4 found this helpful
+      - generic [ref=f25e418]:
+        - img "Review's profile picture" [ref=f25e419]
+        - heading "Mengesha 5 out of 5 stars Apr 7, 2026" [level=3] [ref=f25e421]:
+          - generic [ref=f25e422]: Mengesha
+          - img "5 out of 5 stars" [ref=f25e423]
+          - generic [ref=f25e452]: Apr 7, 2026
+        - button "Review options" [ref=f25e456] [cursor=pointer]
+        - paragraph [ref=f25e462]: Functions with flawless precision and lives up to every claim. Highly reliable. ✅
+        - generic [ref=f25e463]: 1 person found this review to be helpful
+      - generic [ref=f25e465]:
+        - img "Review's profile picture" [ref=f25e466]
+        - heading "Sean Carey 5 out of 5 stars Mar 24, 2026" [level=3] [ref=f25e468]:
+          - generic [ref=f25e469]: Sean Carey
+          - img "5 out of 5 stars" [ref=f25e470]
+          - generic [ref=f25e499]: Mar 24, 2026
+        - button "Review options" [ref=f25e503] [cursor=pointer]
+        - paragraph [ref=f25e509]: Works exactly as described ✅
+        - generic [ref=f25e510]: 1 person found this review to be helpful
+      - generic [ref=f25e512]:
+        - img "Review's profile picture" [ref=f25e513]
+        - heading "Carlo power 5 out of 5 stars Mar 23, 2026" [level=3] [ref=f25e515]:
+          - generic [ref=f25e516]: Carlo power
+          - img "5 out of 5 stars" [ref=f25e517]
+          - generic [ref=f25e546]: Mar 23, 2026
+        - button "Review options" [ref=f25e550] [cursor=pointer]
+        - paragraph [ref=f25e556]: Awesome extension
+        - generic [ref=f25e557]: 1 out of 2 found this helpful
+      - generic [ref=f25e559]:
+        - img "Review's profile picture" [ref=f25e560]
+        - heading "Omar 5 out of 5 stars Feb 22, 2026" [level=3] [ref=f25e562]:
+          - generic [ref=f25e563]: Omar
+          - img "5 out of 5 stars" [ref=f25e564]
+          - generic [ref=f25e593]: Feb 22, 2026
+        - button "Review options" [ref=f25e597] [cursor=pointer]
+        - paragraph [ref=f25e603]: how do i find another persons cookies
+        - generic [ref=f25e604]: 2 out of 25 found this helpful
+      - generic [ref=f25e606]:
+        - img "Review's profile picture" [ref=f25e607]
+        - heading "Sander Saarm 1 out of 5 stars Feb 12, 2026" [level=3] [ref=f25e609]:
+          - generic [ref=f25e610]: Sander Saarm
+          - img "1 out of 5 stars" [ref=f25e611]
+          - generic [ref=f25e640]: Feb 12, 2026
+        - button "Review options" [ref=f25e644] [cursor=pointer]
+        - paragraph [ref=f25e650]: Used another extension long time, but this didn't work quite right anymore. So I tried Cookie-Editor. This doesn't remove all the cookies. Maybe removes only the active site's domain cookies, but not all cookies. I replaced it with EditThisCookie, which shows all the active site's cookies, and I can change them and delete all...
+        - generic [ref=f25e651]: 0 out of 6 found this helpful
+      - button "Load more" [ref=f25e655] [cursor=pointer]
+  - contentinfo [ref=f25e658]:
+    - list [ref=f25e659]:
+      - listitem [ref=f25e660]:
+        - link "About Chrome Web Store" [ref=f25e661] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en-US
+        - text: •
+      - listitem [ref=f25e662]:
+        - link "Developer Dashboard" [ref=f25e663] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f25e664]:
+        - link "Privacy Policy" [ref=f25e665] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en-US
+        - text: •
+      - listitem [ref=f25e666]:
+        - link "Terms of Service" [ref=f25e667] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en-US/gallery_tos.html
+        - text: •
+      - listitem [ref=f25e668]:
+        - link "Help" [ref=f25e669] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en-US

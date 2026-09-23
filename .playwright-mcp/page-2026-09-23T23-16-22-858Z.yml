@@ -1,0 +1,200 @@
+- generic [ref=f32e1]:
+  - banner [ref=f32e2]:
+    - link "Skip to main content" [ref=f32e3] [cursor=pointer]
+    - generic [ref=f32e4]:
+      - generic [ref=f32e5]:
+        - link "Chrome Web Store logo Chrome Web Store" [ref=f32e7] [cursor=pointer]:
+          - /url: ./
+          - img "Chrome Web Store logo" [ref=f32e8]
+          - generic [ref=f32e9]: Chrome Web Store
+        - search "Sitewide" [ref=f32e10]:
+          - combobox "Search Chrome Web Store" [active] [ref=f32e15]
+        - generic [ref=f32e16]:
+          - button "More options menu" [ref=f32e20] [cursor=pointer]
+          - generic [ref=f32e30]:
+            - button "Google apps" [ref=f32e34] [cursor=pointer]
+            - link "Sign in" [ref=f32e38] [cursor=pointer]:
+              - /url: https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/detail/whatfont-%25E2%2580%2593-font-finder-id/cnchnbcmhjadlbdbcebikmkbdlaajnni&followup=https://chromewebstore.google.com/detail/whatfont-%25E2%2580%2593-font-finder-id/cnchnbcmhjadlbdbcebikmkbdlaajnni&ec=GAZApQM
+      - tablist [ref=f32e42]:
+        - generic [ref=f32e45]:
+          - tab "Discover" [ref=f32e46] [cursor=pointer]
+          - tab "Extensions" [selected] [ref=f32e47] [cursor=pointer]
+          - tab "Themes" [ref=f32e48] [cursor=pointer]
+    - dialog [ref=f32e49]:
+      - complementary [ref=f32e50]:
+        - heading "Switch to Chrome?" [level=2] [ref=f32e52]
+        - paragraph [ref=f32e53]: Google recommends using Chrome when using extensions and themes.
+        - generic [ref=f32e54]:
+          - button "No thanks" [ref=f32e56] [cursor=pointer]
+          - generic [ref=f32e60] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f32e61]: "Yes"
+            - link "Yes" [ref=f32e62]:
+              - /url: https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF
+  - main [ref=f32e66]:
+    - generic [ref=f32e67]:
+      - generic [ref=f32e68]:
+        - generic "Info" [ref=f32e70]:
+          - generic [ref=f32e71]: Switch to Chrome to install extensions and themes
+          - button "Switch to Chrome to install extensions and themes Install Chrome" [ref=f32e79] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f32e81]: Install Chrome
+        - generic [ref=f32e83]:
+          - generic [ref=f32e84]:
+            - 'img "Item logo image for WhatFont – Font Finder: identify fonts on page & image" [ref=f32e85]'
+            - 'heading "WhatFont – Font Finder: identify fonts on page & image" [level=1] [ref=f32e86]'
+          - generic [ref=f32e87]:
+            - generic [ref=f32e88]:
+              - generic [ref=f32e89]:
+                - generic [ref=f32e90]: "4.7"
+                - generic [ref=f32e93]:
+                  - text: (
+                  - link [ref=f32e94] [cursor=pointer]:
+                    - /url: ./detail/whatfont-%E2%80%93-font-finder-id/cnchnbcmhjadlbdbcebikmkbdlaajnni/reviews
+                    - paragraph [ref=f32e95]: 13 ratings
+                  - text: )
+              - button "Ratings are updated daily and may not reflect the most recent reviews." [ref=f32e97] [cursor=pointer]
+            - button "Share" [ref=f32e106] [cursor=pointer]
+          - generic [ref=f32e112]:
+            - link "Extension" [ref=f32e113] [cursor=pointer]:
+              - /url: ./category/extensions
+            - link "Developer Tools" [ref=f32e114] [cursor=pointer]:
+              - /url: ./category/extensions/productivity/developer
+            - text: 1,000 users
+          - button "Add to Chrome" [ref=f32e118] [cursor=pointer]
+      - region "Media carousel" [ref=f32e122]:
+        - generic [ref=f32e124]:
+          - 'button "Item media 1 (screenshot) for WhatFont – Font Finder: identify fonts on page & image" [ref=f32e126] [cursor=pointer]':
+            - 'img "Item media 1 (screenshot) for WhatFont – Font Finder: identify fonts on page & image" [ref=f32e127]'
+          - 'button "Item media 2 (screenshot) for WhatFont – Font Finder: identify fonts on page & image" [ref=f32e129] [cursor=pointer]':
+            - 'img "Item media 2 (screenshot) for WhatFont – Font Finder: identify fonts on page & image" [ref=f32e130]'
+      - generic [ref=f32e131]:
+        - heading "Overview" [level=2] [ref=f32e133]
+        - generic [ref=f32e135]:
+          - generic [ref=f32e136]:
+            - paragraph [ref=f32e137]: "What font is this? Identify any font on a web page or in an image: family, size, weight, colour, and every font the page uses."
+            - paragraph [ref=f32e138]: "What font is this? Identify any font on a web page or in an image — in one click WhatFont turns any website into a type specimen. Hover over text to see the font that is really rendered, click it for the full CSS spec, or capture a logo to find the font inside an image. No DevTools, no \"Inspect Element\", no guessing. 🔍 IDENTIFY THE FONT ON ANY WEBSITE • Hover over text — the tooltip shows the font actually rendered, not the CSS fallback list • Click for the full spec: family, size, line height, weight, style and letter spacing • See the whole font stack with the family the browser really picked highlighted • Arrow keys walk the page structure, so even the smallest caption is easy to reach 🖼️ FIND THE FONT IN AN IMAGE OR LOGO • Select any area of the screen: a logo, a banner, a screenshot, a video frame • Send it to Adobe Fonts or WhatTheFont visual search in one click • Or save the crop as PNG and copy it to the clipboard for your own reference 🗂️ ALL FONTS USED ON THE PAGE • One click lists every typeface the page renders • For each one: how many elements use it, which weights and which sizes • Copy the name or jump straight to that text on the page 🎨 COLOURS, CONTRAST AND READY-MADE CSS • Text colour in HEX and RGB — click any value to copy it • WCAG contrast ratio against the real background, with an AA / AAA verdict • Copy CSS: the whole font declaration, ready to paste into your stylesheet • Font source: Google Fonts, Adobe Fonts, self-hosted or a system font, with a link to it ⚡ HOW IT WORKS 1. Click the WhatFont icon or press Alt+Shift+F 2. Hover over any text to see its font 3. Click the text for the full spec, or press Capture to identify a font inside an image 4. Press Esc to switch the inspector off FOR DESIGNERS AND DEVELOPERS Collect typography references, rebuild a design system, match a client's brand font, check whether text colours are accessible, or simply answer \"what font does this website use?\" in seconds. 🔒 PRIVACY WhatFont works inside your browser and does not collect or transmit your browsing data. A captured image leaves the browser only after you choose a font search service yourself. ——————————— WhatFont — a free font finder and font identifier for Chrome. Hover over text to see what font a website uses, inspect the full CSS spec (family, size, weight, colour), check WCAG contrast, list every font on the page, and identify fonts from images, logos and screenshots with Adobe Fonts or WhatTheFont visual search."
+          - button "See more" [ref=f32e139] [cursor=pointer]
+      - generic [ref=f32e142]:
+        - heading [level=2] [ref=f32e144]:
+          - generic [ref=f32e145]:
+            - text: 4.7 out of 5
+            - img "4.7 out of 5 stars" [ref=f32e146]
+          - text: 13 ratings•
+          - paragraph [ref=f32e175]:
+            - link "Learn more about results and reviews." [ref=f32e176] [cursor=pointer]:
+              - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results
+        - generic [ref=f32e178] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f32e179]: See all reviews
+          - link "See all reviews" [ref=f32e180]:
+            - /url: ./detail/whatfont-%E2%80%93-font-finder-id/cnchnbcmhjadlbdbcebikmkbdlaajnni/reviews
+      - generic [ref=f32e181]:
+        - heading "Details" [level=2] [ref=f32e183]
+        - list [ref=f32e185]:
+          - listitem [ref=f32e186]:
+            - generic [ref=f32e187]: Version
+            - generic [ref=f32e188]: 0.0.6
+          - listitem [ref=f32e189]:
+            - generic [ref=f32e190]: Updated
+            - generic [ref=f32e191]: September 3, 2026
+          - listitem [ref=f32e192]:
+            - link "Flag concern" [ref=f32e194] [cursor=pointer]:
+              - /url: ./detail/cnchnbcmhjadlbdbcebikmkbdlaajnni/report
+          - listitem [ref=f32e195]:
+            - generic [ref=f32e196]: Size
+            - generic [ref=f32e197]: 94.2KiB
+          - listitem [ref=f32e198]:
+            - generic [ref=f32e199]: Languages
+            - generic [ref=f32e201]:
+              - text: 47 languages
+              - button "Show more languages" [ref=f32e203] [cursor=pointer]
+          - listitem [ref=f32e209]:
+            - generic [ref=f32e210]: Developer
+            - group [ref=f32e213]:
+              - generic "Email" [ref=f32e214]
+          - listitem [ref=f32e219]:
+            - generic [ref=f32e220]: Non-trader
+            - generic [ref=f32e221]: This developer has not identified itself as a trader. For consumers in the European Union, please note that consumer rights do not apply to contracts between you and this developer.
+      - generic [ref=f32e222]:
+        - heading "Privacy" [level=2] [ref=f32e224]
+        - generic [ref=f32e226]:
+          - generic [ref=f32e227]: The developer has disclosed that it will not collect or use your data.
+          - generic [ref=f32e232]:
+            - heading "This developer declares that your data is" [level=2] [ref=f32e233]
+            - list [ref=f32e234]:
+              - listitem [ref=f32e235]:
+                - text: Not being sold to third parties, outside of the
+                - link "approved use cases" [ref=f32e236] [cursor=pointer]:
+                  - /url: https://developer.chrome.com/docs/webstore/program-policies/limited-use/
+              - listitem [ref=f32e237]: Not being used or transferred for purposes that are unrelated to the item's core functionality
+              - listitem [ref=f32e238]: Not being used or transferred to determine creditworthiness or for lending purposes
+      - generic [ref=f32e239]:
+        - heading "Related" [level=2] [ref=f32e240]
+        - region "Related items carousel" [ref=f32e243]:
+          - button "Previous slide" [ref=f32e245] [cursor=pointer]
+          - region "Related item slides" [ref=f32e252]:
+            - generic [ref=f32e253]:
+              - generic [ref=f32e255]:
+                - link "WhatFont?" [ref=f32e256] [cursor=pointer]:
+                  - /url: ./detail/whatfont/jgeefkaionmdkgligjchjeeakclckgmc
+                - generic [ref=f32e257]:
+                  - heading "WhatFont?" [level=3] [ref=f32e259]
+                  - generic [ref=f32e260]:
+                    - img "Average rating 5 out of 5 stars." [ref=f32e261]:
+                      - generic [ref=f32e262]: "5.0"
+                    - link "Learn more about results and reviews \"WhatFont?\"." [ref=f32e271] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f32e272]: WhatFont?
+              - generic [ref=f32e274]:
+                - link "What the Font - find font & color" [ref=f32e275] [cursor=pointer]:
+                  - /url: ./detail/what-the-font-find-font-c/abefllafeffhoiadldggcalfgbofohfa
+                - generic [ref=f32e276]:
+                  - heading "What the Font - find font & color" [level=3] [ref=f32e277]
+                  - generic [ref=f32e278]:
+                    - img "Average rating 4.6 out of 5 stars." [ref=f32e279]:
+                      - generic [ref=f32e280]: "4.6"
+                    - link "Learn more about results and reviews \"What the Font - find font & color\"." [ref=f32e289] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f32e290]: Find and identify the font name, its family, color, style, size used on any website.
+              - generic [ref=f32e292]:
+                - link "Font Finder by WhatFont" [ref=f32e293] [cursor=pointer]:
+                  - /url: ./detail/font-finder-by-whatfont/bkabpllkghhddkikpelcmjklipifickd
+                - generic [ref=f32e294]:
+                  - heading "Font Finder by WhatFont" [level=3] [ref=f32e295]
+                  - generic [ref=f32e296]:
+                    - img "Average rating 4.4 out of 5 stars." [ref=f32e297]:
+                      - generic [ref=f32e298]: "4.4"
+                    - link "Learn more about results and reviews \"Font Finder by WhatFont\"." [ref=f32e307] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f32e308]: Font Finder directly find font details from web pages easily.
+              - generic [ref=f32e310]:
+                - link "ColorZila" [ref=f32e311] [cursor=pointer]:
+                  - /url: ./detail/colorzila/ijailonldmlkpbiihghomjlbklogcinf
+                - generic [ref=f32e312]:
+                  - heading "ColorZila" [level=3] [ref=f32e313]
+                  - generic [ref=f32e314]:
+                    - img "Average rating 5 out of 5 stars." [ref=f32e315]:
+                      - generic [ref=f32e316]: "5.0"
+                    - link "Learn more about results and reviews \"ColorZila\"." [ref=f32e325] [cursor=pointer]:
+                      - /url: https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en-US
+                  - paragraph [ref=f32e326]: ColorZila is a simple color picker that helps you extract colors from images and view them in formats like HEX and RGB.
+          - button "Next slide" [ref=f32e328] [cursor=pointer]
+  - contentinfo [ref=f32e334]:
+    - list [ref=f32e335]:
+      - listitem [ref=f32e336]:
+        - link "About Chrome Web Store" [ref=f32e337] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore/answer/1047776?hl=en-US
+        - text: •
+      - listitem [ref=f32e338]:
+        - link "Developer Dashboard" [ref=f32e339] [cursor=pointer]:
+          - /url: https://chrome.google.com/webstore/devconsole/
+        - text: •
+      - listitem [ref=f32e340]:
+        - link "Privacy Policy" [ref=f32e341] [cursor=pointer]:
+          - /url: https://myaccount.google.com/privacypolicy?hl=en-US
+        - text: •
+      - listitem [ref=f32e342]:
+        - link "Terms of Service" [ref=f32e343] [cursor=pointer]:
+          - /url: https://ssl.gstatic.com/chrome/webstore/intl/en-US/gallery_tos.html
+        - text: •
+      - listitem [ref=f32e344]:
+        - link "Help" [ref=f32e345] [cursor=pointer]:
+          - /url: https://support.google.com/chrome_webstore?hl=en-US

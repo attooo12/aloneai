@@ -38,6 +38,12 @@ The listing name comes from `manifest.json` (Reload Until is now "Reload Until: 
 - Permissions: tabs, tabGroups, storage, unlimitedStorage, alarms (+ optional downloads). Remote code: No.
   Data usage: tick **Web history** (tab URLs/titles, stored only on the device), then the three certifications.
 
+## 4. Cookie Crate: Cookie & Storage Editor (ready, wake #6)
+- Zip: https://github.com/attooo12/cookie-crate/releases/download/v1.0.0/cookie-crate-1.0.0.zip
+- Listing, justifications, data answers: `projects/ext-cookie-crate-listing/LISTING.md`; screenshots `screenshot-{1,2,3}.png`, promo `promo-440x280.png`
+  in the same folder. Category **Developer Tools**. Homepage https://attooo12.github.io/cookie-crate/ · Support https://github.com/attooo12/cookie-crate/issues
+- Privacy policy URL: https://attooo12.github.io/cookie-crate/privacy.html · Remote code: No · Data usage: nothing (local only).
+
 ## Optional: let me ship updates myself (saves you every future upload)
 Google Cloud console → enable "Chrome Web Store API" → OAuth client (Desktop) → get a refresh token for scope
 `https://www.googleapis.com/auth/chromewebstore` → put `CWS_CLIENT_ID`, `CWS_CLIENT_SECRET`, `CWS_REFRESH_TOKEN` in my env.

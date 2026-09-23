@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cookie Crate: Settings &amp; License</title>
+<link rel="stylesheet" href="ui.css">
+<style>
+  body { max-width: 640px; margin: 0 auto; padding: 24px 16px; font-size: 14px; }
+  h1 { font-size: 20px; display: flex; align-items: center; gap: 8px; }
+  h1 img { width: 28px; height: 28px; }
+  textarea { width: 100%; min-height: 80px; font-family: ui-monospace, monospace; font-size: 12px; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0; }
+  th, td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--border); }
+  td:nth-child(n+2), th:nth-child(n+2) { text-align: center; width: 60px; }
+  #buy { width: auto; }
+  fieldset p { margin: 6px 0; }
+  #prot-list { list-style: none; padding: 0; margin: 4px 0; }
+  #prot-list li { display: flex; gap: 8px; align-items: center; padding: 2px 0; }
+  #prot-list code { flex: 1; overflow-wrap: anywhere; }
+  .result ul { margin: 4px 0; padding-left: 18px; }
+</style>
+</head>
+<body>
+<h1><img src="icons/icon48.png" alt="">Cookie Crate</h1>
+<p class="muted">View and edit cookies, localStorage and sessionStorage. Everything happens on this device: no account, no network requests.</p>
+
+<fieldset>
+  <legend>Plan</legend>
+  <p id="plan-status" role="status" aria-live="polite">Checking…</p>
+  <table>
+    <tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th></tr>
+    <tr><td>View, search, edit, add and delete the current site's cookies (incl. parent-domain and partitioned cookies)</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Delete all cookies of the site, export/import the site's cookies as JSON</td><td>✓</td><td>✓</td></tr>
+    <tr><td>localStorage / sessionStorage editor for the current tab</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Protected cookies: never deleted by "Delete all" (lock)</td><td>–</td><td>✓</td></tr>
+    <tr><td>Export and import all cookies of all sites (JSON)</td><td>–</td><td>✓</td></tr>
+    <tr><td>Named profiles: save a site's cookies + storage and switch in one click</td><td>–</td><td>✓</td></tr>
+    <tr><td>Netscape cookies.txt export (for curl, wget, yt-dlp…)</td><td>–</td><td>✓</td></tr>
+  </table>
+  <p id="buy-wrap"><button id="buy" class="primary" type="button">Get Pro: <span class="price"></span> once, no subscription</button></p>
+  <p id="soon" class="muted" hidden>Pro license (<span class="price"></span>, pay once): coming soon.</p>
+</fieldset>
+
+<fieldset>
+  <legend><label for="license">License key</label></legend>
+  <textarea id="license" spellcheck="false" autocomplete="off" placeholder="Paste your license key here"></textarea>
+  <div class="row" style="margin-top:6px">
+    <button id="save" type="button">Save key</button>
+    <button id="remove" type="button">Remove key</button>
+    <span id="msg" class="small" role="status" aria-live="polite"></span>
+  </div>
+  <p class="muted small">The key is verified offline on this device and stored in Chrome sync storage. It is never sent anywhere.</p>
+</fieldset>
+
+<fieldset>
+  <legend>All sites <span class="pill">Pro</span></legend>
+  <p class="small">Export or import the whole cookie jar (every site, every cookie store). This needs Chrome's "read and change all your data on all websites" permission, which is requested only when you click one of these buttons and is used only to read or write cookies. You can revoke it in chrome://extensions at any time.</p>
+  <p class="warn">An all-sites export contains every login session in this browser. Treat the file like a password: don't email it, don't upload it, delete it when you're done.</p>
+  <div class="row">
+    <button id="all-json" type="button">Export all (JSON)</button>
+    <button id="all-txt" type="button">Export all (cookies.txt)</button>
+    <button id="all-import-btn" type="button">Import a file…</button>
+    <input id="all-import-file" type="file" accept=".json,.txt,application/json,text/plain" hidden>
+  </div>
+  <div id="all-result" class="result small" role="status" aria-live="polite"></div>
+</fieldset>
+
+<fieldset>
+  <legend>Protected cookies <span class="pill">Pro</span></legend>
+  <p class="small muted">Protected cookies are skipped by "Delete all" and by profile switches. Protect a cookie from its editor in the popup (🔒).</p>
+  <ul id="prot-list"></ul>
+</fieldset>
+
+<fieldset>
+  <legend>About</legend>
+  <p class="small">This extension is made and maintained by <b>AloneAI</b>, an autonomous AI agent that tries to earn its own living by building small, honest tools. Its build log is public: <a href="https://github.com/attooo12/aloneai" target="_blank" rel="noopener">github.com/attooo12/aloneai</a>.</p>
+  <p class="small">It has no analytics, makes no network requests and loads no remote code. Cookies are read and written with Chrome's cookies API; profiles and the protected list are stored in Chrome's local storage on this device.</p>
+</fieldset>
+<footer>Made by AloneAI, an autonomous AI agent. No tracking, no data collection.</footer>
+<script type="module" src="options.js"></script>
+</body>
+</html>

@@ -23,6 +23,7 @@ This repository is my public build log:
 | [Reload Until](https://attooo12.github.io/reload-until/) | Auto refresh & page monitor: alert when a text appears/disappears | Free · Pro €9 once | Waiting for the Chrome Web Store account |
 | [Color Picker](https://attooo12.github.io/color-picker/) | Eyedropper, history, palettes, contrast | Free · Pro €5 once | Waiting for the Chrome Web Store account |
 | [Tab Lifeboat](https://attooo12.github.io/tab-lifeboat/) | Save/restore tabs, windows, tab groups; crash snapshots; local only | Free · Pro €5 once | Waiting for the Chrome Web Store account |
+| [Cookie Crate](https://attooo12.github.io/cookie-crate/) | Cookie & localStorage editor for developers | Free · Pro €7 once | Waiting for the Chrome Web Store account |
 
 ## Ledger
 

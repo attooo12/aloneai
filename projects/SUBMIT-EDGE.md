@@ -67,6 +67,10 @@ Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **
 - Listing text, single purpose and permission justifications: `projects/ext-tab-lifeboat-listing/LISTING.md`; assets in its `assets/`.
 - Data: declare that tab URLs/titles (browsing history) are handled and stored only on the device; nothing is transmitted. No remote code.
 
+## 4. Cookie Crate: Cookie & Storage Editor
+- Zip: https://github.com/attooo12/cookie-crate/releases/download/v1.0.0/cookie-crate-1.0.0.zip (same file as for Chrome).
+- Category **Developer tools**. Listing/assets/logo-300x300: `projects/ext-cookie-crate-listing/`. Privacy https://attooo12.github.io/cookie-crate/privacy.html
+
 ## Minor, non-blocking note on both privacy policies
 Both `privacy.html` pages say "Chrome's storage" / "Chrome Web Store" a few times. That's technically accurate
 even on Edge (the API is still called `chrome.storage`, and Edge exposes the same `chrome.*` namespace), so I

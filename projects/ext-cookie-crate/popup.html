@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cookie Crate</title>
+<link rel="stylesheet" href="ui.css">
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<header class="row top">
+  <span class="brand"><img src="icons/icon32.png" alt=""><h1>Cookie Crate</h1></span>
+  <span id="host" class="mono muted host" title=""></span>
+  <span id="plan" class="pill">Free</span>
+  <button id="opts" class="icon" type="button" title="Settings, license and all-sites tools" aria-label="Settings">⚙</button>
+</header>
+
+<div id="noaccess" hidden>
+  <p id="noaccess-msg">Cookie Crate needs your permission to read and change cookies for this site.</p>
+  <button id="grant" class="primary" type="button">Allow access to this site</button>
+  <p class="muted small" id="grant-origins"></p>
+</div>
+<p id="unsupported" class="muted" hidden>This page can't be edited (browser pages, the Chrome Web Store and other extensions are off limits to all extensions). Open a normal website and try again.</p>
+
+<main id="main" hidden>
+  <div class="tabbar" role="tablist" aria-label="Views">
+    <button role="tab" id="tab-cookies" aria-controls="view-cookies" aria-selected="true">Cookies <span id="count" class="muted"></span></button>
+    <button role="tab" id="tab-storage" aria-controls="view-storage" aria-selected="false" tabindex="-1">Storage</button>
+    <button role="tab" id="tab-profiles" aria-controls="view-profiles" aria-selected="false" tabindex="-1">Profiles <span class="pill">Pro</span></button>
+  </div>
+
+  <section id="view-cookies" role="tabpanel" aria-labelledby="tab-cookies">
+    <div class="row">
+      <input id="q" type="search" placeholder="Filter by name, value or domain" aria-label="Filter cookies" class="grow">
+      <button id="add" type="button">+ Add</button>
+    </div>
+    <div class="row actions">
+      <button id="export" type="button">Export JSON</button>
+      <button id="export-txt" type="button">cookies.txt <span class="pill">Pro</span></button>
+      <button id="import-toggle" type="button" aria-expanded="false" aria-controls="import-box">Import…</button>
+      <span class="grow"></span>
+      <button id="delall" type="button" class="danger">Delete all</button>
+    </div>
+    <div id="import-box" hidden>
+      <label for="import-text" class="small">Paste JSON (array of cookies) or Netscape cookies.txt, or choose a file. Only cookies for this site are imported.</label>
+      <textarea id="import-text" rows="4" class="mono" spellcheck="false"></textarea>
+      <div class="row"><button id="import-go" type="button">Import</button><button id="import-file-btn" type="button">Choose file…</button><input id="import-file" type="file" accept=".json,.txt,application/json,text/plain" hidden></div>
+    </div>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+    <ul id="list" aria-label="Cookies"></ul>
+    <p id="empty" class="muted" hidden>No cookies for this site.</p>
+  </section>
+
+  <section id="view-storage" role="tabpanel" aria-labelledby="tab-storage" hidden>
+    <div class="row">
+      <select id="area" aria-label="Storage area"><option value="local">localStorage</option><option value="session">sessionStorage</option></select>
+      <input id="sq" type="search" placeholder="Filter keys and values" aria-label="Filter storage" class="grow">
+      <button id="s-add" type="button">+ Add</button>
+    </div>
+    <div class="row actions"><span id="s-origin" class="muted small mono grow"></span><button id="s-refresh" type="button">Refresh</button><button id="s-clear" type="button" class="danger">Clear all</button></div>
+    <div id="s-status" class="status" role="status" aria-live="polite"></div>
+    <ul id="s-list" aria-label="Storage entries"></ul>
+    <p id="s-empty" class="muted" hidden>No entries.</p>
+  </section>
+
+  <section id="view-profiles" role="tabpanel" aria-labelledby="tab-profiles" hidden>
+    <p class="small muted">A profile saves this site's cookies, localStorage and sessionStorage under a name (for example "staging-admin"). Switching deletes the site's current cookies (except protected ones), restores the profile and reloads the tab.</p>
+    <div class="row"><input id="p-name" type="text" placeholder="Profile name" aria-label="Profile name" class="grow" maxlength="60"><button id="p-save" type="button">Save current as profile</button></div>
+    <div id="p-status" class="status" role="status" aria-live="polite"></div>
+    <ul id="p-list" aria-label="Profiles"></ul>
+  </section>
+  <p class="warn">Cookie values and exports can contain your login sessions. Treat exported files like a password and never paste them into sites you don't trust.</p>
+</main>
+<footer>Made by AloneAI, an autonomous AI agent. Everything stays on this device.</footer>
+<script type="module" src="popup.js"></script>
+</body>
+</html>

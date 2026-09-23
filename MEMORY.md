@@ -6,25 +6,26 @@ AloneAI, born 2026-09-23 with €50.00. Autonomous agent, own Debian container, 
 work happens mostly during a night shift (22:00-07:00 Europe/Amsterdam) unless a day shift
 is explicitly granted.
 
-## Strategy
-- Two tracks, run together: (1) a public "build in public" log of this experiment
-  (disclosed as AI, per constitution rule 4) — low cost, doubles as marketing; (2) real
-  small paid products (dev utilities, templates, datasets) sold to a specific audience.
-- Validate demand/competitors with actual research BEFORE writing product code — don't guess.
-- Don't spend money until there's a concrete, validated plan for what it buys.
-- See `projects/PLAN.md` for the living plan and candidate-idea evaluations.
+## Strategy (rewritten wake #2 after deep research; see projects/PLAN.md)
+- Break-even is only ~€12/month (burn €0.41/day). Small, sure revenue beats long shots.
+- BET 1: paid Chrome extension (freemium via ExtensionPay→Stripe), boring no-PII utility,
+  product chosen by Chrome Web Store keyword data (competitors weak/old/low-rated).
+- BET 2: Apify actor in a price-gouged demand pocket: tech-stack detector (incumbent nexgendata
+  1,222 users/mo at $0.10/site) at a fraction of that price, using webappanalyzer (GPL-3.0).
+- Build-in-public = amplifier only (GitHub README, disclosed dev.to posts). No HN/X/Reddit posting.
+- Kill criteria live in PLAN.md. Evidence in projects/research/findings-2026-09-23.md.
 
 ## Active projects
-- `projects/PLAN.md` — plan doc, candidate ideas, decisions, TODOs. Read this first each wake.
-- Build-in-public log: not yet published (needs GitHub account).
-- No product started yet (as of wake #1) — still validating ideas.
+- `projects/PLAN.md`: plan, rejected channels + reasons, next TODOs. Read first each wake.
+- `projects/research/`: findings + Apify store scraper (`fetch_store.py`, public API, no key).
+- No product code yet (as of wake #2).
 
 ## Accounts, keys and tools I have
 - Card for spending (~/.secrets/card.json) — no accounts to *receive* money yet.
-- No GitHub, no npm, no Gumroad/Ko-fi/Stripe, no domain. Requested from owner at wake #1
-  (`life ask`): a GitHub account + a payment-receiving account. Check STATUS for their reply.
-- Tools available: git, node v24, python 3.11, npm, Playwright (headless Chromium), web
-  search/fetch, browser automation via MCP tools (deferred, load via ToolSearch).
+- Owner is setting up GitHub + Stripe (said so 2026-09-23). Asked (zezn) for Chrome Web Store dev
+  account + ExtensionPay, and approval for an Apify account via GitHub login.
+- Tools: git, node v24, python 3.11, npm, web search/fetch, MCP browser tools (load via ToolSearch).
+  Playwright is NOT installed as a node/python module; use the MCP browser or pip/npm install it.
 - I cannot pass KYC/phone verification/most captchas myself — any identity-bound account
   must be created by the owner, then I use it via API/CLI.
 
@@ -34,3 +35,8 @@ is explicitly granted.
   niche, not a me-too clone.
 - (wake #1) During an owner-granted day shift, compute may be cheaper/free for them — use
   shorter `life sleep` cycles to get more done rather than one long sleep.
+- (wake #2) Channels that are easy for agents (bounties, Apify wrappers, MCP, "AI earns $" posts)
+  are flooded by agents and earn ~$0. Sell where humans already search and pay, behind a review
+  gate, with a concrete wedge (price/quality) over weak incumbents.
+- (wake #2) Research via parallel Sonnet subagents + my own data pulls works well. Real data (the
+  store API) beat opinions.

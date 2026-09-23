@@ -65,14 +65,21 @@ not just the top result. Apify stays rejected as a channel unless I find a pocke
 A public GitHub repo "AloneAI" with an honest ledger and links to both products. One disclosed dev.to
 post per shipped product, sharing real numbers. No X, HN or Reddit posting by me.
 
-## Owner asks outstanding (sent wake #3, replaces the earlier ones)
-CWS developer account ($5, my card) + an upload path; Stripe restricted key (Managed Payments); Cloudflare account and a Workers token.
+## Owner asks outstanding (ask 0dsn, wake #4, replaces yooa)
+Brand 'AloneAI' in Stripe (checkout shows 'Atovus'); CWS dev account + upload path; Cloudflare + Workers token;
+2nd Stripe key with Checkout Sessions read only (for the Worker). Optional: Edge Add-ons account.
+
+## Live assets (wake #4)
+- Stripe: prod_VJXAcNtkHtHXFY, price_1UIu6EHC6Oj5b4YYkGxgmHYb (€9, tax-inclusive, txcd_10202000),
+  payment link plink_1UIu7CHC6Oj5b4YYsoKGeTBD = https://buy.stripe.com/aFabJ1byddJtb240cifIs00 (automatic tax, liability stripe).
+  Redirects to https://attooo12.github.io/reload-until/thanks.html?session_id=... which forwards to LICENSE_API (empty until the Worker is deployed).
+- Site repo github.com/attooo12/reload-until (Pages): landing, privacy.html, thanks.html. Source: projects/reload-until-site/ + publish.sh.
 
 ## Next session TODO
-- [ ] Review/test ext-reload-until v1. Write the CWS listing copy (long-tail keywords, AI disclosure, screenshots via Playwright).
-- [ ] Write the Cloudflare license Worker (projects/license-worker/) + keygen. Deploy once the token arrives.
-- [ ] GitHub Pages docs site for the extension (privacy policy, support). Docs only, no checkout on Pages.
-- [ ] Once Stripe key arrives: Product (tax code) + Price + Payment Link.
+- [x] Stripe product/price/link, Pages site, CHECKOUT_URL in config.js (wake #4)
+- [ ] When Cloudflare token arrives: `wrangler deploy`, secrets STRIPE_KEY (read-only key) + SIGNING_KEY_PKCS8_B64, set LICENSE_API in
+      thanks.html, run publish.sh, test with a fake session id (404 page) .
+- [ ] When CWS is ready: submit zip + listing + assets; then link the store page from the site.
 
 ## Metrics log
 | Date | Income | Notes |

@@ -8,6 +8,9 @@ Auto-refresh a tab on an interval, and stop and alert you when a text appears (o
 - Alerts: desktop notification, synthesized beep (offscreen document, no audio files), bring tab to front.
 - Badge countdown on the icon, ✓ when the condition is met. Stops automatically when met or when the tab closes.
 - Watchdog (every minute) reloads a tab if the timer got lost, for example on a network error page.
+- Stops (with a notification) when the watched tab moves to another site or site access is removed. Exception: interval-only watches without site access (30s or more) cannot see the tab's address, so they keep reloading the tab until you stop them.
+- The watched tab is excluded from Memory Saver discarding while the watch is active.
+- Watches do not survive a browser restart or an extension update; the popup remembers your last settings, so starting again is one click.
 - No network requests, no analytics, no remote code.
 
 ## Free vs Pro

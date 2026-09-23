@@ -12,6 +12,7 @@ let tab = null;
 let origin = '';
 let pro = false;
 let watch = null;
+let watches = {};
 let errorMsg = '';
 
 function setInterval_(sec) {
@@ -84,7 +85,7 @@ function render() {
 function esc(s) { return String(s).replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch])); }
 
 async function loadWatch() {
-  const { watches = {} } = await chrome.storage.session.get('watches');
+  ({ watches = {} } = await chrome.storage.session.get('watches'));
   watch = tab ? watches[tab.id] || null : null;
 }
 
@@ -101,16 +102,21 @@ async function onSubmit(e) {
   if (cfg.mode !== 'none' && !cfg.text) { errorMsg = 'Enter the text to watch for.'; els.text.focus(); return render(); }
   if (cfg.regex) { try { new RegExp(cfg.text, 'i'); } catch { errorMsg = 'Invalid regular expression.'; return render(); } }
   if (cfg.selector) { try { document.querySelector(cfg.selector); } catch { errorMsg = 'Invalid CSS selector.'; return render(); } }
+  // Check the free limit before asking for site access, not after (the service worker enforces it too).
+  if (!pro && Object.values(watches).some((w) => w.status === 'watching' && w.tabId !== tab.id)) {
+    errorMsg = 'Free version watches 1 tab at a time. Stop the other tab or get Pro.';
+    return render();
+  }
 
   chrome.storage.sync.set({ defaults: cfg });
   if (needsHost(cfg)) {
-    // Save first (not awaited) so the service worker can finish if the popup closes during the prompt.
-    chrome.storage.session.set({ ['pending:' + tab.id]: { cfg, origin, at: Date.now() } });
-    // Must be called directly in the user gesture.
+    // Save first (not awaited: no await may come before the request, or the user gesture is lost) so the
+    // service worker can finish the start if the popup closes during the prompt. Replaces any older request.
+    chrome.storage.session.set({ pending: { tabId: tab.id, cfg, origin, at: Date.now() } });
     let granted = false;
     try { granted = await chrome.permissions.request({ origins: [origin + '/*'] }); } catch (err) { errorMsg = String(err.message || err); }
     if (!granted) {
-      chrome.storage.session.remove('pending:' + tab.id);
+      chrome.storage.session.remove('pending');
       errorMsg ||= 'Site access was not granted. Choose 30s or more with no text condition to reload without it.';
       return render();
     }

@@ -45,6 +45,7 @@ function pageSchedule(ms, cond) {
   // cond: null or {text, regex, selector, mode}
   if (window.__reloadUntilTimer) clearTimeout(window.__reloadUntilTimer);
   window.__reloadUntilTimer = setTimeout(() => {
+    if (!chrome.runtime?.id) return; // extension was updated/reloaded: this watch no longer exists
     if (cond) {
       try {
         let content = '';
@@ -118,6 +119,37 @@ function ensureTicker() {
   tick();
 }
 
+// ---------- navigation away from the watched site ----------
+function hostOf(origin) { try { return new URL(origin).host; } catch { return origin; } }
+
+// True when the tab is no longer on the watched origin. With site access the URL is always visible while
+// the tab is on that origin (error pages keep the attempted URL), so a hidden URL means it left.
+// Without site access the URL is usually hidden, and then we cannot tell: keep going.
+function leftSite(w, tab) {
+  if (!w.origin) return false;
+  if (!tab?.url) return !!w.hasHost;
+  try { return new URL(tab.url).origin !== w.origin; } catch { return true; }
+}
+
+async function stopWithNotice(tabId, why) {
+  const w = await getWatch(tabId);
+  await stop(tabId);
+  if (w?.notify) {
+    chrome.notifications.create('stopped:' + tabId, {
+      type: 'basic', iconUrl: 'icons/icon128.png', title: 'Reload Until stopped', message: why, priority: 1
+    });
+  }
+}
+
+// Returns false (and stops the watch) if the tab is gone or has moved to another site.
+async function stillWatchable(tabId, w) {
+  let tab;
+  try { tab = await chrome.tabs.get(tabId); } catch { await stop(tabId); return false; }
+  if (!leftSite(w, tab)) return true;
+  await stopWithNotice(tabId, `The watched tab left ${hostOf(w.origin)}, so reloading stopped.`);
+  return false;
+}
+
 // ---------- scheduling ----------
 async function scheduleNext(tabId) {
   const w = await getWatch(tabId);
@@ -130,13 +162,16 @@ async function scheduleNext(tabId) {
       injected = true;
     } catch { /* error page, or no access: fall back to alarm */ }
   }
+  let nextAt = Date.now() + delay;
   if (!injected) {
     delay = Math.max(delay, w.hasHost ? MIN_INTERVAL_SEC * 1000 : ALARM_MIN_SEC * 1000);
     await chrome.alarms.create(RELOAD_PREFIX + tabId, { when: Date.now() + delay });
+    // Packed extensions clamp alarms to 30s; use the real time for the badge and the watchdog.
+    nextAt = (await chrome.alarms.get(RELOAD_PREFIX + tabId))?.scheduledTime || Date.now() + delay;
   } else {
     await chrome.alarms.clear(RELOAD_PREFIX + tabId);
   }
-  await mutate((ws) => { if (ws[tabId]) ws[tabId].nextAt = Date.now() + delay; });
+  await mutate((ws) => { if (ws[tabId]) ws[tabId].nextAt = nextAt; });
   ensureTicker();
 }
 
@@ -227,12 +262,20 @@ async function focusTab(tabId) {
 }
 
 // ---------- start / stop ----------
-const recentStarts = new Map(); // tabId -> timestamp, dedupes popup + permissions.onAdded double start
+// The popup and permissions.onAdded can both start the same tab (popup stays open through the prompt):
+// a second call within 2s, or while the first is still running, gets the first call's result.
+const recentStarts = new Map(); // tabId -> {at, promise}
 
-async function start(tabId, cfg, origin) {
-  const last = recentStarts.get(tabId);
-  if (last && Date.now() - last < 2000) return { ok: true, deduped: true };
+function start(tabId, cfg, origin) {
+  const r = recentStarts.get(tabId);
+  if (r && Date.now() - r.at < 2000) return r.promise;
+  const promise = doStart(tabId, cfg, origin);
+  recentStarts.set(tabId, { at: Date.now(), promise });
+  promise.then((res) => { if (!res.ok && recentStarts.get(tabId)?.promise === promise) recentStarts.delete(tabId); }, () => recentStarts.delete(tabId));
+  return promise;
+}
 
+async function doStart(tabId, cfg, origin) {
   const intervalSec = Math.round(Number(cfg.intervalSec));
   if (!Number.isFinite(intervalSec) || intervalSec < MIN_INTERVAL_SEC) return { ok: false, error: `Minimum interval is ${MIN_INTERVAL_SEC} seconds.` };
   const mode = ['none', 'appears', 'disappears'].includes(cfg.mode) ? cfg.mode : 'none';
@@ -258,8 +301,10 @@ async function start(tabId, cfg, origin) {
   }
   const needHost = mode !== 'none' || intervalSec < ALARM_MIN_SEC;
   if (needHost && !hasHost) return { ok: false, error: 'Site access is needed for text checks and intervals under 30s.' };
-
-  recentStarts.set(tabId, Date.now());
+  let tab;
+  try { tab = await chrome.tabs.get(tabId); } catch { return { ok: false, error: 'The tab was closed.' }; }
+  // E.g. the tab navigated elsewhere while the permission prompt was open.
+  if (leftSite({ origin, hasHost }, tab)) return { ok: false, error: `The tab is no longer on ${hostOf(origin)}.` };
   const w = {
     tabId, origin: origin || '', hasHost,
     intervalSec, jitterPct: Math.max(0, Math.min(50, Number(cfg.jitterPct) || 0)),
@@ -268,8 +313,11 @@ async function start(tabId, cfg, origin) {
     status: 'watching', count: 0, startedAt: Date.now(), lastChecked: null, nextAt: null
   };
   await mutate((ws) => { ws[tabId] = w; });
-  await chrome.storage.session.remove('pending:' + tabId);
+  await clearPending(tabId);
   chrome.notifications.clear('met:' + tabId);
+  chrome.notifications.clear('stopped:' + tabId);
+  // Keep Memory Saver from discarding the watched tab (a discarded tab has no page timer).
+  chrome.tabs.update(tabId, { autoDiscardable: false }).catch(() => {});
   await ensureWatchdog();
   // Check immediately (condition may already hold), then schedule the first reload.
   await onPageReady(tabId, false);
@@ -281,8 +329,14 @@ async function stop(tabId) {
   await chrome.alarms.clear(RELOAD_PREFIX + tabId);
   try { await chrome.scripting.executeScript({ target: { tabId }, func: pageCancel }); } catch {}
   await setBadge(tabId, '', null);
+  chrome.tabs.update(tabId, { autoDiscardable: true }).catch(() => {});
   recentStarts.delete(tabId);
   return { ok: true };
+}
+
+async function clearPending(tabId) {
+  const { pending } = await chrome.storage.session.get('pending');
+  if (pending?.tabId === tabId) await chrome.storage.session.remove('pending');
 }
 
 async function ensureWatchdog() {
@@ -300,6 +354,7 @@ async function watchdog() {
     const grace = Math.min(w.intervalSec, 120) * 1000 + 30000;
     if (w.nextAt && now - w.nextAt > grace) {
       // Overdue (e.g. error page where injection failed): force a reload.
+      if (!(await stillWatchable(w.tabId, w))) continue;
       try {
         await mutate((ws) => { if (ws[w.tabId]) ws[w.tabId].nextAt = now + w.intervalSec * 1000; });
         await chrome.tabs.reload(w.tabId);
@@ -313,10 +368,13 @@ async function watchdog() {
 }
 
 // ---------- events ----------
-chrome.tabs.onUpdated.addListener(async (tabId, info) => {
+chrome.tabs.onUpdated.addListener(async (tabId, info, tab) => {
   if (info.status !== 'complete') return;
   const w = await getWatch(tabId);
-  if (w && w.status === 'watching') onPageReady(tabId, true);
+  if (w && w.status === 'watching') {
+    if (leftSite(w, tab)) return stopWithNotice(tabId, `The watched tab left ${hostOf(w.origin)}, so reloading stopped.`);
+    onPageReady(tabId, true);
+  }
   else if (w && w.status === 'met') setBadge(tabId, '✓', COLOR_MET);
 });
 
@@ -326,7 +384,7 @@ chrome.tabs.onRemoved.addListener(async (tabId) => {
     await mutate((ws) => { delete ws[tabId]; });
     await chrome.alarms.clear(RELOAD_PREFIX + tabId);
   }
-  chrome.storage.session.remove('pending:' + tabId);
+  clearPending(tabId);
 });
 
 chrome.tabs.onReplaced.addListener(async (added, removed) => {
@@ -334,6 +392,7 @@ chrome.tabs.onReplaced.addListener(async (added, removed) => {
     if (ws[removed]) { ws[added] = { ...ws[removed], tabId: added }; delete ws[removed]; }
   });
   await chrome.alarms.clear(RELOAD_PREFIX + removed);
+  if (await getWatch(added)) chrome.tabs.update(added, { autoDiscardable: false }).catch(() => {});
   scheduleNext(added);
 });
 
@@ -343,23 +402,32 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
     const tabId = Number(alarm.name.slice(RELOAD_PREFIX.length));
     const w = await getWatch(tabId);
     if (!w || w.status !== 'watching') return;
+    if (!(await stillWatchable(tabId, w))) return;
     try { await chrome.tabs.reload(tabId); } catch { await stop(tabId); }
   }
 });
 
 chrome.notifications.onClicked.addListener((id) => {
-  if (id.startsWith('met:')) focusTab(Number(id.slice(4)));
+  if (id.startsWith('met:') || id.startsWith('stopped:')) focusTab(Number(id.split(':')[1]));
   chrome.notifications.clear(id);
 });
 
-// Popup may close while the permission prompt is shown; finish the start here.
+// The popup usually closes while the permission prompt is shown; finish the start here.
+// Only the latest request is kept ("pending") and it expires, so an old denied prompt cannot start a watch later.
 chrome.permissions.onAdded.addListener(async (perms) => {
-  const all = await chrome.storage.session.get(null);
-  for (const [key, p] of Object.entries(all)) {
-    if (!key.startsWith('pending:')) continue;
-    if (!perms.origins?.some((o) => o === p.origin + '/*' || o === '<all_urls>')) continue;
-    if (Date.now() - (p.at || 0) > 5 * 60 * 1000) { chrome.storage.session.remove(key); continue; }
-    start(Number(key.slice(8)), p.cfg, p.origin);
+  const { pending: p } = await chrome.storage.session.get('pending');
+  if (!p || !perms.origins?.some((o) => o === p.origin + '/*' || o === '<all_urls>')) return;
+  await chrome.storage.session.remove('pending');
+  if (Date.now() - (p.at || 0) > 5 * 60 * 1000) return;
+  start(p.tabId, p.cfg, p.origin);
+});
+
+chrome.permissions.onRemoved.addListener(async () => {
+  for (const w of Object.values(await getWatches())) {
+    if (w.status !== 'watching' || !w.hasHost) continue;
+    let still = false;
+    try { still = await chrome.permissions.contains({ origins: [w.origin + '/*'] }); } catch {}
+    if (!still) await stopWithNotice(w.tabId, `Site access to ${hostOf(w.origin)} was removed, so reloading stopped.`);
   }
 });
 
@@ -384,8 +452,10 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   return true;
 });
 
-chrome.runtime.onInstalled.addListener(() => { getWatches().then((ws) => { if (Object.keys(ws).length) ensureWatchdog(); }); });
-chrome.runtime.onStartup.addListener(() => chrome.storage.session.clear());
+// Watches never resume after a browser restart or an extension update (tab ids change, session storage is
+// cleared). Also drop leftover alarms so nothing fires for a stale tab id.
+chrome.runtime.onInstalled.addListener(() => chrome.alarms.clearAll());
+chrome.runtime.onStartup.addListener(() => { chrome.storage.session.clear(); chrome.alarms.clearAll(); });
 
 // Resume badge ticker whenever the worker wakes up with active watches.
 getWatches().then((ws) => { if (Object.values(ws).some((w) => w.status === 'watching')) ensureTicker(); });

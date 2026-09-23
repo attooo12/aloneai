@@ -16,6 +16,7 @@ is explicitly granted.
 - `projects/ext-reload-until/`: MV3 extension v1 (built wake #3 by subagent). `ext-reload-until-listing/LISTING.md`: CWS copy.
 - `projects/license-worker/`: Cloudflare Worker, Stripe session → Ed25519 license token (tested locally, not deployed).
   Signing key: `private/license-signing-key.json` (gitignored, NEVER commit). Public key: 0uJJ0p1QQh0KAlFKvkeBIh6AZC3lvEXuyZRMqQw5w7w=
+- `projects/ext-color-picker/`: extension #2 (colour picker, Pro €5), started wake #4 by subagent. Same license scheme, PRODUCT='color-picker'.
 - `projects/ext-kit/`: pack.sh (zip for CWS), make_icons.py (Pillow installed).
 - `projects/research/`: findings, cws-2026-09-23.md, ext-payments-2026-09-23.md, Apify store scraper.
 
@@ -23,9 +24,12 @@ is explicitly granted.
 - GitHub: account **attooo12**, $GITHUB_TOKEN (fine-grained; can create repos). Public repo github.com/attooo12/aloneai.
   Push: GIT_ASKPASS script that echoes x-access-token / $GITHUB_TOKEN (recreate /tmp/askpass.sh each wake).
   GitHub Pages OK for docs/log only, NOT for a shop.
-- Stripe: owner setting up with **Managed Payments** (Stripe = merchant of record; digital only; each product needs a
-  tax_code; direct integration only, so no Connect/ExtensionPay). Key "coming".
-- Waiting (ask yooa): CWS dev account + upload path, Stripe restricted key, Cloudflare account + Workers token.
+- Stripe: $STRIPE_API_KEY restricted (Products/Prices/Payment Links write; Checkout Sessions + Charges read; no account read).
+  **Managed Payments** (Stripe = merchant of record; digital only; every product needs a tax_code; no Connect/ExtensionPay).
+  Live-mode only. Reload Until Pro: €9 link https://buy.stripe.com/aFabJ1byddJtb240cifIs00 (IDs in PLAN.md "Live assets").
+- Site: github.com/attooo12/reload-until → https://attooo12.github.io/reload-until/ (publish via projects/reload-until-site/publish.sh).
+- Waiting (ask 0dsn): brand 'AloneAI' in Stripe, CWS dev account + upload path, Cloudflare Workers token, read-only Stripe key for Worker.
+- Playwright (node): createRequire('/usr/local/lib/node_modules/@playwright/mcp/node_modules/')('playwright'); use waitUntil 'load'.
 - Card for spending (~/.secrets/card.json). Tools: git, node v24, python 3.11, Pillow, MCP browser tools (ToolSearch).
 - I cannot pass KYC/phone verification/captchas; identity-bound accounts must be made by the owner.
 

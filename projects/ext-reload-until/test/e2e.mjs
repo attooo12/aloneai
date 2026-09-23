@@ -40,7 +40,9 @@ const errors = [];
 try {
   let [sw] = ctx.serviceWorkers();
   sw ??= await ctx.waitForEvent('serviceworker', { timeout: 10000 });
-  sw.on?.('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+  const watchConsole = (w) => w.on?.('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+  watchConsole(sw);
+  ctx.on('serviceworker', watchConsole); // restarted workers
   const extId = new URL(sw.url()).host;
   check('service worker started', !!extId, extId);
 
@@ -51,6 +53,13 @@ try {
   const send = (msg) => drv.evaluate((m) => chrome.runtime.sendMessage(m), msg);
   const watches = () => drv.evaluate(async () => (await chrome.storage.session.get('watches')).watches || {});
   const tabIdOf = (urlPat) => drv.evaluate(async (u) => (await chrome.tabs.query({ url: u }))[0]?.id, urlPat);
+  const waitFor = async (fn, ms) => { const t = Date.now(); let v; while (Date.now() - t < ms) { if ((v = await fn())) return v; await sleep(300); } return v; };
+  const cdp = await ctx.newCDPSession(drv);
+  const killWorker = async () => {
+    const { targetInfos } = await cdp.send('Target.getTargets');
+    const t = targetInfos.find((x) => x.type === 'service_worker' && x.url.includes(extId));
+    return t ? (await cdp.send('Target.closeTarget', { targetId: t.targetId })).success : false;
+  };
 
   // ---- license ----
   const good = makeToken(pem);
@@ -102,6 +111,17 @@ try {
   const rRegex = await send({ type: 'start', tabId: tabB, origin: `http://127.0.0.1:${PORT}`, cfg: { ...cfgB, regex: true } });
   check('free: regex refused', rRegex.ok === false && /Pro/.test(rRegex.error));
 
+  // popup: the free limit is checked before any site access prompt
+  const popF = await ctx.newPage();
+  popF.on('pageerror', (e) => errors.push('popup: ' + e.message));
+  await popF.goto(`chrome-extension://${extId}/popup.html?tab=${tabB}`);
+  await popF.waitForSelector('#toggle:not([disabled])');
+  await popF.selectOption('#mode', 'appears'); await popF.fill('#text', 'in stock'); await popF.click('#toggle');
+  await sleep(300);
+  const pendingF = await drv.evaluate(async () => (await chrome.storage.session.get('pending')).pending);
+  check('popup: free limit shown before asking for site access', /1 tab/.test(await popF.textContent('#status')) && !pendingF);
+  await popF.close();
+
   // ---- pro ----
   await drv.evaluate((k) => {
     window.__beeped = false;
@@ -150,9 +170,66 @@ try {
   while (Date.now() - t1 < 40000) { wC = (await watches())[tabC]; if (wC?.status === 'met') break; await sleep(500); }
   check('"until disappears" mode with jitter', rC.ok && wC?.status === 'met' && wC.count === 3, `count=${wC?.count}`);
 
+  // ---- popup Start click (full user-gesture path), then the tab navigates to another site ----
+  await fetch(`http://127.0.0.1:${PORT}/reset`);
+  const pD = await ctx.newPage();
+  await pD.goto(`http://127.0.0.1:${PORT}/stock?d`);
+  const tabD = await tabIdOf(`http://127.0.0.1/stock?d`);
+  const popD = await ctx.newPage();
+  popD.on('pageerror', (e) => errors.push('popup: ' + e.message));
+  await popD.goto(`chrome-extension://${extId}/popup.html?tab=${tabD}`);
+  await popD.waitForSelector('#toggle:not([disabled])');
+  await popD.fill('#custom', '3'); await popD.selectOption('#mode', 'appears'); await popD.fill('#text', 'never shown text');
+  await popD.click('#toggle');
+  const wD = await waitFor(async () => (await watches())[tabD], 5000);
+  const pendD = await drv.evaluate(async () => (await chrome.storage.session.get('pending')).pending);
+  check('popup: Start click starts the watch and clears the pending request', wD?.status === 'watching' && wD.hasHost && !pendD, JSON.stringify(pendD));
+  check('watched tab is not auto-discardable', (await drv.evaluate((id) => chrome.tabs.get(id), tabD)).autoDiscardable === false);
+  await popD.close();
+  await sleep(1000);
+  await pD.goto(`http://localhost:${PORT}/count`);
+  const goneD = await waitFor(async () => !(await watches())[tabD], 5000);
+  const notesD = await drv.evaluate(() => new Promise((r) => chrome.notifications.getAll(r)));
+  const tD = await drv.evaluate((id) => chrome.tabs.get(id), tabD);
+  const badgeD = await drv.evaluate((id) => chrome.action.getBadgeText({ tabId: id }), tabD);
+  check('navigating to another site stops the watch with a notice', goneD && !!notesD['stopped:' + tabD] && badgeD === '' && tD.autoDiscardable === true);
+  const countBefore = (await (await fetch(`http://127.0.0.1:${PORT}/hits`)).json()).count;
+  await sleep(5000);
+  const countAfter = (await (await fetch(`http://127.0.0.1:${PORT}/hits`)).json()).count;
+  check('the other site is not reloaded', countAfter === countBefore, `${countBefore} -> ${countAfter}`);
+  await pD.close();
+
+  // ---- service worker killed mid-watch: state lives in storage, the watch still completes ----
+  await fetch(`http://127.0.0.1:${PORT}/reset`);
+  const pE = await ctx.newPage();
+  await pE.goto(`http://127.0.0.1:${PORT}/stock?e`);
+  const tabE = await tabIdOf(`http://127.0.0.1/stock?e`);
+  const rE = await send({ type: 'start', tabId: tabE, origin: `http://127.0.0.1:${PORT}`, cfg: { intervalSec: 3, mode: 'appears', text: 'in stock', notify: false, sound: false } });
+  const killed = await killWorker();
+  const killed2 = await waitFor(killWorker, 10000); // again, once the reload has woken it up
+  const wE = await waitFor(async () => { const w = (await watches())[tabE]; return w?.status === 'met' && w; }, 40000);
+  check('service worker restarts mid-watch do not lose the watch', rE.ok && killed && killed2 && wE?.count === 3, `count=${wE?.count}`);
+  await pE.close();
+
+  // ---- network error page: the watch recovers (injection fails there, alarm fallback reloads) ----
+  await fetch(`http://127.0.0.1:${PORT}/reset`);
+  const pF = await ctx.newPage();
+  await pF.goto(`http://127.0.0.1:${PORT}/flaky`);
+  const tabF = await tabIdOf(`http://127.0.0.1/flaky`);
+  const rF = await send({ type: 'start', tabId: tabF, origin: `http://127.0.0.1:${PORT}`, cfg: { intervalSec: 3, mode: 'appears', text: 'online', notify: false, sound: false } });
+  await fetch(`http://127.0.0.1:${PORT}/down`);
+  const onErrorPage = await waitFor(() => drv.evaluate((id) => chrome.scripting.executeScript({ target: { tabId: id }, func: () => 1 }).then(() => false, (e) => /error page/i.test(e.message)), tabF), 15000);
+  await sleep(4000); // stay offline for a few more reload attempts
+  await fetch(`http://127.0.0.1:${PORT}/up`);
+  const tF = Date.now();
+  const wF = await waitFor(async () => { const w = (await watches())[tabF]; return w?.status === 'met' && w; }, 90000);
+  const hitsF = (await (await fetch(`http://127.0.0.1:${PORT}/hits`)).json()).flaky;
+  check('recovers from a network error page', rF.ok && onErrorPage && wF?.status === 'met', `errorPage=${onErrorPage} hits=${hitsF} recovered ${Math.round((Date.now() - tF) / 1000)}s after the server came back`);
+  await pF.close();
+
   // ---- alarm path result ----
-  let wA; 
-  while (Date.now() - tStartA < 50000) { wA = (await watches())[tabA]; if ((wA?.count || 0) >= 1) break; await sleep(1000); }
+  let wA = (await watches())[tabA];
+  while ((wA?.count || 0) < 1 && Date.now() - tStartA < 50000) { wA = (await watches())[tabA]; if ((wA?.count || 0) >= 1) break; await sleep(1000); }
   check('interval-only (alarm) reload happened', wA?.count >= 1, `count=${wA?.count} after ${Math.round((Date.now() - tStartA) / 1000)}s`);
 
   // ---- stop + tab close ----

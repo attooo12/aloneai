@@ -3,5 +3,5 @@ main = "worker.js"
 compatibility_date = "2026-09-01"
 
 [vars]
-# payment_link id -> product slug; filled in once the Stripe Payment Link exists
-PRODUCTS = "{}"
+# payment_link id -> product slug
+PRODUCTS = "{\"plink_1UIu7CHC6Oj5b4YYsoKGeTBD\": \"reload-until\"}"

@@ -27,7 +27,8 @@ async function refresh() {
   for (const id of ['all-json', 'all-txt', 'all-import-btn']) $(id).disabled = !pro;
   const prot = [...(await getProtected())].sort();
   $('prot-list').replaceChildren(...(prot.length ? prot.map((k) => {
-    const [domain, path, name] = k.split('|');
+    const [domain, path, ...rest] = k.split('|');
+    const name = rest.join('|');
     const b = el('button', { type: 'button', textContent: 'Unprotect' });
     b.addEventListener('click', async () => { const p = await getProtected(); p.delete(k); await chrome.storage.local.set({ protected: [...p] }); refresh(); });
     return el('li', {}, el('code', { textContent: `${name}  (${domain}${path})` }), b);

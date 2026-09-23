@@ -341,6 +341,47 @@ try {
   await drv.waitForFunction(() => /No protected/.test(document.querySelector('#prot-list').textContent));
   check('options: unprotect', (await ev(async () => (await chrome.storage.local.get('protected')).protected)).length === 0);
 
+  // ---------- review regressions ----------
+  const fixErr = await ev(async (exp) => {
+    const errs = [];
+    const s = async (d) => { try { if (!(await chrome.cookies.set(d))) errs.push(d.name + ': null'); } catch (e) { errs.push(d.name + ': ' + e.message); } };
+    await s({ url: 'https://sub.a.test/', name: 'sflip', value: 'S', secure: true, expirationDate: exp });
+    await s({ url: 'https://sub.a.test/', name: 'xchip', value: 'X1', secure: true, partitionKey: { topLevelSite: 'https://a.test', hasCrossSiteAncestor: true } });
+    return errs;
+  }, Math.floor(Date.now() / 1000) + 86400 * 10 + 0.625);
+  check('(regression fixtures set)', fixErr.length === 0, fixErr.join('; '));
+  const sflip0 = (await cookiesAt({ domain: 'sub.a.test', name: 'sflip' }))[0];
+  pop = await openPopup();
+  await pop.waitForSelector('body[data-ready]');
+  await row(pop, 'sflip').locator('.head').click();
+  await pop.uncheck('#f-secure');
+  await pop.click('.editor button[type=submit]');
+  await pop.waitForFunction(() => /Saved "sflip"|refused|Failed/.test(document.querySelector('#status').textContent + document.querySelector('.editor .err')?.textContent));
+  const sflip = await cookiesAt({ domain: 'sub.a.test', name: 'sflip' });
+  check('edit: un-ticking Secure on a Secure cookie works (one cookie, now non-Secure)', sflip.length === 1 && sflip[0].secure === false && sflip[0].value === 'S', JSON.stringify(sflip));
+  check('edit: untouched expiry kept exactly (no minute truncation)', sflip[0]?.expirationDate === sflip0.expirationDate, `${sflip[0]?.expirationDate} vs ${sflip0.expirationDate}`);
+  await row(pop, 'xchip').locator('.head').click();
+  await pop.fill('#f-value', 'X2');
+  await pop.click('.editor button[type=submit]');
+  await pop.waitForFunction(() => /Saved "xchip"/.test(document.querySelector('#status').textContent));
+  const xchip = await cookiesAt({ name: 'xchip' });
+  check('edit: partitioned cookie with hasCrossSiteAncestor edited in place (no duplicate in another partition)', xchip.length === 1 && xchip[0].value === 'X2' && xchip[0].partitionKey?.hasCrossSiteAncestor === true, JSON.stringify(xchip));
+  await row(pop, 'xchip').locator('.head').click();
+  await pop.fill('#f-value', ' padded');
+  await pop.click('.editor button[type=submit]');
+  check('edit: value Chrome would refuse gets a clear message, original kept', /space/.test(await pop.textContent('.editor .err')) && (await cookiesAt({ name: 'xchip' }))[0]?.value === 'X2');
+  await pop.close();
+  // storage: a failed rename (quota exceeded) must not lose the old entry
+  const quota = await ev(async (id) => { const C = await import('./cookies.js'); try { await C.writeStorage(id, 'local', { set: [['theme-renamed', 'x'.repeat(12e6)]], remove: ['theme'] }); return 'no error'; } catch (e) { return e.message; } }, tabId);
+  check('storage: failed rename keeps the original entry', /quota|exceeded/i.test(quota) && (await target.evaluate(() => [localStorage.getItem('theme'), localStorage.getItem('theme-renamed')].join())) === 'light,', quota);
+  // all-sites import of a Firefox Cookie-Editor export (storeId "firefox-default")
+  await drv.setInputFiles('#all-import-file', { name: 'ff.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify([{ domain: '.b.test', hostOnly: false, httpOnly: false, name: 'ffx', path: '/', sameSite: null, secure: false, session: true, storeId: 'firefox-default', value: '1', firstPartyDomain: '' }])) });
+  await drv.waitForFunction(() => /Imported \d+ of 1/.test(document.querySelector('#all-result').textContent));
+  check('all-sites import: foreign storeId (firefox-default) goes to the default store', /Imported 1 of 1/.test(await drv.textContent('#all-result')) && (await cookiesAt({ name: 'ffx' })).length === 1, await drv.textContent('#all-result'));
+  // profile saved on another origin: storage is not written into this one
+  const ap = await ev(async (id) => { const C = await import('./cookies.js'); return C.applyProfile({ name: 'x', host: 'sub.a.test', origin: 'https://sub.a.test', cookies: [], local: [['leak', '1']], session: [] }, id); }, tabId);
+  check('profile: storage from another origin (https vs http) not written; reason reported', ap.storageOk === false && /https:\/\/sub\.a\.test/.test(ap.storageError) && (await target.evaluate(() => localStorage.getItem('leak'))) === null && (await target.evaluate(() => localStorage.getItem('theme'))) === 'light', JSON.stringify(ap));
+
   // ---------- no access / unsupported ----------
   const cpage = watch(await ctx.newPage(), 'c.example');
   await cpage.goto(U('c.example', '/page?seed=1'), { waitUntil: 'load' });

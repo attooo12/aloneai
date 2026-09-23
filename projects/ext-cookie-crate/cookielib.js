@@ -7,24 +7,36 @@ export const SAMESITE_LABEL = { unspecified: 'Not set', no_restriction: 'None', 
 
 // Common two-label public suffixes (a full Public Suffix List isn't bundled). Only used to avoid asking for
 // permission on e.g. "co.uk"; which cookies apply is always decided by appliesToHost().
-const SUFFIX2 = new Set(['co.uk', 'org.uk', 'ac.uk', 'gov.uk', 'me.uk', 'com.au', 'net.au', 'org.au', 'co.nz', 'co.jp', 'ne.jp', 'or.jp', 'co.kr', 'co.in', 'co.za', 'co.id', 'com.br', 'com.mx', 'com.ar', 'com.tr', 'com.cn', 'com.tw', 'com.hk', 'com.sg', 'com.my', 'com.ph', 'com.vn', 'com.pl', 'com.ua', 'co.il', 'github.io', 'herokuapp.com', 'vercel.app', 'netlify.app', 'pages.dev', 'web.app', 'firebaseapp.com', 'appspot.com', 'blogspot.com']);
+const SUFFIX2 = new Set(['co.uk', 'org.uk', 'ac.uk', 'gov.uk', 'me.uk', 'ltd.uk', 'plc.uk', 'net.uk', 'sch.uk', 'com.au', 'net.au', 'org.au', 'edu.au', 'gov.au', 'id.au', 'co.nz', 'net.nz', 'org.nz', 'co.jp', 'ne.jp', 'or.jp', 'ac.jp', 'go.jp', 'co.kr', 'or.kr', 'co.in', 'net.in', 'org.in', 'co.za', 'co.id', 'com.br', 'com.mx', 'com.ar', 'com.tr', 'com.cn', 'com.tw', 'com.hk', 'com.sg', 'com.my', 'com.ph', 'com.vn', 'com.pl', 'com.ua', 'co.il', 'co.th', 'in.th', 'com.co', 'com.pe', 'com.eg', 'com.sa', 'com.pk', 'com.ng', 'co.ke']);
+// Hosting platforms where every subdomain is a separate site (all on the Public Suffix List). Under these we never
+// ask for (or look at) a parent domain: only the exact host.
+const PLATFORMS = ['github.io', 'gitlab.io', 'githubusercontent.com', 'herokuapp.com', 'vercel.app', 'netlify.app', 'pages.dev', 'workers.dev', 'r2.dev', 'web.app', 'firebaseapp.com', 'appspot.com', 'blogspot.com', 'amazonaws.com', 'cloudfront.net', 'azurewebsites.net', 'azurestaticapps.net', 'cloudfunctions.net', 'run.app', 'fly.dev', 'onrender.com', 'glitch.me', 'repl.co', 'replit.app', 'replit.dev', 'surge.sh', 'ngrok.io', 'ngrok.app', 'ngrok-free.app', 'ngrok-free.dev', 'trycloudflare.com', 'deno.dev', 'myshopify.com', 'readthedocs.io', 'bitbucket.io', 'codeberg.page', 'webflow.io', 'hf.space', 'streamlit.app', 'railway.app', 'neocities.org', 'wixsite.com', 'carrd.co'];
+// Second-level labels that are public registries under many two-letter country TLDs (e.g. co.th, com.ec, ac.id):
+// a host like shop.co.xx must not make us ask for "co.xx". Unknown cases fail safe to fewer parent domains.
+const GENERIC_SLD = new Set(['co', 'com', 'net', 'org', 'gov', 'edu', 'ac', 'or', 'ne', 'go', 'gob', 'gouv', 'mil', 'nic', 'ltd', 'plc', 'sch', 'nom', 'biz', 'info', 'int']);
 const IPV4 = /^\d{1,3}(\.\d{1,3}){3}$/;
 const bare = (d) => String(d || '').replace(/^\./, '').toLowerCase();
+// Hosts are compared the way Chrome stores cookie domains: lower case, IPv6 in [brackets].
+export const normHost = (h) => { h = String(h || '').toLowerCase(); return h.includes(':') && !h.startsWith('[') ? `[${h}]` : h; };
+const isIP = (h) => IPV4.test(h) || h.startsWith('[');
 
-// Shortest domain (at least two labels, or the host itself for IPs / single-label hosts) whose cookies may apply
-// to `host`. One chrome.cookies.getAll({domain}) with it returns a superset of everything that applies.
+// Shortest domain whose cookies may apply to `host` and that isn't a public suffix (the host itself for IPs,
+// single-label hosts and sites on hosting platforms). One chrome.cookies.getAll({domain}) with it returns a
+// superset of everything that applies.
 export function baseDomain(host) {
-  host = String(host).toLowerCase().replace(/^\[|\]$/g, '');
-  if (IPV4.test(host) || host.includes(':')) return host;
+  host = normHost(host);
+  if (isIP(host)) return host;
+  if (PLATFORMS.some((p) => host.endsWith('.' + p))) return host;
   const labels = host.split('.');
-  const n = labels.length > 2 && SUFFIX2.has(labels.slice(-2).join('.')) ? 3 : 2;
+  const last2 = labels.slice(-2).join('.');
+  const n = labels.length > 2 && (SUFFIX2.has(last2) || (labels[labels.length - 1].length === 2 && GENERIC_SLD.has(labels[labels.length - 2]))) ? 3 : 2;
   return labels.length <= n ? host : labels.slice(-n).join('.');
 }
 
-// Every domain from the host itself up to its two-label parent, e.g. sub.a.test -> [sub.a.test, a.test].
+// Every domain from the host itself up to its registrable domain, e.g. sub.a.test -> [sub.a.test, a.test].
 export function parentDomains(host) {
-  host = String(host).toLowerCase().replace(/^\[|\]$/g, '');
-  if (IPV4.test(host) || host.includes(':')) return [host];
+  host = normHost(host);
+  if (isIP(host)) return [host];
   const base = baseDomain(host);
   const labels = host.split('.');
   const out = [];
@@ -35,17 +47,19 @@ export function parentDomains(host) {
 // Would the browser send cookie `c` to some page on `host` (ignoring path and Secure)?
 export function appliesToHost(c, host) {
   const d = bare(c.domain);
-  host = String(host).toLowerCase().replace(/^\[|\]$/g, '');
+  host = normHost(host);
   if (!d) return false;
-  if (c.hostOnly) return d === host;
+  if (c.hostOnly || isIP(d) || isIP(host)) return d === host;
   return host === d || host.endsWith('.' + d);
 }
 
-export function cookieUrl(c) {
-  return (c.secure ? 'https' : 'http') + '://' + bare(c.domain) + (c.path || '/');
+export function cookieUrl(c, https = c.secure) {
+  return (https ? 'https' : 'http') + '://' + bare(c.domain) + (c.path || '/');
 }
 export const partitionSite = (c) => (c.partitionKey && c.partitionKey.topLevelSite) || '';
-export const cookieKey = (c) => [c.storeId || '', partitionSite(c), String(c.domain).toLowerCase(), c.path || '/', c.name].join('|');
+// hasCrossSiteAncestor is part of the partition: the same site with and without it are two different cookie jars.
+const partitionId = (c) => (partitionSite(c) ? partitionSite(c) + (c.partitionKey.hasCrossSiteAncestor === undefined ? '' : c.partitionKey.hasCrossSiteAncestor ? '+x' : '+s') : '');
+export const cookieKey = (c) => [c.storeId || '', partitionId(c), String(c.domain).toLowerCase(), c.path || '/', c.name].join('|');
 // Protection is per (domain, path, name), independent of cookie store / partition.
 export const protectKey = (c) => [String(c.domain).toLowerCase(), c.path || '/', c.name].join('|');
 
@@ -69,6 +83,11 @@ function normSameSite(v) {
 const bool = (v) => v === true || v === 'true' || v === 'TRUE' || v === 1;
 const BAD_NAME = /[\x00-\x1f\x7f;=]/;
 const BAD_VALUE = /[\x00-\x08\x0a-\x1f\x7f;]/;
+const utf8Len = (s) => new TextEncoder().encode(s).length;
+function toPunycode(d) {
+  const dot = d.startsWith('.') ? '.' : '';
+  try { return dot + new URL('http://' + d.replace(/^\./, '')).hostname; } catch { return d; }
+}
 const DOMAIN_RE = /^\.?([a-z0-9_]([a-z0-9_-]*[a-z0-9_])?)(\.[a-z0-9_]([a-z0-9_-]*[a-z0-9_])?)*\.?$/i;
 
 // Validate/normalise one cookie from any supported source (editor form, our JSON, other editors' JSON arrays,
@@ -82,14 +101,19 @@ export function normalizeCookie(o, { now = Date.now() / 1000, defaultDomain = ''
   if (typeof value !== 'string') return { error: `"${name}": value must be text` };
   if (BAD_VALUE.test(value)) return { error: `"${name}": value contains ; or control characters` };
   if (!name && !value) return { error: 'cookie has neither a name nor a value' };
+  if (/^\s|\s$/.test(name) || /^\s|\s$/.test(value)) return { error: `"${name.trim()}": name and value can't start or end with a space` };
+  if (utf8Len(name) + utf8Len(value) > 4096) return { error: `"${name.slice(0, 40)}": name + value are ${utf8Len(name) + utf8Len(value)} bytes; browsers allow at most 4096` };
   let domain = typeof o.domain === 'string' && o.domain.trim() ? o.domain.trim().toLowerCase() : defaultDomain.toLowerCase();
   if (!domain) return { error: `"${name}": missing "domain"` };
-  if (!DOMAIN_RE.test(domain) && !IPV4.test(domain)) return { error: `"${name}": invalid domain "${domain}"` };
+  const ipv6 = /^\[[0-9a-f:.]+\]$/.test(domain);
+  if (!ipv6 && /[^\x00-\x7f]/.test(domain)) domain = toPunycode(domain); // IDN: cookies are stored under the xn-- form
+  if (!DOMAIN_RE.test(domain) && !IPV4.test(domain) && !ipv6) return { error: `"${name}": invalid domain "${domain}"` };
   domain = domain.replace(/\.$/, '');
-  const hostOnly = typeof o.hostOnly === 'boolean' ? o.hostOnly : !domain.startsWith('.');
+  const hostOnly = IPV4.test(domain) || ipv6 ? true : typeof o.hostOnly === 'boolean' ? o.hostOnly : !domain.startsWith('.');
   domain = hostOnly ? bare(domain) : '.' + bare(domain);
   const path = o.path === undefined || o.path === null || o.path === '' ? '/' : String(o.path);
   if (!path.startsWith('/') || /[\x00-\x1f;]/.test(path)) return { error: `"${name}": path must start with "/"` };
+  if (utf8Len(path) > 1024) return { error: `"${name}": path is longer than 1024 bytes` };
   let exp = o.expirationDate ?? o.expires ?? o.expiry;
   if (typeof exp === 'string' && exp.trim() !== '') exp = /^\d+(\.\d+)?$/.test(exp.trim()) ? Number(exp) : Date.parse(exp) / 1000;
   if (exp === '' || exp === null || exp === undefined || exp === -1 || exp === 0) exp = undefined;
@@ -107,7 +131,8 @@ export function normalizeCookie(o, { now = Date.now() / 1000, defaultDomain = ''
   if (pk && !/^https?:\/\/[^/]+$/.test(pk.topLevelSite)) return { error: `"${name}": partition site must look like https://example.com` };
   if (sameSite === 'no_restriction' && !secure) return { error: `"${name}": SameSite=None requires Secure` };
   if (pk && !secure) return { error: `"${name}": partitioned cookies require Secure` };
-  if (/^__(Secure|Host)-/.test(name) && !secure) return { error: `"${name}": __Secure-/__Host- cookies require Secure` };
+  if (/^__(Secure|Host)-/i.test(name) && !secure) return { error: `"${name}": __Secure-/__Host- cookies require Secure` };
+  if (/^__Host-/i.test(name) && (!hostOnly || path !== '/')) return { error: `"${name}": __Host- cookies must be host-only (no domain) with path "/"` };
   const cookie = { name, value, domain, hostOnly, path, secure, httpOnly: bool(o.httpOnly), sameSite, session };
   if (!session) cookie.expirationDate = exp;
   if (pk) cookie.partitionKey = { topLevelSite: pk.topLevelSite, ...(typeof pk.hasCrossSiteAncestor === 'boolean' ? { hasCrossSiteAncestor: pk.hasCrossSiteAncestor } : {}) };

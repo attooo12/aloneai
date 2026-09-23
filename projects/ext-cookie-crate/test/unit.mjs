@@ -101,6 +101,27 @@ p = L.parseImport('a.test FALSE / FALSE 0 spaced v\n', opts);
 check('cookies.txt: space-separated fallback', p.cookies.length === 1 && p.cookies[0].name === 'spaced');
 check('cookies.txt: nothing recognisable', !!L.parseImport('hello world', opts).error);
 
+// ---------- review fixes ----------
+check('public suffix: ccTLD registries (co.th, com.ec, ac.id) are never requested', eq(L.parentDomains('www.shop.co.th'), ['www.shop.co.th', 'shop.co.th']) && L.baseDomain('a.b.com.ec') === 'b.com.ec' && eq(L.parentDomains('x.ac.id'), ['x.ac.id']));
+check('public suffix: hosting platforms -> exact host only (foo.github.io, bucket.s3.amazonaws.com, a.b.herokuapp.com)', eq(L.parentDomains('foo.github.io'), ['foo.github.io']) && eq(L.parentDomains('bucket.s3.amazonaws.com'), ['bucket.s3.amazonaws.com']) && eq(L.parentDomains('a.b.herokuapp.com'), ['a.b.herokuapp.com']));
+check('public suffix: ordinary domains still include the registrable parent', eq(L.parentDomains('www.example.de'), ['www.example.de', 'example.de']) && eq(L.parentDomains('a.b.example.com'), ['a.b.example.com', 'b.example.com', 'example.com']) && eq(L.parentDomains('localhost'), ['localhost']));
+check('IPv6: host kept in [brackets] like Chrome stores it; cookie applies', eq(L.parentDomains('[::1]'), ['[::1]']) && L.baseDomain('::1') === '[::1]' && L.appliesToHost({ domain: '[::1]', hostOnly: true }, '[::1]'));
+check('IPv6: cookie validated (bracketed domain, forced host-only)', (() => { const c = n({ name: 'a', value: '1', domain: '[::1]', hostOnly: false }).cookie; return c && c.domain === '[::1]' && c.hostOnly === true; })());
+check('IP: domain cookie on an IP never matches another IP', !L.appliesToHost({ domain: '.0.0.1', hostOnly: false }, '127.0.0.1'));
+check('IDN: unicode domain converted to punycode', n({ name: 'a', value: '1', domain: '.münchen.test' }).cookie.domain === '.xn--mnchen-3ya.test' && n({ name: 'a', value: '1', domain: 'MÜNCHEN.test' }).cookie.domain === 'xn--mnchen-3ya.test');
+check('__Host-: domain cookie or path other than / rejected with a clear message', /host-only/.test(n({ name: '__Host-x', value: '1', domain: '.a.test', secure: true }).error) && /path "\/"/.test(n({ name: '__Host-x', value: '1', domain: 'a.test', path: '/p', secure: true }).error) && !!n({ name: '__Host-x', value: '1', domain: 'a.test', secure: true }).cookie);
+check('__Secure- (any case) needs Secure', /require Secure/.test(n({ name: '__secure-x', value: '1', domain: 'a.test' }).error) && !!n({ name: '__Secure-x', value: '1', domain: '.a.test', secure: true }).cookie);
+check('size: 4096 bytes name+value ok, 4097 rejected, counted in UTF-8 bytes', !!n({ name: 'abcd', value: 'x'.repeat(4092), domain: 'a.test' }).cookie && /4096/.test(n({ name: 'abcd', value: 'x'.repeat(4093), domain: 'a.test' }).error) && /4096/.test(n({ name: 'u', value: 'é'.repeat(2100), domain: 'a.test' }).error));
+check('unicode value (é€😀) accepted as is', n({ name: 'u', value: 'é€😀 "q", a\\b', domain: 'a.test' }).cookie.value === 'é€😀 "q", a\\b');
+check('leading/trailing spaces in name or value rejected (Chrome refuses them)', /space/.test(n({ name: 'a', value: ' x', domain: 'a.test' }).error) && /space/.test(n({ name: 'a ', value: 'x', domain: 'a.test' }).error) && !!n({ name: 'a', value: 'x y', domain: 'a.test' }).cookie);
+check('path longer than 1024 bytes rejected', /1024/.test(n({ name: 'a', value: '1', domain: 'a.test', path: '/' + 'p'.repeat(1030) }).error));
+check('cookieKey distinguishes hasCrossSiteAncestor', L.cookieKey({ domain: 'a', name: 'n', partitionKey: { topLevelSite: 'https://a', hasCrossSiteAncestor: true } }) !== L.cookieKey({ domain: 'a', name: 'n', partitionKey: { topLevelSite: 'https://a', hasCrossSiteAncestor: false } }));
+check('cookieUrl: https override for a non-Secure cookie', L.cookieUrl({ domain: 'a.test', secure: false }, true) === 'https://a.test/');
+p = L.parseImport(JSON.stringify([{ domain: '.a.test', expirationDate: NOW + 100.123456, hostOnly: false, httpOnly: true, name: 'etc', path: '/', sameSite: 'no_restriction', secure: true, session: false, storeId: 'firefox-default', value: 'v', id: 1 }, { domain: 'sub.a.test', hostOnly: true, httpOnly: false, name: 'ce', path: '/', sameSite: null, secure: false, session: true, storeId: '0', value: 'w', firstPartyDomain: '', partitionKey: null }]), opts);
+check('import: EditThisCookie / Cookie-Editor (Firefox) JSON: float expiry kept exactly, sameSite null -> unspecified, storeId kept for the store check', p.cookies.length === 2 && p.cookies[0].expirationDate === NOW + 100.123456 && p.cookies[0].sameSite === 'no_restriction' && p.cookies[1].sameSite === 'unspecified' && p.cookies[1].hostOnly && p.cookies[0].storeId === 'firefox-default', JSON.stringify(p));
+p = L.parseImport('#HttpOnly_.a.test\tTRUE\t/\tTRUE\t0\t__Secure-s\tv\n#HttpOnly_sub.a.test\tFALSE\t/\tTRUE\t0\t__Host-h\tv\n', opts);
+check('cookies.txt: #HttpOnly_ with __Secure-/__Host- prefixes', p.cookies.length === 2 && p.cookies.every((c) => c.httpOnly && c.secure) && p.cookies[1].hostOnly, JSON.stringify(p));
+
 // ---------- datetime-local helpers ----------
 const t = 1_800_000_060;
 check('toLocalInput/fromLocalInput round trip (minute precision)', L.fromLocalInput(L.toLocalInput(t)) === t);

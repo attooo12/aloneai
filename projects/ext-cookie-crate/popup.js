@@ -48,13 +48,13 @@ async function init() {
   $('plan').classList.toggle('pro', pro);
   let url;
   try { url = new URL(tab.url); } catch { url = null; }
-  if (!url || !/^https?:$/.test(url.protocol) || url.hostname === 'chromewebstore.google.com') { $('unsupported').hidden = false; return; }
+  if (!url || !/^https?:$/.test(url.protocol) || url.hostname === 'chromewebstore.google.com' || (url.hostname === 'chrome.google.com' && url.pathname.startsWith('/webstore'))) { $('unsupported').hidden = false; return; }
   host = url.hostname;
   $('host').textContent = host; $('host').title = url.origin;
   const origins = originsForHost(host);
   if (!(await hasOrigins(origins))) {
     $('noaccess').hidden = false;
-    $('grant-origins').textContent = `Chrome will ask to allow: ${origins.map((o) => o.replace('*://', '').replace('/*', '')).join(', ')} (the site and its parent domains, whose cookies also apply here). Nothing else. You can revoke it any time in chrome://extensions.`;
+    $('grant-origins').textContent = `Chrome will ask to allow: ${origins.map((o) => o.replace('*://', '').replace('/*', '')).join(', ')} (the site and its parent domains, whose cookies also apply here). Nothing else. You can revoke it any time in chrome://extensions. If this popup closes while Chrome asks, just open it again.`;
     $('grant').onclick = async () => {
       if (await requestOrigins(origins)) { $('noaccess').hidden = true; await start(); } else $('noaccess-msg').textContent = 'Access was not granted, so Cookie Crate cannot show this site\'s cookies.';
     };
@@ -178,15 +178,20 @@ function editor(c, locked) {
   form.addEventListener('keydown', (e) => { if (e.key === 'Escape') { e.preventDefault(); openKey = null; renderCookies(); } });
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (!f.session.checked && !f.expires.value) { err.textContent = 'Set an expiry date or tick "Session".'; return; }
     let domain = f.domain.value.trim().toLowerCase();
+    // The date field has minute precision: keep the exact original expiry unless it was changed. Likewise keep the
+    // full partition key (incl. hasCrossSiteAncestor) unless the partition site was changed.
+    const expires = !isNew && !c.session && !f.session.checked && f.expires.value === toLocalInput(c.expirationDate) ? c.expirationDate : fromLocalInput(f.expires.value);
+    const part = f.partition.value.trim();
+    const partitionKey = !part ? undefined : !isNew && part === partitionSite(c) ? c.partitionKey : part;
     if (!f.hostOnly.checked && !domain.startsWith('.')) domain = '.' + domain;
     const r = normalizeCookie({
       name: f.name.value, value: f.value.value, domain, hostOnly: f.hostOnly.checked, path: f.path.value.trim(),
       secure: f.secure.checked, httpOnly: f.httpOnly.checked, sameSite: f.sameSite.value, session: f.session.checked,
-      expirationDate: f.session.checked ? undefined : fromLocalInput(f.expires.value), partitionKey: f.partition.value.trim() || undefined
+      expirationDate: f.session.checked ? undefined : expires, partitionKey
     });
     if (r.error) { err.textContent = r.error; return; }
-    if (!f.session.checked && !f.expires.value) { err.textContent = 'Set an expiry date or tick "Session".'; return; }
     if (!appliesToHost(r.cookie, host)) { err.textContent = `The domain must be ${host} or one of its parent domains.`; return; }
     try {
       await saveCookie(r.cookie, isNew ? null : c, storeId);
@@ -325,7 +330,7 @@ async function loadProfiles() {
       b('Switch to', async () => {
         const r = await applyProfile(p, tab.id, storeId);
         await chrome.tabs.reload(tab.id);
-        say('p-status', `Switched to "${p.name}": ${plural(r.added, 'cookie')} set${r.kept ? `, ${r.kept} protected kept` : ''}${r.expired ? `, ${r.expired} expired skipped` : ''}${r.failed.length ? `, ${r.failed.length} failed` : ''}${r.storageOk ? '' : '; storage could not be restored'}. Tab reloaded.`, r.failed.length ? 'error' : 'ok');
+        say('p-status', `Switched to "${p.name}": ${r.deleted} removed, ${plural(r.added, 'cookie')} set${r.kept ? `, ${r.kept} protected kept` : ''}${r.expired ? `, ${r.expired} expired skipped` : ''}${r.failed.length ? `, ${r.failed.length} failed` : ''}${r.storageOk ? '' : `; storage was not restored (${r.storageError})`}. Tab reloaded.`, r.failed.length ? 'error' : 'ok');
         await loadCookies();
       }),
       b('Update', async () => { await saveProfile(p.name, host, tab.id, storeId); say('p-status', `Updated "${p.name}" from the current state.`, 'ok'); loadProfiles(); }),

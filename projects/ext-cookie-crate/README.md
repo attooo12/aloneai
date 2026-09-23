@@ -29,8 +29,11 @@ deletions (tested).
   returns nothing. (What could not be verified headlessly: an actual toolbar click, so the "activeTab doesn't cover
   cookies" statement rests on Chromium's design plus that test, not on a real click.)
 - So the popup shows "Allow access to this site" and requests only `*://<host>/*` plus its parent domains up to the
-  registrable domain (parent-domain cookies need their own host permission). A small built-in list of two-label
-  public suffixes (co.uk, github.io, ...) avoids asking for e.g. `co.uk`; no full Public Suffix List is bundled.
+  registrable domain (parent-domain cookies need their own host permission). No full Public Suffix List is bundled:
+  a small list of two-label suffixes (co.uk, com.au, ...) plus the rule "generic label (co/com/org/ac/...) under a
+  two-letter TLD" avoids asking for e.g. `co.uk` or `co.th`, and under hosting platforms (github.io, herokuapp.com,
+  amazonaws.com, ...) only the exact host is requested. An unlisted multi-label suffix (e.g. `kyoto.jp`) would still
+  be asked for; Chrome never stores cookies on public suffixes, so that request grants nothing useful but is harmless.
 - Pro "all sites" export/import requests `<all_urls>` at click time, with an explanation on the page.
 - Known Chrome behaviour: on some platforms the popup closes while Chrome shows its permission prompt. The grant
   still happens; click the icon again.

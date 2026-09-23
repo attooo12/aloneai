@@ -63,7 +63,7 @@
   </section>
 
   <section id="view-profiles" role="tabpanel" aria-labelledby="tab-profiles" hidden>
-    <p class="small muted">A profile saves this site's cookies, localStorage and sessionStorage under a name (for example "staging-admin"). Switching deletes the site's current cookies (except protected ones), restores the profile and reloads the tab.</p>
+    <p class="small muted">A profile saves this site's cookies, localStorage and sessionStorage under a name (for example "staging-admin"). Switching deletes all of the site's current cookies, including ones that are not in the profile (protected ones are kept), then restores the profile's cookies and storage and reloads the tab.</p>
     <div class="row"><input id="p-name" type="text" placeholder="Profile name" aria-label="Profile name" class="grow" maxlength="60"><button id="p-save" type="button">Save current as profile</button></div>
     <div id="p-status" class="status" role="status" aria-live="polite"></div>
     <ul id="p-list" aria-label="Profiles"></ul>

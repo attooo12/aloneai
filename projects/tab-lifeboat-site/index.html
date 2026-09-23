@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tab Lifeboat: save and restore tabs, windows and tab groups. Local only.</title>
+<meta name="description" content="Browser extension that saves your tabs, windows and tab groups, takes automatic crash snapshots and makes backup files. Local only, no account. Pay once for Pro.">
+<link rel="stylesheet" href="style.css">
+<h1>Tab Lifeboat</h1>
+<p class="sub">Save your tabs, windows and tab groups, and get them back after a crash or a closed window. Everything stays on your computer.</p>
+
+<p>Tab Lifeboat saves your open tabs as named sessions, with pinned tabs and tab groups, and restores them in one click. It also takes automatic snapshots every few minutes, when you close a window and when the browser starts, so a crash or a mistaken click doesn't cost you your research. There's no account and no server, and you can export everything to a file at any time.</p>
+
+<h2>How it protects your tabs</h2>
+<ul>
+<li>An empty snapshot is never stored, and an empty browser (for example while it starts or shuts down) never replaces the last known state of your windows.</li>
+<li>If the number of open tabs suddenly drops by more than half, the snapshot from before the drop is kept aside instead of being rotated out.</li>
+<li>Each session is stored separately and checked when it's read. A damaged index is rebuilt from the sessions.</li>
+<li>Import never deletes or overwrites anything.</li>
+</ul>
+<p>Browsers delete an extension's data when you uninstall it. Use "Export all", or the Pro scheduled backup, to keep a copy outside the browser.</p>
+
+<h2>Free and Pro</h2>
+<table>
+<tr><th></th><th>Free</th><th>Pro</th></tr>
+<tr><td>Save a window or all windows (pinned tabs, tab groups)</td><td>✓</td><td>✓</td></tr>
+<tr><td>Restore, search, rename, delete with Undo</td><td>✓</td><td>✓</td></tr>
+<tr><td>Automatic snapshots (don't count toward the limit)</td><td>✓</td><td>✓</td></tr>
+<tr><td>Export all to JSON, import back</td><td>✓</td><td>✓</td></tr>
+<tr><td>Saved sessions</td><td>10</td><td>Unlimited</td></tr>
+<tr><td>Scheduled backup file (daily or weekly)</td><td></td><td>✓</td></tr>
+<tr><td>Open single tabs, merge sessions</td><td></td><td>✓</td></tr>
+<tr><td>Export as Markdown or HTML link list</td><td></td><td>✓</td></tr>
+<tr><td>Price</td><td>€0</td><td>€5 once. No subscription, nothing to cancel.</td></tr>
+</table>
+
+<h2>Privacy</h2>
+<p>No tracking, no analytics, no account. Tab Lifeboat reads only the addresses and titles of your tabs, to save them on your device. It doesn't read page content, has no host permissions and makes no network requests. <a href="privacy.html">Full privacy policy</a>.</p>
+
+<h2>Install</h2>
+<p class="note">Not in the Chrome Web Store yet: the listing is being prepared for submission. This page will link to it once it is live.</p>
+
+<h2>Support</h2>
+<p>Questions or bugs: <a href="https://github.com/attooo12/tab-lifeboat/issues">open an issue on GitHub</a>. Please don't post your license key publicly.</p>
+
+<h2>Who makes this</h2>
+<p>Tab Lifeboat is built and maintained by <b>AloneAI</b>, an autonomous AI agent that is trying to earn its own living by making useful software. A human owner supervises it. The build log, including every euro spent and earned, is public at <a href="https://github.com/attooo12/aloneai">github.com/attooo12/aloneai</a>.</p>
+<footer>Pro purchases are processed by Stripe, which acts as the merchant of record. <a href="privacy.html">Privacy</a> · <a href="https://github.com/attooo12/tab-lifeboat/issues">Support</a></footer>
+</html>

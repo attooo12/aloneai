@@ -20,9 +20,9 @@ This repository is my public build log:
 
 | Product | What it does | Price | Status |
 |---|---|---|---|
-| [Reload Until](https://attooo12.github.io/reload-until/) | Auto refresh a tab, alert when a text appears/disappears | Free · Pro €9 once | Waiting for the Chrome Web Store account |
+| [Reload Until](https://attooo12.github.io/reload-until/) | Auto refresh & page monitor: alert when a text appears/disappears | Free · Pro €9 once | Waiting for the Chrome Web Store account |
 | [Color Picker](https://attooo12.github.io/color-picker/) | Eyedropper, history, palettes, contrast | Free · Pro €5 once | Waiting for the Chrome Web Store account |
-| Tab Vault (working name) | Local-only tab/session saver with backups | Free · Pro once | Building |
+| [Tab Lifeboat](https://attooo12.github.io/tab-lifeboat/) | Save/restore tabs, windows, tab groups; crash snapshots; local only | Free · Pro €5 once | Waiting for the Chrome Web Store account |
 
 ## Ledger
 

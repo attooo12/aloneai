@@ -23,6 +23,7 @@ Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **
   Pillow (Lanczos) since there was no source art at that size:
   - `projects/ext-reload-until-listing/assets/logo-300x300.png`
   - `projects/ext-color-picker-listing/assets/logo-300x300.png`
+  - `projects/ext-tab-lifeboat-listing/assets/logo-300x300.png`
 - **Small promo tile, 440×280, required**: already have it, same file as the CWS listing —
   `assets/promo-small-440x280.png` in each listing folder. No resize needed.
 - **Screenshots, 1280×800, optional but recommended (up to 10)**: reuse the same PNGs as the CWS listing —
@@ -32,7 +33,7 @@ Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **
 - **Video URL, optional**: skip.
 
 ## 1. Reload Until
-- Zip: `projects/ext-kit/dist/reload-until-1.0.1.zip` (same file uploaded to Chrome Web Store).
+- Zip: https://github.com/attooo12/reload-until/releases/download/v1.0.1/reload-until-1.0.1.zip (same file as for Chrome).
 - **Properties tab**: Category **Productivity** (Edge's equivalent of Chrome's "Tools"). Website
   https://attooo12.github.io/reload-until/ · Support contact: your email or
   https://github.com/attooo12/reload-until/issues · Privacy policy URL:
@@ -49,7 +50,7 @@ Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **
 - Distribution: Free, all markets, Public — same as Chrome.
 
 ## 2. Color Picker & Palette
-- Zip: `projects/ext-kit/dist/color-picker-1.0.0.zip` (same file uploaded to Chrome Web Store).
+- Zip: https://github.com/attooo12/color-picker/releases/download/v1.0.0/color-picker-1.0.0.zip (same file as for Chrome).
 - **Properties tab**: Category **Developer Tools** (alternative: Productivity). Website
   https://attooo12.github.io/color-picker/ · Support: https://github.com/attooo12/color-picker/issues ·
   Privacy policy URL: https://attooo12.github.io/color-picker/privacy.html
@@ -59,6 +60,13 @@ Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **
   (activeTab, scripting, storage, no host permissions). No data collection, no remote code.
 - Distribution: Free, all markets, Public.
 
+## 3. Tab Lifeboat: Session Saver & Backup
+- Zip: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.0/tab-lifeboat-1.0.0.zip (same file as for Chrome).
+- Category **Productivity**. Website https://attooo12.github.io/tab-lifeboat/ · Support https://github.com/attooo12/tab-lifeboat/issues ·
+  Privacy policy https://attooo12.github.io/tab-lifeboat/privacy.html
+- Listing text, single purpose and permission justifications: `projects/ext-tab-lifeboat-listing/LISTING.md`; assets in its `assets/`.
+- Data: declare that tab URLs/titles (browsing history) are handled and stored only on the device; nothing is transmitted. No remote code.
+
 ## Minor, non-blocking note on both privacy policies
 Both `privacy.html` pages say "Chrome's storage" / "Chrome Web Store" a few times. That's technically accurate
 even on Edge (the API is still called `chrome.storage`, and Edge exposes the same `chrome.*` namespace), so I
@@ -66,8 +74,7 @@ left it as-is rather than fork a second privacy page. If an Edge reviewer ever a
 it's a one-line edit to `PRIVACY.md`/`privacy.html` on my next wake — flag it to me if it comes up.
 
 ## What was actually verified vs. what to expect at review
-- Verified: both zips are exactly the ones already live on the Chrome Web Store (byte-identical, built by the
-  same `ext-kit/pack.sh`), Chromium supports every API both extensions use (offscreen, scripting, alarms,
+- Verified: the zips are byte-identical to the Chrome Web Store uploads (built by the same `ext-kit/pack.sh`), Chromium supports every API both extensions use (offscreen, scripting, alarms,
   notifications, optional_host_permissions, commands), and each extension's full Playwright test suite
   (`test/e2e.mjs`, `test/unit.mjs`) still passes — those tests run against a real Chromium build (via
   Playwright), which is the same engine Edge ships.

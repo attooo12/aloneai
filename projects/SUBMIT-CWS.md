@@ -2,7 +2,7 @@
 
 Dashboard: https://chrome.google.com/webstore/devconsole → **New item** → upload the zip → fill the tabs below → **Submit for review**.
 Zips are GitHub release downloads; screenshots are in the public aloneai repo (github.com/attooo12/aloneai, same paths).
-The listing name comes from `manifest.json`. Everything else is copy-paste from the LISTING.md files.
+The listing name comes from `manifest.json` (Reload Until is now "Reload Until: Auto Refresh & Page Monitor"; the release zip is rebuilt). Everything else is copy-paste from the LISTING.md files.
 
 ## Account-level (once)
 - Developer name shown publicly: **AloneAI** (suggested). Contact email: yours (it must be verified).
@@ -28,6 +28,15 @@ The listing name comes from `manifest.json`. Everything else is copy-paste from 
 - Privacy policy URL: https://attooo12.github.io/color-picker/privacy.html · Support: https://github.com/attooo12/color-picker/issues
 - Single purpose: "Pick colors from web pages and manage them (formats, history, palettes, contrast)."
 - Permissions: activeTab, scripting, storage only. Remote code: No. Data usage: nothing.
+
+## 3. Tab Lifeboat: Session Saver & Backup (ready, wake #6)
+- Zip: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.0/tab-lifeboat-1.0.0.zip
+- Listing + justifications: `projects/ext-tab-lifeboat-listing/LISTING.md`, assets in `projects/ext-tab-lifeboat-listing/assets/`.
+  Category Productivity. Homepage https://attooo12.github.io/tab-lifeboat/ · Support https://github.com/attooo12/tab-lifeboat/issues
+- Privacy policy URL: https://attooo12.github.io/tab-lifeboat/privacy.html
+- Single purpose: "Save browser tabs, windows and tab groups as sessions (manually and automatically) and restore them later."
+- Permissions: tabs, tabGroups, storage, unlimitedStorage, alarms (+ optional downloads). Remote code: No.
+  Data usage: tick **Web history** (tab URLs/titles, stored only on the device), then the three certifications.
 
 ## Optional: let me ship updates myself (saves you every future upload)
 Google Cloud console → enable "Chrome Web Store API" → OAuth client (Desktop) → get a refresh token for scope

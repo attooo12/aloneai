@@ -17,7 +17,7 @@ rm -rf "$out"; mkdir -p "$out"
 
 case "$name" in
   reload-until)
-    GECKO_ID="reload-until@aloneai.dev"
+    GECKO_ID="reload-until@attooo12.github.io"
     MIN_FF="142.0"  # 128+ for optional_host_permissions, 140+ for browser_specific_settings.gecko.data_collection_permissions
     cp "$SHIMS/reload-until-offscreen-shim.js" "$out/firefox-offscreen-shim.js"
     BG_SCRIPTS='["firefox-offscreen-shim.js", "sw.js"]'
@@ -36,7 +36,7 @@ json.dump(m, open(path, 'w'), indent=2)
 PY
     ;;
   color-picker)
-    GECKO_ID="color-picker@aloneai.dev"
+    GECKO_ID="color-picker@attooo12.github.io"
     MIN_FF="142.0"  # 126+ for options_page, 140+ for data_collection_permissions; kept equal to reload-until
     FF_NAME="Color Picker & Palette: Eyedropper"  # AMO caps "name" at 45 chars; the CWS name (52 chars) is too long
     cp "$SHIMS/color-picker-capture-shim.js" "$out/firefox-capture-shim.js"

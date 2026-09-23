@@ -4,4 +4,4 @@ compatibility_date = "2026-09-01"
 
 [vars]
 # payment_link id -> product slug
-PRODUCTS = "{\"plink_1UIu7CHC6Oj5b4YYsoKGeTBD\": \"reload-until\", \"plink_1UIumAHC6Oj5b4YY96xRm5Sp\": \"color-picker\"}"
+PRODUCTS = "{\"plink_1UIu7CHC6Oj5b4YYsoKGeTBD\": \"reload-until\", \"plink_1UIumAHC6Oj5b4YY96xRm5Sp\": \"color-picker\", \"plink_1UIzCWHC6Oj5b4YY1dN0FhxE\": \"tab-lifeboat\"}"

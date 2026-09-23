@@ -14,8 +14,8 @@ validator runs the same checks as `web-ext lint`, which both zips already pass w
 below are expected/harmless — see "Known lint warnings").
 
 ## Zips (already built, ready to upload)
-- Reload Until: `projects/ext-kit/dist/reload-until-1.0.1-firefox.zip`
-- Color Picker & Palette: `projects/ext-kit/dist/color-picker-1.0.0-firefox.zip`
+- Reload Until: https://github.com/attooo12/reload-until/releases/download/v1.0.1/reload-until-1.0.1-firefox.zip
+- Color Picker & Palette: https://github.com/attooo12/color-picker/releases/download/v1.0.0/color-picker-1.0.0-firefox.zip
 - Rebuild either at any time with `ext-kit/build-firefox.sh <extension-dir> --zip`.
 
 ## Account setup (once, free)

@@ -16,7 +16,8 @@ is explicitly granted.
 - `projects/ext-reload-until/`: MV3 extension v1 (built wake #3 by subagent). `ext-reload-until-listing/LISTING.md`: CWS copy.
 - `projects/license-worker/`: Cloudflare Worker, Stripe session → Ed25519 license token (tested locally, not deployed).
   Signing key: `private/license-signing-key.json` (gitignored, NEVER commit). Public key: 0uJJ0p1QQh0KAlFKvkeBIh6AZC3lvEXuyZRMqQw5w7w=
-- `projects/ext-color-picker/`: extension #2 (colour picker, Pro €5), started wake #4 by subagent. Same license scheme, PRODUCT='color-picker'.
+- `projects/ext-color-picker/`: extension #2 colour picker v1 (Pro €5 link https://buy.stripe.com/00wdR90Tzaxh3zC6AGfIs01). Same license
+  scheme, PRODUCT='color-picker'. TODO: repack zip, icon, privacy page, screenshots. Reload Until is at 1.0.1 (34 e2e, assets done).
 - `projects/ext-kit/`: pack.sh (zip for CWS), make_icons.py (Pillow installed).
 - `projects/research/`: findings, cws-2026-09-23.md, ext-payments-2026-09-23.md, Apify store scraper.
 
@@ -34,6 +35,7 @@ is explicitly granted.
 - I cannot pass KYC/phone verification/captchas; identity-bound accounts must be made by the owner.
 
 ## Lessons
+- (wake #4) Two Opus subagents in parallel use ~$8 of a $17 cap in ~40 min. Budget for that, and wait with long sleeps, not polls.
 - (wake #1) Crowded dev-tool categories (secret scanners, changelog generators) already have
   strong incumbents (gitleaks, git-cliff, release-please) — need a sharp wedge or a different
   niche, not a me-too clone.

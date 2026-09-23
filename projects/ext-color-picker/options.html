@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Color Picker: License &amp; Options</title>
+<link rel="stylesheet" href="ui.css">
+<style>
+  body { max-width: 560px; margin: 0 auto; padding: 24px 16px; font-size: 14px; }
+  textarea { width: 100%; min-height: 80px; font-family: ui-monospace, monospace; font-size: 12px; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0; }
+  th, td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--border); }
+  #buy { width: auto; }
+  .checks label { display: flex; gap: 6px; align-items: center; margin-top: 4px; }
+</style>
+</head>
+<body>
+<h1>Color Picker &amp; Palette</h1>
+<p class="muted">Pick any color on a page with an eyedropper, copy it as HEX, RGB or HSL, and keep your palettes.</p>
+
+<fieldset>
+  <legend>Plan</legend>
+  <p id="plan-status" role="status" aria-live="polite">Checking…</p>
+  <table>
+    <tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th></tr>
+    <tr><td>Eyedropper on any normal web page, plus a picker window for the rest of the screen</td><td>✓</td><td>✓</td></tr>
+    <tr><td>HEX, RGB, HSL with one-click copy</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Last 12 picks, keyboard shortcut</td><td>✓</td><td>✓</td></tr>
+    <tr><td>OKLCH format</td><td>–</td><td>✓</td></tr>
+    <tr><td>Unlimited named palettes (saved on this device)</td><td>–</td><td>✓</td></tr>
+    <tr><td>Export palettes: CSS variables, Tailwind (v4 and v3), JSON</td><td>–</td><td>✓</td></tr>
+    <tr><td>WCAG contrast checker (AA / AAA, normal and large text)</td><td>–</td><td>✓</td></tr>
+  </table>
+  <p id="buy-wrap"><button id="buy" class="primary" type="button">Get Pro: <span class="price"></span> once, no subscription</button></p>
+  <p id="soon" class="muted" hidden>Pro license (<span class="price"></span>, pay once): coming soon.</p>
+</fieldset>
+
+<fieldset>
+  <legend><label for="license">License key</label></legend>
+  <textarea id="license" spellcheck="false" autocomplete="off" placeholder="Paste your license key here"></textarea>
+  <div class="row" style="margin-top:6px">
+    <button id="save" type="button">Save key</button>
+    <button id="remove" type="button">Remove key</button>
+    <span id="msg" class="small" role="status" aria-live="polite"></span>
+  </div>
+  <p class="muted small">The key is verified offline on this device and stored in Chrome sync storage. It is never sent anywhere.</p>
+</fieldset>
+
+<fieldset>
+  <legend>Options</legend>
+  <div class="checks">
+    <label><input id="upper" type="checkbox"> Show HEX in upper case (#1A2B3C instead of #1a2b3c)</label>
+    <label><input id="autoCopy" type="checkbox"> Copy the HEX to the clipboard right after a pick</label>
+  </div>
+  <p class="muted small">Keyboard shortcut: <b id="shortcut">–</b>. <button id="shortcuts" type="button">Change shortcut</button></p>
+</fieldset>
+
+<fieldset>
+  <legend>About</legend>
+  <p class="small">This extension is made and maintained by <b>AloneAI</b>, an autonomous AI agent that tries to earn its own living by building small, honest tools. Its build log is public: <a href="https://github.com/attooo12/aloneai" target="_blank" rel="noopener">github.com/attooo12/aloneai</a>.</p>
+  <p class="small">It has no analytics, makes no network requests and loads no remote code. Your picks, palettes and settings stay in Chrome's storage on your device. It only touches a page when you start a pick on it.</p>
+</fieldset>
+
+<footer>Made by AloneAI, an autonomous AI agent. No tracking, no data collection.</footer>
+<script type="module" src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Color Picker</title>
+<link rel="stylesheet" href="ui.css">
+<style>
+  body { width: 340px; padding: 12px; }
+  body.window { width: auto; max-width: 420px; margin: 0 auto; }
+  header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; gap: 6px; }
+  header a { text-decoration: none; }
+  h2 { font-size: 12px; margin: 0; }
+  [role=tablist] { display: flex; gap: 4px; margin-bottom: 10px; }
+  [role=tab] { flex: 1; }
+  [role=tab][aria-selected=true] { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+  [role=tab] .pill { margin-left: 3px; padding: 0 5px; font-size: 10px; }
+  [role=tab][aria-selected=true] .pill { color: inherit; border-color: currentColor; }
+  #hint { margin: 4px 0 8px; text-align: center; }
+  #msg:empty { display: none; }
+  #msg { margin: 0 0 8px; padding: 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--card); }
+  #msg button { margin-top: 6px; }
+  .current { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
+  .big-swatch { width: 44px; height: 44px; border-radius: 8px; border: 1px solid var(--border); flex: none; }
+  .current input { flex: 1; min-width: 0; font-family: ui-monospace, monospace; }
+  .formats { display: grid; grid-template-columns: 48px 1fr auto; gap: 4px 6px; align-items: center; margin: 0 0 10px; }
+  .formats dt { color: var(--muted); font-size: 11px; font-weight: 600; }
+  .formats dd { margin: 0; font-family: ui-monospace, monospace; font-size: 12px; overflow-wrap: anywhere; }
+  .formats button { padding: 2px 8px; font-size: 11px; }
+  .section-head { display: flex; justify-content: space-between; align-items: center; margin: 4px 0 6px; }
+  .section-head button { padding: 1px 7px; font-size: 11px; }
+  .swatches { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+  .swatches li { position: relative; }
+  .swatches button.sw { width: 100%; aspect-ratio: 1.6; padding: 0; border-radius: 6px; border: 1px solid var(--border); }
+  .swatches button.sw[aria-pressed=true] { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .swatches button.rm { position: absolute; top: -6px; right: -6px; width: 16px; height: 16px; padding: 0; line-height: 13px; font-size: 11px; border-radius: 50%; }
+  .empty { grid-column: 1 / -1; }
+  button.link { border: 0; background: none; color: var(--accent); padding: 0; text-decoration: underline; }
+  .locked { text-align: center; padding: 14px 6px; }
+  .locked p { margin: 0 0 8px; }
+  #pal-select, #pal-name, #exp-kind { flex: 1; min-width: 0; }
+  #exp-out { width: 100%; height: 110px; font: 11px/1.35 ui-monospace, monospace; resize: vertical; margin-top: 6px; }
+  .field { display: flex; gap: 6px; align-items: center; margin-bottom: 6px; }
+  .field label { width: 76px; flex: none; }
+  .field input[type=text] { flex: 1; min-width: 0; font-family: ui-monospace, monospace; }
+  .field input[type=color] { width: 32px; height: 28px; padding: 0; border: 1px solid var(--border); border-radius: 6px; background: none; flex: none; }
+  #preview { border: 1px solid var(--border); border-radius: 8px; padding: 10px; margin: 8px 0; }
+  #preview .lg { font-size: 18.66px; font-weight: 700; display: block; }
+  #ratio { font-size: 22px; font-weight: 700; text-align: center; margin: 4px 0; }
+  .checks { width: 100%; border-collapse: collapse; }
+  .checks td { padding: 3px 4px; border-bottom: 1px solid var(--border); }
+  .checks td:last-child { text-align: right; font-weight: 600; }
+  .pass { color: var(--ok); } .fail { color: var(--danger); }
+  .stack > * + * { margin-top: 6px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Color Picker</h1>
+  <a id="plan" class="pill" href="options.html" target="_blank" title="License and options">Free</a>
+</header>
+
+<div role="tablist" aria-label="Sections">
+  <button role="tab" id="tab-pick" aria-controls="panel-pick" aria-selected="true" type="button">Pick</button>
+  <button role="tab" id="tab-palettes" aria-controls="panel-palettes" aria-selected="false" tabindex="-1" type="button">Palettes<span class="pill pro-tag">Pro</span></button>
+  <button role="tab" id="tab-contrast" aria-controls="panel-contrast" aria-selected="false" tabindex="-1" type="button">Contrast<span class="pill pro-tag">Pro</span></button>
+</div>
+
+<!-- PICK -->
+<section id="panel-pick" role="tabpanel" aria-labelledby="tab-pick">
+  <button id="pick" class="primary" type="button">Pick a color</button>
+  <p id="hint" class="muted small"></p>
+  <div id="msg" role="alert"></div>
+
+  <div class="current">
+    <div id="swatch" class="big-swatch" aria-hidden="true"></div>
+    <input id="input" type="text" spellcheck="false" autocomplete="off" aria-label="Current color (type or paste HEX, rgb(), hsl() or oklch())" placeholder="#2563EB, rgb(…), hsl(…)">
+  </div>
+  <dl class="formats" id="formats">
+    <dt>HEX</dt><dd id="f-hex"></dd><dd><button type="button" data-copy="hex" aria-label="Copy HEX">Copy</button></dd>
+    <dt>RGB</dt><dd id="f-rgb"></dd><dd><button type="button" data-copy="rgb" aria-label="Copy RGB">Copy</button></dd>
+    <dt>HSL</dt><dd id="f-hsl"></dd><dd><button type="button" data-copy="hsl" aria-label="Copy HSL">Copy</button></dd>
+    <dt>OKLCH</dt><dd id="f-oklch"></dd><dd><button type="button" data-copy="oklch" aria-label="Copy OKLCH">Copy</button></dd>
+  </dl>
+  <p class="row" id="add-row" hidden><button id="add-current" type="button">Add to palette</button> <span id="add-msg" class="small muted" role="status"></span></p>
+
+  <div class="section-head"><h2 id="history-h">Recent picks</h2><button id="clear-history" type="button">Clear</button></div>
+  <ul id="history" class="swatches" aria-labelledby="history-h"></ul>
+  <p class="small muted" style="margin:10px 0 0"><button id="open-window" class="link" type="button">Pick outside this page</button> (opens a small window that can pick anywhere on screen)</p>
+</section>
+
+<!-- PALETTES -->
+<section id="panel-palettes" role="tabpanel" aria-labelledby="tab-palettes" hidden>
+  <div class="locked" data-locked hidden>
+    <p><b>Named palettes are part of Pro.</b></p>
+    <p class="muted small">Save unlimited palettes and export them as CSS variables, Tailwind or JSON. <span class="price"></span> once, no subscription.</p>
+    <a class="pro-link" href="options.html" target="_blank">Unlock Pro</a>
+  </div>
+  <div data-unlocked hidden class="stack">
+    <div class="row">
+      <label class="sr-only" for="pal-select">Palette</label>
+      <select id="pal-select"></select>
+      <button id="pal-new" type="button">New</button>
+    </div>
+    <div class="row" id="pal-edit">
+      <label class="sr-only" for="pal-name">Palette name</label>
+      <input id="pal-name" type="text" maxlength="60" autocomplete="off">
+      <button id="pal-rename" type="button">Rename</button>
+      <button id="pal-delete" type="button">Delete</button>
+    </div>
+    <ul id="pal-colors" class="swatches" aria-label="Colors in this palette"></ul>
+    <div class="row"><button id="pal-add" type="button">Add current color</button><span id="pal-current" class="small muted"></span></div>
+    <fieldset>
+      <legend>Export</legend>
+      <div class="row">
+        <label class="sr-only" for="exp-kind">Export format</label>
+        <select id="exp-kind">
+          <option value="css">CSS variables</option>
+          <option value="tailwind4">Tailwind v4 (@theme)</option>
+          <option value="tailwind3">Tailwind v3 (config)</option>
+          <option value="json">JSON</option>
+        </select>
+        <button id="exp-copy" type="button">Copy</button>
+      </div>
+      <label class="sr-only" for="exp-out">Export output</label>
+      <textarea id="exp-out" readonly spellcheck="false"></textarea>
+    </fieldset>
+    <p id="pal-msg" class="small" role="status"></p>
+  </div>
+</section>
+
+<!-- CONTRAST -->
+<section id="panel-contrast" role="tabpanel" aria-labelledby="tab-contrast" hidden>
+  <div class="locked" data-locked hidden>
+    <p><b>The WCAG contrast checker is part of Pro.</b></p>
+    <p class="muted small">Check text and background colors against AA and AAA. <span class="price"></span> once, no subscription.</p>
+    <a class="pro-link" href="options.html" target="_blank">Unlock Pro</a>
+  </div>
+  <div data-unlocked hidden>
+    <div class="field">
+      <label for="c-fg">Text</label>
+      <input id="c-fg" type="text" spellcheck="false" autocomplete="off">
+      <input id="c-fg-pick" type="color" aria-label="Choose text color">
+      <button type="button" data-use="fg" title="Use the current color">Current</button>
+    </div>
+    <div class="field">
+      <label for="c-bg">Background</label>
+      <input id="c-bg" type="text" spellcheck="false" autocomplete="off">
+      <input id="c-bg-pick" type="color" aria-label="Choose background color">
+      <button type="button" data-use="bg" title="Use the current color">Current</button>
+    </div>
+    <div class="row"><button id="c-swap" type="button">Swap colors</button><span id="c-err" class="small error" role="alert"></span></div>
+    <div id="preview"><span class="lg">Large text (18.66px bold)</span><span>Normal text looks like this.</span></div>
+    <p id="ratio" aria-live="polite"></p>
+    <table class="checks">
+      <tr><td>AA normal text (4.5:1)</td><td id="c-aa"></td></tr>
+      <tr><td>AA large text (3:1)</td><td id="c-aa-lg"></td></tr>
+      <tr><td>AAA normal text (7:1)</td><td id="c-aaa"></td></tr>
+      <tr><td>AAA large text (4.5:1)</td><td id="c-aaa-lg"></td></tr>
+    </table>
+  </div>
+</section>
+
+<p id="status" class="sr-only" role="status" aria-live="polite"></p>
+<footer>No tracking. Made by AloneAI, an autonomous AI agent.</footer>
+<script type="module" src="popup.js"></script>
+</body>
+</html>

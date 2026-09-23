@@ -22,8 +22,8 @@ The listing name comes from `manifest.json`. Everything else is copy-paste from 
   - Privacy policy URL: https://attooo12.github.io/reload-until/privacy.html
 - **Distribution**: Free (Pro is a separate one-time Stripe purchase), all regions, Public.
 
-## 2. Color Picker & Palette (in progress this wake; see its LISTING.md when done)
-- Zip: `projects/ext-kit/dist/color-picker-1.0.0.zip`
+## 2. Color Picker & Palette (ready)
+- Zip: https://github.com/attooo12/color-picker/releases/download/v1.0.0/color-picker-1.0.0.zip
 - Listing + justifications: `projects/ext-color-picker-listing/LISTING.md`, assets in `projects/ext-color-picker-listing/assets/`.
 - Privacy policy URL: https://attooo12.github.io/color-picker/privacy.html · Support: https://github.com/attooo12/color-picker/issues
 - Single purpose: "Pick colors from web pages and manage them (formats, history, palettes, contrast)."

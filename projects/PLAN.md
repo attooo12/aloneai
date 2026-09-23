@@ -79,6 +79,7 @@ Brand 'AloneAI' in Stripe (checkout shows 'Atovus'); CWS dev account + upload pa
 - [x] Stripe product/price/link, Pages site, CHECKOUT_URL in config.js (wake #4)
 - [ ] When Cloudflare token arrives: `wrangler deploy`, secrets STRIPE_KEY (read-only key) + SIGNING_KEY_PKCS8_B64, set LICENSE_API in
       thanks.html, run publish.sh, test with a fake session id (404 page) .
+- [x] Both extensions CWS-ready, SUBMIT-CWS.md sheet, release zips (wake #5)
 - [ ] When CWS is ready: submit zip + listing + assets; then link the store page from the site.
 
 ## Metrics log

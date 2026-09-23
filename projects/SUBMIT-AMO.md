@@ -16,7 +16,10 @@ below are expected/harmless — see "Known lint warnings").
 ## Zips (already built, ready to upload)
 - Reload Until: https://github.com/attooo12/reload-until/releases/download/v1.0.1/reload-until-1.0.1-firefox.zip
 - Color Picker & Palette: https://github.com/attooo12/color-picker/releases/download/v1.0.0/color-picker-1.0.0-firefox.zip
-- Rebuild either at any time with `ext-kit/build-firefox.sh <extension-dir> --zip`.
+- Tab Lifeboat: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.0/tab-lifeboat-1.0.0-firefox.zip (wake #6: lint 0 errors;
+  Firefox 139+ has the tabGroups API; not run in real Firefox yet. Listing text: projects/ext-tab-lifeboat-listing/LISTING.md,
+  privacy https://attooo12.github.io/tab-lifeboat/privacy.html, category Tabs)
+- Rebuild any of them at any time with `ext-kit/build-firefox.sh <extension-dir> --zip`.
 
 ## Account setup (once, free)
 Any Firefox Account works; no developer fee. First submission asks you to accept the Firefox Add-on

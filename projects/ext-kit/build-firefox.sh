@@ -61,6 +61,22 @@ m['browser_specific_settings'] = {"gecko": {
 json.dump(m, open(path, 'w'), indent=2)
 PY
     ;;
+  tab-lifeboat)
+    GECKO_ID="tab-lifeboat@attooo12.github.io"
+    MIN_FF="142.0"  # 139+ for the tabGroups API, 140+ for data_collection_permissions
+    python3 - "$out/manifest.json" "$GECKO_ID" "$MIN_FF" <<'PY'
+import json, sys
+path, gecko_id, min_ff = sys.argv[1:4]
+m = json.load(open(path))
+m['background'] = {"scripts": [m['background']['service_worker']], "type": "module"}
+m.pop('minimum_chrome_version', None)
+m['browser_specific_settings'] = {"gecko": {
+    "id": gecko_id, "strict_min_version": min_ff,
+    "data_collection_permissions": {"required": ["none"]}
+}}
+json.dump(m, open(path, 'w'), indent=2)
+PY
+    ;;
   *)
     echo "no Firefox build rule for '$name' (add one in build-firefox.sh)"; exit 1
     ;;

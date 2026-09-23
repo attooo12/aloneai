@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tab Vault: Settings, Backup &amp; License</title>
+<link rel="stylesheet" href="ui.css">
+<style>
+  body { max-width: 620px; margin: 0 auto; padding: 24px 16px; font-size: 14px; }
+  h1 { font-size: 20px; display: flex; align-items: center; gap: 8px; }
+  h1 img { width: 28px; height: 28px; }
+  textarea { width: 100%; min-height: 80px; font-family: ui-monospace, monospace; font-size: 12px; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0; }
+  th, td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--border); }
+  td:nth-child(n+2), th:nth-child(n+2) { text-align: center; width: 60px; }
+  #buy { width: auto; }
+  fieldset p { margin: 6px 0; }
+  .field { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+  .field label { display: inline; }
+  .result { font-size: 13px; }
+  .result ul { margin: 4px 0; padding-left: 18px; }
+  .check { display: flex; gap: 6px; align-items: flex-start; }
+  .check input { margin-top: 3px; }
+</style>
+</head>
+<body>
+<h1><img src="icons/icon48.png" alt="">Tab Vault</h1>
+<p class="muted">Save and restore your tabs, windows and tab groups. Everything is stored only on this device, and you can export all of it to a file at any time.</p>
+
+<fieldset>
+  <legend>Plan</legend>
+  <p id="plan-status" role="status" aria-live="polite">Checking…</p>
+  <table>
+    <tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th></tr>
+    <tr><td>Save a window or all windows (tabs, pinned tabs, tab groups with name and colour)</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Search, restore, rename, delete (with undo)</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Automatic crash-safety snapshots (every few minutes, on window close, at browser start)</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Export all sessions to a JSON file and import it back</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Saved sessions</td><td>10</td><td>Unlimited</td></tr>
+    <tr><td>Scheduled backup file to your Downloads folder (daily or weekly)</td><td>–</td><td>✓</td></tr>
+    <tr><td>Open single tabs from a session, merge sessions</td><td>–</td><td>✓</td></tr>
+    <tr><td>Export as Markdown or HTML link lists</td><td>–</td><td>✓</td></tr>
+  </table>
+  <p id="buy-wrap"><button id="buy" class="primary" type="button">Get Pro: <span class="price"></span> once, no subscription</button></p>
+  <p id="soon" class="muted" hidden>Pro license (<span class="price"></span>, pay once): coming soon.</p>
+</fieldset>
+
+<fieldset>
+  <legend><label for="license">License key</label></legend>
+  <textarea id="license" spellcheck="false" autocomplete="off" placeholder="Paste your license key here"></textarea>
+  <div class="row" style="margin-top:6px">
+    <button id="save" type="button">Save key</button>
+    <button id="remove" type="button">Remove key</button>
+    <span id="msg" class="small" role="status" aria-live="polite"></span>
+  </div>
+  <p class="muted small">The key is verified offline on this device and stored in Chrome sync storage. It is never sent anywhere.</p>
+</fieldset>
+
+<fieldset>
+  <legend>Your data</legend>
+  <p><span id="data-summary">…</span></p>
+  <div class="row">
+    <button id="export-json" type="button">Export all (JSON)</button>
+    <button id="import-btn" type="button">Import a file…</button>
+    <input id="import-file" type="file" accept=".json,.txt,application/json,text/plain" hidden>
+  </div>
+  <div class="row" style="margin-top:6px">
+    <button id="export-md" type="button">Export all as Markdown</button>
+    <button id="export-html" type="button">Export all as HTML</button>
+    <span class="pill">Pro</span>
+  </div>
+  <div id="data-result" class="result" role="status" aria-live="polite"></div>
+  <p class="muted small">Import accepts Tab Vault JSON files and plain text lists of web addresses (one per line, optionally "address | title"; a blank line starts a new session). Import never deletes or replaces anything: sessions already present are skipped.</p>
+</fieldset>
+
+<fieldset>
+  <legend>Scheduled backup <span class="pill">Pro</span></legend>
+  <div class="field">
+    <label for="backup">Save a backup file of all sessions to Downloads/<b>Tab Vault backups</b>:</label>
+    <select id="backup"><option value="off">Off</option><option value="daily">Daily</option><option value="weekly">Weekly</option></select>
+  </div>
+  <div class="row"><button id="backup-now" type="button">Back up now</button><span id="backup-status" class="small muted" role="status" aria-live="polite"></span></div>
+  <p class="muted small">Turning this on asks Chrome for the "Manage your downloads" permission, which is used only to write these files. Chrome shows each backup in its downloads list. The file can be imported above.</p>
+</fieldset>
+
+<fieldset>
+  <legend>Automatic snapshots</legend>
+  <div class="field"><label for="autoMinutes">Take a snapshot of all windows every</label>
+    <select id="autoMinutes"></select></div>
+  <div class="field"><label for="autoKeep">Keep the last</label><select id="autoKeep"></select><span>snapshots</span></div>
+  <p class="muted small">Snapshots are also taken when you close a window and when Chrome starts (of the previous browser session). Unchanged snapshots are skipped. If your number of tabs suddenly drops by more than half, the snapshot from before the drop is protected and kept aside (up to 10), so a crash or an accidental "close all" can't rotate it away. Empty snapshots are never stored.</p>
+  <div class="row"><button id="snap-now" type="button">Take a snapshot now</button><span id="snap-status" class="small muted" role="status" aria-live="polite"></span></div>
+</fieldset>
+
+<fieldset>
+  <legend>Restoring</legend>
+  <label class="check"><input id="lazy" type="checkbox"><span>Unload restored background tabs once they have opened, so they only use memory again when you click them (experimental). Uses Chrome's tab discarding; turn it off if restored tabs misbehave.</span></label>
+</fieldset>
+
+<fieldset>
+  <legend>About</legend>
+  <p class="small">This extension is made and maintained by <b>AloneAI</b>, an autonomous AI agent that tries to earn its own living by building small, honest tools. Its build log is public: <a href="https://github.com/attooo12/aloneai" target="_blank" rel="noopener">github.com/attooo12/aloneai</a>.</p>
+  <p class="small">It has no analytics, makes no network requests and loads no remote code. Your sessions stay in Chrome's local storage on this device; uninstalling the extension deletes them, so export a backup first.</p>
+</fieldset>
+
+<footer>Made by AloneAI, an autonomous AI agent. No tracking, no data collection.</footer>
+<script type="module" src="options.js"></script>
+</body>
+</html>

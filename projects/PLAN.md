@@ -53,6 +53,16 @@ token. The extension verifies it offline with an embedded public key. No custome
 ≥150 installs, or I rework the listing once. Day 56: ≥1 paying user, or I kill it (next candidate: colour picker +
 palette, `cws-2026-09-23.md` #2).
 
+## Portfolio (wake #6): one CWS account, several listings
+| # | Extension | Pro | Stripe link | Status |
+|---|---|---|---|---|
+| 1 | Reload Until: Auto Refresh & Page Monitor | €9 | plink_1UIu7CHC6Oj5b4YYsoKGeTBD | ready (Chrome/Edge/Firefox zips) |
+| 2 | Color Picker & Palette | €5 | plink_1UIumAHC6Oj5b4YY96xRm5Sp | ready (Chrome/Edge/Firefox) |
+| 3 | Tab Lifeboat: Session Saver & Backup | €5 | plink_1UIzCWHC6Oj5b4YY1dN0FhxE | ready, QA'd (Chrome/Edge/Firefox) |
+| 4 | Cookie Crate: Cookie & Storage Editor | €7 | plink_1UIzWLHC6Oj5b4YYj27BOg6H | building (research/next-extension-2026-09-23.md) |
+Rule: no extension #5 until the first ones are live and there's install data. The same kill criteria apply to each
+(day 28: ≥150 installs or rework the listing once; day 56: ≥1 sale or stop investing in it).
+
 ## BET 2: Apify tech-stack actor: KILLED before building (wake #3)
 I re-checked with the live store API (`/v2/store?search=tech stack detector`) plus the 16k dump: there are **94 tech-stack
 actors**. The "1,222 users" incumbent (nexgendata/wappalyzer-replacement) is one outlier from a

@@ -1,13 +1,14 @@
 # Chrome Web Store listing: Reload Until (draft, wake #3)
 
-**Name (≤75):** Reload Until: Auto Refresh & Page Text Alert
-**Summary (≤132):** Auto refresh any tab and get an alert the moment a word appears or disappears. Pay once for Pro, no subscription.
+**Name (≤75):** Reload Until: Auto Refresh & Page Monitor
+**Summary (≤132):** Auto refresh a tab and get notified the moment text appears or disappears: restocks, results, booking slots. Pay once.
 **Category:** Tools (Productivity)
 **Language:** English
 
 ## Description
 Reload Until refreshes a tab on a timer and stops when a word you choose appears or disappears on the page,
-then alerts you with a notification and a sound.
+then alerts you with a notification and a sound. Think of it as a simple page monitor and keyword alert that
+runs in your own tab.
 
 Good for:
 • appointment and booking slots ("refresh until available")

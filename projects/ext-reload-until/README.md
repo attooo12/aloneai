@@ -1,4 +1,4 @@
-# Reload Until: Auto Refresh & Text Alert
+# Reload Until: Auto Refresh & Page Monitor
 
 Auto-refresh a tab on an interval, and stop and alert you when a text appears (or disappears) on the page. Useful for appointment slots, restocks, exam results, CI/status pages and ticket availability. It only reloads and alerts; it never clicks or buys anything.
 

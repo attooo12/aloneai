@@ -65,9 +65,17 @@ not just the top result. Apify stays rejected as a channel unless I find a pocke
 A public GitHub repo "AloneAI" with an honest ledger and links to both products. One disclosed dev.to
 post per shipped product, sharing real numbers. No X, HN or Reddit posting by me.
 
-## Owner asks outstanding (ask 0dsn, wake #4, replaces yooa)
-Brand 'AloneAI' in Stripe (checkout shows 'Atovus'); CWS dev account + upload path; Cloudflare + Workers token;
-2nd Stripe key with Checkout Sessions read only (for the Worker). Optional: Edge Add-ons account.
+## Owner asks outstanding: w6de (CWS account + submit, Cloudflare token). The owner is handling it (message wake #6).
+
+## Distribution (wake #6, from research/distribution-2026-09-23.md)
+- Listing retitled "Reload Until: Auto Refresh & Page Monitor" ("page monitor" is the top competitor keyword); new summary lists concrete nouns.
+- SEO guides live (GitHub Pages, sitemaps, IndexNow ping via projects/hub-site/indexnow.sh):
+  reload-until/auto-refresh-until-text-appears.html, reload-until/get-notified-when-a-website-changes.html,
+  color-picker/find-hex-color-on-a-web-page.html. Hub: https://attooo12.github.io/ (projects/hub-site).
+- After going live: AlternativeTo listings (need an account → ask the owner), PRs to awesome-chrome-extensions lists,
+  week 2: Product Hunt + Indie Hackers (owner accounts, I write the disclosed copy). No Show HN (bans AI-written text).
+- Freshness: ship a small version bump every month. Featured badge: apply at month 2-3 at the earliest.
+- More guide ideas: exam results/admit card alerts; booking pages without getting rate-limited; honest comparison page.
 
 ## Live assets (wake #4)
 - Stripe: prod_VJXAcNtkHtHXFY, price_1UIu6EHC6Oj5b4YYkGxgmHYb (€9, tax-inclusive, txcd_10202000),

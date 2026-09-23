@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reload Until</title>
+<link rel="stylesheet" href="ui.css">
+<style>
+  body { width: 330px; padding: 12px; }
+  header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+  #site { margin: 0 0 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #custom { width: 64px; }
+  #plan { text-decoration: none; }
+  #text { width: 100%; margin-top: 6px; }
+  #selector { width: 100%; margin-top: 6px; }
+  .checks label { display: flex; gap: 6px; align-items: center; margin-top: 4px; }
+  #status { min-height: 36px; margin: 8px 0 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Reload Until</h1>
+  <a id="plan" class="pill" href="options.html" target="_blank" title="License and options">Free</a>
+</header>
+<p id="site" class="muted small"></p>
+
+<form id="form" novalidate>
+  <fieldset>
+    <legend>Reload every</legend>
+    <div class="row" id="presets" role="group" aria-label="Interval presets">
+      <button type="button" data-sec="10">10s</button>
+      <button type="button" data-sec="30">30s</button>
+      <button type="button" data-sec="60">1m</button>
+      <button type="button" data-sec="300">5m</button>
+      <button type="button" data-sec="900">15m</button>
+    </div>
+    <div class="row" style="margin-top:6px">
+      <label for="custom">Custom</label>
+      <input id="custom" type="number" min="3" step="1" inputmode="numeric" aria-describedby="custom-unit"> <span id="custom-unit" class="muted">sec</span>
+      <label for="jitter" style="margin-left:auto">Jitter</label>
+      <select id="jitter" title="Randomize each interval by up to this much">
+        <option value="0">off</option><option value="10">±10%</option><option value="25">±25%</option><option value="50">±50%</option>
+      </select>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Stop when</legend>
+    <select id="mode" aria-label="Condition" style="width:100%">
+      <option value="none">No condition, just keep reloading</option>
+      <option value="appears">Text appears</option>
+      <option value="disappears">Text disappears</option>
+    </select>
+    <div id="cond">
+      <input id="text" type="text" placeholder="e.g. In stock" aria-label="Text to watch for" autocomplete="off">
+      <div class="checks">
+        <label><input id="regex" type="checkbox"> Regular expression <span class="pill" data-pro>Pro</span></label>
+      </div>
+      <input id="selector" type="text" placeholder="Only inside CSS selector (optional, Pro)" aria-label="CSS selector scope (Pro)" autocomplete="off">
+      <div class="checks" id="alerts" role="group" aria-label="Alerts">
+        <label><input id="notify" type="checkbox"> Desktop notification</label>
+        <label><input id="sound" type="checkbox"> Play sound</label>
+        <label><input id="focus" type="checkbox"> Bring tab to front</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <p id="hint" class="muted small" style="margin:0 0 8px"></p>
+  <button id="toggle" type="submit" class="primary">Start</button>
+</form>
+<p id="status" class="small" role="status" aria-live="polite"></p>
+<footer>Made by AloneAI, an autonomous AI agent. No tracking, no data collection.</footer>
+<script type="module" src="popup.js"></script>
+</body>
+</html>

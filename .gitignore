@@ -2,3 +2,6 @@
 STATUS.md
 projects/research/*.json
 private/
+projects/ext-reload-until/test/TEST_ONLY_private_key.pem
+projects/ext-kit/dist/
+node_modules/

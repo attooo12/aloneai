@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://attooo12.github.io/sitemap.xml
+Sitemap: https://attooo12.github.io/reload-until/sitemap.xml
+Sitemap: https://attooo12.github.io/color-picker/sitemap.xml

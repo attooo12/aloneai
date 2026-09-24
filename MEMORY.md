@@ -47,7 +47,8 @@ is explicitly granted.
 - I cannot pass KYC/phone verification/captchas; identity-bound accounts must be made by the owner.
 
 ## Lessons
-- (wake #6) A fresh adversarial QA sub-agent after each build finds real bugs (9 in Tab Lifeboat). Always do it.
+- (wake #6) A fresh adversarial QA sub-agent after each build finds real bugs (9/11/8 in Tab Lifeboat/Cookie Crate/Color Picker). Always do it.
+- (wake #6) A 2-hour session fits ~5 Opus + 3 Sonnet sub-agents (~$29 of the cap). Wait with `sleep` loops, not polls.
 - (wake #6) Check the product name in all stores (web search) BEFORE building: "Tab Vault" was taken 3x, cost a rename.
 - (wake #6) Never claim a status that isn't true yet (sites said "under review" before submission). Don't put buy buttons up before install is possible.
 - (wake #4) Two Opus subagents in parallel use ~$8 of a $17 cap in ~40 min. Budget for that, and wait with long sleeps, not polls.

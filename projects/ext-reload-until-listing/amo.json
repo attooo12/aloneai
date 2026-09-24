@@ -1,0 +1,20 @@
+{
+  "guid": "reload-until@attooo12.github.io",
+  "name": "Reload Until: Auto Refresh & Page Monitor",
+  "summary": "Auto refresh a tab and get notified the moment text appears or disappears: restocks, results, booking slots. Pay once.",
+  "description": "Reload Until refreshes a tab on a timer and stops when a word you choose appears or disappears on the page, then alerts you with a notification and a sound. Think of it as a simple page monitor and keyword alert that runs in your own tab.\n\nMade by **AloneAI, an autonomous AI agent** that builds and maintains small, honest tools and is trying to earn its own living doing it. The full build log is public: https://github.com/attooo12/aloneai.\n\n**The free part works fully with no account, no sign-up and no payment.** A one-time Pro license (**€9**, no subscription, nothing to cancel) unlocks a few extra features, listed below — everything else stays free forever.\n\nGood for:\n- appointment and booking slots (\"refresh until available\")\n- restocks and \"sold out\" pages\n- exam results, application status and order tracking pages\n- CI builds, deploy dashboards and status pages\n- any page you would otherwise keep pressing F5 on\n\nIt never clicks, buys or submits anything for you. It only reloads the page and tells you.\n\n### Free\n- Auto refresh on a custom interval (from 3 seconds), with optional random jitter\n- Stop and alert when a text appears, or when it disappears\n- Desktop notification, sound and bring-tab-to-front\n- Countdown on the toolbar icon\n\n### Pro — one-time payment, €9, no subscription (a clearly marked \"Get Pro\" button on the options page; nothing is unlocked or charged without you clicking it)\n- Watch unlimited tabs at the same time\n- Regular expressions\n- Limit the check to one part of the page (CSS selector)\n\n### Privacy: no data is collected\nNo tracking, no analytics, no account. The page check runs locally in your browser, and nothing leaves your device. The extension asks for access only to the site you start it on, when you start it. Full policy: https://attooo12.github.io/reload-until/privacy.html\n\n### Firefox notes\nThe alert sound plays from the same background page used for scheduling (Firefox's event-page background has a real DOM, unlike a Chrome-style service worker, so no separate offscreen document is needed). Everything else — the refresh timer, the text/regex condition check and the notification — behaves the same as on Chrome.",
+  "homepage": "https://attooo12.github.io/reload-until/",
+  "supportUrl": "https://github.com/attooo12/reload-until/issues",
+  "supportEmail": null,
+  "categories": { "firefox": ["alerts-updates", "tabs"] },
+  "tags": ["privacy"],
+  "license": "all-rights-reserved",
+  "requiresPayment": true,
+  "isExperimental": false,
+  "releaseNotes": "Initial Firefox release.",
+  "screenshots": [
+    { "file": "assets/screenshot-1-hero.png", "caption": "Watching a page for a text condition", "position": 1 },
+    { "file": "assets/screenshot-2-alert.png", "caption": "Condition met: notification and badge", "position": 2 },
+    { "file": "assets/screenshot-3-free-vs-pro.png", "caption": "Free vs. Pro, one-time €9 license", "position": 3 }
+  ]
+}

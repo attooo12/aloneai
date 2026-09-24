@@ -1,5 +1,40 @@
 # addons.mozilla.org (AMO) submission: copy-paste sheet for the owner (~15 min per extension)
 
+## Self-publish (preferred)
+
+The whole submission — build, upload, validation, listing metadata and screenshots — can be done from the
+command line via AMO's API v5, no web UI and no 2FA (`projects/research/stores-selfserve-2026-09-24.md`: the
+2FA requirement is for the AMO web UI only; pure API-key use is exempt). This is the preferred path; the
+manual dashboard steps below are the fallback if the API path ever breaks.
+
+1. **Get API keys** (once, human step — needs a Mozilla account, which needs its own email):
+   - Sign in at https://addons.mozilla.org/ (any Mozilla account; no developer fee).
+   - Go to https://addons.mozilla.org/developers/addon/api/key/, accept the Firefox Add-on Distribution
+     Agreement if prompted, and generate a JWT issuer + secret.
+2. **Export them** where the agent's shell can see them:
+   ```
+   export AMO_JWT_ISSUER='user:12345:678'
+   export AMO_JWT_SECRET='...'
+   ```
+3. **Publish one extension**:
+   ```
+   node projects/ext-kit/amo-publish.mjs <name>            # reload-until | color-picker | tab-lifeboat | cookie-crate
+   node projects/ext-kit/amo-publish.mjs <name> --dry-run   # print every request without sending anything
+   ```
+   The script rebuilds the Firefox zip fresh from source each time (`build-firefox.sh`), validates the listing
+   in `projects/ext-<name>-listing/amo.json` (categories and tags against AMO's live API, license against
+   AMO's documented license-slug list), uploads it, polls for validation, creates the add-on (or attaches a new
+   version if the `guid` already exists on AMO — same command either way), and uploads the screenshots.
+4. **One thing the API can't do**: AMO's documented Add-on Create/Edit endpoints have a `support_email` field
+   but no `support_url` field. The script prints the support URL from `amo.json` as a reminder — set it once by
+   hand per extension at the listing's "Edit Product Page" → "Support Information" in the AMO web UI (a 2FA-gated
+   page, so this one step needs a human with the Mozilla account, not the API key).
+5. All four `amo.json` files disclose, per AMO's payment-disclosure policy: that AloneAI (an autonomous AI
+   agent) made the extension, that the free part needs no account or payment, the exact one-time Pro price, and
+   that no data is collected. Checked for conflicts: none of the four extensions show any upsell automatically
+   (no `onInstalled` tab-opening, no popup nag) — every "Get Pro"/"Buy" action is a plain link/button the user
+   clicks on the options page, which satisfies AMO's "clear opt-in for monetization" rule as-is.
+
 Firefox needed real, if small, code changes (Chrome's `chrome.offscreen` and the `EyeDropper` API don't exist
 in Firefox). Those live in a **separate build step**, not a fork: `projects/ext-kit/build-firefox.sh` reads the
 same source in `ext-reload-until/` and `ext-color-picker/` and generates a Firefox variant into
@@ -19,6 +54,8 @@ below are expected/harmless — see "Known lint warnings").
 - Tab Lifeboat: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.0/tab-lifeboat-1.0.0-firefox.zip (wake #6: lint 0 errors;
   Firefox 139+ has the tabGroups API; not run in real Firefox yet. Listing text: projects/ext-tab-lifeboat-listing/LISTING.md,
   privacy https://attooo12.github.io/tab-lifeboat/privacy.html, category Tabs)
+- Cookie Crate: built locally at `ext-kit/dist/cookie-crate-1.0.0-firefox.zip` (no GitHub release cut yet). See
+  "3. Cookie Crate" below for the Firefox feasibility assessment.
 - Rebuild any of them at any time with `ext-kit/build-firefox.sh <extension-dir> --zip`.
 
 ## Account setup (once, free)
@@ -81,6 +118,48 @@ build log being public on GitHub doesn't imply a reuse license either way — th
   the user to use Chrome or Edge for that specific case — worth one line in the listing description so it
   isn't a surprise, e.g. "the picker window for browser-internal pages needs Chrome or Edge."
 
+## 3. Cookie Crate — Firefox feasibility assessment
+
+**Verdict: feasible, and simpler than the other three.** Cookie Crate has no background/service worker (popup +
+options only) and doesn't touch `chrome.offscreen` or `EyeDropper`, so it needed **no shim files at all** — only
+a manifest transform (drop `minimum_chrome_version`, add `browser_specific_settings.gecko`), same as the other
+three's manifest changes. Added as a `cookie-crate` case in `ext-kit/build-firefox.sh`.
+
+Cookie API differences checked:
+- **`partitionKey` (CHIPS)**: `cookies.js`'s `getAll()` already wraps Chrome's `partitionKey: {}` filter in a
+  try/catch that falls back to a plain `cookies.getAll(details)` call if the browser rejects/doesn't understand
+  that filter — written before this Firefox work, for defensiveness, but it turns out to be exactly what's
+  needed here too. Firefox partitions cookies differently (dynamic First-Party Isolation / Total Cookie
+  Protection) and doesn't expose the same `partitionKey` filter shape, so on Firefox this silently degrades to
+  "unpartitioned cookies only" instead of throwing. `setCookie`/`removeCookie` only ever send a `partitionKey`
+  field back if the cookie object already has one (i.e. came from a successful CHIPS-aware `getAll`), so nothing
+  Firefox-incompatible gets sent on that browser either. Net effect: on Firefox, CHIPS-partitioned cookies
+  (a narrow, newer case) may not show up; every other cookie operation is unaffected.
+- **`storeId` / `getAllCookieStores()`**: used as-is; Firefox implements this for its container tabs and private
+  browsing, so it should work at least as well as on Chrome (arguably better — Firefox Multi-Account Containers
+  give more distinct cookie stores than Chrome's built-in profiles).
+- **`firstPartyDomain`**: not used by this extension on either browser; not a compatibility concern.
+- **`chrome.scripting.executeScript` for storage access**: uses the `{ target: { tabId }, func, args }` form,
+  the exact same call shape already shipped and verified working in the Reload Until Firefox build (`sw.js`,
+  unmodified, calls `chrome.scripting.executeScript({ target, func: pageRun, args: [...] })`). No polyfill
+  needed; Firefox's `chrome.*` namespace already returns promises the same way `browser.*` does.
+- **`chrome.permissions.request/contains` for optional host permissions**: same call already proven for the
+  other two extensions' Firefox builds (needs Firefox 128+, already the version floor used here).
+
+Verification performed: `web-ext lint` on the built zip is **0 errors, 1 warning** (`UNSAFE_VAR_ASSIGNMENT` on
+a static, non-dynamic `innerHTML` string literal in `options.js` — a false positive, same class of warning
+already documented as harmless for the other two extensions). The built extension **installs successfully as a
+temporary add-on in a real (Playwright-provided) headless Firefox** via `web-ext run --firefox=<path> --args=-headless`,
+with no errors in the process. **Not verified** (time-boxed, consistent with the other two extensions' notes):
+an actual interactive session — opening the popup, editing a real cookie, using the Pro import/export/profile
+features — because Playwright doesn't support loading unpacked/temporary extensions in Firefox the way it does
+for Chromium, so this repo's existing e2e harness can't drive it. Recommend the same 5-minute manual smoke test
+suggested for Reload Until/Color Picker after AMO approves the first version.
+
+Listing: `projects/ext-cookie-crate-listing/amo.json`, screenshots already in that directory (same PNGs as
+Chrome), categories **Web Development** + **Privacy & Security**, privacy policy
+https://attooo12.github.io/cookie-crate/privacy.html, support https://github.com/attooo12/cookie-crate/issues.
+
 ## What changed for Firefox (for your own reference / if a reviewer asks)
 - `manifest.json`: `background.service_worker` → `background.scripts` + `type: "module"` (Firefox's MV3
   background is an event page, not a service worker); added `browser_specific_settings.gecko` (id, min
@@ -96,6 +175,9 @@ build log being public on GitHub doesn't imply a reuse license either way — th
   `EyeDropper().open()` (AbortError/OperationError) the same way for the native and fallback implementations,
   so no logic there needed to branch on browser.
 - Nothing else differs: same HTML/CSS, same `color.js`/`store.js`/`license.js`/`config.js`, same icons.
+- Cookie Crate needed no shim file at all — just the same manifest transform, since it has no background page
+  and doesn't touch `chrome.offscreen` or `EyeDropper`. See "3. Cookie Crate" above for the API-compatibility
+  reasoning (partitionKey/CHIPS, storeId, scripting).
 
 ## Known lint warnings (expected, not blocking)
 `web-ext lint` returns **0 errors** on both zips. Remaining warnings and why they're fine:
@@ -121,8 +203,10 @@ build log being public on GitHub doesn't imply a reuse license either way — th
   about:debugging or the AMO listing, try a pick on a normal page (main path) and the picker-window message on
   a restricted page, and check that the "condition met" beep plays on Reload Until.
 
-## Optional: publish updates via API later
-AMO has a JWT-based Add-on API (`https://addons.mozilla.org/api/v5/`) using a key/secret pair from
-https://addons.mozilla.org/developers/addon/api/key/. Same idea as the Chrome/Edge API notes: once the first
-manual submission is approved, give me that key/secret and I can ship future version bumps (`web-ext sign`)
-myself; listing/privacy edits stay with you.
+## Publishing via API (superseded the "Optional" note below — see "Self-publish (preferred)" at the top)
+This used to say "give me a key/secret later and I'll ship updates with `web-ext sign`." That's now built:
+`projects/ext-kit/amo-publish.mjs` does the full first submission (not just version bumps) — upload, listing
+metadata and screenshots — for any of the four extensions once `AMO_JWT_ISSUER`/`AMO_JWT_SECRET` exist. The one
+manual step that remains even after that (see point 4 in "Self-publish (preferred)"): AMO's API has no
+`support_url` field, so the support link has to be typed into the web UI once per extension after the first
+submission.

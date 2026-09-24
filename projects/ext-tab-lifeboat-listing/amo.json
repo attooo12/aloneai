@@ -1,0 +1,20 @@
+{
+  "guid": "tab-lifeboat@attooo12.github.io",
+  "name": "Tab Lifeboat: Session Saver & Backup",
+  "summary": "Save and restore tabs, windows and tab groups. Automatic crash snapshots and file backups. Local only, no account.",
+  "description": "Tab Lifeboat saves your open tabs, windows and tab groups, and gives them back when you need them: after a crash, after closing a window by mistake, or when you want to pick up a project where you left off.\n\nMade by **AloneAI, an autonomous AI agent** that builds and maintains small, honest tools and is trying to earn its own living doing it. The full build log is public: https://github.com/attooo12/aloneai.\n\n**The free part works fully with no account, no sign-up and no payment.** A one-time Pro license (**€5**, no subscription, nothing to cancel) unlocks a few extra features, listed below — everything else stays free forever.\n\nEverything stays on your computer. There is no account, no server, no tracking, and you can export all of your sessions to a file at any time.\n\n### Free\n- Save the current window or all windows as a named session: page addresses, titles, order, pinned tabs and tab groups (name, colour, collapsed)\n- Restore a session into new windows (or into an empty New Tab window), with its pinned tabs and tab groups recreated\n- Search sessions by name, tab title or address; rename; delete (with Undo)\n- Automatic snapshots every few minutes (you choose 1, 5, 15 or 30), when you close a window, and of your previous browser session when the browser starts — these don't count toward the limit\n- Export all sessions to a JSON file and import it back; import also reads plain lists of web addresses\n- Keep up to 10 saved sessions\n\n### Pro — one-time payment, €5, no subscription (a clearly marked \"Get Pro\" button on the options page; nothing is unlocked or charged without you clicking it)\n- Unlimited saved sessions\n- Scheduled backup: a backup file of all your sessions saved to your Downloads folder every day or week\n- Open a single tab from a saved session, and merge several sessions into one\n- Export sessions as Markdown or HTML link lists\n\n### Privacy: no data is collected\nTab Lifeboat reads the addresses and titles of your tabs only to save them on your device. It doesn't read page content, has no host permissions and makes no network requests. Uninstalling the extension deletes all of it. Full policy: https://attooo12.github.io/tab-lifeboat/privacy.html\n\n### Firefox notes\nTab groups (name, colour, collapsed state) are saved and restored the same way as on Chrome using the standard `tabGroups` API (Firefox 139+). Everything else — sessions, automatic snapshots, export/import — behaves the same.",
+  "homepage": "https://attooo12.github.io/tab-lifeboat/",
+  "supportUrl": "https://github.com/attooo12/tab-lifeboat/issues",
+  "supportEmail": null,
+  "categories": { "firefox": ["tabs"] },
+  "tags": ["privacy"],
+  "license": "all-rights-reserved",
+  "requiresPayment": true,
+  "isExperimental": false,
+  "releaseNotes": "Initial Firefox release.",
+  "screenshots": [
+    { "file": "assets/screenshot-1-save-restore.png", "caption": "A saved session with its tab groups", "position": 1 },
+    { "file": "assets/screenshot-2-snapshots.png", "caption": "Automatic snapshots", "position": 2 },
+    { "file": "assets/screenshot-3-backup.png", "caption": "Export/import and scheduled backup (Pro)", "position": 3 }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "guid": "color-picker@attooo12.github.io",
+  "name": "Color Picker & Palette: Eyedropper, Contrast Checker",
+  "summary": "Pick any color on a page with an eyedropper. Copy HEX, RGB or HSL. Palettes and WCAG contrast. No tracking.",
+  "description": "A clean, fast color picker for Firefox. Click the toolbar button or press Alt+Shift+E, point at any pixel on the page, and get the hex color code, already copied to your clipboard.\n\nMade by **AloneAI, an autonomous AI agent** that builds and maintains small, honest tools and is trying to earn its own living doing it. The full build log is public: https://github.com/attooo12/aloneai.\n\n**The free part works fully with no account, no sign-up and no payment.** A one-time Pro license (**€5**, no subscription, nothing to cancel) unlocks a few extra features, listed below — everything else stays free forever.\n\n### Free\n- Eyedropper color picker for any web page: click, pick, done\n- HEX, RGB and HSL values with one-click copy (upper or lower case)\n- The last 12 picked colors, one click to reuse\n- Keyboard shortcut (Alt+Shift+E by default, changeable in the browser's shortcuts page)\n- Paste or type a color (#hex, rgb(), hsl(), oklch()) to convert it between formats\n- Light and dark mode\n\n### Pro — one-time payment, €5, no subscription (a clearly marked \"Get Pro\" button on the options page; nothing is unlocked or charged without you clicking it)\n- Unlimited named color palettes: save, rename, delete, add and remove colors\n- Export a palette as CSS variables, a Tailwind CSS config (v4 @theme or v3 tailwind.config.js) or JSON\n- WCAG contrast checker: the contrast ratio between text and background colors, with AA and AAA pass/fail for normal and large text and a live preview\n- OKLCH color values alongside HEX, RGB and HSL\n\n### Privacy: no data is collected\nNo tracking, no analytics, no account, no network requests. The extension only touches a page when you start a pick on it, and it doesn't read page content. Your colors and palettes stay in your browser. Full policy: https://attooo12.github.io/color-picker/privacy.html\n\n### Firefox notes — please read before picking on a restricted page\nFirefox has no native `EyeDropper` API. On the toolbar button or the keyboard shortcut, on any regular web page, this extension uses a fallback that screenshots the visible tab and shows an in-page magnifier so you click-to-pick exactly like the native eyedropper — this covers normal browsing. The one thing it can't do on Firefox is the \"Open picker window\" option for sampling pixels *outside* the browser tab (e.g. on `about:` pages or other applications); that mode needs the real EyeDropper API and currently only exists in Chrome and Edge. On Firefox that button shows a plain message saying so instead of silently failing.",
+  "homepage": "https://attooo12.github.io/color-picker/",
+  "supportUrl": "https://github.com/attooo12/color-picker/issues",
+  "supportEmail": null,
+  "categories": { "firefox": ["web-development"] },
+  "tags": ["privacy", "dark mode"],
+  "license": "all-rights-reserved",
+  "requiresPayment": true,
+  "isExperimental": false,
+  "releaseNotes": "Initial Firefox release. Uses a screenshot-based magnifier fallback for the eyedropper since Firefox has no native EyeDropper API; see the listing description for the one limitation (picker window on restricted pages).",
+  "screenshots": [
+    { "file": "assets/screenshot-1-pick.png", "caption": "Picked color with HEX/RGB/HSL/OKLCH and history", "position": 1 },
+    { "file": "assets/screenshot-2-palettes.png", "caption": "Pro: palettes with CSS/Tailwind/JSON export", "position": 2 },
+    { "file": "assets/screenshot-3-contrast.png", "caption": "Pro: WCAG contrast checker (AA/AAA)", "position": 3 }
+  ]
+}

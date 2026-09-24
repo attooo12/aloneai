@@ -77,6 +77,26 @@ m['browser_specific_settings'] = {"gecko": {
 json.dump(m, open(path, 'w'), indent=2)
 PY
     ;;
+  cookie-crate)
+    GECKO_ID="cookie-crate@attooo12.github.io"
+    MIN_FF="142.0"  # 128+ for optional_host_permissions, 140+ for data_collection_permissions
+    # No background/service worker (popup+options only) and no chrome.offscreen/EyeDropper usage, so no shims
+    # are needed at all: cookies.js's getAll() already falls back gracefully when Chrome's CHIPS
+    # `partitionKey: {}` filter isn't understood (Firefox partitions cookies differently, via dFPI, and
+    # doesn't expose that filter the same way), and chrome.scripting.executeScript({func, args}) is the same
+    # call already proven to work in the reload-until Firefox build. Only the manifest needs to change.
+    python3 - "$out/manifest.json" "$GECKO_ID" "$MIN_FF" <<'PY'
+import json, sys
+path, gecko_id, min_ff = sys.argv[1:4]
+m = json.load(open(path))
+m.pop('minimum_chrome_version', None)
+m['browser_specific_settings'] = {"gecko": {
+    "id": gecko_id, "strict_min_version": min_ff,
+    "data_collection_permissions": {"required": ["none"]}
+}}
+json.dump(m, open(path, 'w'), indent=2)
+PY
+    ;;
   *)
     echo "no Firefox build rule for '$name' (add one in build-firefox.sh)"; exit 1
     ;;

@@ -25,14 +25,14 @@ Every extension also has an optional **marquee tile** (1400×560) next to its pr
 - **Distribution**: Free (Pro is a separate one-time Stripe purchase), all regions, Public.
 
 ## 2. Color Picker & Palette (ready)
-- Zip: https://github.com/attooo12/color-picker/releases/download/v1.0.0/color-picker-1.0.0.zip
+- Zip: https://github.com/attooo12/color-picker/releases/download/v1.0.1/color-picker-1.0.1.zip
 - Listing + justifications: `projects/ext-color-picker-listing/LISTING.md`, assets in `projects/ext-color-picker-listing/assets/`.
 - Privacy policy URL: https://attooo12.github.io/color-picker/privacy.html · Support: https://github.com/attooo12/color-picker/issues
 - Single purpose: "Pick colors from web pages and manage them (formats, history, palettes, contrast)."
 - Permissions: activeTab, scripting, storage only. Remote code: No. Data usage: nothing.
 
 ## 3. Tab Lifeboat: Session Saver & Backup (ready, wake #6)
-- Zip: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.0/tab-lifeboat-1.0.0.zip
+- Zip: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.1/tab-lifeboat-1.0.1.zip
 - Listing + justifications: `projects/ext-tab-lifeboat-listing/LISTING.md`, assets in `projects/ext-tab-lifeboat-listing/assets/`.
   Category Productivity. Homepage https://attooo12.github.io/tab-lifeboat/ · Support https://github.com/attooo12/tab-lifeboat/issues
 - Privacy policy URL: https://attooo12.github.io/tab-lifeboat/privacy.html
@@ -41,7 +41,7 @@ Every extension also has an optional **marquee tile** (1400×560) next to its pr
   Data usage: tick **Web history** (tab URLs/titles, stored only on the device), then the three certifications.
 
 ## 4. Cookie Crate: Cookie & Storage Editor (ready, wake #6)
-- Zip: https://github.com/attooo12/cookie-crate/releases/download/v1.0.0/cookie-crate-1.0.0.zip
+- Zip: https://github.com/attooo12/cookie-crate/releases/download/v1.0.1/cookie-crate-1.0.1.zip
 - Listing, justifications, data answers: `projects/ext-cookie-crate-listing/LISTING.md`; screenshots `screenshot-{1,2,3}.png`, promo `promo-440x280.png`
   in the same folder. Category **Developer Tools**. Homepage https://attooo12.github.io/cookie-crate/ · Support https://github.com/attooo12/cookie-crate/issues
 - Privacy policy URL: https://attooo12.github.io/cookie-crate/privacy.html · Remote code: No · Data usage: nothing (local only).

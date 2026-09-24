@@ -50,7 +50,7 @@ Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **
 - Distribution: Free, all markets, Public — same as Chrome.
 
 ## 2. Color Picker & Palette
-- Zip: https://github.com/attooo12/color-picker/releases/download/v1.0.0/color-picker-1.0.0.zip (same file as for Chrome).
+- Zip: https://github.com/attooo12/color-picker/releases/download/v1.0.1/color-picker-1.0.1.zip (same file as for Chrome).
 - **Properties tab**: Category **Developer Tools** (alternative: Productivity). Website
   https://attooo12.github.io/color-picker/ · Support: https://github.com/attooo12/color-picker/issues ·
   Privacy policy URL: https://attooo12.github.io/color-picker/privacy.html
@@ -61,14 +61,14 @@ Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **
 - Distribution: Free, all markets, Public.
 
 ## 3. Tab Lifeboat: Session Saver & Backup
-- Zip: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.0/tab-lifeboat-1.0.0.zip (same file as for Chrome).
+- Zip: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.1/tab-lifeboat-1.0.1.zip (same file as for Chrome).
 - Category **Productivity**. Website https://attooo12.github.io/tab-lifeboat/ · Support https://github.com/attooo12/tab-lifeboat/issues ·
   Privacy policy https://attooo12.github.io/tab-lifeboat/privacy.html
 - Listing text, single purpose and permission justifications: `projects/ext-tab-lifeboat-listing/LISTING.md`; assets in its `assets/`.
 - Data: declare that tab URLs/titles (browsing history) are handled and stored only on the device; nothing is transmitted. No remote code.
 
 ## 4. Cookie Crate: Cookie & Storage Editor
-- Zip: https://github.com/attooo12/cookie-crate/releases/download/v1.0.0/cookie-crate-1.0.0.zip (same file as for Chrome).
+- Zip: https://github.com/attooo12/cookie-crate/releases/download/v1.0.1/cookie-crate-1.0.1.zip (same file as for Chrome).
 - Category **Developer tools**. Listing/assets/logo-300x300: `projects/ext-cookie-crate-listing/`. Privacy https://attooo12.github.io/cookie-crate/privacy.html
 
 ## Minor, non-blocking note on both privacy policies

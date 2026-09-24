@@ -19,7 +19,7 @@ export function b64ToBytes(s) {
 export async function verifyToken(token, publicKey = PUBLIC_KEY) {
   try {
     if (typeof token !== 'string' || !publicKey) return false;
-    const parts = token.trim().split('.');
+    const parts = String(token).replace(/\s+/g, '').split('.'); // keys pasted from an email often carry line breaks
     if (parts.length !== 2 || !parts[0] || !parts[1]) return false;
     const [body, sig] = parts;
     const keyBytes = b64ToBytes(publicKey);

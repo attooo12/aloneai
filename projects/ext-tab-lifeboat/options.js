@@ -44,7 +44,7 @@ $('buy').addEventListener('click', () => { if (CHECKOUT_URL) chrome.tabs.create(
 
 // ---------- license ----------
 $('save').addEventListener('click', async () => {
-  const key = $('license').value.trim();
+  const key = $('license').value.replace(/\s+/g, ''); // keys pasted from an email often carry line breaks
   if (!(await verifyToken(key))) { $('msg').innerHTML = '<span class="error">This license key is not valid for Tab Lifeboat.</span>'; return; }
   await chrome.storage.sync.set({ license: key });
   $('msg').innerHTML = '<span class="ok">Saved. Pro unlocked.</span>';

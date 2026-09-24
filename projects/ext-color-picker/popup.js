@@ -1,5 +1,5 @@
 import { isPro } from './license.js';
-import { PRO_PRICE } from './config.js';
+import { PRO_PRICE, shortcutsTarget, FIREFOX_SHORTCUTS_HINT } from './config.js';
 import { formats, normalizeHex, parseColor, contrastRatio, wcag, exportPalette, toHex } from './color.js';
 import { injectPicker, openPickerWindow, isRestrictedUrl, RESTRICTED_MESSAGE } from './pick.js';
 import * as store from './store.js';
@@ -209,10 +209,15 @@ async function renderHint() {
   } else if (sc) {
     h.textContent = `Shortcut: ${sc}`;
   } else {
-    const b = document.createElement('button');
-    b.type = 'button'; b.className = 'link'; b.textContent = 'Set a keyboard shortcut';
-    b.addEventListener('click', () => chrome.tabs.create({ url: 'chrome://extensions/shortcuts' }));
-    h.append(b);
+    const target = shortcutsTarget();
+    if (target.browser === 'firefox') {
+      h.textContent = FIREFOX_SHORTCUTS_HINT;
+    } else {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'link'; b.textContent = 'Set a keyboard shortcut';
+      b.addEventListener('click', () => chrome.tabs.create({ url: target.url }));
+      h.append(b);
+    }
   }
   if (!WINDOW_MODE) {
     const tab = await getTargetTab().catch(() => null);

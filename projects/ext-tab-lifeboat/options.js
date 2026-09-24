@@ -34,7 +34,7 @@ async function refresh() {
   const last = s.backupLast ? `Last backup: ${new Date(s.backupLast).toLocaleString()}.` : 'No backup made yet.';
   // Scheduled backups stop silently without Pro or the downloads permission (removable in chrome://extensions): say so.
   const paused = s.backup === 'off' ? '' : !pro ? ' Scheduled backups are paused: they need Pro.'
-    : !(await hasDownloads()) ? ' Scheduled backups are paused: Chrome\'s downloads permission was removed. Click "Back up now" to grant it again.' : '';
+    : !(await hasDownloads()) ? ' Scheduled backups are paused: the browser\'s downloads permission was removed. Click "Back up now" to grant it again.' : '';
   $('backup-status').textContent = last + paused;
   $('backup-status').classList.toggle('error', !!paused);
 }
@@ -89,7 +89,7 @@ async function importText(text) {
   const r = await importSessions(parsed.sessions);
   const out = [node('span', `Imported ${r.added} session${r.added === 1 ? '' : 's'}${r.duplicates ? `; ${r.duplicates} already here, skipped` : ''}.`, 'ok')];
   const notes = [...parsed.problems];
-  if (parsed.droppedTabs) notes.push(`${parsed.droppedTabs} tab(s) with addresses Chrome can't reopen (for example javascript: or data:) were left out`);
+  if (parsed.droppedTabs) notes.push(`${parsed.droppedTabs} tab(s) with addresses the browser can't reopen (for example javascript: or data:) were left out`);
   if (notes.length) out.push(list(notes));
   result(out);
   refresh();
@@ -107,7 +107,7 @@ $('backup').addEventListener('change', async () => {
   const value = $('backup').value;
   if (value !== 'off') {
     const granted = await chrome.permissions.request({ permissions: ['downloads'] }).catch(() => false);
-    if (!granted) { $('backup').value = 'off'; $('backup-status').textContent = 'Chrome did not grant the downloads permission, so backups stay off.'; return; }
+    if (!granted) { $('backup').value = 'off'; $('backup-status').textContent = 'The browser did not grant the downloads permission, so backups stay off.'; return; }
   }
   await setSettings({ backup: value });
   $('backup-status').textContent = value === 'off' ? 'Scheduled backups are off.' : `Backups will be saved ${value}.`;

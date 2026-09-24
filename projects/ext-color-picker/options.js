@@ -1,5 +1,5 @@
 import { isPro, verifyToken } from './license.js';
-import { CHECKOUT_URL, PRO_PRICE } from './config.js';
+import { CHECKOUT_URL, PRO_PRICE, shortcutsTarget, FIREFOX_SHORTCUTS_HINT } from './config.js';
 import { getSettings, setSettings } from './store.js';
 
 const $ = (id) => document.getElementById(id);
@@ -39,7 +39,16 @@ for (const id of ['upper', 'autoCopy']) {
 getSettings().then((s) => { $('upper').checked = s.upper; $('autoCopy').checked = s.autoCopy; });
 
 chrome.commands.getAll().then((cmds) => { $('shortcut').textContent = cmds.find((c) => c.name === 'pick-color')?.shortcut || 'not set'; });
-$('shortcuts').addEventListener('click', () => chrome.tabs.create({ url: 'chrome://extensions/shortcuts' }));
+{
+  const target = shortcutsTarget();
+  if (target.browser === 'firefox') {
+    $('shortcuts').hidden = true;
+    $('shortcuts-hint').hidden = false;
+    $('shortcuts-hint').textContent = FIREFOX_SHORTCUTS_HINT;
+  } else {
+    $('shortcuts').addEventListener('click', () => chrome.tabs.create({ url: target.url }));
+  }
+}
 
 chrome.storage.sync.get('license').then(({ license }) => { if (license) $('license').value = license; });
 refresh();

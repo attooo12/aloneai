@@ -1,7 +1,8 @@
 import { isPro, verifyToken, normalizeToken } from './license.js';
-import { CHECKOUT_URL } from './config.js';
+import { CHECKOUT_URL, PRO_PRICE } from './config.js';
 
 const $ = (id) => document.getElementById(id);
+for (const el of document.querySelectorAll('.price')) el.textContent = PRO_PRICE;
 
 async function refresh() {
   const pro = await isPro();

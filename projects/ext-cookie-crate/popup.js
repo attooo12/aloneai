@@ -54,7 +54,7 @@ async function init() {
   const origins = originsForHost(host);
   if (!(await hasOrigins(origins))) {
     $('noaccess').hidden = false;
-    $('grant-origins').textContent = `Chrome will ask to allow: ${origins.map((o) => o.replace('*://', '').replace('/*', '')).join(', ')} (the site and its parent domains, whose cookies also apply here). Nothing else. You can revoke it any time in chrome://extensions. If this popup closes while Chrome asks, just open it again.`;
+    $('grant-origins').textContent = `The browser will ask to allow: ${origins.map((o) => o.replace('*://', '').replace('/*', '')).join(', ')} (the site and its parent domains, whose cookies also apply here). Nothing else. You can revoke it any time in your browser's extensions settings. If this popup closes while the browser asks, just open it again.`;
     $('grant').onclick = async () => {
       if (await requestOrigins(origins)) { $('noaccess').hidden = true; await start(); } else $('noaccess-msg').textContent = 'Access was not granted, so Cookie Crate cannot show this site\'s cookies.';
     };

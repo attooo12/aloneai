@@ -52,7 +52,7 @@
     <button id="remove" type="button">Remove key</button>
     <span id="msg" class="small" role="status" aria-live="polite"></span>
   </div>
-  <p class="muted small">The key is verified offline on this device and stored in Chrome sync storage. It is never sent anywhere.</p>
+  <p class="muted small">The key is verified offline on this device and stored in the browser's sync storage. It is never sent anywhere.</p>
 </fieldset>
 
 <fieldset>
@@ -79,7 +79,7 @@
     <select id="backup"><option value="off">Off</option><option value="daily">Daily</option><option value="weekly">Weekly</option></select>
   </div>
   <div class="row"><button id="backup-now" type="button">Back up now</button><span id="backup-status" class="small muted" role="status" aria-live="polite"></span></div>
-  <p class="muted small">Turning this on asks Chrome for the "Manage your downloads" permission, which is used only to write these files. Chrome shows each backup in its downloads list. The file can be imported above.</p>
+  <p class="muted small">Turning this on asks the browser for the "Manage your downloads" permission, which is used only to write these files. The browser shows each backup in its downloads list. The file can be imported above.</p>
 </fieldset>
 
 <fieldset>
@@ -87,19 +87,19 @@
   <div class="field"><label for="autoMinutes">Take a snapshot of all windows every</label>
     <select id="autoMinutes"></select></div>
   <div class="field"><label for="autoKeep">Keep the last</label><select id="autoKeep"></select><span>snapshots</span></div>
-  <p class="muted small">Snapshots are also taken when you close a window and when Chrome starts (of the previous browser session). Unchanged snapshots are skipped. If your number of tabs suddenly drops by more than half, the snapshot from before the drop is protected and kept aside (up to 10), so a crash or an accidental "close all" can't rotate it away. Empty snapshots are never stored.</p>
+  <p class="muted small">Snapshots are also taken when you close a window and when the browser starts (of the previous browser session). Unchanged snapshots are skipped. If your number of tabs suddenly drops by more than half, the snapshot from before the drop is protected and kept aside (up to 10), so a crash or an accidental "close all" can't rotate it away. Empty snapshots are never stored.</p>
   <div class="row"><button id="snap-now" type="button">Take a snapshot now</button><span id="snap-status" class="small muted" role="status" aria-live="polite"></span></div>
 </fieldset>
 
 <fieldset>
   <legend>Restoring</legend>
-  <label class="check"><input id="lazy" type="checkbox"><span>Unload restored background tabs once they have opened, so they only use memory again when you click them (experimental). Uses Chrome's tab discarding; turn it off if restored tabs misbehave.</span></label>
+  <label class="check"><input id="lazy" type="checkbox"><span>Unload restored background tabs once they have opened, so they only use memory again when you click them (experimental). Uses the browser's tab discarding; turn it off if restored tabs misbehave.</span></label>
 </fieldset>
 
 <fieldset>
   <legend>About</legend>
   <p class="small">This extension is made and maintained by <b>AloneAI</b>, an autonomous AI agent that tries to earn its own living by building small, honest tools. Its build log is public: <a href="https://github.com/attooo12/aloneai" target="_blank" rel="noopener">github.com/attooo12/aloneai</a>.</p>
-  <p class="small">It has no analytics, makes no network requests and loads no remote code. Your sessions stay in Chrome's local storage on this device; uninstalling the extension deletes them, so export a backup first.</p>
+  <p class="small">It has no analytics, makes no network requests and loads no remote code. Your sessions stay in the browser's local storage on this device; uninstalling the extension deletes them, so export a backup first.</p>
 </fieldset>
 
 <footer>Made by AloneAI, an autonomous AI agent. No tracking, no data collection.</footer>

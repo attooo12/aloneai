@@ -1,12 +1,16 @@
 # Microsoft Edge Add-ons submission: copy-paste sheet for the owner (~10 min per extension)
 
-**Bottom line: the Chrome zips work on Edge unchanged — no code changes needed.** Edge is Chromium-based, ships
-the same MV3 engine, and supports `chrome.offscreen`, `optional_host_permissions`, `chrome.scripting`,
-`chrome.alarms`/`notifications` identically to Chrome (Microsoft's own docs describe publishing Chromium
-extensions to Edge Add-ons "with minimal to no code changes"). `minimum_chrome_version: "137"` in both
-manifests is harmless on Edge: Edge's version number tracks Chrome's, so it gates the same real-world release.
-Verified by re-running each extension's existing Chrome/Playwright test suite unchanged (see the "what was
-verified" note at the end) — nothing about the Edge build path touches the extension source.
+**Bottom line: the extension code needs no changes for Edge — only the zip's declared locale set differs.** Edge
+is Chromium-based, ships the same MV3 engine, and supports `chrome.offscreen`, `optional_host_permissions`,
+`chrome.scripting`, `chrome.alarms`/`notifications` identically to Chrome (Microsoft's own docs describe
+publishing Chromium extensions to Edge Add-ons "with minimal to no code changes"). `minimum_chrome_version:
+"137"` in all four manifests is harmless on Edge: Edge's version number tracks Chrome's, so it gates the same
+real-world release. Verified by re-running each extension's existing Chrome/Playwright test suite unchanged
+(see the "what was verified" note at the end) — nothing about the Edge build path touches the extension source.
+The one difference from the Chrome upload is the zip itself: use the **`-edge.zip`** release asset linked below
+for each extension, not the plain one. It's produced by `ext-kit/build-edge.sh` and is byte-identical to the
+Chrome zip except it keeps only the English `_locales/en/` folder — see "Edge zip is English-only on purpose"
+further down for why.
 
 Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **New extension** → upload the zip
 → fill the tabs below → **Submit for review**.
@@ -33,7 +37,8 @@ Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **
 - **Video URL, optional**: skip.
 
 ## 1. Reload Until
-- Zip: https://github.com/attooo12/reload-until/releases/download/v1.0.3/reload-until-1.0.3.zip (same file as for Chrome).
+- Zip: https://github.com/attooo12/reload-until/releases/download/v1.0.4/reload-until-1.0.4-edge.zip (Edge-specific
+  build: same code and manifest as the Chrome zip, English-only `_locales` — see "Edge zip is English-only" below).
 - **Properties tab**: Category **Productivity** (Edge's equivalent of Chrome's "Tools"). Website
   https://attooo12.github.io/reload-until/ · Support contact: your email or
   https://github.com/attooo12/reload-until/issues · Privacy policy URL:
@@ -50,7 +55,8 @@ Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **
 - Distribution: Free, all markets, Public — same as Chrome.
 
 ## 2. Color Picker & Palette
-- Zip: https://github.com/attooo12/color-picker/releases/download/v1.0.2/color-picker-1.0.2.zip (same file as for Chrome).
+- Zip: https://github.com/attooo12/color-picker/releases/download/v1.0.3/color-picker-1.0.3-edge.zip (Edge-specific
+  build, English-only `_locales`).
 - **Properties tab**: Category **Developer Tools** (alternative: Productivity). Website
   https://attooo12.github.io/color-picker/ · Support: https://github.com/attooo12/color-picker/issues ·
   Privacy policy URL: https://attooo12.github.io/color-picker/privacy.html
@@ -61,14 +67,16 @@ Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **
 - Distribution: Free, all markets, Public.
 
 ## 3. Tab Lifeboat: Session Saver & Backup
-- Zip: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.2/tab-lifeboat-1.0.2.zip (same file as for Chrome).
+- Zip: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.3/tab-lifeboat-1.0.3-edge.zip (Edge-specific
+  build, English-only `_locales`).
 - Category **Productivity**. Website https://attooo12.github.io/tab-lifeboat/ · Support https://github.com/attooo12/tab-lifeboat/issues ·
   Privacy policy https://attooo12.github.io/tab-lifeboat/privacy.html
 - Listing text, single purpose and permission justifications: `projects/ext-tab-lifeboat-listing/LISTING.md`; assets in its `assets/`.
 - Data: declare that tab URLs/titles (browsing history) are handled and stored only on the device; nothing is transmitted. No remote code.
 
 ## 4. Cookie Crate: Cookie & Storage Editor
-- Zip: https://github.com/attooo12/cookie-crate/releases/download/v1.0.2/cookie-crate-1.0.2.zip (same file as for Chrome).
+- Zip: https://github.com/attooo12/cookie-crate/releases/download/v1.0.3/cookie-crate-1.0.3-edge.zip (Edge-specific
+  build, English-only `_locales`).
 - Category **Developer tools**. Listing/assets/logo-300x300: `projects/ext-cookie-crate-listing/`. Privacy https://attooo12.github.io/cookie-crate/privacy.html
 - Data usage: same as Chrome, **Authentication information** and **Website content** (handled only on the device). No remote code.
 
@@ -76,7 +84,13 @@ Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **
 - Edge policy 1.1.2 says a listing "must not reference other browsers". The LISTING.md descriptions are now
   browser-neutral (no "Chrome"), so the same text works on both stores. Don't add "for Chrome" when pasting.
 - Edge policy 1.8.2 requires the price of paid features in the metadata: each description now states the one-time
-  Pro price (€9 / €5 / €5 / €7).
+  Pro price (€9 / €5 / €5 / €7). Reload Until also now shows that price inside the extension itself (the "Get
+  Pro" button on the options page), matching the other three.
+- Edge's ~45-character name cap: every localized `extName` (`_locales/*/messages.json`, all four extensions) is
+  now at most 45 characters, including the ones over the limit in the previous audit (Reload Until it/nl/pl/pt_BR,
+  Color Picker es/pt_BR, Tab Lifeboat pl, Cookie Crate es/it/pt_BR) — shortened with natural wording, not just
+  truncated. Since the Edge zip only ships `_locales/en/` (see below), this mostly matters if you ever also
+  submit the full 9-language zip to Edge; the English name Edge actually reads today is unaffected (36-44 chars).
 - **Notes for certification**: paste a reviewer license key (ask me for one per extension; never commit it) and one
   line on how to use it (options page, License key, Save).
 - Search terms (optional, max 7 terms, 30 characters each, 21 words in total), suggested:
@@ -84,10 +98,15 @@ Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **
   Color Picker: color picker · eyedropper · hex color · contrast checker · color palette · wcag · oklch
   Tab Lifeboat: session manager · save tabs · restore tabs · tab groups · crash recovery · tab backup · export tabs
   Cookie Crate: cookie editor · localStorage editor · export cookies · import cookies · cookies.txt · sessionStorage · delete cookies
-- The zips declare 9 languages (`_locales`). Partner Center asks for a Description and a logo for **each** language
-  in the package. Use the same logo everywhere. For the descriptions, ask me for the 8 translations, or paste the
-  English one and accept a possible localization remark (policy 1.7). The extension UI itself is English-only,
-  which each localized short description already says.
+- **Edge zip is English-only on purpose.** Edge policy 1.7 requires a Description (and logo) for *every* language
+  declared in the uploaded package's `_locales` folder. The Chrome/AMO zips ship 9 languages, which would mean
+  pasting a description into Partner Center 9 times per extension (36 pastes total) just to satisfy that
+  requirement. Instead, `ext-kit/build-edge.sh <extension-dir>` builds a separate `<slug>-<version>-edge.zip`
+  that is byte-identical to the Chrome zip except `_locales/` keeps only `en/` — so Edge sees exactly one
+  declared locale, every `__MSG_*__` in the manifest still resolves (to English), and you paste the English
+  listing once, same as before. Nothing about the extension's code, permissions or behavior differs from the
+  Chrome build; only the zip's declared locale set is narrower. Rebuild it any time with
+  `ext-kit/build-edge.sh <extension-dir>`.
 
 ## Privacy policies
 All four `privacy.html` pages are browser-neutral since 2026-09-24 (Edge policy 1.5.2 asks for that), list the

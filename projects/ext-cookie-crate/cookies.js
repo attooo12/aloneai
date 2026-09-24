@@ -40,8 +40,8 @@ export async function setCookie(c, storeId = c.storeId) {
   // Chrome won't let an http:// URL create a non-Secure cookie where a Secure one of the same name exists (e.g. when
   // un-ticking Secure). The cookie is still non-Secure when set via https://, so retry that way.
   if ((!r || r.error) && !c.secure) { const r2 = await attempt({ ...toSetDetails(c, storeId), url: cookieUrl(c, true) }); if (r2 && !r2.error) r = r2; }
-  if (r && r.error) throw new Error(/Failed to parse or set/.test(r.error) ? `Chrome refused cookie "${c.name}" (check domain, path, Secure and SameSite).` : r.error);
-  if (!r) throw new Error(chrome.runtime.lastError?.message || 'Chrome refused this cookie (check domain, Secure and SameSite).');
+  if (r && r.error) throw new Error(/Failed to parse or set/.test(r.error) ? `The browser refused cookie "${c.name}" (check domain, path, Secure and SameSite).` : r.error);
+  if (!r) throw new Error(chrome.runtime.lastError?.message || 'The browser refused this cookie (check domain, Secure and SameSite).');
   return r;
 }
 

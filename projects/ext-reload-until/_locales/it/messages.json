@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Reload Until: Aggiornamento automatico e monitor",
+    "message": "Reload Until: Auto-aggiornamento e monitor",
     "description": "Extension name shown in the store and browser UI"
   },
   "extShortName": {

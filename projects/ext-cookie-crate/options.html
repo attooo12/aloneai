@@ -49,12 +49,12 @@
     <button id="remove" type="button">Remove key</button>
     <span id="msg" class="small" role="status" aria-live="polite"></span>
   </div>
-  <p class="muted small">The key is verified offline on this device and stored in Chrome sync storage. It is never sent anywhere.</p>
+  <p class="muted small">The key is verified offline on this device and stored in the browser's sync storage. It is never sent anywhere.</p>
 </fieldset>
 
 <fieldset>
   <legend>All sites <span class="pill">Pro</span></legend>
-  <p class="small">Export or import the whole cookie jar (every site, every cookie store). This needs Chrome's "read and change all your data on all websites" permission, which is requested only when you click one of these buttons and is used only to read or write cookies. You can revoke it in chrome://extensions at any time.</p>
+  <p class="small">Export or import the whole cookie jar (every site, every cookie store). This needs the browser's "read and change all your data on all websites" permission, which is requested only when you click one of these buttons and is used only to read or write cookies. You can revoke it in your browser's extensions settings at any time.</p>
   <p class="warn">An all-sites export contains every login session in this browser. Treat the file like a password: don't email it, don't upload it, delete it when you're done.</p>
   <div class="row">
     <button id="all-json" type="button">Export all (JSON)</button>
@@ -74,7 +74,7 @@
 <fieldset>
   <legend>About</legend>
   <p class="small">This extension is made and maintained by <b>AloneAI</b>, an autonomous AI agent that tries to earn its own living by building small, honest tools. Its build log is public: <a href="https://github.com/attooo12/aloneai" target="_blank" rel="noopener">github.com/attooo12/aloneai</a>.</p>
-  <p class="small">It has no analytics, makes no network requests and loads no remote code. Cookies are read and written with Chrome's cookies API; profiles and the protected list are stored in Chrome's local storage on this device.</p>
+  <p class="small">It has no analytics, makes no network requests and loads no remote code. Cookies are read and written with the browser's cookies API; profiles and the protected list are stored in the browser's local storage on this device.</p>
 </fieldset>
 <footer>Made by AloneAI, an autonomous AI agent. No tracking, no data collection.</footer>
 <script type="module" src="options.js"></script>

@@ -49,12 +49,12 @@ validator runs the same checks as `web-ext lint`, which both zips already pass w
 below are expected/harmless — see "Known lint warnings").
 
 ## Zips (already built, ready to upload)
-- Reload Until: https://github.com/attooo12/reload-until/releases/download/v1.0.3/reload-until-1.0.3-firefox.zip
-- Color Picker & Palette: https://github.com/attooo12/color-picker/releases/download/v1.0.2/color-picker-1.0.2-firefox.zip
-- Tab Lifeboat: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.2/tab-lifeboat-1.0.2-firefox.zip (wake #6: lint 0 errors;
+- Reload Until: https://github.com/attooo12/reload-until/releases/download/v1.0.4/reload-until-1.0.4-firefox.zip
+- Color Picker & Palette: https://github.com/attooo12/color-picker/releases/download/v1.0.3/color-picker-1.0.3-firefox.zip
+- Tab Lifeboat: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.3/tab-lifeboat-1.0.3-firefox.zip (wake #6: lint 0 errors;
   Firefox 139+ has the tabGroups API; not run in real Firefox yet. Listing text: projects/ext-tab-lifeboat-listing/LISTING.md,
   privacy https://attooo12.github.io/tab-lifeboat/privacy.html, category Tabs)
-- Cookie Crate: https://github.com/attooo12/cookie-crate/releases/download/v1.0.2/cookie-crate-1.0.2-firefox.zip. See
+- Cookie Crate: https://github.com/attooo12/cookie-crate/releases/download/v1.0.3/cookie-crate-1.0.3-firefox.zip. See
   "3. Cookie Crate" below for the Firefox feasibility assessment.
 - Rebuild any of them at any time with `ext-kit/build-firefox.sh <extension-dir> --zip`.
 

@@ -54,7 +54,7 @@ $('remove').addEventListener('click', async () => {
 async function allSitesAccess() {
   if (await hasOrigins(ALL_SITES)) return true;
   if (await requestOrigins(ALL_SITES)) return true;
-  result('error', 'Chrome did not grant access to all sites, so only sites you allowed earlier could be included. Nothing was done.');
+  result('error', 'The browser did not grant access to all sites, so only sites you allowed earlier could be included. Nothing was done.');
   return false;
 }
 for (const [id, fmt] of [['all-json', 'json'], ['all-txt', 'txt']]) {

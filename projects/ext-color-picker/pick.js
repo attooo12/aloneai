@@ -5,7 +5,7 @@
 import { RESTRICTED_URL } from './config.js';
 
 export const RESTRICTED_MESSAGE =
-  "Chrome doesn't let extensions run on this page (browser pages, the Chrome Web Store, other extensions). " +
+  "The browser doesn't let extensions run on this page (browser pages, the browser's extension store, other extensions). " +
   'Use the picker window instead: it can pick any color on your screen, including this page.';
 
 export function isRestrictedUrl(url) {
@@ -19,10 +19,10 @@ export function explainInjectError(message = '', url = '') {
   if (/^file:/i.test(url) || /file:\/\//.test(m)) {
     return 'To pick on local files, turn on "Allow access to file URLs" for this extension in chrome://extensions, or use the picker window.';
   }
-  if (/error page/i.test(m)) return "Chrome doesn't let extensions run on error pages. Use the picker window instead.";
+  if (/error page/i.test(m)) return "The browser doesn't let extensions run on error pages. Use the picker window instead.";
   if (/No tab with id|Frame with ID|was removed|No current window/i.test(m)) return 'This tab is not available any more. Try again.';
   if (/permission|Cannot access/i.test(m)) {
-    return "This page can't be accessed right now (Chrome only allows it right after you open the extension on it). Open the extension again, or use the picker window.";
+    return "This page can't be accessed right now (the browser only allows it right after you open the extension on it). Open the extension again, or use the picker window.";
   }
   return 'Could not start the eyedropper on this page. Use the picker window instead.';
 }

@@ -19,7 +19,7 @@ below (English) are still what you fill in and see in the dashboard.
 Every extension also has an optional **marquee tile** (1400×560) next to its promo tile: `marquee-1400x560.png`. Upload it too; the store only features items that have one.
 
 ## 1. Reload Until (ready)
-- Zip: https://github.com/attooo12/reload-until/releases/download/v1.0.3/reload-until-1.0.3.zip (workspace: `projects/ext-kit/dist/`)
+- Zip: https://github.com/attooo12/reload-until/releases/download/v1.0.4/reload-until-1.0.4.zip (workspace: `projects/ext-kit/dist/`)
 - **Store listing** tab: copy from `projects/ext-reload-until-listing/LISTING.md` (description, summary, category Tools, English).
   Screenshots: `projects/ext-reload-until-listing/assets/screenshot-{1,2,3}-*.png`. Small promo tile: `assets/promo-small-440x280.png`.
   Homepage: https://attooo12.github.io/reload-until/ · Support: https://github.com/attooo12/reload-until/issues
@@ -35,14 +35,14 @@ Every extension also has an optional **marquee tile** (1400×560) next to its pr
 - **Distribution**: Free (Pro is a separate one-time Stripe purchase), all regions, Public.
 
 ## 2. Color Picker & Palette (ready)
-- Zip: https://github.com/attooo12/color-picker/releases/download/v1.0.2/color-picker-1.0.2.zip
+- Zip: https://github.com/attooo12/color-picker/releases/download/v1.0.3/color-picker-1.0.3.zip
 - Listing + justifications: `projects/ext-color-picker-listing/LISTING.md`, assets in `projects/ext-color-picker-listing/assets/`.
 - Privacy policy URL: https://attooo12.github.io/color-picker/privacy.html · Support: https://github.com/attooo12/color-picker/issues
 - Single purpose: "Pick colors from web pages and manage them (formats, history, palettes, contrast)."
 - Permissions: activeTab, scripting, storage only. Remote code: No. Data usage: nothing.
 
 ## 3. Tab Lifeboat: Session Saver & Backup (ready, wake #6)
-- Zip: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.2/tab-lifeboat-1.0.2.zip
+- Zip: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.3/tab-lifeboat-1.0.3.zip
 - Listing + justifications: `projects/ext-tab-lifeboat-listing/LISTING.md`, assets in `projects/ext-tab-lifeboat-listing/assets/`.
   Category Productivity. Homepage https://attooo12.github.io/tab-lifeboat/ · Support https://github.com/attooo12/tab-lifeboat/issues
 - Privacy policy URL: https://attooo12.github.io/tab-lifeboat/privacy.html
@@ -51,7 +51,7 @@ Every extension also has an optional **marquee tile** (1400×560) next to its pr
   Data usage: tick **Web history** (tab URLs/titles, stored only on the device), then the three certifications.
 
 ## 4. Cookie Crate: Cookie & Storage Editor (ready, wake #6)
-- Zip: https://github.com/attooo12/cookie-crate/releases/download/v1.0.2/cookie-crate-1.0.2.zip
+- Zip: https://github.com/attooo12/cookie-crate/releases/download/v1.0.3/cookie-crate-1.0.3.zip
 - Listing, justifications, data answers: `projects/ext-cookie-crate-listing/LISTING.md`; screenshots `screenshot-{1,2,3}.png`, promo `promo-440x280.png`
   in the same folder. Category **Developer Tools**. Homepage https://attooo12.github.io/cookie-crate/ · Support https://github.com/attooo12/cookie-crate/issues
 - Privacy policy URL: https://attooo12.github.io/cookie-crate/privacy.html · Remote code: No · Data usage: tick

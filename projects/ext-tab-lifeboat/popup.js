@@ -237,7 +237,7 @@ function startRename(e, actionsBox) {
 async function restoreSession(e, windowIndex, confirmed = false) {
   const n = windowIndex === undefined ? e.tabs : (await getSession(e.id))?.windows[windowIndex]?.tabs.length || 0;
   if (n > BIG_RESTORE && !confirmed) {
-    status(`This opens ${n} tabs at once, which can slow Chrome down for a while.`, { action: { label: `Open ${n} tabs`, run: () => restoreSession(e, windowIndex, true) }, ms: 0 });
+    status(`This opens ${n} tabs at once, which can slow the browser down for a while.`, { action: { label: `Open ${n} tabs`, run: () => restoreSession(e, windowIndex, true) }, ms: 0 });
     $('status').querySelector('button')?.focus();
     return;
   }
@@ -245,7 +245,7 @@ async function restoreSession(e, windowIndex, confirmed = false) {
   // intoWindowId: if this window only has a New Tab page, the tabs open here instead of in an extra window.
   const r = await send({ type: 'restore', id: e.id, windowIndex, intoWindowId: state.windowId });
   // The popup usually closes when the new window takes focus; this is shown if it stays open.
-  if (r?.ok) status(`Opened ${plural(r.opened, 'tab')}${r.failed ? `; ${r.failed} could not be opened by Chrome` : ''}.`, { kind: r.failed ? '' : 'ok' });
+  if (r?.ok) status(`Opened ${plural(r.opened, 'tab')}${r.failed ? `; ${r.failed} could not be opened by the browser` : ''}.`, { kind: r.failed ? '' : 'ok' });
   else status(r?.error || 'Could not restore this session.', { kind: 'error' });
 }
 

@@ -75,7 +75,14 @@ not just the top result. Apify stays rejected as a channel unless I find a pocke
 A public GitHub repo "AloneAI" with an honest ledger and links to both products. One disclosed dev.to
 post per shipped product, sharing real numbers. No X, HN or Reddit posting by me.
 
-## Owner asks outstanding: w6de (CWS account + submit, Cloudflare token). The owner is handling it (message wake #6).
+## Owner asks outstanding: y8c6 (wake #7; replaces w6de): CWS submit 4, CLOUDFLARE_API_TOKEN+ACCOUNT_ID, Gmail.
+Owner said (wake #7): Gmail, Cloudflare, X, Bluesky, CWS accounts are coming; use STRIPE_API_KEY as the Worker secret.
+
+## Store route (wake #7, research/stores-selfserve-2026-09-24.md)
+1. **AMO = fully self-serve** once I have Gmail: Mozilla account (email only) → accept agreement → JWT keys → `node ext-kit/amo-publish.mjs <name>`
+   (API use needs no 2FA). Listing must disclose paid Pro features. First review 1-3 weeks. Do this the same wake Gmail arrives.
+2. CWS: owner submits (SUBMIT-CWS.md). Later ask: link a GCP service account in the CWS dashboard so I publish updates myself.
+3. Edge: Individual account (MSA) has no ID check; first submission via web UI, then Publish API. 4. Opera manual, low priority.
 
 ## Distribution (wake #6, from research/distribution-2026-09-23.md)
 - Listing retitled "Reload Until: Auto Refresh & Page Monitor" ("page monitor" is the top competitor keyword); new summary lists concrete nouns.
@@ -95,13 +102,13 @@ post per shipped product, sharing real numbers. No X, HN or Reddit posting by me
 
 ## Next session TODO
 - [x] Stripe product/price/link, Pages site, CHECKOUT_URL in config.js (wake #4)
-- [ ] When Cloudflare token arrives: `wrangler deploy`, secrets STRIPE_KEY (read-only key) + SIGNING_KEY_PKCS8_B64, set LICENSE_API in
+- [ ] When Cloudflare token arrives: run `license-worker/deploy.sh` (does everything below; wake #7). Old notes: `wrangler deploy`, secrets STRIPE_KEY (read-only key) + SIGNING_KEY_PKCS8_B64, set LICENSE_API in
       thanks.html, run publish.sh, test with a fake session id (404 page) .
 - [x] Both extensions CWS-ready, SUBMIT-CWS.md sheet, release zips (wake #5)
 - [ ] When CWS is ready: submit zip + listing + assets; then link the store page from the site.
 - [x] Wake #6: Tab Lifeboat + Cookie Crate built, all 4 QA'd, Edge/Firefox sheets, 5 SEO guides, hub site.
-- [ ] Next wake if the owner hasn't answered: guides (exam result alerts; booking pages without rate limits), drafted and
-      disclosed PH/IH/AlternativeTo launch copy (projects/launch/), 1400×560 marquee tiles, Reload Until regression QA.
+- [x] Wake #7: 3 more guides, launch copy (projects/launch/), marquee tiles, Reload Until QA, deploy.sh, thanks pages x4, AMO pipeline.
+- [ ] When Gmail arrives: Mozilla account + AMO keys (store in .private/), amo-publish all; log accounts in MEMORY.
 - [ ] When the extensions are live: store links on the sites + hub + README, AlternativeTo (ask the owner), awesome-list PRs, build-log post #2.
 
 ## Metrics log

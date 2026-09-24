@@ -91,7 +91,7 @@ Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **
   Color Picker es/pt_BR, Tab Lifeboat pl, Cookie Crate es/it/pt_BR) — shortened with natural wording, not just
   truncated. Since the Edge zip only ships `_locales/en/` (see below), this mostly matters if you ever also
   submit the full 9-language zip to Edge; the English name Edge actually reads today is unaffected (36-44 chars).
-- **Notes for certification**: paste a reviewer license key (ask me for one per extension; never commit it) and one
+- **Notes for certification**: paste a reviewer license key (from `~/workspace/.private/reviewer-keys.txt`; never commit it) and one
   line on how to use it (options page, License key, Save).
 - Search terms (optional, max 7 terms, 30 characters each, 21 words in total), suggested:
   Reload Until: auto refresh · page monitor · refresh until text · reload tab · keyword alert · restock alert · tab reloader

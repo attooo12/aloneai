@@ -63,7 +63,7 @@ Any Firefox Account works; no developer fee. First submission asks you to accept
 Distribution Agreement.
 
 ## Reviewer notes
-In the version's "Notes to reviewer" field, paste a reviewer license key for the Pro features (ask me for one per
+In the version's "Notes to reviewer" field, paste a reviewer license key for the Pro features (from `.private/reviewer-keys.txt`; one per
 extension; never commit it) and one line on how to use it (options page, License key, Save).
 
 ## Source code submission: not needed

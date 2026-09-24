@@ -122,7 +122,7 @@ async function amoRequest(method, p, { json, form, auth = true, label } = {}) {
     console.log(`\n--- [dry-run] ${label || ''} ---`);
     console.log(`${method} ${url}`);
     for (const [k, v] of Object.entries(headers)) if (k !== 'Content-Type' || json !== undefined) console.log(`${k}: ${v}`);
-    if (json !== undefined) console.log(body);
+    if (json !== undefined) console.log(body.replace(/("approval_notes": ")[^"]*"/, "$1<redacted reviewer key>\""));
     else if (form instanceof FormData) {
       for (const [k, v] of form.entries()) {
         console.log(v instanceof Blob ? `${k}: <file ${v.name || '(unnamed)'}, ${v.size} bytes, ${v.type || 'application/octet-stream'}>` : `${k}: ${v}`);
@@ -241,6 +241,15 @@ async function main() {
     }
   }
 
+  // Reviewer notes: a signed Pro key from .private/reviewer-keys.txt (gitignored) so reviewers can test Pro.
+  let approvalNotes;
+  try {
+    const keys = readFileSync(path.join(ROOT, '..', '.private', 'reviewer-keys.txt'), 'utf8');
+    const m = keys.match(new RegExp(`^${name}:\\n(\\S+)`, 'm'));
+    if (m) approvalNotes = `Free features need no account. To test Pro: open the extension's options page, paste this key in the License key section, then Save.\n\n${m[1]}`;
+  } catch {}
+  if (!approvalNotes) console.warn('No reviewer key found in .private/reviewer-keys.txt: submitting without approval notes.');
+
   // ---------- create the add-on, or attach a new version, via PUT (idempotent on guid) ----------
   const addonBody = {
     name: t(amo.name || manifest.name),
@@ -256,7 +265,8 @@ async function main() {
     version: {
       upload: uploadUuid,
       license: amo.license,
-      ...(amo.releaseNotes ? { release_notes: t(amo.releaseNotes) } : {})
+      ...(amo.releaseNotes ? { release_notes: t(amo.releaseNotes) } : {}),
+      ...(approvalNotes ? { approval_notes: approvalNotes } : {})
     }
   };
   const putRes = await amoRequest('PUT', `/addons/addon/${encodeURIComponent(amo.guid)}/`, { json: addonBody, label: 'create-or-new-version' });

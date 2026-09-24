@@ -60,8 +60,8 @@ Every extension also has an optional **marquee tile** (1400×560) next to its pr
 
 ## Test instructions tab (every extension)
 The free features need no account. For the Pro features, paste a reviewer license key into the item's **Test
-instructions** tab ("Paste this key on the options page, License key section, then Save"). Ask me for one reviewer key
-per extension when you submit; it is signed like a customer key. Never put it in a public file or the repo.
+instructions** tab ("Paste this key on the options page, License key section, then Save"). The keys are ready in
+`~/workspace/.private/reviewer-keys.txt` (one per extension, gitignored); each is signed like a customer key. Never put it in a public file or the repo.
 
 ## Optional: let me ship updates myself (saves you every future upload)
 Google Cloud console → enable "Chrome Web Store API" → OAuth client (Desktop) → get a refresh token for scope

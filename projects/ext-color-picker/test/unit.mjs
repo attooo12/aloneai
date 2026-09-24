@@ -37,6 +37,19 @@ check('OKLCH matches reference values for sRGB primaries', refs.every(([h, L, Cc
 check('OKLCH white = L 1, C 0; black = L 0', near(ok('#FFFFFF').l, 1, 1e-6) && ok('#FFFFFF').c < 1e-4 && ok('#FFFFFF').h === 0 && ok('#000000').l === 0);
 check('OKLCH achromatic string', f('#FFFFFF').oklch === 'oklch(100% 0 0)' && f('#000000').oklch === 'oklch(0% 0 0)');
 
+// ---- out-of-gamut OKLCH (CSS Color 4: reduce chroma, keep L and H; L 100% = white, 0% = black) ----
+check('OKLCH L=100% is white and L=0% is black regardless of chroma', P('oklch(100% 0.2 30)') === '#FFFFFF' && P('oklch(0% 0.2 30)') === '#000000' && P('oklch(120% 0.1 0)') === '#FFFFFF');
+check('out-of-gamut OKLCH keeps its hue (chroma reduced, not per-channel clipped)', (() => {
+  for (const [L, Cc, H] of [[0.7, 0.4, 150], [0.9, 0.3, 100], [0.5, 0.3, 264], [0.6, 0.37, 330], [0.4, 0.3, 30]]) {
+    const o = C.rgbToOklch(C.parseColor(`oklch(${L} ${Cc} ${H})`));
+    if (Math.abs(o.l - L) > 0.01) return false;
+    const dh = Math.abs(((o.h - H + 540) % 360) - 180);
+    if (dh > 3) return false;
+  }
+  return true;
+})());
+check('export drops duplicate colours', C.exportPalette({ name: 'x', colors: ['#abc', '#AABBCC', 'aabbcc'] }, 'css') === ':root {\n  --x-1: #aabbcc;\n}\n');
+
 // ---- round trips ----
 let hslBad = 0, okBad = 0, n = 0;
 const STEP = process.env.FULL ? 1 : 3;

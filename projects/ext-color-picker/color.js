@@ -114,7 +114,7 @@ export function rgbToOklch({ r, g, b }) {
   return { l: L, c: C, h: C < 1e-4 ? 0 : H };
 }
 
-export function oklchToRgb(L, C, H) {
+function oklchToEncoded(L, C, H) {
   const hr = (H * Math.PI) / 180;
   const A = C * Math.cos(hr), Bb = C * Math.sin(hr);
   const l = (L + 0.3963377774 * A + 0.2158037573 * Bb) ** 3;
@@ -123,8 +123,27 @@ export function oklchToRgb(L, C, H) {
   const R = 4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s;
   const G = -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s;
   const B = -0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s;
-  // Out-of-gamut values are clipped to sRGB.
-  return { r: Math.round(clamp(fromLinear(R), 0, 255)), g: Math.round(clamp(fromLinear(G), 0, 255)), b: Math.round(clamp(fromLinear(B), 0, 255)) };
+  const enc = (c) => (c < 0 ? -fromLinear(-c) : fromLinear(c)); // sign-preserving, 0..255 when in gamut
+  return [enc(R), enc(G), enc(B)];
+}
+const inGamut = (v) => v.every((x) => x >= -0.5 && x <= 255.5); // rounds into 0..255 without clipping
+
+export function oklchToRgb(L, C, H) {
+  // CSS Color 4: L >= 100% is white and L <= 0 is black whatever the chroma.
+  if (L >= 1) return { r: 255, g: 255, b: 255 };
+  if (L <= 0) return { r: 0, g: 0, b: 0 };
+  let v = oklchToEncoded(L, C, H);
+  if (!inGamut(v)) {
+    // Out of sRGB: keep lightness and hue, reduce chroma until it fits (per-channel clipping shifts the hue).
+    let lo = 0, hi = C;
+    for (let i = 0; i < 32; i++) {
+      const mid = (lo + hi) / 2;
+      if (inGamut(oklchToEncoded(L, mid, H))) lo = mid; else hi = mid;
+    }
+    v = oklchToEncoded(L, lo, H);
+  }
+  const [r, g, b] = v.map((x) => Math.round(clamp(x, 0, 255)));
+  return { r, g, b };
 }
 
 // ---------- display strings ----------
@@ -171,7 +190,7 @@ export function slug(name, fallback = 'palette') {
 
 export function exportPalette(palette, kind) {
   const name = slug(palette.name);
-  const colors = (palette.colors || []).map((h) => normalizeHex(h)).filter(Boolean).map((h) => h.toLowerCase());
+  const colors = [...new Set((palette.colors || []).map((h) => normalizeHex(h)).filter(Boolean).map((h) => h.toLowerCase()))];
   switch (kind) {
     case 'css':
       return `:root {\n${colors.map((h, i) => `  --${name}-${i + 1}: ${h};`).join('\n')}\n}\n`;

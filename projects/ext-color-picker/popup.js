@@ -50,6 +50,8 @@ for (const t of tabs) {
     const i = tabs.indexOf(t);
     if (e.key === 'ArrowRight') selectTab(tabs[(i + 1) % tabs.length], true);
     if (e.key === 'ArrowLeft') selectTab(tabs[(i + tabs.length - 1) % tabs.length], true);
+    if (e.key === 'Home') { e.preventDefault(); selectTab(tabs[0], true); }
+    if (e.key === 'End') { e.preventDefault(); selectTab(tabs[tabs.length - 1], true); }
   });
 }
 
@@ -83,6 +85,7 @@ function setCurrent(hex, { updateInput = true } = {}) {
   }
   for (const b of document.querySelectorAll('[data-copy]')) b.disabled = !f;
   $('pal-current').textContent = current ? showHex(current) : '';
+  $('pal-add').disabled = !activePalette() || !current; // a typed or picked colour can be added right away
   renderHistory();
 }
 
@@ -266,7 +269,7 @@ function renderPalettes() {
   $('exp-out').value = p ? exportPalette(p, $('exp-kind').value) : '';
   chrome.storage.local.set({ activePaletteId });
 }
-$('pal-select').addEventListener('change', () => { activePaletteId = $('pal-select').value; renderPalettes(); });
+$('pal-select').addEventListener('change', () => { activePaletteId = $('pal-select').value; disarmDelete(); renderPalettes(); });
 $('pal-new').addEventListener('click', async () => {
   const p = await guard(() => store.createPalette('', current ? [current] : []));
   if (!p) return;
@@ -278,21 +281,29 @@ $('pal-new').addEventListener('click', async () => {
 });
 $('pal-rename').addEventListener('click', async () => {
   const p = activePalette(); if (!p) return;
+  if (!$('pal-name').value.trim()) { $('pal-name').value = p.name; return palMsg('A palette needs a name.', true); }
   if (await guard(() => store.renamePalette(p.id, $('pal-name').value))) { palettes = await store.getPalettes(); renderPalettes(); palMsg('Renamed.'); }
 });
 $('pal-name').addEventListener('keydown', (e) => { if (e.key === 'Enter') $('pal-rename').click(); });
-let deleteArmed = 0;
+// The confirm click only counts for the palette it was armed on (switching palettes disarms it).
+let deleteArmed = { id: null, t: 0 }, disarmTimer = 0;
+function disarmDelete() {
+  clearTimeout(disarmTimer);
+  if (deleteArmed.id) palMsg('');
+  deleteArmed = { id: null, t: 0 };
+  $('pal-delete').textContent = 'Delete';
+}
 $('pal-delete').addEventListener('click', async () => {
   const p = activePalette(); if (!p) return;
-  if (Date.now() - deleteArmed > 4000) {
-    deleteArmed = Date.now();
+  if (deleteArmed.id !== p.id || Date.now() - deleteArmed.t > 4000) {
+    deleteArmed = { id: p.id, t: Date.now() };
     $('pal-delete').textContent = 'Confirm';
     palMsg(`Click “Confirm” to delete “${p.name}”.`, true);
-    setTimeout(() => ($('pal-delete').textContent = 'Delete'), 4000);
+    clearTimeout(disarmTimer);
+    disarmTimer = setTimeout(disarmDelete, 4000);
     return;
   }
-  deleteArmed = 0;
-  $('pal-delete').textContent = 'Delete';
+  disarmDelete();
   if (await guard(() => store.deletePalette(p.id))) { palettes = await store.getPalettes(); activePaletteId = null; renderPalettes(); palMsg(`Deleted “${p.name}”.`); }
 });
 async function addCurrentTo(p) {

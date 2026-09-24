@@ -45,8 +45,15 @@ export async function injectPicker(tab, { fromPopup = false } = {}) {
 // screen, so it covers pages Chrome protects from extensions.
 export async function openPickerWindow() {
   const url = chrome.runtime.getURL('popup.html?window=1');
-  const existing = await chrome.tabs.query({ url: chrome.runtime.getURL('popup.html') + '*' });
-  const w = existing.find((t) => t.url && t.url.includes('window=1'));
+  // runtime.getContexts sees our own pages without the "tabs" permission (tabs.query's url filter needs it).
+  let w = null;
+  if (chrome.runtime.getContexts) {
+    const ctxs = await chrome.runtime.getContexts({ contextTypes: ['TAB'] }).catch(() => []);
+    w = ctxs.find((c) => c.documentUrl?.includes('popup.html?window=1') && c.windowId > -1) || null;
+  } else {
+    const existing = await chrome.tabs.query({ url: chrome.runtime.getURL('popup.html') + '*' });
+    w = existing.find((t) => t.url && t.url.includes('window=1')) || null;
+  }
   if (w) {
     await chrome.windows.update(w.windowId, { focused: true });
     return w.windowId;

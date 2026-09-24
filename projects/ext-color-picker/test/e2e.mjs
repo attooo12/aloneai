@@ -263,6 +263,11 @@ try {
   await drv.fill('#license', good);
   await drv.click('#save');
   await sleep(200);
+  await drv.evaluate(() => chrome.storage.sync.remove('license'));
+  await drv.fill('#license', ' ' + good.slice(0, 40) + '\n' + good.slice(40, 90) + '\r\n ' + good.slice(90) + '\n');
+  await drv.click('#save');
+  await sleep(200);
+  check('options: key pasted with line breaks is accepted and stored clean', /Pro unlocked/.test(await drv.textContent('#msg')) && (await drv.evaluate(async () => (await chrome.storage.sync.get('license')).license)) === good);
   check('options: valid key unlocks Pro', /Pro unlocked/.test(await drv.textContent('#msg')) && /Pro is active/.test(await drv.textContent('#plan-status')));
   check('options: mentions AloneAI autonomous agent + repo', /autonomous AI agent/.test(await drv.textContent('body')) && (await drv.locator('a[href="https://github.com/attooo12/aloneai"]').count()) === 1);
 
@@ -324,6 +329,45 @@ try {
   await sleep(150);
   pals = await drv.evaluate(async () => (await chrome.storage.local.get('palettes')).palettes);
   check('pro: delete needs a confirm click', afterOne === 31 && pals.length === 30 && !pals.some((p) => p.name === delName), `${afterOne} -> ${pals.length}`);
+  await pop.selectOption('#pal-select', { index: 2 });
+  await pop.click('#pal-delete'); // armed for palette #2
+  await pop.selectOption('#pal-select', { index: 3 });
+  await pop.click('#pal-delete'); // must only arm palette #3, not delete it
+  await sleep(150);
+  const afterSwitch = (await drv.evaluate(async () => (await chrome.storage.local.get('palettes')).palettes)).length;
+  check('pro: switching palettes disarms delete (no delete without its own confirm)', afterSwitch === 30 && /Confirm/.test(await pop.textContent('#pal-delete')) && /Bulk/.test(await pop.textContent('#pal-msg')), `${afterSwitch}`);
+  await pop.fill('#pal-name', '   ');
+  await pop.click('#pal-rename');
+  await sleep(100);
+  check('pro: renaming to an empty name is refused with a message', /needs a name/.test(await pop.textContent('#pal-msg')) && (await pop.inputValue('#pal-name')).startsWith('Bulk'));
+  const names = await drv.evaluate(async () => {
+    const S = await import('./store.js');
+    const a = await S.createPalette(''); const b = await S.createPalette('');
+    await S.deletePalette(a.id);
+    const c = await S.createPalette('');
+    const out = [b.name, c.name];
+    await S.deletePalette(b.id); await S.deletePalette(c.id);
+    return out;
+  });
+  check('pro: default palette names never collide after a delete', names[0] !== names[1], JSON.stringify(names));
+  await drv.evaluate(async () => { const { history } = await chrome.storage.local.get('history'); await chrome.storage.local.set({ savedHistory: history, history: [] }); });
+  await pop.reload();
+  await pop.waitForSelector('#f-hex', { state: 'attached' });
+  await sleep(150);
+  const disabledBefore = await pop.isDisabled('#pal-add');
+  await pop.click('#tab-pick');
+  await pop.fill('#input', '#10B981');
+  await pop.click('#tab-palettes');
+  check('pro: typing a colour enables "Add current color" (no reload needed)', disabledBefore && !(await pop.isDisabled('#pal-add')), String(disabledBefore));
+  await drv.evaluate(async () => { const { savedHistory } = await chrome.storage.local.get('savedHistory'); await chrome.storage.local.set({ history: savedHistory }); await chrome.storage.local.remove('savedHistory'); });
+  await pop.reload();
+  await pop.waitForSelector('#f-hex', { state: 'attached' });
+  await pop.focus('#tab-pick');
+  await pop.keyboard.press('End');
+  const endSel = await pop.getAttribute('#tab-contrast', 'aria-selected');
+  await pop.keyboard.press('Home');
+  check('tabs: Home/End move between first and last tab', endSel === 'true' && (await pop.getAttribute('#tab-pick', 'aria-selected')) === 'true' && (await pop.evaluate(() => document.activeElement.id)) === 'tab-pick');
+  await pop.click('#tab-palettes');
 
   // contrast
   await pop.click('#tab-contrast');

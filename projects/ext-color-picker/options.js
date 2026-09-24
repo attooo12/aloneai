@@ -16,7 +16,7 @@ for (const el of document.querySelectorAll('.price')) el.textContent = PRO_PRICE
 $('buy').addEventListener('click', () => { if (CHECKOUT_URL) chrome.tabs.create({ url: CHECKOUT_URL }); });
 
 $('save').addEventListener('click', async () => {
-  const key = $('license').value.trim();
+  const key = $('license').value.replace(/\s+/g, ''); // keys pasted from an email often carry line breaks
   if (!(await verifyToken(key))) {
     $('msg').innerHTML = '<span class="error">This license key is not valid.</span>';
     return;

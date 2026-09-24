@@ -56,12 +56,19 @@ const find = (palettes, id) => {
   return p;
 };
 
+// "Palette N" with the first N not already taken (deleting "Palette 1" must not lead to two "Palette 2").
+function defaultName(palettes) {
+  const taken = new Set(palettes.map((p) => p.name));
+  let n = palettes.length + 1;
+  while (taken.has(`Palette ${n}`)) n++;
+  return `Palette ${n}`;
+}
 export async function createPalette(name, colors = []) {
   await requirePro();
   const palettes = await getPalettes();
   const p = {
     id: crypto.randomUUID(),
-    name: cleanName(name, `Palette ${palettes.length + 1}`),
+    name: cleanName(name, defaultName(palettes)),
     colors: [...new Set(colors.map(normalizeHex).filter(Boolean))].slice(0, PALETTE_COLORS_MAX),
     created: Date.now(),
     updated: Date.now()

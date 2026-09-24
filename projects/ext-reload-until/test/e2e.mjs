@@ -40,7 +40,7 @@ const errors = [];
 try {
   let [sw] = ctx.serviceWorkers();
   sw ??= await ctx.waitForEvent('serviceworker', { timeout: 10000 });
-  const watchConsole = (w) => w.on?.('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+  const watchConsole = (w) => w.on?.('console', (m) => { if (m.type() === 'error' || /sound failed/.test(m.text())) errors.push(m.text()); });
   watchConsole(sw);
   ctx.on('serviceworker', watchConsole); // restarted workers
   const extId = new URL(sw.url()).host;
@@ -74,6 +74,7 @@ try {
       tamperedPayload: await L.verifyToken(tamperedBody + '.' + s, testPub),
       tamperedSig: await L.verifyToken(b + '.' + s.slice(0, 5) + flip + s.slice(6), testPub),
       garbage: await L.verifyToken('nonsense', testPub),
+      lineBreaks: await L.verifyToken(' ' + good.slice(0, 40) + '\r\n' + good.slice(40, 95) + ' \n ' + good.slice(95) + '\n', testPub),
       prodKeyRejects: await L.verifyToken(good, '0uJJ0p1QQh0KAlFKvkeBIh6AZC3lvEXuyZRMqQw5w7w='),
       isProBefore: await L.isPro()
     };
@@ -82,10 +83,25 @@ try {
   check('license: tampered payload rejected', lt.tamperedPayload === false);
   check('license: tampered signature rejected', lt.tamperedSig === false);
   check('license: garbage rejected', lt.garbage === false);
+  check('license: key with line breaks and spaces (pasted from an email) accepted', lt.lineBreaks === true);
   check('license: prod key rejects test token', lt.prodKeyRejects === false);
   check('license: isPro false without key', lt.isProBefore === false);
   const wrongProduct = await drv.evaluate(async ({ t, testPub }) => (await import('./license.js')).verifyToken(t, testPub), { t: makeToken(pem, 'a@b.c', 'other-product'), testPub });
   check('license: wrong product rejected', wrongProduct === false);
+
+  // ---- free plan: two starts for different tabs at the same moment must not both succeed ----
+  const pR1 = await ctx.newPage(); await pR1.goto(`http://127.0.0.1:${PORT}/count?r1`);
+  const pR2 = await ctx.newPage(); await pR2.goto(`http://127.0.0.1:${PORT}/count?r2`);
+  const [tR1, tR2] = [await tabIdOf(`http://127.0.0.1/count?r1`), await tabIdOf(`http://127.0.0.1/count?r2`)];
+  const rTooLong = await send({ type: 'start', tabId: tR1, origin: `http://127.0.0.1:${PORT}`, cfg: { intervalSec: 3000000, mode: 'none' } });
+  check('interval over 7 days refused (page timer would overflow and reload nonstop)', rTooLong.ok === false && /Maximum/.test(rTooLong.error), JSON.stringify(rTooLong));
+  await sleep(2100); // past the double-start dedupe window
+  const rRace = await drv.evaluate(({ ids, origin }) => Promise.all(ids.map((id) => chrome.runtime.sendMessage({ type: 'start', tabId: id, origin, cfg: { intervalSec: 30, mode: 'none' } }))),
+    { ids: [tR1, tR2], origin: `http://127.0.0.1:${PORT}` });
+  const wRace = await watches();
+  check('free: simultaneous starts on two tabs, only one wins', rRace.filter((r) => r.ok).length === 1 && Object.keys(wRace).length === 1, JSON.stringify(rRace));
+  await send({ type: 'stop', tabId: tR1 }); await send({ type: 'stop', tabId: tR2 });
+  await pR1.close(); await pR2.close();
 
   // ---- free plan: interval reload on localhost (no host permission -> alarm path, 30s) ----
   await fetch(`http://127.0.0.1:${PORT}/reset`);
@@ -123,11 +139,15 @@ try {
   await popF.close();
 
   // ---- pro ----
-  await drv.evaluate((k) => {
-    window.__beeped = false;
-    chrome.runtime.onMessage.addListener((m) => { if (m?.type === 'beepDone') window.__beeped = true; });
-    return chrome.storage.sync.set({ license: k });
-  }, good);
+  await drv.evaluate(() => {
+    window.__beeped = false; window.__beeps = 0;
+    chrome.runtime.onMessage.addListener((m) => { if (m?.type === 'beepDone') { window.__beeped = true; window.__beeps++; } });
+  });
+  await drv.fill('#license', good.slice(0, 50) + '\n' + good.slice(50, 120) + '\n  ' + good.slice(120));
+  await drv.click('#save');
+  await sleep(300);
+  const stored = await drv.evaluate(async () => (await chrome.storage.sync.get('license')).license);
+  check('options: key wrapped over lines saves (without the line breaks)', stored === good && /Saved/.test(await drv.textContent('#msg')), await drv.textContent('#msg'));
   const proNow = await drv.evaluate(async () => (await import('./license.js')).isPro());
   check('isPro true after storing test license', proNow === true);
   const rB2 = await send({ type: 'start', tabId: tabB, origin: `http://127.0.0.1:${PORT}`, cfg: { ...cfgB, text: 'in\\s+stock', regex: true, selector: '#s' } });
@@ -169,6 +189,56 @@ try {
   let wC; const t1 = Date.now();
   while (Date.now() - t1 < 40000) { wC = (await watches())[tabC]; if (wC?.status === 'met') break; await sleep(500); }
   check('"until disappears" mode with jitter', rC.ok && wC?.status === 'met' && wC.count === 3, `count=${wC?.count}`);
+
+  // ---- two conditions met at the same moment: both beeps play, to the end ----
+  const pN1 = await ctx.newPage(); await pN1.goto(`http://127.0.0.1:${PORT}/nbsp?1`);
+  const pN2 = await ctx.newPage(); await pN2.goto(`http://127.0.0.1:${PORT}/nbsp?2`);
+  const [tN1, tN2] = [await tabIdOf(`http://127.0.0.1/nbsp?1`), await tabIdOf(`http://127.0.0.1/nbsp?2`)];
+  await drv.evaluate(() => { window.__beeps = 0; });
+  const rBeep = await Promise.all([tN1, tN2].map((id) =>
+    send({ type: 'start', tabId: id, origin: `http://127.0.0.1:${PORT}`, cfg: { intervalSec: 3, mode: 'appears', text: 'stock', notify: false, sound: true } })));
+  await sleep(4000);
+  check('two alerts at once: both beeps play to the end', rBeep.every((r) => r.ok) && await drv.evaluate(() => window.__beeps) === 2, `beeps=${await drv.evaluate(() => window.__beeps)}`);
+
+  // ---- text matching: &nbsp; and line breaks ----
+  const rN = await Promise.all([[tN1, 'In stock'], [tN2, 'ships today']].map(([id, text]) =>
+    send({ type: 'start', tabId: id, origin: `http://127.0.0.1:${PORT}`, cfg: { intervalSec: 3, mode: 'appears', text, notify: false, sound: false } })));
+  const wN = await watches();
+  check('plain text matches across &nbsp; and line breaks', rN.every((r) => r.ok) && wN[tN1]?.status === 'met' && wN[tN1].text === 'In stock' && wN[tN2]?.status === 'met', JSON.stringify([wN[tN1]?.status, wN[tN2]?.status]));
+  await sleep(2100); // past the double-start dedupe window
+
+  // ---- "Start again" with other settings right after a start is not swallowed by the double-start guard ----
+  const rS1 = await send({ type: 'start', tabId: tN1, origin: `http://127.0.0.1:${PORT}`, cfg: { intervalSec: 3, mode: 'appears', text: 'ships', notify: false, sound: false } });
+  const rS2 = await send({ type: 'start', tabId: tN1, origin: `http://127.0.0.1:${PORT}`, cfg: { intervalSec: 3, mode: 'appears', text: 'never shown text', notify: false, sound: false } });
+  const wS = (await watches())[tN1];
+  check('start with changed settings within 2s uses the new settings', rS1.ok && rS2.ok && wS?.text === 'never shown text' && wS.status === 'watching', JSON.stringify([wS?.text, wS?.status]));
+  await send({ type: 'stop', tabId: tN1 });
+  await pN1.close(); await pN2.close();
+
+  // ---- hidden text (display:none) inside the selector does not count ----
+  const pH = await ctx.newPage(); await pH.goto(`http://127.0.0.1:${PORT}/hidden`);
+  const tH = await tabIdOf(`http://127.0.0.1/hidden`);
+  const rH = await send({ type: 'start', tabId: tH, origin: `http://127.0.0.1:${PORT}`, cfg: { intervalSec: 60, mode: 'appears', text: 'in stock', selector: '#b', notify: false, sound: false } });
+  check('text in a hidden element is not reported as appeared', rH.ok && (await watches())[tH]?.status === 'watching', JSON.stringify((await watches())[tH]?.status));
+  await send({ type: 'stop', tabId: tH }); await pH.close();
+
+  // ---- "disappears" on a page that renders its text after the load event: no false alert ----
+  await fetch(`http://127.0.0.1:${PORT}/reset`);
+  const pP = await ctx.newPage(); await pP.goto(`http://127.0.0.1:${PORT}/spa`); await sleep(1600);
+  const tP = await tabIdOf(`http://127.0.0.1/spa`);
+  const rP = await send({ type: 'start', tabId: tP, origin: `http://127.0.0.1:${PORT}`, cfg: { intervalSec: 3, mode: 'disappears', text: 'sold out', notify: false, sound: false } });
+  await waitFor(async () => ((await watches())[tP]?.count || 0) >= 3 || (await watches())[tP]?.status !== 'watching', 25000);
+  const wP = (await watches())[tP];
+  check('"disappears" waits for late-rendered text after each reload', rP.ok && wP?.status === 'watching' && wP.count >= 3, `status=${wP?.status} count=${wP?.count}`);
+  await send({ type: 'stop', tabId: tP }); await pP.close();
+
+  // ---- text inside a same-origin iframe ----
+  const pI = await ctx.newPage(); await pI.goto(`http://127.0.0.1:${PORT}/framed`);
+  const tI = await tabIdOf(`http://127.0.0.1/framed`);
+  const rI = await send({ type: 'start', tabId: tI, origin: `http://127.0.0.1:${PORT}`, cfg: { intervalSec: 3, mode: 'appears', text: 'in stock', notify: false, sound: false } });
+  const wI = await waitFor(async () => { const w = (await watches())[tI]; return w?.status === 'met' && w; }, 30000);
+  check('text inside a same-origin iframe is found', rI.ok && wI?.count === 2, `count=${wI?.count}`);
+  await pI.close();
 
   // ---- popup Start click (full user-gesture path), then the tab navigates to another site ----
   await fetch(`http://127.0.0.1:${PORT}/reset`);
@@ -226,6 +296,29 @@ try {
   const hitsF = (await (await fetch(`http://127.0.0.1:${PORT}/hits`)).json()).flaky;
   check('recovers from a network error page', rF.ok && onErrorPage && wF?.status === 'met', `errorPage=${onErrorPage} hits=${hitsF} recovered ${Math.round((Date.now() - tF) / 1000)}s after the server came back`);
   await pF.close();
+
+  // ---- a page that never finishes loading, and a watch whose first schedule was lost: the watchdog checks/revives ----
+  await fetch(`http://127.0.0.1:${PORT}/reset`);
+  const pL = await ctx.newPage(); await pL.goto(`http://127.0.0.1:${PORT}/slowimg`, { waitUntil: 'domcontentloaded' });
+  const tL = await tabIdOf(`http://127.0.0.1/slowimg`);
+  const rL = await send({ type: 'start', tabId: tL, origin: `http://127.0.0.1:${PORT}`, cfg: { intervalSec: 3, mode: 'appears', text: 'in stock', notify: false, sound: false } });
+  const pY = await ctx.newPage(); await pY.goto(`http://127.0.0.1:${PORT}/stock?y`);
+  const tY = await tabIdOf(`http://127.0.0.1/stock?y`);
+  await drv.evaluate(async ({ tY, origin }) => {
+    const { watches = {} } = await chrome.storage.session.get('watches');
+    watches[tY] = { tabId: tY, origin, hasHost: true, intervalSec: 3, jitterPct: 0, mode: 'appears', text: 'in stock', regex: false, selector: '',
+      notify: false, sound: false, focus: false, status: 'watching', count: 0, startedAt: Date.now() - 60000, lastChecked: null, nextAt: null };
+    await chrome.storage.session.set({ watches });
+  }, { tY, origin: `http://127.0.0.1:${PORT}` });
+  await sleep(38000); // past the watchdog's grace period (interval + 30s)
+  const loadingL = (await drv.evaluate((id) => chrome.tabs.get(id), tL)).status === 'loading';
+  await drv.evaluate(() => chrome.alarms.create('watchdog', { when: Date.now() + 100 }));
+  const wL = await waitFor(async () => { const w = (await watches())[tL]; return w?.status === 'met' && w; }, 20000);
+  check('page that never finishes loading: the watchdog checks it before reloading', rL.ok && loadingL && wL?.status === 'met', `loading=${loadingL} status=${(await watches())[tL]?.status}`);
+  const wY = await waitFor(async () => { const w = (await watches())[tY]; return w?.count >= 1 && w; }, 15000);
+  check('watch that never got its first reload scheduled is revived by the watchdog', wY?.count >= 1, `count=${(await watches())[tY]?.count}`);
+  await drv.evaluate(() => chrome.alarms.create('watchdog', { periodInMinutes: 1 }));
+  await send({ type: 'stop', tabId: tY }); await pY.close(); await pL.close();
 
   // ---- alarm path result ----
   let wA = (await watches())[tabA];

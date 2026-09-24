@@ -1,11 +1,14 @@
 // Reload Until: service worker. No network requests; all state is local.
 import { isPro } from './license.js';
-import { MIN_INTERVAL_SEC, ALARM_MIN_SEC } from './config.js';
+import { MIN_INTERVAL_SEC, MAX_INTERVAL_SEC, ALARM_MIN_SEC } from './config.js';
+import { pageRun } from './page.js';
 
 const WATCHDOG = 'watchdog';
 const RELOAD_PREFIX = 'reload:';
 const COLOR_WATCHING = '#2563eb';
 const COLOR_MET = '#16a34a';
+const SETTLE_MS = 3000; // "disappears": how long a page may take to render the text after loading
+const FREE_LIMIT = 'Free version watches 1 tab at a time. Stop the other tab or get Pro.';
 
 // ---------- state (chrome.storage.session, key "watches": {tabId: watch}) ----------
 let queue = Promise.resolve();
@@ -27,49 +30,6 @@ async function getWatches() {
 }
 async function getWatch(tabId) {
   return (await getWatches())[tabId];
-}
-
-// ---------- injected functions (run in the page's isolated world) ----------
-function pageCheck(text, isRegex, selector) {
-  let content = '';
-  if (selector) {
-    content = Array.from(document.querySelectorAll(selector)).map((el) => el.innerText || el.textContent || '').join('\n');
-  } else if (document.body) {
-    content = document.body.innerText || document.body.textContent || '';
-  }
-  if (isRegex) return new RegExp(text, 'i').test(content);
-  return content.toLowerCase().includes(String(text).toLowerCase());
-}
-
-function pageSchedule(ms, cond) {
-  // cond: null or {text, regex, selector, mode}
-  if (window.__reloadUntilTimer) clearTimeout(window.__reloadUntilTimer);
-  window.__reloadUntilTimer = setTimeout(() => {
-    if (!chrome.runtime?.id) return; // extension was updated/reloaded: this watch no longer exists
-    if (cond) {
-      try {
-        let content = '';
-        if (cond.selector) {
-          content = Array.from(document.querySelectorAll(cond.selector)).map((el) => el.innerText || el.textContent || '').join('\n');
-        } else if (document.body) {
-          content = document.body.innerText || document.body.textContent || '';
-        }
-        const found = cond.regex ? new RegExp(cond.text, 'i').test(content) : content.toLowerCase().includes(cond.text.toLowerCase());
-        const met = cond.mode === 'appears' ? found : !found;
-        if (met) {
-          // Content changed without a reload (dynamic page): tell the service worker instead of reloading.
-          chrome.runtime.sendMessage({ type: 'conditionMet' });
-          return;
-        }
-      } catch (e) { /* fall through to reload */ }
-    }
-    location.reload();
-  }, ms);
-}
-
-function pageCancel() {
-  if (window.__reloadUntilTimer) clearTimeout(window.__reloadUntilTimer);
-  window.__reloadUntilTimer = null;
 }
 
 // ---------- helpers ----------
@@ -158,7 +118,7 @@ async function scheduleNext(tabId) {
   let injected = false;
   if (w.hasHost) {
     try {
-      await chrome.scripting.executeScript({ target: { tabId }, func: pageSchedule, args: [delay, condOf(w)] });
+      await chrome.scripting.executeScript({ target: { tabId }, func: pageRun, args: ['schedule', condOf(w), delay] });
       injected = true;
     } catch { /* error page, or no access: fall back to alarm */ }
   }
@@ -179,9 +139,10 @@ async function evaluate(tabId, w) {
   // Returns true (met), false (not met) or null (could not check).
   if (w.mode === 'none' || !w.hasHost) return null;
   try {
-    const [res] = await chrome.scripting.executeScript({ target: { tabId }, func: pageCheck, args: [w.text, !!w.regex, w.selector || ''] });
-    if (typeof res?.result !== 'boolean') return null;
-    return w.mode === 'appears' ? res.result : !res.result;
+    // Injection waits for the document to be parsed, which may never happen on a stalled page.
+    const timeout = new Promise((resolve) => setTimeout(resolve, SETTLE_MS + 10000, []));
+    const [res] = await Promise.race([chrome.scripting.executeScript({ target: { tabId }, func: pageRun, args: ['check', condOf(w), SETTLE_MS] }), timeout]);
+    return typeof res?.result === 'boolean' ? res.result : null;
   } catch {
     return null;
   }
@@ -206,8 +167,12 @@ async function onPageReady(tabId, countReload) {
 
 // ---------- alerts ----------
 let creatingOffscreen = null;
+let closingOffscreen = null;
+let beeping = 0; // beeps sent and not finished yet: the document closes only after the last one
 async function playSound() {
   try {
+    await closingOffscreen;
+    beeping++;
     const has = await chrome.offscreen.hasDocument?.();
     if (!has) {
       creatingOffscreen ??= chrome.offscreen.createDocument({
@@ -215,12 +180,20 @@ async function playSound() {
         reasons: ['AUDIO_PLAYBACK'],
         justification: 'Play a short alert beep when the watched condition is met.'
       }).finally(() => { creatingOffscreen = null; });
-      await creatingOffscreen;
     }
+    // hasDocument() is already true while another call is still creating it (its script not loaded yet).
+    await creatingOffscreen;
     await chrome.runtime.sendMessage({ target: 'offscreen', type: 'beep' });
   } catch (e) {
+    beeping = Math.max(0, beeping - 1); // no beepDone will come for this one
     console.warn('sound failed', e);
   }
+}
+
+function beepDone() {
+  beeping = Math.max(0, beeping - 1);
+  if (!beeping) closingOffscreen ??= chrome.offscreen.closeDocument().catch(() => {}).finally(() => { closingOffscreen = null; });
+  return closingOffscreen;
 }
 
 async function onMet(tabId) {
@@ -234,7 +207,7 @@ async function onMet(tabId) {
   });
   if (!w) return; // already handled
   await chrome.alarms.clear(RELOAD_PREFIX + tabId);
-  try { await chrome.scripting.executeScript({ target: { tabId }, func: pageCancel }); } catch {}
+  try { await chrome.scripting.executeScript({ target: { tabId }, func: pageRun, args: ['cancel', null, 0] }); } catch {}
   await setBadge(tabId, '✓', COLOR_MET);
   const what = w.mode === 'appears' ? `"${w.text}" appeared` : `"${w.text}" disappeared`;
   if (w.notify) {
@@ -263,14 +236,15 @@ async function focusTab(tabId) {
 
 // ---------- start / stop ----------
 // The popup and permissions.onAdded can both start the same tab (popup stays open through the prompt):
-// a second call within 2s, or while the first is still running, gets the first call's result.
-const recentStarts = new Map(); // tabId -> {at, promise}
+// a second call with the same settings within 2s, or while the first is still running, gets the first call's result.
+const recentStarts = new Map(); // tabId -> {at, key, promise}
 
 function start(tabId, cfg, origin) {
+  const key = JSON.stringify([cfg, origin]);
   const r = recentStarts.get(tabId);
-  if (r && Date.now() - r.at < 2000) return r.promise;
+  if (r && r.key === key && Date.now() - r.at < 2000) return r.promise;
   const promise = doStart(tabId, cfg, origin);
-  recentStarts.set(tabId, { at: Date.now(), promise });
+  recentStarts.set(tabId, { at: Date.now(), key, promise });
   promise.then((res) => { if (!res.ok && recentStarts.get(tabId)?.promise === promise) recentStarts.delete(tabId); }, () => recentStarts.delete(tabId));
   return promise;
 }
@@ -278,6 +252,7 @@ function start(tabId, cfg, origin) {
 async function doStart(tabId, cfg, origin) {
   const intervalSec = Math.round(Number(cfg.intervalSec));
   if (!Number.isFinite(intervalSec) || intervalSec < MIN_INTERVAL_SEC) return { ok: false, error: `Minimum interval is ${MIN_INTERVAL_SEC} seconds.` };
+  if (intervalSec > MAX_INTERVAL_SEC) return { ok: false, error: 'Maximum interval is 7 days.' };
   const mode = ['none', 'appears', 'disappears'].includes(cfg.mode) ? cfg.mode : 'none';
   const text = String(cfg.text || '').trim();
   if (mode !== 'none' && !text) return { ok: false, error: 'Enter the text to watch for.' };
@@ -293,7 +268,7 @@ async function doStart(tabId, cfg, origin) {
   }
   const watches = await getWatches();
   const others = Object.values(watches).filter((x) => x.status === 'watching' && x.tabId !== tabId);
-  if (!pro && others.length >= 1) return { ok: false, error: 'Free version watches 1 tab at a time. Stop the other tab or get Pro.' };
+  if (!pro && others.length >= 1) return { ok: false, error: FREE_LIMIT };
 
   let hasHost = false;
   if (origin) {
@@ -312,7 +287,12 @@ async function doStart(tabId, cfg, origin) {
     notify: !!cfg.notify, sound: !!cfg.sound, focus: !!cfg.focus,
     status: 'watching', count: 0, startedAt: Date.now(), lastChecked: null, nextAt: null
   };
-  await mutate((ws) => { ws[tabId] = w; });
+  // Check the free limit again in the same storage transaction: two starts for different tabs can overlap.
+  const refused = await mutate((ws) => {
+    if (!pro && Object.values(ws).some((x) => x.status === 'watching' && x.tabId !== tabId)) return true;
+    ws[tabId] = w;
+  });
+  if (refused) return { ok: false, error: FREE_LIMIT };
   await clearPending(tabId);
   chrome.notifications.clear('met:' + tabId);
   chrome.notifications.clear('stopped:' + tabId);
@@ -327,7 +307,7 @@ async function doStart(tabId, cfg, origin) {
 async function stop(tabId) {
   await mutate((ws) => { delete ws[tabId]; });
   await chrome.alarms.clear(RELOAD_PREFIX + tabId);
-  try { await chrome.scripting.executeScript({ target: { tabId }, func: pageCancel }); } catch {}
+  try { await chrome.scripting.executeScript({ target: { tabId }, func: pageRun, args: ['cancel', null, 0] }); } catch {}
   await setBadge(tabId, '', null);
   chrome.tabs.update(tabId, { autoDiscardable: true }).catch(() => {});
   recentStarts.delete(tabId);
@@ -352,9 +332,12 @@ async function watchdog() {
     if (w.status !== 'watching') continue;
     any = true;
     const grace = Math.min(w.intervalSec, 120) * 1000 + 30000;
-    if (w.nextAt && now - w.nextAt > grace) {
-      // Overdue (e.g. error page where injection failed): force a reload.
+    const due = w.nextAt || w.startedAt; // nextAt is still null if the worker died before the first schedule
+    if (due && now - due > grace) {
+      // Overdue (e.g. error page where injection failed, or a page that never finishes loading): force a reload.
       if (!(await stillWatchable(w.tabId, w))) continue;
+      // The load never completed, so nothing checked this page yet: the text may well be there.
+      if ((await evaluate(w.tabId, w)) === true) { await onMet(w.tabId); continue; }
       try {
         await mutate((ws) => { if (ws[w.tabId]) ws[w.tabId].nextAt = now + w.intervalSec * 1000; });
         await chrome.tabs.reload(w.tabId);
@@ -443,7 +426,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
       case 'start': return start(msg.tabId, msg.cfg || {}, msg.origin);
       case 'stop': return stop(msg.tabId);
       case 'beepDone':
-        try { await chrome.offscreen.closeDocument(); } catch {}
+        await beepDone();
         return { ok: true };
       default: return { ok: false, error: 'unknown message' };
     }

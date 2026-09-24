@@ -1,5 +1,5 @@
 import { isPro } from './license.js';
-import { DEFAULTS, MIN_INTERVAL_SEC, ALARM_MIN_SEC } from './config.js';
+import { DEFAULTS, MIN_INTERVAL_SEC, MAX_INTERVAL_SEC, ALARM_MIN_SEC } from './config.js';
 
 const $ = (id) => document.getElementById(id);
 const els = {
@@ -99,6 +99,7 @@ async function onSubmit(e) {
   }
   const cfg = readForm();
   if (!Number.isFinite(cfg.intervalSec) || cfg.intervalSec < MIN_INTERVAL_SEC) { errorMsg = `Minimum interval is ${MIN_INTERVAL_SEC} seconds.`; return render(); }
+  if (cfg.intervalSec > MAX_INTERVAL_SEC) { errorMsg = 'Maximum interval is 7 days.'; return render(); }
   if (cfg.mode !== 'none' && !cfg.text) { errorMsg = 'Enter the text to watch for.'; els.text.focus(); return render(); }
   if (cfg.regex) { try { new RegExp(cfg.text, 'i'); } catch { errorMsg = 'Invalid regular expression.'; return render(); } }
   if (cfg.selector) { try { document.querySelector(cfg.selector); } catch { errorMsg = 'Invalid CSS selector.'; return render(); } }

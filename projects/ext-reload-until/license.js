@@ -16,10 +16,15 @@ export function b64ToBytes(s) {
   return out;
 }
 
+export function normalizeToken(token) {
+  return String(token).replace(/\s+/g, '');
+}
+
 export async function verifyToken(token, publicKey = PUBLIC_KEY) {
   try {
     if (typeof token !== 'string' || !publicKey) return false;
-    const parts = token.trim().split('.');
+    // Keys pasted from an email or a narrow window often carry line breaks or spaces: base64url has none.
+    const parts = normalizeToken(token).split('.');
     if (parts.length !== 2 || !parts[0] || !parts[1]) return false;
     const [body, sig] = parts;
     const keyBytes = b64ToBytes(publicKey);

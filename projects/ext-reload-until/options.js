@@ -1,4 +1,4 @@
-import { isPro, verifyToken } from './license.js';
+import { isPro, verifyToken, normalizeToken } from './license.js';
 import { CHECKOUT_URL } from './config.js';
 
 const $ = (id) => document.getElementById(id);
@@ -14,7 +14,7 @@ async function refresh() {
 $('buy').addEventListener('click', () => { if (CHECKOUT_URL) chrome.tabs.create({ url: CHECKOUT_URL }); });
 
 $('save').addEventListener('click', async () => {
-  const key = $('license').value.trim();
+  const key = normalizeToken($('license').value);
   if (!(await verifyToken(key))) {
     $('msg').innerHTML = '<span class="error">This license key is not valid.</span>';
     return;

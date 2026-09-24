@@ -3,11 +3,11 @@
 Auto-refresh a tab on an interval, and stop and alert you when a text appears (or disappears) on the page. Useful for appointment slots, restocks, exam results, CI/status pages and ticket availability. It only reloads and alerts; it never clicks or buys anything.
 
 ## Features
-- Interval presets (10s, 30s, 1m, 5m, 15m) or custom seconds (minimum 3s), optional random jitter (±10/25/50%).
-- Stop when text appears / disappears (case-insensitive substring). Also rechecks right before each reload, so dynamic pages are covered.
+- Interval presets (10s, 30s, 1m, 5m, 15m) or custom seconds (minimum 3s, maximum 7 days), optional random jitter (±10/25/50%).
+- Stop when text appears / disappears (case-insensitive substring of the visible text; any run of spaces, line breaks or `&nbsp;` counts as one space; same-origin iframes included). Also rechecks right before each reload, so dynamic pages are covered. Before reporting a text as gone, it gives the freshly loaded page up to 3s to render it.
 - Alerts: desktop notification, synthesized beep (offscreen document, no audio files), bring tab to front.
 - Badge countdown on the icon, ✓ when the condition is met. Stops automatically when met or when the tab closes.
-- Watchdog (every minute) reloads a tab if the timer got lost, for example on a network error page.
+- Watchdog (every minute) reloads a tab if the timer got lost, for example on a network error page. A page that never finishes loading is checked before it is reloaded again.
 - Stops (with a notification) when the watched tab moves to another site or site access is removed. Exception: interval-only watches without site access (30s or more) cannot see the tab's address, so they keep reloading the tab until you stop them.
 - The watched tab is excluded from Memory Saver discarding while the watch is active.
 - Watches do not survive a browser restart or an extension update; the popup remembers your last settings, so starting again is one click.
@@ -33,4 +33,4 @@ The Pro license is an Ed25519-signed token verified offline (`license.js`). Set 
 - `optional_host_permissions` (`<all_urls>`): requested only at Start, for the one site being watched, and only when a text condition or an interval under 30s is used.
 
 ## Development
-No build step. Load the folder unpacked in `chrome://extensions`. Tests: `node test/e2e.mjs` (Playwright + local Python server; `test/` holds a TEST ONLY key pair and is excluded from the package).
+No build step. Load the folder unpacked in `chrome://extensions`. Tests: `node test/unit.mjs` (page matcher, license) and `node test/e2e.mjs` (Playwright + local Python server; `test/` holds a TEST ONLY key pair and is excluded from the package).

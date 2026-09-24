@@ -7,3 +7,4 @@ projects/ext-kit/dist/
 node_modules/
 projects/ext-color-picker-listing/dist/
 projects/ext-tab-lifeboat-listing/dist/
+.browser/

@@ -49,18 +49,22 @@ validator runs the same checks as `web-ext lint`, which both zips already pass w
 below are expected/harmless — see "Known lint warnings").
 
 ## Zips (already built, ready to upload)
-- Reload Until: https://github.com/attooo12/reload-until/releases/download/v1.0.2/reload-until-1.0.2-firefox.zip
-- Color Picker & Palette: https://github.com/attooo12/color-picker/releases/download/v1.0.1/color-picker-1.0.1-firefox.zip
-- Tab Lifeboat: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.1/tab-lifeboat-1.0.1-firefox.zip (wake #6: lint 0 errors;
+- Reload Until: https://github.com/attooo12/reload-until/releases/download/v1.0.3/reload-until-1.0.3-firefox.zip
+- Color Picker & Palette: https://github.com/attooo12/color-picker/releases/download/v1.0.2/color-picker-1.0.2-firefox.zip
+- Tab Lifeboat: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.2/tab-lifeboat-1.0.2-firefox.zip (wake #6: lint 0 errors;
   Firefox 139+ has the tabGroups API; not run in real Firefox yet. Listing text: projects/ext-tab-lifeboat-listing/LISTING.md,
   privacy https://attooo12.github.io/tab-lifeboat/privacy.html, category Tabs)
-- Cookie Crate: https://github.com/attooo12/cookie-crate/releases/download/v1.0.1/cookie-crate-1.0.1-firefox.zip. See
+- Cookie Crate: https://github.com/attooo12/cookie-crate/releases/download/v1.0.2/cookie-crate-1.0.2-firefox.zip. See
   "3. Cookie Crate" below for the Firefox feasibility assessment.
 - Rebuild any of them at any time with `ext-kit/build-firefox.sh <extension-dir> --zip`.
 
 ## Account setup (once, free)
 Any Firefox Account works; no developer fee. First submission asks you to accept the Firefox Add-on
 Distribution Agreement.
+
+## Reviewer notes
+In the version's "Notes to reviewer" field, paste a reviewer license key for the Pro features (ask me for one per
+extension; never commit it) and one line on how to use it (options page, License key, Save).
 
 ## Source code submission: not needed
 AMO requires a separate source upload only when the reviewable copy is hard to read — minified, bundled
@@ -77,8 +81,9 @@ redistributed, I'd leave it on **All Rights Reserved** unless you want to make i
 build log being public on GitHub doesn't imply a reuse license either way — this is your call.
 
 ## 1. Reload Until
-- **Name**: same as Chrome, "Reload Until: Auto Refresh & Page Monitor" (41 characters, under AMO's 45-char
-  cap on the manifest `name`).
+- **Name**: same as Chrome, "Reload Until: Auto Refresh & Page Monitor" (41 characters, under AMO's 50-char
+  cap on the manifest `name`). Now delivered via `_locales/*/messages.json` (`__MSG_extName__`): AMO shows the
+  name/description in the reviewer's or user's locale automatically, same manifest for every store.
 - **Summary / description / categories / keywords**: copy from `projects/ext-reload-until-listing/LISTING.md`
   — same text as Chrome. AMO's closest categories are **Tabs** and **Feeds, News & Blogging**; pick "Tabs" as
   primary (auto-refresh/tab-monitoring tools live there).
@@ -96,10 +101,12 @@ build log being public on GitHub doesn't imply a reuse license either way — th
   wouldn't fully work there; worth a follow-up wake if you want Android support later.
 
 ## 2. Color Picker & Palette
-- **Name**: shortened to "Color Picker & Palette: Eyedropper" for the Firefox manifest (AMO caps `name` at 45
-  characters; the Chrome name is 52). The listing page's display title on AMO is a separate field and can use
-  the full Chrome name/summary from `projects/ext-color-picker-listing/LISTING.md` if you prefer — only the
-  manifest's internal `name` had to shrink.
+- **Name**: the manifest `name` is now "Color Picker & Palette: Eyedropper, Contrast" (44 characters) in every
+  store, Chrome/Edge included — shortened from the old 52-character CWS-only name so one name fits AMO's
+  50-char cap everywhere, instead of a separate Firefox-only override. Delivered via `__MSG_extName__` /
+  `_locales/*/messages.json`, so it's also localized per store locale. The listing page's display title on AMO
+  is a separate field and can use the fuller wording from `projects/ext-color-picker-listing/LISTING.md` if you
+  prefer — only the manifest's internal `name` had to shrink.
 - **Summary / description / categories / keywords**: copy from `LISTING.md`. Closest AMO category:
   **Web Development** (primary) — the eyedropper/contrast-checker/palette feature set is squarely a
   developer/designer tool.

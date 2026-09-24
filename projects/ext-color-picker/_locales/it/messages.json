@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Color Picker & Palette: Contagocce, Contrasto",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Color Picker",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "Scegli un colore di pagina con un contagocce. Copia HEX, RGB o HSL. Palette e contrasto WCAG. Nessun tracking. Interfaccia inglese.",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Color Picker (Alt+Maiusc+E per scegliere)",
+    "description": "Toolbar button tooltip"
+  }
+}

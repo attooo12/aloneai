@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Tab Lifeboat: Salvataggio sessioni e backup",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Tab Lifeboat",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "Salva e ripristina schede, finestre e gruppi. Snapshot automatici e backup su file. Solo locale, senza account. Interfaccia inglese.",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Tab Lifeboat",
+    "description": "Toolbar button tooltip"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Color Picker & Palette: Eyedropper, Contrast",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Color Picker",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "Pick any color on a page with an eyedropper. Copy HEX, RGB or HSL. Palettes and WCAG contrast. No tracking.",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Color Picker (Alt+Shift+E to pick)",
+    "description": "Toolbar button tooltip"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Color Picker & Palette: Pipette, Kontrast",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Color Picker",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "Pipette zum Farben picken auf jeder Seite. HEX, RGB, HSL kopieren. Paletten und WCAG-Kontrast. Kein Tracking. Englische Oberfläche.",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Color Picker (Alt+Shift+E zum Picken)",
+    "description": "Toolbar button tooltip"
+  }
+}

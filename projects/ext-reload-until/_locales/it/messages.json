@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Reload Until: Aggiornamento automatico e monitor",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Reload Until",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "Ricarica una scheda e avvisa se un testo compare o scompare: scorte, risultati, prenotazioni. Pagamento unico. Interfaccia inglese.",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Reload Until",
+    "description": "Toolbar button tooltip"
+  }
+}

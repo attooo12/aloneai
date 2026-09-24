@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Reload Until: Automatisch vernieuwen & bewaking",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Reload Until",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "Vernieuwt een tabblad en waarschuwt als tekst verschijnt/verdwijnt: voorraad, uitslagen. Eenmalige betaling. Engels interface.",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Reload Until",
+    "description": "Toolbar button tooltip"
+  }
+}

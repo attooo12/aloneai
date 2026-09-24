@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Reload Until: Auto Refresh & Page Monitor",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Reload Until",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "Auto refresh a tab and get notified the moment text appears or disappears: restocks, results, booking slots. Pay once.",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Reload Until",
+    "description": "Toolbar button tooltip"
+  }
+}

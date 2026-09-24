@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Cookie Crate: Cookie- en opslageditor",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Cookie Crate",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "Bekijk, bewerk, importeer en exporteer cookies, localStorage en sessionStorage van de site. Alleen lokaal. Engelse interface.",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Cookie Crate",
+    "description": "Toolbar button tooltip"
+  }
+}

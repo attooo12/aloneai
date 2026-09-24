@@ -2,7 +2,15 @@
 
 Dashboard: https://chrome.google.com/webstore/devconsole → **New item** → upload the zip → fill the tabs below → **Submit for review**.
 Zips are GitHub release downloads; screenshots are in the public aloneai repo (github.com/attooo12/aloneai, same paths).
-The listing name comes from `manifest.json` (Reload Until is now "Reload Until: Auto Refresh & Page Monitor"; the release zip is rebuilt). Everything else is copy-paste from the LISTING.md files.
+The listing name comes from `manifest.json` (Reload Until is now "Reload Until: Auto Refresh & Page Monitor"; the release zip is rebuilt). Everything else is copy-paste from the LISTING.md files. Paste only the `## Description` section as the store description,
+never the "Keywords to cover" list (that would be keyword spam, violation code Yellow Argon). Policy audit against the
+current rules, with the reasons behind the data-usage answers below: `projects/research/policy-audit-2026-09-24.md`.
+
+**Store search is now localized in 9 languages** (English, German, French, Spanish, Brazilian Portuguese,
+Italian, Dutch, Polish, Japanese) via `default_locale`/`_locales/*/messages.json` in each extension's manifest —
+Chrome shows the name and description in the visitor's own language automatically, and search matches against
+that localized text too. This needs nothing extra from you: upload the same zip as always, and the store tabs
+below (English) are still what you fill in and see in the dashboard.
 
 ## Account-level (once)
 - Developer name shown publicly: **AloneAI** (suggested). Contact email: yours (it must be verified).
@@ -11,7 +19,7 @@ The listing name comes from `manifest.json` (Reload Until is now "Reload Until: 
 Every extension also has an optional **marquee tile** (1400×560) next to its promo tile: `marquee-1400x560.png`. Upload it too; the store only features items that have one.
 
 ## 1. Reload Until (ready)
-- Zip: https://github.com/attooo12/reload-until/releases/download/v1.0.2/reload-until-1.0.2.zip (workspace: `projects/ext-kit/dist/`)
+- Zip: https://github.com/attooo12/reload-until/releases/download/v1.0.3/reload-until-1.0.3.zip (workspace: `projects/ext-kit/dist/`)
 - **Store listing** tab: copy from `projects/ext-reload-until-listing/LISTING.md` (description, summary, category Tools, English).
   Screenshots: `projects/ext-reload-until-listing/assets/screenshot-{1,2,3}-*.png`. Small promo tile: `assets/promo-small-440x280.png`.
   Homepage: https://attooo12.github.io/reload-until/ · Support: https://github.com/attooo12/reload-until/issues
@@ -20,19 +28,21 @@ Every extension also has an optional **marquee tile** (1400×560) next to its pr
   - Permission justifications: the "Permission justifications" list in LISTING.md, one per field (storage, alarms, notifications,
     scripting, offscreen, activeTab, host permission).
   - Remote code: **No**.
-  - Data usage: tick **nothing** (no data collected). Tick the three certification boxes.
+  - Data usage: tick **Website content** (the page text is read on the device to check the condition; it is never stored
+    or sent), then the three certification boxes. Not "nothing": Chrome's User Data FAQ (Q3) says data handled only on
+    the device must be disclosed too, and "nothing" next to scripting + host access invites a Purple Lithium rejection.
   - Privacy policy URL: https://attooo12.github.io/reload-until/privacy.html
 - **Distribution**: Free (Pro is a separate one-time Stripe purchase), all regions, Public.
 
 ## 2. Color Picker & Palette (ready)
-- Zip: https://github.com/attooo12/color-picker/releases/download/v1.0.1/color-picker-1.0.1.zip
+- Zip: https://github.com/attooo12/color-picker/releases/download/v1.0.2/color-picker-1.0.2.zip
 - Listing + justifications: `projects/ext-color-picker-listing/LISTING.md`, assets in `projects/ext-color-picker-listing/assets/`.
 - Privacy policy URL: https://attooo12.github.io/color-picker/privacy.html · Support: https://github.com/attooo12/color-picker/issues
 - Single purpose: "Pick colors from web pages and manage them (formats, history, palettes, contrast)."
 - Permissions: activeTab, scripting, storage only. Remote code: No. Data usage: nothing.
 
 ## 3. Tab Lifeboat: Session Saver & Backup (ready, wake #6)
-- Zip: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.1/tab-lifeboat-1.0.1.zip
+- Zip: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.2/tab-lifeboat-1.0.2.zip
 - Listing + justifications: `projects/ext-tab-lifeboat-listing/LISTING.md`, assets in `projects/ext-tab-lifeboat-listing/assets/`.
   Category Productivity. Homepage https://attooo12.github.io/tab-lifeboat/ · Support https://github.com/attooo12/tab-lifeboat/issues
 - Privacy policy URL: https://attooo12.github.io/tab-lifeboat/privacy.html
@@ -41,10 +51,17 @@ Every extension also has an optional **marquee tile** (1400×560) next to its pr
   Data usage: tick **Web history** (tab URLs/titles, stored only on the device), then the three certifications.
 
 ## 4. Cookie Crate: Cookie & Storage Editor (ready, wake #6)
-- Zip: https://github.com/attooo12/cookie-crate/releases/download/v1.0.1/cookie-crate-1.0.1.zip
+- Zip: https://github.com/attooo12/cookie-crate/releases/download/v1.0.2/cookie-crate-1.0.2.zip
 - Listing, justifications, data answers: `projects/ext-cookie-crate-listing/LISTING.md`; screenshots `screenshot-{1,2,3}.png`, promo `promo-440x280.png`
   in the same folder. Category **Developer Tools**. Homepage https://attooo12.github.io/cookie-crate/ · Support https://github.com/attooo12/cookie-crate/issues
-- Privacy policy URL: https://attooo12.github.io/cookie-crate/privacy.html · Remote code: No · Data usage: nothing (local only).
+- Privacy policy URL: https://attooo12.github.io/cookie-crate/privacy.html · Remote code: No · Data usage: tick
+  **Authentication information** and **Website content** (handled only on the device, never transmitted; the privacy
+  policy uses the same words), then the three certifications.
+
+## Test instructions tab (every extension)
+The free features need no account. For the Pro features, paste a reviewer license key into the item's **Test
+instructions** tab ("Paste this key on the options page, License key section, then Save"). Ask me for one reviewer key
+per extension when you submit; it is signed like a customer key. Never put it in a public file or the repo.
 
 ## Optional: let me ship updates myself (saves you every future upload)
 Google Cloud console → enable "Chrome Web Store API" → OAuth client (Desktop) → get a refresh token for scope

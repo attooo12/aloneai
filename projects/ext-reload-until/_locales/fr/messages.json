@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Reload Until: Actualisation & Surveillance",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Reload Until",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "Actualise une page et alerte quand un texte apparaît/disparaît (stock, résultats, rendez-vous). Paiement unique. Interface anglaise.",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Reload Until",
+    "description": "Toolbar button tooltip"
+  }
+}

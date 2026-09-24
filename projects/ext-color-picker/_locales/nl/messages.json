@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Color Picker & Palette: Kleurpipet, Contrast",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Color Picker",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "Kies een kleur op pagina met een kleurpipet. HEX, RGB of HSL kopiëren. Paletten en WCAG-contrast. Geen tracking. Engels interface.",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Color Picker (Alt+Shift+E om te kiezen)",
+    "description": "Toolbar button tooltip"
+  }
+}

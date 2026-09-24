@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Reload Until: Auto-Reload & Seitenüberwachung",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Reload Until",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "Seite automatisch neu laden, Alarm bei Text-Änderung (Lager, Ergebnisse, Termine). Einmalzahlung, kein Abo. Oberfläche: Englisch.",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Reload Until",
+    "description": "Toolbar button tooltip"
+  }
+}

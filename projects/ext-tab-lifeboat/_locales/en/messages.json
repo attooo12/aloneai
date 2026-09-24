@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Tab Lifeboat: Session Saver & Backup",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Tab Lifeboat",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "Save and restore tabs, windows and tab groups. Automatic crash snapshots and file backups. Local only, no account.",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Tab Lifeboat",
+    "description": "Toolbar button tooltip"
+  }
+}

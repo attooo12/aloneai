@@ -10,7 +10,18 @@ set -e
 dir="$1"; [ -f "$dir/manifest.json" ] || { echo "no manifest in $dir"; exit 1; }
 HERE="$(cd "$(dirname "$0")" && pwd)"
 SHIMS="$HERE/firefox-shims"
-name=$(python3 -c "import json,re;m=json.load(open('$dir/manifest.json'));print(re.sub('[^a-z0-9]+','-',(m.get('short_name') or m['name']).lower()).strip('-'))")
+name=$(python3 -c "
+import json, os, re
+d = '$dir'
+m = json.load(open(os.path.join(d, 'manifest.json')))
+val = m.get('short_name') or m['name']
+if isinstance(val, str) and val.startswith('__MSG_') and val.endswith('__'):
+    key = val[6:-2]
+    loc = m.get('default_locale', 'en')
+    msgs = json.load(open(os.path.join(d, '_locales', loc, 'messages.json')))
+    val = msgs[key]['message']
+print(re.sub('[^a-z0-9]+', '-', val.lower()).strip('-'))
+")
 out="$HERE/dist/firefox/$name"
 rm -rf "$out"; mkdir -p "$out"
 (cd "$dir" && tar -c --exclude='./test' --exclude='./.git' .) | (cd "$out" && tar -x)
@@ -38,7 +49,8 @@ PY
   color-picker)
     GECKO_ID="color-picker@attooo12.github.io"
     MIN_FF="142.0"  # 126+ for options_page, 140+ for data_collection_permissions; kept equal to reload-until
-    FF_NAME="Color Picker & Palette: Eyedropper"  # AMO caps "name" at 45 chars; the CWS name (52 chars) is too long
+    # 'name' is __MSG_extName__ (see _locales/*/messages.json) and every locale's extName is already <=50 chars
+    # (AMO's cap), so unlike before, no Firefox-only name override is needed here.
     cp "$SHIMS/color-picker-capture-shim.js" "$out/firefox-capture-shim.js"
     cp "$SHIMS/eyedropper-polyfill.js" "$out/eyedropper-polyfill.js"
     BG_SCRIPTS='["firefox-capture-shim.js", "sw.js"]'
@@ -47,12 +59,11 @@ PY
     sed -i 's#<script type="module" src="popup.js"></script>#<script src="eyedropper-polyfill.js"></script>\n<script type="module" src="popup.js"></script>#' "$out/popup.html"
     grep -q 'eyedropper-polyfill.js' "$out/popup.html" || { echo "popup.html script tag not found/patched"; exit 1; }
     grep -q 'eyedropper-polyfill.js' "$out/pick.js" || { echo "pick.js files: [...] not patched"; exit 1; }
-    python3 - "$out/manifest.json" "$GECKO_ID" "$MIN_FF" "$BG_SCRIPTS" "$FF_NAME" <<'PY'
+    python3 - "$out/manifest.json" "$GECKO_ID" "$MIN_FF" "$BG_SCRIPTS" <<'PY'
 import json, sys
-path, gecko_id, min_ff, bg_scripts, ff_name = sys.argv[1:6]
+path, gecko_id, min_ff, bg_scripts = sys.argv[1:5]
 m = json.load(open(path))
 m['background'] = {"scripts": json.loads(bg_scripts), "type": "module"}
-m['name'] = ff_name
 m.pop('minimum_chrome_version', None)
 m['browser_specific_settings'] = {"gecko": {
     "id": gecko_id, "strict_min_version": min_ff,

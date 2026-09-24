@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Tab Lifeboat: Sessies opslaan en back-up",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Tab Lifeboat",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "Bewaart/herstelt tabbladen, vensters, tabgroepen. Auto-snapshots en bestandsback-ups. Alleen lokaal, geen account. Engels interface.",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Tab Lifeboat",
+    "description": "Toolbar button tooltip"
+  }
+}

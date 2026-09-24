@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Reload Until: Recarga automática y monitor",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Reload Until",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "Recarga una pestaña y avisa si un texto aparece o desaparece: stock, resultados, citas. Pago único. Interfaz en inglés.",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Reload Until",
+    "description": "Toolbar button tooltip"
+  }
+}

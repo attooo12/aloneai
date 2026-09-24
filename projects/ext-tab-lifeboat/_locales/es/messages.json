@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Tab Lifeboat: Guardar sesiones y copias",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Tab Lifeboat",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "Guarda y restaura pestañas, ventanas y grupos. Copias automáticas y backups en archivo. Solo local, sin cuenta. Interfaz en inglés.",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Tab Lifeboat",
+    "description": "Toolbar button tooltip"
+  }
+}

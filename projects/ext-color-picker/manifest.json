@@ -1,13 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "Color Picker & Palette: Eyedropper, Contrast Checker",
-  "short_name": "Color Picker",
-  "version": "1.0.1",
-  "description": "Pick any color on a page with an eyedropper. Copy HEX, RGB or HSL. Palettes and WCAG contrast. No tracking.",
+  "default_locale": "en",
+  "name": "__MSG_extName__",
+  "short_name": "__MSG_extShortName__",
+  "version": "1.0.2",
+  "description": "__MSG_extDescription__",
   "minimum_chrome_version": "137",
   "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
   "action": {
-    "default_title": "Color Picker (Alt+Shift+E to pick)",
+    "default_title": "__MSG_actionTitle__",
     "default_popup": "popup.html",
     "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png" }
   },

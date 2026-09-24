@@ -33,24 +33,24 @@ Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **
 - **Video URL, optional**: skip.
 
 ## 1. Reload Until
-- Zip: https://github.com/attooo12/reload-until/releases/download/v1.0.2/reload-until-1.0.2.zip (same file as for Chrome).
+- Zip: https://github.com/attooo12/reload-until/releases/download/v1.0.3/reload-until-1.0.3.zip (same file as for Chrome).
 - **Properties tab**: Category **Productivity** (Edge's equivalent of Chrome's "Tools"). Website
   https://attooo12.github.io/reload-until/ · Support contact: your email or
   https://github.com/attooo12/reload-until/issues · Privacy policy URL:
   https://attooo12.github.io/reload-until/privacy.html
-- **Store listings tab** (English): copy from `projects/ext-reload-until-listing/LISTING.md` — name (Edge's
-  limit is generous, the full CWS name fits), the ≤132-char summary as the short description, the long
+- **Store listings tab** (English): copy from `projects/ext-reload-until-listing/LISTING.md` — name (read from the manifest;
+  Edge caps names at 45 characters per MDN, the English names are 36-44), the ≤132-char summary as the short description, the long
   description, and the same screenshots + small promo tile.
 - **Privacy tab / data collection**: single purpose and permission justifications are the same list as
   `LISTING.md` → "Permission justifications" (storage, alarms, notifications, scripting, offscreen, activeTab,
-  optional host permission). Declare no data collection (Edge's privacy questionnaire is similar to Chrome's:
-  tick "does not collect user data" for every category). No remote code.
+  optional host permission). Data usage: tick the same category as on Chrome (**Website content**: the page
+  text is read on the device, never stored or sent). No remote code.
 - **Age ratings / content**: not mature content, no ads, no in-extension purchases flag needed since Pro is a
   one-time Stripe purchase made outside the extension (same framing you used for Chrome).
 - Distribution: Free, all markets, Public — same as Chrome.
 
 ## 2. Color Picker & Palette
-- Zip: https://github.com/attooo12/color-picker/releases/download/v1.0.1/color-picker-1.0.1.zip (same file as for Chrome).
+- Zip: https://github.com/attooo12/color-picker/releases/download/v1.0.2/color-picker-1.0.2.zip (same file as for Chrome).
 - **Properties tab**: Category **Developer Tools** (alternative: Productivity). Website
   https://attooo12.github.io/color-picker/ · Support: https://github.com/attooo12/color-picker/issues ·
   Privacy policy URL: https://attooo12.github.io/color-picker/privacy.html
@@ -61,21 +61,37 @@ Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **
 - Distribution: Free, all markets, Public.
 
 ## 3. Tab Lifeboat: Session Saver & Backup
-- Zip: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.1/tab-lifeboat-1.0.1.zip (same file as for Chrome).
+- Zip: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.2/tab-lifeboat-1.0.2.zip (same file as for Chrome).
 - Category **Productivity**. Website https://attooo12.github.io/tab-lifeboat/ · Support https://github.com/attooo12/tab-lifeboat/issues ·
   Privacy policy https://attooo12.github.io/tab-lifeboat/privacy.html
 - Listing text, single purpose and permission justifications: `projects/ext-tab-lifeboat-listing/LISTING.md`; assets in its `assets/`.
 - Data: declare that tab URLs/titles (browsing history) are handled and stored only on the device; nothing is transmitted. No remote code.
 
 ## 4. Cookie Crate: Cookie & Storage Editor
-- Zip: https://github.com/attooo12/cookie-crate/releases/download/v1.0.1/cookie-crate-1.0.1.zip (same file as for Chrome).
+- Zip: https://github.com/attooo12/cookie-crate/releases/download/v1.0.2/cookie-crate-1.0.2.zip (same file as for Chrome).
 - Category **Developer tools**. Listing/assets/logo-300x300: `projects/ext-cookie-crate-listing/`. Privacy https://attooo12.github.io/cookie-crate/privacy.html
+- Data usage: same as Chrome, **Authentication information** and **Website content** (handled only on the device). No remote code.
 
-## Minor, non-blocking note on both privacy policies
-Both `privacy.html` pages say "Chrome's storage" / "Chrome Web Store" a few times. That's technically accurate
-even on Edge (the API is still called `chrome.storage`, and Edge exposes the same `chrome.*` namespace), so I
-left it as-is rather than fork a second privacy page. If an Edge reviewer ever asks for browser-neutral wording,
-it's a one-line edit to `PRIVACY.md`/`privacy.html` on my next wake — flag it to me if it comes up.
+## Edge-specific checks (policy audit 2026-09-24)
+- Edge policy 1.1.2 says a listing "must not reference other browsers". The LISTING.md descriptions are now
+  browser-neutral (no "Chrome"), so the same text works on both stores. Don't add "for Chrome" when pasting.
+- Edge policy 1.8.2 requires the price of paid features in the metadata: each description now states the one-time
+  Pro price (€9 / €5 / €5 / €7).
+- **Notes for certification**: paste a reviewer license key (ask me for one per extension; never commit it) and one
+  line on how to use it (options page, License key, Save).
+- Search terms (optional, max 7 terms, 30 characters each, 21 words in total), suggested:
+  Reload Until: auto refresh · page monitor · refresh until text · reload tab · keyword alert · restock alert · tab reloader
+  Color Picker: color picker · eyedropper · hex color · contrast checker · color palette · wcag · oklch
+  Tab Lifeboat: session manager · save tabs · restore tabs · tab groups · crash recovery · tab backup · export tabs
+  Cookie Crate: cookie editor · localStorage editor · export cookies · import cookies · cookies.txt · sessionStorage · delete cookies
+- The zips declare 9 languages (`_locales`). Partner Center asks for a Description and a logo for **each** language
+  in the package. Use the same logo everywhere. For the descriptions, ask me for the 8 translations, or paste the
+  English one and accept a possible localization remark (policy 1.7). The extension UI itself is English-only,
+  which each localized short description already says.
+
+## Privacy policies
+All four `privacy.html` pages are browser-neutral since 2026-09-24 (Edge policy 1.5.2 asks for that), list the
+user's controls, and include the terms of sale (one-time price, Stripe as merchant of record, not sold by any store).
 
 ## What was actually verified vs. what to expect at review
 - Verified: the zips are byte-identical to the Chrome Web Store uploads (built by the same `ext-kit/pack.sh`), Chromium supports every API both extensions use (offscreen, scripting, alarms,

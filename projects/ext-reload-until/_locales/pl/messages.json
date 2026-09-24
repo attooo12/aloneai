@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Reload Until: Automatyczne odświeżanie i monitor",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Reload Until",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "Automatycznie odświeża kartę, powiadamia o zmianie tekstu: dostępność, wyniki. Jednorazowa opłata. Interfejs angielski.",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Reload Until",
+    "description": "Toolbar button tooltip"
+  }
+}

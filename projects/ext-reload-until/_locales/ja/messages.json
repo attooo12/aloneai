@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Reload Until: 自動更新・ページ監視",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Reload Until",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "タブを自動更新し、テキストの出現・消失を通知します(再入荷・結果・予約枠など)。買い切り、サブスクなし。インターフェースは英語です。",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Reload Until",
+    "description": "Toolbar button tooltip"
+  }
+}

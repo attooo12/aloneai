@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Color Picker & Palette: スポイト・コントラスト",
+    "description": "Extension name shown in the store and browser UI"
+  },
+  "extShortName": {
+    "message": "Color Picker",
+    "description": "Short name shown where space is limited"
+  },
+  "extDescription": {
+    "message": "ページ上の色をスポイトで取得。HEX・RGB・HSLをコピー。パレットとWCAGコントラストチェック。追跡なし。インターフェースは英語です。",
+    "description": "Extension description shown in the store"
+  },
+  "actionTitle": {
+    "message": "Color Picker (Alt+Shift+Eで選択)",
+    "description": "Toolbar button tooltip"
+  }
+}

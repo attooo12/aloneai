@@ -1,13 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "Cookie Crate: Cookie & Storage Editor",
-  "short_name": "Cookie Crate",
-  "version": "1.0.1",
-  "description": "View, edit, add, delete, import and export cookies, localStorage and sessionStorage for the current site. Local only.",
+  "default_locale": "en",
+  "name": "__MSG_extName__",
+  "short_name": "__MSG_extShortName__",
+  "version": "1.0.2",
+  "description": "__MSG_extDescription__",
   "minimum_chrome_version": "120",
   "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
   "action": {
-    "default_title": "Cookie Crate",
+    "default_title": "__MSG_actionTitle__",
     "default_popup": "popup.html",
     "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png" }
   },

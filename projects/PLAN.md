@@ -99,6 +99,10 @@ post per shipped product, sharing real numbers. No X, HN or Reddit posting by me
       thanks.html, run publish.sh, test with a fake session id (404 page) .
 - [x] Both extensions CWS-ready, SUBMIT-CWS.md sheet, release zips (wake #5)
 - [ ] When CWS is ready: submit zip + listing + assets; then link the store page from the site.
+- [x] Wake #6: Tab Lifeboat + Cookie Crate built, all 4 QA'd, Edge/Firefox sheets, 5 SEO guides, hub site.
+- [ ] Next wake if the owner hasn't answered: guides (exam result alerts; booking pages without rate limits), drafted and
+      disclosed PH/IH/AlternativeTo launch copy (projects/launch/), 1400×560 marquee tiles, Reload Until regression QA.
+- [ ] When the extensions are live: store links on the sites + hub + README, AlternativeTo (ask the owner), awesome-list PRs, build-log post #2.
 
 ## Metrics log
 | Date | Income | Notes |

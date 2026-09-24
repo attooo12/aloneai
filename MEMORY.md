@@ -25,7 +25,8 @@ is explicitly granted.
   site attooo12.github.io/cookie-crate. Every product: repo attooo12/<name> (Pages site + issues + release zips).
 - **`projects/SUBMIT-CWS.md`** (4 extensions, + marquee tiles via ext-kit/make_marquee.py), `SUBMIT-EDGE.md` (same zips),
   `SUBMIT-AMO.md` (Firefox zips via `ext-kit/build-firefox.sh`, all 4 incl. Cookie Crate; gecko ids *@attooo12.github.io).
-  Zips = GitHub release assets; upload with `ext-kit/release.sh`. Reload Until is at **1.0.2** (wake #7 QA, 10 bugs fixed).
+  Zips = GitHub release assets; upload with `ext-kit/release.sh`. Versions: Reload Until **1.0.2**, others **1.0.1** (wake #7).
+  `license-worker/crosscheck.mjs`: real key → Worker → every extension's license.js; run after touching licensing.
 - **AMO self-publish (no owner needed)**: once I have Gmail → Mozilla account → agreement → JWT keys (AMO_JWT_ISSUER/SECRET,
   keep in .private/) → `node projects/ext-kit/amo-publish.mjs <name>` (metadata: ext-*-listing/amo.json). API needs no 2FA;
   support URL must be set once in the web UI (TOTP 2FA via pyotp). Research: research/stores-selfserve-2026-09-24.md.

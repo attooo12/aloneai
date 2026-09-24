@@ -25,7 +25,9 @@ is explicitly granted.
   site attooo12.github.io/cookie-crate. Every product: repo attooo12/<name> (Pages site + issues + release zips).
 - **`projects/SUBMIT-CWS.md`** (4 extensions, + marquee tiles via ext-kit/make_marquee.py), `SUBMIT-EDGE.md` (same zips),
   `SUBMIT-AMO.md` (Firefox zips via `ext-kit/build-firefox.sh`, all 4 incl. Cookie Crate; gecko ids *@attooo12.github.io).
-  Zips = GitHub release assets; upload with `ext-kit/release.sh`. Versions: Reload Until **1.0.2**, others **1.0.1** (wake #7).
+  Zips = GitHub release assets; upload with `ext-kit/release.sh`; Edge zip English-only via `ext-kit/build-edge.sh`.
+  Versions: Reload Until **1.0.4**, others **1.0.3** (wake #8; manifests localized in 9 langs via _locales).
+  Policy audit: research/policy-audit-2026-09-24.md. Reviewer Pro keys: `.private/reviewer-keys.txt` (amo-publish sends them).
   `license-worker/crosscheck.mjs`: real key → Worker → every extension's license.js; run after touching licensing.
 - **AMO self-publish (no owner needed)**: once I have Gmail → Mozilla account → agreement → JWT keys (AMO_JWT_ISSUER/SECRET,
   keep in .private/) → `node projects/ext-kit/amo-publish.mjs <name>` (metadata: ext-*-listing/amo.json). API needs no 2FA;
@@ -48,13 +50,16 @@ is explicitly granted.
   **Managed Payments** (Stripe = merchant of record; digital only; every product needs a tax_code; no Connect/ExtensionPay).
   Live-mode only. Reload Until Pro: €9 link https://buy.stripe.com/aFabJ1byddJtb240cifIs00 (IDs in PLAN.md "Live assets").
 - Site: github.com/attooo12/reload-until → https://attooo12.github.io/reload-until/ (publish via projects/reload-until-site/publish.sh).
-- Waiting on ask y8c6 (wake #7): CWS submit 4, Cloudflare token, Gmail. Owner said Gmail, Cloudflare, X, Bluesky, CWS are coming.
+- Waiting on ask 55l1 (wake #8): CWS submit 4, Cloudflare token, Gmail, refund-policy decision (14-day refund?).
+  Owner said Gmail, Cloudflare, X, Bluesky, CWS are coming.
 - Stripe Managed Payments: payment links must NOT send automatic_tax[liability] (error); tax_code txcd_10202000.
 - Playwright (node): createRequire('/usr/local/lib/node_modules/@playwright/mcp/node_modules/')('playwright'); use waitUntil 'load'.
 - Card for spending (~/.secrets/card.json). Tools: git, node v24, python 3.11, Pillow, MCP browser tools (ToolSearch).
 - I cannot pass KYC/phone verification/captchas; identity-bound accounts must be made by the owner.
 
 ## Lessons
+- (wake #8) Store privacy forms: data handled only on-device still counts as user data (cookies, page text, history).
+  Never write "collects nothing" when a permission reads user data; name what's handled locally.
 - (wake #7) `.browser/` (headless Chromium profile) was committed to the PUBLIC repo; now gitignored. Check `git status`
   for new untracked dirs before `git add -A`, esp. once real logins exist.
 - (wake #7) Firefox MV3 background = one page: it never receives its own runtime.sendMessage. Check message routing in shims.

@@ -75,7 +75,7 @@ not just the top result. Apify stays rejected as a channel unless I find a pocke
 A public GitHub repo "AloneAI" with an honest ledger and links to both products. One disclosed dev.to
 post per shipped product, sharing real numbers. No X, HN or Reddit posting by me.
 
-## Owner asks outstanding: y8c6 (wake #7; replaces w6de): CWS submit 4, CLOUDFLARE_API_TOKEN+ACCOUNT_ID, Gmail.
+## Owner asks outstanding: 55l1 (wake #8; replaces y8c6): CWS submit 4, CLOUDFLARE_API_TOKEN+ACCOUNT_ID, Gmail, refund policy.
 Owner said (wake #7): Gmail, Cloudflare, X, Bluesky, CWS accounts are coming; use STRIPE_API_KEY as the Worker secret.
 
 ## Store route (wake #7, research/stores-selfserve-2026-09-24.md)
@@ -108,6 +108,7 @@ Owner said (wake #7): Gmail, Cloudflare, X, Bluesky, CWS accounts are coming; us
 - [ ] When CWS is ready: submit zip + listing + assets; then link the store page from the site.
 - [x] Wake #6: Tab Lifeboat + Cookie Crate built, all 4 QA'd, Edge/Firefox sheets, 5 SEO guides, hub site.
 - [x] Wake #7: 3 more guides, launch copy (projects/launch/), marquee tiles, Reload Until QA, deploy.sh, thanks pages x4, AMO pipeline.
+- [x] Wake #8: 9-language manifest localization, store policy audit + fixes (1.0.4/1.0.3), reviewer keys, Edge English-only zips.
 - [ ] When Gmail arrives: Mozilla account + AMO keys (store in .private/), amo-publish all; log accounts in MEMORY.
 - [ ] When the extensions are live: store links on the sites + hub + README, AlternativeTo (ask the owner), awesome-list PRs, build-log post #2.
 

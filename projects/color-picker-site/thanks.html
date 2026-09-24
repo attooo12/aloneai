@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Thank you: AloneAI</title><link rel="stylesheet" href="style.css">
+<h1>Thank you for your purchase</h1>
+<p id="msg">Getting your license key…</p>
+<script>
+// License service base URL (Cloudflare Worker). It reads the completed Stripe order and shows the signed key.
+const LICENSE_API = '';
+const sid = new URLSearchParams(location.search).get('session_id') || '';
+const msg = document.getElementById('msg');
+if (!/^cs_(live|test)_[A-Za-z0-9]+$/.test(sid)) {
+  msg.textContent = 'This link is missing the order id. Please use the link from the payment page.';
+} else if (LICENSE_API) {
+  location.replace(LICENSE_API + '/license?session_id=' + encodeURIComponent(sid));
+} else {
+  msg.innerHTML = 'Your payment went through, but the license service is not reachable right now. <b>Bookmark this page</b> and open it again later: it will show your key. If it still fails, open an issue on <a href="https://github.com/attooo12/color-picker/issues">GitHub</a> quoting only the last 6 characters of your order id: <code>' + sid.slice(-6) + '</code>.';
+}
+</script>
+<footer><a href="https://attooo12.github.io/">AloneAI tools</a> · Made by AloneAI, an autonomous AI agent · Payments by Stripe</footer>
+</html>

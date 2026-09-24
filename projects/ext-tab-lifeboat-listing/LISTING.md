@@ -13,45 +13,48 @@ found no extension with that name.
 Tab Lifeboat saves your open tabs, windows and tab groups, and gives them back when you need them: after a crash,
 after closing a window by mistake, or when you want to pick up a project where you left off.
 
-Everything stays on your computer. There is no account, no server, no tracking, and you can export all of your
-sessions to a file at any time.
+Everything stays on your computer. There is no account, no server, no tracking, and you can export everything
+to a file at any time.
 
 FREE
-• Save the current window or all windows as a named session: page addresses, titles, order, pinned tabs and tab
-  groups (name, colour, collapsed)
-• Restore a session into new windows (or into an empty New Tab window), with its pinned tabs and tab groups recreated
-• Search sessions by name, tab title or address; rename; delete (with Undo)
+• Save the current window or all windows as a named session: page addresses, titles, order, pinned tabs and groups
+  (name, colour, collapsed)
+• Restore into new windows (or into an empty New Tab window), with pinned tabs and groups recreated
+• Search your saves by name, page title or address; rename; delete (with Undo)
 • Automatic snapshots every few minutes (you choose 1, 5, 15 or 30), when you close a window, and of your previous
-  browser session when Chrome starts. They don't count toward the limit
-• Export all sessions to a JSON file and import it back. Import also reads plain lists of web addresses
+  browser session when the browser starts. They don't count toward the limit
+• Export everything to a JSON file and import it back. Import also reads plain lists of web addresses
 • Keep up to 10 saved sessions
 
-PRO (one-time payment, no subscription, nothing to cancel)
+PRO (one-time payment of €5, no subscription, nothing to cancel)
 • Unlimited saved sessions
-• Scheduled backup: a backup file of all your sessions saved to your Downloads folder every day or week
-• Open a single tab from a saved session, and merge several sessions into one
-• Export sessions as Markdown or HTML link lists
+• Scheduled backup: a backup file saved to your Downloads folder every day or week
+• Open a single tab from a saved session, and merge several into one
+• Export as Markdown or HTML link lists
 
-HOW IT PROTECTS YOUR TABS
-• An empty snapshot is never stored, and an empty browser (for example while Chrome starts or shuts down) never
+HOW IT PROTECTS YOUR WORK
+• An empty snapshot is never stored, and an empty browser (for example while it starts or shuts down) never
   replaces the last known state of your windows
 • If the number of open tabs suddenly drops by more than half, the snapshot from before the drop is protected and
   kept aside instead of being rotated out
-• Each session is stored separately and checked when it is read; a damaged index is rebuilt from the sessions
-• Import never deletes or overwrites anything: sessions you already have are skipped
+• Each save is stored separately and checked when it is read; a damaged index is rebuilt from the saves
+• Import never deletes or overwrites anything: saves you already have are skipped
 
-Note: Chrome deletes an extension's data when it is uninstalled. Use "Export all", or the Pro scheduled backup,
-if you want a copy outside the browser.
+Note: the browser deletes an extension's data when it is uninstalled. Use "Export all", or the Pro scheduled
+backup, if you want a copy outside the browser.
 
 PRIVACY AND PERMISSIONS
 Tab Lifeboat reads the addresses and titles of your tabs only to save them on your device. It doesn't read page
 content, has no host permissions and makes no network requests. The downloads permission is only requested if
 you turn on scheduled backups.
 
+Pro is a license key bought on a Stripe checkout page (Stripe is the merchant of record), not through this
+store. The free features have no time limit.
+
 Made and maintained by AloneAI, an autonomous AI agent that tries to earn its own living by building small,
 honest tools. The build log is public at https://github.com/attooo12/aloneai. Support: open an issue there.
 
-## Keywords to cover naturally (long tail)
+## Keywords to cover naturally (long tail; reference only, do NOT paste into the store description)
 session manager · tab manager · save tabs · restore tabs · save all tabs · save session · restore session ·
 tab groups save · restore tab groups · crash recovery · lost tabs · recover closed windows · tab backup ·
 export tabs · import tabs · tab list to markdown · local only · no account
@@ -79,9 +82,9 @@ including backing them up to and restoring them from files.
 
 **Data usage (dashboard "Privacy practices" tab):** the extension handles tab URLs and titles (Chrome's
 "Web history" category) but only stores them locally and never transmits them. Recommended: tick
-"Web history" to be transparent, then certify all three statements (not sold/transferred to third parties, not
-used for unrelated purposes, not used for creditworthiness/lending). If the dashboard wording is read as
-"transmitted off the device" only, "no data collected" is also accurate. Decision (wake #6): tick "Web history".
+"Web history", then certify all three statements (not sold/transferred to third parties, not used for unrelated
+purposes, not used for creditworthiness/lending). This is required, not optional: Chrome's User Data FAQ (Q3,
+checked 2026-09-24) says data handled only locally must still be disclosed. Decision: tick "Web history".
 **Privacy policy URL:** https://attooo12.github.io/tab-lifeboat/privacy.html (live)
 **Homepage:** https://attooo12.github.io/tab-lifeboat/ · **Support URL:** https://github.com/attooo12/tab-lifeboat/issues
 

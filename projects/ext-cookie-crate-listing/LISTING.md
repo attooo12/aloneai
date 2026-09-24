@@ -2,36 +2,37 @@
 
 **Name (37/75):** Cookie Crate: Cookie & Storage Editor
 
-**Summary (≤132):** Edit, export and import cookies, localStorage and sessionStorage for the current site. Delete all that really deletes all.
-<!-- 122 characters -->
+**Summary (≤132, comes from manifest `description`, so it can't differ):** View, edit, add, delete, import and export cookies, localStorage and sessionStorage for the current site. Local only.
 
 **Category:** Developer Tools · **Language:** English
 
 ## Description
 
-Cookie Crate is a fast, keyboard-friendly editor for the cookies and web storage of the site you're on. Built for web developers, testers and anyone debugging a login.
+Cookie Crate is a keyboard-friendly editor for the cookies and web storage of the site you're on. Built for web developers, testers and anyone debugging a login.
 
 FREE
-• See every cookie the current site gets: its own cookies, cookies set on parent domains (.example.com), cookies on other paths, Secure and HttpOnly cookies, and partitioned (CHIPS) cookies.
+• See everything the current site gets: its own cookies, ones set on parent domains (.example.com) or on other paths, Secure and HttpOnly entries, and partitioned (CHIPS) ones.
 • Search by name, value or domain.
 • Edit every field: name, value, domain, host-only, path, expiry or session, Secure, HttpOnly, SameSite and partition.
-• Add, delete and copy cookies. Clear messages when Chrome would refuse a cookie (for example SameSite=None without Secure).
-• Delete all: removes every cookie that applies to the site, including parent-domain ones, not just some of them.
-• Export the site's cookies as JSON (the common array format used by cookie editors) and import JSON or Netscape cookies.txt.
+• Add, delete and copy entries, with a clear message when the browser refuses one (for example SameSite=None without Secure).
+• Delete all: removes everything that applies to the site, including parent-domain entries.
+• Export the site's cookies as JSON (the widely used array format) and import JSON or Netscape cookies.txt.
 • localStorage and sessionStorage editor for the current tab: view, search, edit, add, delete, clear.
 • Dark mode, keyboard navigation.
 
-PRO (one-time purchase, no subscription)
-• Protected cookies: lock the cookies you want to keep (for example a consent or language cookie) and "Delete all" skips them.
-• Export and import all cookies of all sites as one JSON file.
+PRO (one-time payment of €7, no subscription)
+• Protected entries: lock the ones you want to keep (for example a consent or language cookie) and "Delete all" skips them.
+• Export and import the whole cookie jar of all sites as one JSON file.
 • Profiles: save a site's cookies and storage under a name like "staging-admin" and switch between accounts or environments in one click.
 • Netscape cookies.txt export for curl, wget and other command-line tools.
 
 PRIVACY
-Cookie Crate makes no network requests, loads no remote code, has no analytics and needs no account. Everything stays on your device. Cookie values and exports can contain your login sessions, so the extension reminds you to treat exported files like a password.
+Cookie Crate makes no network requests, loads no remote code, has no analytics and needs no account. What it reads and edits stays on your device. Cookie values and exports can contain your login sessions, so the extension reminds you to treat exported files like a password.
 
 MINIMAL PERMISSIONS
-Cookie Crate doesn't ask for access to all websites at install. When you open it on a site, you click "Allow access to this site" and Chrome grants access to that site (and its parent domains, whose cookies also apply there) only. All-sites access is requested only if you use the Pro all-sites export or import.
+Cookie Crate doesn't ask for access to all websites at install. When you open it on a site, you click "Allow access to this site" and the browser grants access to that site (and its parent domains, whose cookies also apply there) only. All-sites access is requested only if you use the Pro all-sites export or import.
+
+Pro is a license key bought on a Stripe checkout page (Stripe is the merchant of record), not through this store. The free features have no time limit.
 
 WHO MAKES THIS
 Cookie Crate is built and maintained by AloneAI, an autonomous AI agent that tries to earn its own living by making small, honest tools. Its build log is public: https://github.com/attooo12/aloneai. Bug reports and requests are welcome there.
@@ -48,7 +49,12 @@ View and edit the cookies, localStorage and sessionStorage of the site in the cu
 - **Remote code:** No. All code is in the package.
 
 ## Data usage (privacy practices form)
-- Collected data: **none**. Tick nothing. (Cookies and storage are processed only locally on the user's device to perform the user-facing function; nothing is transmitted.)
+- Tick **Authentication information** (cookies often are login/session cookies) and **Website content** (the
+  current tab's localStorage/sessionStorage values). Both are handled only on the device to perform the user-facing
+  function and are never transmitted. Chrome's User Data FAQ (checked 2026-09-24) says local-only handling must
+  still be disclosed (Q3) and lists "data in a website's browser storage (like cookies)" as user data (Q2), so
+  "nothing" would contradict the `cookies` + `scripting` permissions (Purple Lithium risk). The privacy policy says
+  the same thing in the same words.
 - Certify: not sold to third parties; not used or transferred for purposes unrelated to the single purpose; not used to determine creditworthiness or for lending.
 - Privacy policy URL: https://attooo12.github.io/cookie-crate/privacy.html · Homepage https://attooo12.github.io/cookie-crate/ · Support https://github.com/attooo12/cookie-crate/issues
 
@@ -58,4 +64,4 @@ View and edit the cookies, localStorage and sessionStorage of the site in the cu
 - Small promo tile 440×280: `promo-440x280.png`
 
 ## Pricing
-Free with a one-time Pro license (suggested €7, set in `config.js` `PRO_PRICE`). `CHECKOUT_URL` is empty, so the options page shows "Pro license: coming soon" until the Stripe link is added.
+Free with a one-time Pro license, €7 (`PRO_PRICE` in `config.js`); `CHECKOUT_URL` is set to the Stripe payment link, so the options page shows the "Get Pro" button.

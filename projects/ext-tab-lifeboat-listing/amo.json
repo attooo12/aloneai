@@ -7,7 +7,7 @@
   "supportUrl": "https://github.com/attooo12/tab-lifeboat/issues",
   "supportEmail": null,
   "categories": { "firefox": ["tabs"] },
-  "tags": ["privacy"],
+  "tags": [],
   "license": "all-rights-reserved",
   "requiresPayment": true,
   "isExperimental": false,

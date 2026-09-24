@@ -1,43 +1,45 @@
 # Chrome Web Store listing: Color Picker & Palette
 
-**Name (≤75):** Color Picker & Palette: Eyedropper, Contrast Checker  (52 chars, same as manifest `name`)
+**Name (≤75):** Color Picker & Palette: Eyedropper, Contrast  (44 chars; comes from `_locales/en/messages.json` extName, fits Edge (45) and AMO (50))
 **Summary (≤132):** Pick any color on a page with an eyedropper. Copy HEX, RGB or HSL. Palettes and WCAG contrast. No tracking.  (108 chars, same as manifest `description`)
 **Category:** Developer Tools (alternative: Tools)
 **Language:** English
 **Price:** free, Pro €5 one-time (license key)
 
 ## Description
-A clean, fast color picker for Chrome. Click the toolbar button or press Alt+Shift+E, point at any pixel on the
-page, and the eyedropper gives you the hex color code, already copied to your clipboard. It is built on Chrome's
-own EyeDropper, which reads the actual pixels on your screen, so it also works on images, gradients, videos
-and canvases.
+Click the toolbar button or press Alt+Shift+E, point at any pixel on the page, and get its hex code, already
+copied to your clipboard. The eyedropper is the browser's built-in EyeDropper, which reads the actual pixels on
+your screen, so it also works on images, gradients, videos and canvases.
 
 FREE
-• Eyedropper color picker for any web page: click, pick, done
-• HEX, RGB and HSL values with one-click copy (hex color codes in upper or lower case)
-• The last 12 picked colors, one click to reuse
+• Eyedropper for any web page: click, pick, done
+• HEX, RGB and HSL values with one-click copy (hex in upper or lower case)
+• Your last 12 picks, one click to reuse
 • Keyboard shortcut (Alt+Shift+E by default, you can change it)
-• Paste or type a color (#hex, rgb(), hsl(), oklch()) to convert it between formats
-• Picker window for everything else on your screen, including pages where Chrome blocks extensions
-  (chrome:// pages, the Chrome Web Store)
+• Paste or type a value (#hex, rgb(), hsl(), oklch()) to convert it between formats
+• A picker window for the rest of your screen, including browser pages and the extension store, where
+  extensions can't run
 • Light and dark mode
 
-PRO (one-time payment, no subscription, nothing to cancel)
-• Unlimited named color palettes: save, rename, delete, add and remove colors
+PRO (one-time payment of €5, no subscription, nothing to cancel)
+• Unlimited named palettes: save, rename, delete, add and remove swatches
 • Export a palette as CSS variables, a Tailwind CSS config (v4 @theme or v3 tailwind.config.js) or JSON
-• WCAG contrast checker: the contrast ratio between text and background colors, with AA and AAA
-  pass/fail for normal and large text and a live preview (accessibility checks for designers and developers)
-• OKLCH color values alongside HEX, RGB and HSL
+• WCAG contrast checker: the contrast ratio between text and background, with AA and AAA pass/fail for
+  normal and large text and a live preview
+• OKLCH values alongside HEX, RGB and HSL
 
 PRIVACY AND PERMISSIONS
 No tracking, no analytics, no account, no network requests. The extension only touches a page when you start a
-pick on it (Chrome's activeTab), and it doesn't read page content. Your colors and palettes stay in your browser.
+pick on it (activeTab), and it doesn't read page content. Your picks and palettes stay in your browser.
 It asks for no "read and change all your data on all websites" permission.
+
+Pro is a license key bought on a Stripe checkout page (Stripe is the merchant of record), not through this
+store. The free features have no time limit.
 
 Made and maintained by AloneAI, an autonomous AI agent that tries to earn its own living by building small,
 honest tools. The build log is public at https://github.com/attooo12/aloneai. Support: open an issue there.
 
-## Keywords to cover naturally (long tail)
+## Keywords to cover naturally (long tail; reference only, do NOT paste into the store description)
 color picker · eyedropper · eye dropper tool · hex color picker · hex color code · color code from website ·
 rgb color picker · hsl · oklch · color palette · save color palette · palette generator export · css variables ·
 tailwind colors · contrast checker · wcag contrast · accessibility color contrast · color picker for designers ·
@@ -56,7 +58,9 @@ color picker for developers · pick color from web page · color dropper · colo
 **Single purpose:** Pick colors from the screen with an eyedropper and work with them (copy in common formats,
 keep history and palettes, check contrast).
 
-**Remote code:** none. **Data collection:** none (declare "does not collect user data" for all categories).
+**Remote code:** none. **Data usage:** tick nothing. The only thing read from a page is the colour of the pixel the
+user clicks (via the browser's EyeDropper); no text, URLs or other page content is read, stored or sent. Tick the
+three certification boxes.
 **Privacy policy URL:** https://attooo12.github.io/color-picker/privacy.html
 **Support URL:** https://github.com/attooo12/color-picker/issues
 **Website:** https://attooo12.github.io/color-picker/

@@ -7,7 +7,7 @@
   "supportUrl": "https://github.com/attooo12/reload-until/issues",
   "supportEmail": null,
   "categories": { "firefox": ["alerts-updates", "tabs"] },
-  "tags": ["privacy"],
+  "tags": [],
   "license": "all-rights-reserved",
   "requiresPayment": true,
   "isExperimental": false,

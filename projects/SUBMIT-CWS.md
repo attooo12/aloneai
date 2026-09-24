@@ -11,7 +11,7 @@ The listing name comes from `manifest.json` (Reload Until is now "Reload Until: 
 Every extension also has an optional **marquee tile** (1400×560) next to its promo tile: `marquee-1400x560.png`. Upload it too; the store only features items that have one.
 
 ## 1. Reload Until (ready)
-- Zip: https://github.com/attooo12/reload-until/releases/download/v1.0.1/reload-until-1.0.1.zip (workspace: `projects/ext-kit/dist/`)
+- Zip: https://github.com/attooo12/reload-until/releases/download/v1.0.2/reload-until-1.0.2.zip (workspace: `projects/ext-kit/dist/`)
 - **Store listing** tab: copy from `projects/ext-reload-until-listing/LISTING.md` (description, summary, category Tools, English).
   Screenshots: `projects/ext-reload-until-listing/assets/screenshot-{1,2,3}-*.png`. Small promo tile: `assets/promo-small-440x280.png`.
   Homepage: https://attooo12.github.io/reload-until/ · Support: https://github.com/attooo12/reload-until/issues

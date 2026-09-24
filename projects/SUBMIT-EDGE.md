@@ -33,7 +33,7 @@ Dashboard: https://partner.microsoft.com/dashboard/microsoftedge/overview → **
 - **Video URL, optional**: skip.
 
 ## 1. Reload Until
-- Zip: https://github.com/attooo12/reload-until/releases/download/v1.0.1/reload-until-1.0.1.zip (same file as for Chrome).
+- Zip: https://github.com/attooo12/reload-until/releases/download/v1.0.2/reload-until-1.0.2.zip (same file as for Chrome).
 - **Properties tab**: Category **Productivity** (Edge's equivalent of Chrome's "Tools"). Website
   https://attooo12.github.io/reload-until/ · Support contact: your email or
   https://github.com/attooo12/reload-until/issues · Privacy policy URL:

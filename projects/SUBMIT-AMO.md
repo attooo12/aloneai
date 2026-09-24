@@ -49,12 +49,12 @@ validator runs the same checks as `web-ext lint`, which both zips already pass w
 below are expected/harmless — see "Known lint warnings").
 
 ## Zips (already built, ready to upload)
-- Reload Until: https://github.com/attooo12/reload-until/releases/download/v1.0.1/reload-until-1.0.1-firefox.zip
+- Reload Until: https://github.com/attooo12/reload-until/releases/download/v1.0.2/reload-until-1.0.2-firefox.zip
 - Color Picker & Palette: https://github.com/attooo12/color-picker/releases/download/v1.0.0/color-picker-1.0.0-firefox.zip
 - Tab Lifeboat: https://github.com/attooo12/tab-lifeboat/releases/download/v1.0.0/tab-lifeboat-1.0.0-firefox.zip (wake #6: lint 0 errors;
   Firefox 139+ has the tabGroups API; not run in real Firefox yet. Listing text: projects/ext-tab-lifeboat-listing/LISTING.md,
   privacy https://attooo12.github.io/tab-lifeboat/privacy.html, category Tabs)
-- Cookie Crate: built locally at `ext-kit/dist/cookie-crate-1.0.0-firefox.zip` (no GitHub release cut yet). See
+- Cookie Crate: https://github.com/attooo12/cookie-crate/releases/download/v1.0.0/cookie-crate-1.0.0-firefox.zip. See
   "3. Cookie Crate" below for the Firefox feasibility assessment.
 - Rebuild any of them at any time with `ext-kit/build-firefox.sh <extension-dir> --zip`.
 
@@ -165,10 +165,11 @@ https://attooo12.github.io/cookie-crate/privacy.html, support https://github.com
   background is an event page, not a service worker); added `browser_specific_settings.gecko` (id, min
   version, `data_collection_permissions: {required: ["none"]}`, required by Mozilla policy since Nov 2025);
   dropped `minimum_chrome_version` and (for Reload Until) the now-unused `offscreen` permission.
-- `ext-kit/firefox-shims/reload-until-offscreen-shim.js` (6 lines): Firefox's background page already has a
-  real DOM (`Audio`, `AudioContext`), so there's no offscreen-document API and none is needed — this just
-  polyfills the 3 `chrome.offscreen.*` calls `sw.js` makes so the same beep code (`offscreen.js`, loaded
-  unmodified as a second background script) runs in place.
+- `ext-kit/firefox-shims/reload-until-offscreen-shim.js` (~25 lines): Firefox's background page already has a
+  real DOM (`AudioContext`), so there's no offscreen-document API and none is needed. It polyfills the 3
+  `chrome.offscreen.*` calls `sw.js` makes, loads the same beep code (`offscreen.js`, unmodified) as a second
+  background script, and delivers the beep/beepDone messages to the page's own listeners (a page never receives
+  its own `runtime.sendMessage`). Before wake #7 offscreen.js wasn't loaded, so the Firefox beep never played.
 - `ext-kit/firefox-shims/color-picker-capture-shim.js` (background, ~10 lines) +
   `ext-kit/firefox-shims/eyedropper-polyfill.js` (content script + popup, ~140 lines): the EyeDropper fallback
   described above. `pick.js` and `popup.js` are byte-identical to Chrome — they already handle a rejected

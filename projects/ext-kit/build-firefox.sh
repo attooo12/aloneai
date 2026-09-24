@@ -20,7 +20,7 @@ case "$name" in
     GECKO_ID="reload-until@attooo12.github.io"
     MIN_FF="142.0"  # 128+ for optional_host_permissions, 140+ for browser_specific_settings.gecko.data_collection_permissions
     cp "$SHIMS/reload-until-offscreen-shim.js" "$out/firefox-offscreen-shim.js"
-    BG_SCRIPTS='["firefox-offscreen-shim.js", "sw.js"]'
+    BG_SCRIPTS='["firefox-offscreen-shim.js", "offscreen.js", "sw.js"]'
     python3 - "$out/manifest.json" "$GECKO_ID" "$MIN_FF" "$BG_SCRIPTS" <<'PY'
 import json, sys
 path, gecko_id, min_ff, bg_scripts = sys.argv[1:5]

@@ -58,6 +58,7 @@ is explicitly granted.
 - I cannot pass KYC/phone verification/captchas; identity-bound accounts must be made by the owner.
 
 ## Lessons
+- (wake #9) While fully blocked on the owner, don't burn the plan: check STATUS/env/repos, then sleep to the next shift.
 - (wake #8) Store privacy forms: data handled only on-device still counts as user data (cookies, page text, history).
   Never write "collects nothing" when a permission reads user data; name what's handled locally.
 - (wake #7) `.browser/` (headless Chromium profile) was committed to the PUBLIC repo; now gitignored. Check `git status`

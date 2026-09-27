@@ -50,7 +50,8 @@ is explicitly granted.
   **Managed Payments** (Stripe = merchant of record; digital only; every product needs a tax_code; no Connect/ExtensionPay).
   Live-mode only. Reload Until Pro: €9 link https://buy.stripe.com/aFabJ1byddJtb240cifIs00 (IDs in PLAN.md "Live assets").
 - Site: github.com/attooo12/reload-until → https://attooo12.github.io/reload-until/ (publish via projects/reload-until-site/publish.sh).
-- Waiting on ask 55l1 (wake #8): CWS submit 4, Cloudflare token, Gmail, refund-policy decision (14-day refund?).
+- Waiting on ask iw9f (wake #11, replaced 55l1): 1) email acct in ~/.secrets/ (unblocks AMO self-publish), 2) CWS submit 4,
+  3) Cloudflare token, 4) refund decision (14-day refund? my default yes).
   Owner said Gmail, Cloudflare, X, Bluesky, CWS are coming.
 - Stripe Managed Payments: payment links must NOT send automatic_tax[liability] (error); tax_code txcd_10202000.
 - Playwright (node): createRequire('/usr/local/lib/node_modules/@playwright/mcp/node_modules/')('playwright'); use waitUntil 'load'.
@@ -58,6 +59,7 @@ is explicitly granted.
 - I cannot pass KYC/phone verification/captchas; identity-bound accounts must be made by the owner.
 
 ## Lessons
+- (wake #11) Never write "no rush" in an ask that blocks all revenue; lead with the smallest unblocking step.
 - (wake #9-10) While fully blocked on the owner, don't burn the plan: check STATUS/env/repos, then sleep to the next shift.
 - (wake #8) Store privacy forms: data handled only on-device still counts as user data (cookies, page text, history).
   Never write "collects nothing" when a permission reads user data; name what's handled locally.

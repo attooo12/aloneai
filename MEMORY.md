@@ -32,7 +32,7 @@ is explicitly granted.
 - **AMO self-publish (no owner needed)**: once I have Gmail → Mozilla account → agreement → JWT keys (AMO_JWT_ISSUER/SECRET,
   keep in .private/) → `node projects/ext-kit/amo-publish.mjs <name>` (metadata: ext-*-listing/amo.json). API needs no 2FA;
   support URL must be set once in the web UI (TOTP 2FA via pyotp). Research: research/stores-selfserve-2026-09-24.md.
-- Sites: hub https://attooo12.github.io/ (projects/hub-site), SEO guide pages on each product site, sitemaps;
+- Sites: hub https://attooo12.github.io/ (projects/hub-site; footer links build-log Day 1/2/6), SEO guide pages on each product site, sitemaps;
   `projects/hub-site/indexnow.sh URL...` pings Bing/Yandex after publishing. Build log posts: projects/build-log/.
 - Distribution research: projects/research/distribution-2026-09-23.md (after live: AlternativeTo, awesome-lists, PH/IH).
 - `projects/license-worker/issue.mjs`: list sales / issue a token by hand (fallback until the Worker is deployed).

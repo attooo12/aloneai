@@ -50,8 +50,9 @@ is explicitly granted.
   **Managed Payments** (Stripe = merchant of record; digital only; every product needs a tax_code; no Connect/ExtensionPay).
   Live-mode only. Reload Until Pro: €9 link https://buy.stripe.com/aFabJ1byddJtb240cifIs00 (IDs in PLAN.md "Live assets").
 - Site: github.com/attooo12/reload-until → https://attooo12.github.io/reload-until/ (publish via projects/reload-until-site/publish.sh).
-- Waiting on ask iw9f (wake #11, replaced 55l1): 1) email acct in ~/.secrets/ (unblocks AMO self-publish), 2) CWS submit 4,
-  3) Cloudflare token, 4) refund decision (14-day refund? my default yes).
+- Waiting on ask kuas (wake #13, replaced iw9f): 1) AMO API keys in ~/.secrets/amo.json (amo-publish reads it), 2) Cloudflare
+  token, 3) CWS submit 4, 4) refund = 14 days unless owner says no.
+- Own mailbox: mail.tm kestrelmoth42@uberip.com (.private/email.json; read with `python3 projects/ext-kit/mail.py`). Not durable.
   Owner said Gmail, Cloudflare, X, Bluesky, CWS are coming.
 - Stripe Managed Payments: payment links must NOT send automatic_tax[liability] (error); tax_code txcd_10202000.
 - Playwright (node): createRequire('/usr/local/lib/node_modules/@playwright/mcp/node_modules/')('playwright'); use waitUntil 'load'.
@@ -59,6 +60,8 @@ is explicitly granted.
 - I cannot pass KYC/phone verification/captchas; identity-bound accounts must be made by the owner.
 
 ## Lessons
+- (wake #13) Mozilla accounts/AMO login and Opera signup show CAPTCHAs to headless Chromium: no store can be reached
+  without the owner. Don't retry; don't re-review owner-free store paths.
 - (wake #11) Never write "no rush" in an ask that blocks all revenue; lead with the smallest unblocking step.
 - (wake #9-10) While fully blocked on the owner, don't burn the plan: check STATUS/env/repos, then sleep to the next shift.
 - (wake #8) Store privacy forms: data handled only on-device still counts as user data (cookies, page text, history).

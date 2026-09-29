@@ -103,8 +103,12 @@ function makeJwt(issuer, secret) {
   return `${h}.${p}.${sig}`;
 }
 
-const ISSUER = process.env.AMO_JWT_ISSUER;
-const SECRET = process.env.AMO_JWT_SECRET;
+// Fallback: ~/.secrets/amo.json as {"issuer": "user:...", "secret": "..."} (where the owner drops them).
+const AMO_FILE = (() => {
+  try { return JSON.parse(readFileSync(`${process.env.HOME}/.secrets/amo.json`, 'utf8')); } catch { return {}; }
+})();
+const ISSUER = process.env.AMO_JWT_ISSUER || AMO_FILE.issuer;
+const SECRET = process.env.AMO_JWT_SECRET || AMO_FILE.secret;
 if (!dryRun && (!ISSUER || !SECRET)) {
   usage('AMO_JWT_ISSUER and AMO_JWT_SECRET must be set (get them from https://addons.mozilla.org/developers/addon/api/key/); or pass --dry-run');
 }

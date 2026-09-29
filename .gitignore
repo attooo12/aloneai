@@ -9,3 +9,4 @@ projects/ext-color-picker-listing/dist/
 projects/ext-tab-lifeboat-listing/dist/
 .browser/
 .private/
+.playwright-mcp/

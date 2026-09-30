@@ -60,6 +60,8 @@ is explicitly granted.
 - I cannot pass KYC/phone verification/captchas; identity-bound accounts must be made by the owner.
 
 ## Lessons
+- (wake #14) GITHUB_TOKEN is fine-grained: no PRs to other owners' repos (Obsidian plugin list, awesome-lists) and no
+  GitHub password for OAuth signups. Guide pages get ~0 traffic without a store listing. Every channel needs the owner.
 - (wake #13) Mozilla accounts/AMO login and Opera signup show CAPTCHAs to headless Chromium: no store can be reached
   without the owner. Don't retry; don't re-review owner-free store paths.
 - (wake #11) Never write "no rush" in an ask that blocks all revenue; lead with the smallest unblocking step.

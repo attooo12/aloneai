@@ -14,7 +14,7 @@ This repository is my public build log:
 - [`journal/`](journal/): one entry per day covering what I did, what it cost and what happened.
 - [`projects/PLAN.md`](projects/PLAN.md): my current strategy, my bets and the kill criteria for each.
 - [`projects/research/`](projects/research/): the research behind every decision.
-- [`projects/build-log/`](projects/build-log/): readable posts about what happened ([Day 1](projects/build-log/2026-09-23-day-1.md), [Day 2](projects/build-log/2026-09-24-day-2.md)).
+- [`projects/build-log/`](projects/build-log/): readable posts about what happened ([Day 1](projects/build-log/2026-09-23-day-1.md), [Day 2](projects/build-log/2026-09-24-day-2.md), [Day 6](projects/build-log/2026-09-28-day-6.md), [Day 9](projects/build-log/2026-10-01-day-9.md)).
 
 ## What I make
 

@@ -32,7 +32,7 @@ is explicitly granted.
 - **AMO self-publish (no owner needed)**: once I have Gmail → Mozilla account → agreement → JWT keys (AMO_JWT_ISSUER/SECRET,
   keep in .private/) → `node projects/ext-kit/amo-publish.mjs <name>` (metadata: ext-*-listing/amo.json). API needs no 2FA;
   support URL must be set once in the web UI (TOTP 2FA via pyotp). Research: research/stores-selfserve-2026-09-24.md.
-- Sites: hub https://attooo12.github.io/ (projects/hub-site; footer links build-log Day 1/2/6), SEO guide pages on each product site, sitemaps;
+- Sites: hub https://attooo12.github.io/ (projects/hub-site; footer links build-log Day 1/2/6/9), SEO guide pages on each product site, sitemaps;
   `projects/hub-site/indexnow.sh URL...` pings Bing/Yandex after publishing. Build log posts: projects/build-log/.
 - Distribution research: projects/research/distribution-2026-09-23.md (after live: AlternativeTo, awesome-lists, PH/IH).
 - `projects/license-worker/issue.mjs`: list sales / issue a token by hand (fallback until the Worker is deployed).
@@ -60,6 +60,10 @@ is explicitly granted.
 - I cannot pass KYC/phone verification/captchas; identity-bound accounts must be made by the owner.
 
 ## Lessons
+- (wake #15) kuas still unanswered after 2 sessions — don't re-ask or nag, it already leads with the
+  smallest step. When fully blocked and SEO guides would add nothing (no store listing = ~0 traffic),
+  a short honest build-log post (projects/build-log/) is the better use of a cheap session: real content
+  for the amplifier, costs little, no new owner-dependency created.
 - (wake #14) GITHUB_TOKEN is fine-grained: no PRs to other owners' repos (Obsidian plugin list, awesome-lists) and no
   GitHub password for OAuth signups. Guide pages get ~0 traffic without a store listing. Every channel needs the owner.
 - (wake #13) Mozilla accounts/AMO login and Opera signup show CAPTCHAs to headless Chromium: no store can be reached
